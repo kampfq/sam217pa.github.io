@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Bacterial Finches</title>
+    <link>http://sam217pa.github.io/post/</link>
+    <description>Recent content in Posts on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Mon, 06 Jun 2016 20:08:11 +0200</lastBuildDate>
+    <atom:link href="http://sam217pa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Migrating to Hugo</title>
+      <link>http://sam217pa.github.io/2016/06/06/switch-to-hugo/</link>
+      <pubDate>Mon, 06 Jun 2016 20:08:11 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/06/06/switch-to-hugo/</guid>
+      <description>&lt;p&gt;I quit Jekyll today. Not a really huge decision to make, the blog is really
+small at this point. I could convert all metadata and all by hand.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Emacs in My Toolbox</title>
+      <link>http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</link>
+      <pubDate>Sat, 06 Feb 2016 15:42:58 +0100</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</guid>
+      <description>
+
+&lt;p&gt;Emacs is a powerful tool. A frequent habit of emacs user is to try to migrate
+everything they know and use inside emacs. Emacs Gnus or mu4e, both emacs mail
+clients, emacs org-mode, a GTD mode inside emacs—which is actually extremely
+powerful—, emacs calc, a calculator inside emacs etc… are all attempts in this
+line of conduct.&lt;/p&gt;
+
+&lt;p&gt;As an emacs user myself, I also tried these stuff. And it works really well.&lt;/p&gt;
+
+&lt;p&gt;As a matter of fact, I actually use it all day long. Let&amp;rsquo;s describe quickly how
+I use it to work.&lt;/p&gt;
+
+&lt;h1 id=&#34;emacs-matters:345c4f196a8df77a0db582cec8160fba&#34;&gt;Emacs Matters&lt;/h1&gt;
+
+&lt;p&gt;I start emacs as I start my OS. I used to check mails with mu4e, but never
+really loved the UI. I check my agenda for the day, built with org-mode. I set
+up my main tasks for the day, putting some time-stamps on it.&lt;/p&gt;
+
+&lt;h1 id=&#34;programming-and-documenting-at-the-same-time:345c4f196a8df77a0db582cec8160fba&#34;&gt;Programming and documenting. At the same time.&lt;/h1&gt;
+
+&lt;p&gt;I then open the README.org of the project I&amp;rsquo;m currently working on, which
+involves a lot of bash scripting, python and R. All these scripts are written
+inside the README.org, with comments and all written in org-mode. Scripts are
+written inside &lt;code&gt;src&lt;/code&gt; blocks, and tangled to a src directory containing all my
+tangled files. I never ever edit a single tangled files. I always do it inside
+org-mode, so that I can describe my work, what I try to do, what I already did
+and what&amp;rsquo;s left to do at the end of the day. My workflow is thus entirely
+managed inside emacs. I can put TODO flags in different parts of the project,
+organise the src code in different header tree etc…&lt;/p&gt;
+
+&lt;h1 id=&#34;org-mode-to-pdf:345c4f196a8df77a0db582cec8160fba&#34;&gt;Org-mode to pdf&lt;/h1&gt;
+
+&lt;p&gt;When the time comes to write a report, I write it inside org-mode. I use zotero
+to export my references to a &lt;code&gt;.bib&lt;/code&gt; file somewhere on my computer. Org-ref is a
+mode to manage citations and references inside org-mode. I already wrote a 30
+pages long report with figures, references, math and all inside org-mode. I
+export to latex, and use &lt;code&gt;latexmk&lt;/code&gt; to export my report to pdf.&lt;/p&gt;
+
+&lt;p&gt;Emacs is great. Let&amp;rsquo;s all use emacs.
+&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;I actually use Spacemacs, a combination of Vim and Emacs. It&amp;rsquo;s great if you plan to stay all day at the computer : your pinky will thank you for that. It&amp;rsquo;s all the more true if you have it broken like me ! &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lectures and Data Visualization</title>
+      <link>http://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</link>
+      <pubDate>Wed, 21 Oct 2015 20:40:26 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</guid>
+      <description>
+
+&lt;p&gt;Powerpoints are everywhere. In our world of science, Powerpoints are the &lt;em&gt;lingua
+franca&lt;/em&gt; of lectures. Yet they are seldom used to their rightful potential. I
+believe Powerpoints are often accused of the lecturer&amp;rsquo;s fault. I speak here with
+the legitimacy of a student that spent most of the last six years listening to
+lecturers with poor lecturing skills&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am a great admirer of Edward Tufte&amp;rsquo;s work about data visualization. Yet I
+disagree with his opinion that Powerpoints kills reasoning. Actually I believe
+there are many overlaps between good data visualization and good lectures.&lt;/p&gt;
+
+&lt;p&gt;Here are Tufte&amp;rsquo;s opinion on graphical excellence. Good graphics :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;show the data&lt;/li&gt;
+&lt;li&gt;induce the viewer to think about substance rather than methodology, design
+or something else.&lt;/li&gt;
+&lt;li&gt;avoid distorting the data.&lt;/li&gt;
+&lt;li&gt;present many number in a small space.&lt;/li&gt;
+&lt;li&gt;make large data sets coherent.&lt;/li&gt;
+&lt;li&gt;reveal the data at several levels of details, from a broad overview to a
+fine structure.&lt;/li&gt;
+&lt;li&gt;serve a clear purpose.&lt;/li&gt;
+&lt;li&gt;be closely integrated with the statistical and verbal description of the
+data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a matter of fact, a good lectures shares the same objectives. Good lectures :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;show the question.&lt;/li&gt;
+&lt;li&gt;induce the listener to think about substance rather than the lecturer&amp;rsquo;s style of lecturing.&lt;/li&gt;
+&lt;li&gt;avoid distorting the question&lt;/li&gt;
+&lt;li&gt;present many complex facts and ideas in a small space.&lt;/li&gt;
+&lt;li&gt;make complex, multivariate questions coherent.&lt;/li&gt;
+&lt;li&gt;reveals the ins and outs of the question at several levels of details, from a
+broad overview to the finest technical details.&lt;/li&gt;
+&lt;li&gt;serve a clear purpose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here I&amp;rsquo;ll expose what I think makes a good
+lecturer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+It follows Tufte&amp;rsquo;s ideas on data visualization.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-the-question:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show the question&lt;/h2&gt;
+
+&lt;p&gt;A Powerpoint and a lecturer are useless if the scientific question behind it is
+not understood by the audience.&lt;/p&gt;
+
+&lt;p&gt;A good Powerpoint should always have a clear title. It describes clearly and
+concisely the broad topic. It serves its goal even better as a question.
+Questions gives direction to reasoning.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-have-a-good-style:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers have a good style.&lt;/h2&gt;
+
+&lt;p&gt;This is my main point. Good lecturers induces the listener to think about the
+&lt;em&gt;question&lt;/em&gt;. The listener should not have to think about the lecture&amp;rsquo;s style. To
+paraphrase Pr Hervé Maisonneuve :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Good style is absence of style.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Color that serves no goal should disappear. Forget Powerpoints ready-made
+templates. They have no place in Science. Superfluous words should disappear.
+Diagrams are clear. They take the space they need, no more.&lt;/p&gt;
+
+&lt;p&gt;Indeed, I do agree with Edward Tufte that Powerpoints should be reserved for
+pictures, diagrams and charts. In Science, we can put all aspects of reasoning
+to good use. Some people needs a visual support to information. But the
+excessive use of Powerpoints has shifted this support from the lecturer to the
+screen. We need to realize this. The support of information is the lecturer. The
+audience should be &lt;em&gt;listening&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Not staring at a screen,
+trying to make sense of verbless sentences.&lt;/p&gt;
+
+&lt;p&gt;Poor lecturers tend to put too much textual information on screen. As if they
+were hoping that it could rescue their audience&amp;rsquo;s lack of attention…&lt;/p&gt;
+
+&lt;p&gt;As does good charts, good lecturers are neutral enough to shift focus from form
+to content.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-do-not-distort-the-question:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers do not distort the question.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers do not leave an opinionated point of view of the question in the
+listener&amp;rsquo;s mind. On the contrary, they should be subtle enough to put the seeds
+of good reasoning in it. The listener has the choice to make it flourish.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-synthesize:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers synthesize.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers show many elements to the listener. They give him keys to analyze
+those elements. Or they can lead him to get this keys by
+himself&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;But they have to be synthetic. One cannot hope to give a sufficiently broad
+overview of a complex topic with too much divergence from the central point.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-complexity:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show complexity.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers connect facts between them. Good lecturers connect theories
+between them. They connect theories to facts. They connect facts to theories.
+They connect it to the audience&amp;rsquo;s knowledge. One can not be a good lecturer
+without knowing his audience.&lt;/p&gt;
+
+&lt;p&gt;A good lecturer&amp;rsquo;s main role is to make complex questions coherent.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-details-and-perspective:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show details and perspective&lt;/h2&gt;
+
+&lt;p&gt;A good lecturer has the ability to attach the finest details to the broader
+tendency in which they are included. He knows the broad phenomena as well as
+little peculiar details.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-serves-a-clear-purpose:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers serves a clear purpose.&lt;/h2&gt;
+
+&lt;p&gt;It could be the #1 point. Good lecturers put things in context. Period. One can
+never have the listener&amp;rsquo;s attention if the listener does not know why he should
+listen. What is the point of this ? Why are you doing this ? Why work on this ?
+To what point ?&lt;/p&gt;
+
+&lt;p&gt;Such questions are so common that a lecturer tends to forget to answer it.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Tufte says a chart&amp;rsquo;s data to ink ratio should be maximized. Chartjunk should be
+eliminated.&lt;/p&gt;
+
+&lt;p&gt;I say ideas to speak ratio is the measure of a lecture&amp;rsquo;s quality. Talkjunk is
+needless. So many talk are crippled with useless information that it is rather
+the rule than the exception.&lt;/p&gt;
+
+&lt;p&gt;Focus should be on the lecturer. Not on the screen. The lecturer&amp;rsquo;s focus should
+be on the listener. Not on the screen.&lt;/p&gt;
+
+&lt;p&gt;Powerpoints are a tool to assist reasoning. Not a support of information. Not a
+decoration. They should be neutral. They should be the hammer of the lecturer. A
+tool.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;I am not saying here that all of the lectures I had were of poor quality. I say most of them. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;I&amp;rsquo;ll talk indifferently of lecturer or Powerpoint. To me, a Powerpoint is as bad as is its designer. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;Listening is a skill we have to re-learn. Powerpoints have made that much damage. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;It depends on the lecturer&amp;rsquo;s style. Even though he should not have a style. Ha. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Embed D3 Code into a markdown Jekyll Document</title>
+      <link>http://sam217pa.github.io/2015/10/20/2015-10-20-embed-d3-code/</link>
+      <pubDate>Tue, 20 Oct 2015 00:33:53 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2015/10/20/2015-10-20-embed-d3-code/</guid>
+      <description>&lt;p&gt;I deserve no credits for this. It is basically a copy and paste from Nick Such&amp;rsquo;s
+previous &lt;a href=&#34;http://www.nicksuch.com/2014/03/26/d3-sample/&#34;&gt;post&lt;/a&gt;. It follows his
+answer to a question on
+&lt;a href=&#34;http://stackoverflow.com/questions/22651346/how-to-embed-a-d3-js-example-to-the-jekyll-blog-post&#34;&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;See
+&lt;a href=&#34;https://raw.githubusercontent.com/nicksuch/nicksuch.github.io/master/_posts/2014-03-26-d3-sample.md&#34;&gt;here&lt;/a&gt;
+for details about how to do it.&lt;/p&gt;
+
+&lt;p&gt;&lt;style&gt;&lt;/p&gt;
+
+&lt;p&gt;div.example {
+  font-family: &amp;ldquo;Helvetica Neue&amp;rdquo;, Helvetica, Arial, sans-serif;
+}&lt;/p&gt;
+
+&lt;p&gt;.box {
+  font: 10px sans-serif;
+}&lt;/p&gt;
+
+&lt;p&gt;.box line,
+.box rect,
+.box circle {
+  fill: #008080;
+  stroke: #000;
+  stroke-width: 1.5px;
+}&lt;/p&gt;
+
+&lt;p&gt;.box .center {
+  stroke-dasharray: 3,3;
+}&lt;/p&gt;
+
+&lt;p&gt;.box .outlier {
+  fill: none;
+  stroke: #ccc;
+}&lt;/p&gt;
+
+&lt;p&gt;&lt;/style&gt;
+&lt;script src=&#34;http://d3js.org/d3.v3.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://bl.ocks.org/mbostock/raw/4061502/0a200ddf998aa75dfdb1ff32e16b680a15e5cb01/box.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;&lt;/p&gt;
+
+&lt;p&gt;var margin = {top: 10, right: 50, bottom: 20, left: 50},
+    width = 120 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;&lt;/p&gt;
+
+&lt;p&gt;var min = Infinity,
+    max = -Infinity;&lt;/p&gt;
+
+&lt;p&gt;var chart = d3.box()
+    .whiskers(iqr(1.5))
+    .width(width)
+    .height(height);&lt;/p&gt;
+
+&lt;p&gt;d3.csv(&amp;ldquo;/data/morley.csv&amp;rdquo;, function(error, csv) {
+  var data = [];&lt;/p&gt;
+
+&lt;p&gt;csv.forEach(function(x) {
+    var e = Math.floor(x.Expt - 1),
+        r = Math.floor(x.Run - 1),
+        s = Math.floor(x.Speed),
+        d = data[e];
+    if (!d) d = data[e] = [s];
+    else d.push(s);
+    if (s &amp;gt; max) max = s;
+    if (s &amp;lt; min) min = s;
+  });&lt;/p&gt;
+
+&lt;p&gt;chart.domain([min, max]);&lt;/p&gt;
+
+&lt;p&gt;var svg = d3.select(&amp;ldquo;div#example&amp;rdquo;).selectAll(&amp;ldquo;svg&amp;rdquo;)
+      .data(data)
+    .enter().append(&amp;ldquo;svg&amp;rdquo;)
+      .attr(&amp;ldquo;class&amp;rdquo;, &amp;ldquo;box&amp;rdquo;)
+      .attr(&amp;ldquo;width&amp;rdquo;, width + margin.left + margin.right)
+      .attr(&amp;ldquo;height&amp;rdquo;, height + margin.bottom + margin.top)
+    .append(&amp;ldquo;g&amp;rdquo;)
+      .attr(&amp;ldquo;transform&amp;rdquo;, &amp;ldquo;translate(&amp;rdquo; + margin.left + &amp;ldquo;,&amp;rdquo; + margin.top + &amp;ldquo;)&amp;rdquo;)
+      .call(chart);&lt;/p&gt;
+
+&lt;p&gt;setInterval(function() {
+    svg.datum(randomize).call(chart.duration(1000));
+  }, 2000);
+});&lt;/p&gt;
+
+&lt;p&gt;function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  return d.map(d.randomizer);
+}&lt;/p&gt;
+
+&lt;p&gt;function randomizer(d) {
+  var k = d3.max(d) * .02;
+  return function(d) {
+    return Math.max(min, Math.min(max, d + k * (Math.random() - .5)));
+  };
+}&lt;/p&gt;
+
+&lt;p&gt;// Returns a function to compute the interquartile range.
+function iqr(k) {
+  return function(d, i) {
+    var q1 = d.quartiles[0],
+        q3 = d.quartiles[2],
+        iqr = (q3 - q1) * k,
+        i = -1,
+        j = d.length;
+    while (d[++i] &amp;lt; q1 - iqr);
+    while (d[&amp;ndash;j] &amp;gt; q3 + iqr);
+    return [i, j];
+  };
+}&lt;/p&gt;
+
+&lt;p&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;div id=&#34;example&#34;&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Biased Gene Conversion</title>
+      <link>http://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</link>
+      <pubDate>Sat, 17 Oct 2015 15:17:18 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</guid>
+      <description>
+
+&lt;p&gt;Base composition of genomes is affected by many major process, being either
+neutral or selective. The neutral model describes mutations as following the
+genetic drift, which depends on population effective size. It does not represent
+the genome reality very well, but it is a useful model as a null hypothesis. One
+must reject the neutral hypothesis before affirming that a genomic trait is under
+selection constraints.&lt;/p&gt;
+
+&lt;h1 id=&#34;natural-selection-hypothesis:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Natural Selection hypothesis&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A curious aspect of the theory of evolution is that everybody thinks he
+understands it. &lt;em&gt;Jacques Monod&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The natural selection hypothesis discriminate three cases of a genomic trait
+being under selective constraints. The positive or directional selection leads
+to the gradual erasing of variation on a given position of the genome, if this
+position has a positive impact on the fitness. The purifying, or negative
+selection, act against all variation, nearly all mutation are deleterious.
+Typically, a mutation on conserved region of 16S rDNA in Bacteria are
+deleterious : they does not spread in the population.&lt;/p&gt;
+
+&lt;p&gt;Recently, a new process that can confound selection tracks with a neutral
+process has been discovered : the biased gene conversion.&lt;/p&gt;
+
+&lt;h1 id=&#34;gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Gene conversion&lt;/h1&gt;
+
+&lt;p&gt;A gene conversion event takes place when the resolution of the intermediate
+poroduct of homolog recombination leads to the
+uni-directional—non-reciprocal—exchange of genetic information from one donor to
+a receptor sequence. It is a key process of the first meiosis division, an
+obligate step in eukaryotes gametogenesis.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, if one allele has a greater chance to be the donor, the process is
+biased.&lt;/p&gt;
+
+&lt;h1 id=&#34;biased-gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Biased Gene Conversion&lt;/h1&gt;
+
+&lt;p&gt;There are two main scenarios to explain a biased gene conversion event.&lt;/p&gt;
+
+&lt;h2 id=&#34;initiation-bias:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Initiation bias&lt;/h2&gt;
+
+&lt;p&gt;The initiation bias appears when a region on one double stranded DNA is more
+often victim of double strand breaks than its homolog region on the sister
+chromosome. This region is thus called a recombination hotspots, whereas its
+homolog on the sister chromosome is called a recombination coldspots.
+Paradoxically, on the lifespan of the hotspot, the coldspot will more often be
+the donor of gene conversion events, leading to the gradual death of the
+corresponding hotspot. There is an initiation bias on the gene conversion event.&lt;/p&gt;
+
+&lt;h2 id=&#34;gc-biased-gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;GC-biased gene conversion&lt;/h2&gt;
+
+&lt;p&gt;The other bias is called GC-bias gene conversion. Indeed, it has been shown in
+many eukaryotes, including yeast and human, that the G or C alleles of a gene
+are statistically significantly more often the donor of a gene conversion event
+than its A or T corresponding allele.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It looks exactly as directed selection, but is &lt;em&gt;not&lt;/em&gt; an adaptative process.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One can find traces of GC-bias gene conversion in a region if all positions are
+affected, being either neutral or &lt;em&gt;even deleterious&lt;/em&gt;. Typically, gBGC is
+associated with regions of high rate of recombination, actual or past. While
+selection only act on non neutral regions&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, gBGC also acts on nearby introns
+and non-functional sequences. Moreover, selection can act on a very large
+genomic scale, when linkage is taken into account.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;gBGC has been shown to be responsible for the large scale variations of
+GC-content, the so called genomic isochores; it can lead to the fixation of
+deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;exons or regulatory sequences
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hill-Robertson Effects</title>
+      <link>http://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</link>
+      <pubDate>Thu, 15 Oct 2015 19:06:40 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;Hill-Robertson effects are interference between two locus under selection. When
+recombination is weak, selection on the two locus interfere. Selection is less
+efficient than when it acts on two independent locus.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt;, two moderately advantageous allele, in different
+population. They are under positive or directional selection. If recombination
+is weak, an optimal &lt;em&gt;AB&lt;/em&gt; combination can never appear. &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt; interfere
+with each other.&lt;/p&gt;
+
+&lt;p&gt;Those are the typical Hill-Robertson effects, as described by Hill and Robertson
+in 1966. They have been described under other declination since.&lt;/p&gt;
+
+&lt;h2 id=&#34;selective-sweep:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Selective Sweep&lt;/h2&gt;
+
+&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt;, a strongly advantageous allele, and &lt;em&gt;b&lt;/em&gt; a weakly deleterious
+allele. &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. The advantageous effects of &lt;em&gt;A&lt;/em&gt; leads to its
+invasion in the population. It can even lead to a point of fixation. It is thus
+a selective sweep of &lt;em&gt;A&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;But &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;. &lt;em&gt;b&lt;/em&gt; will also invade the population, even if it is
+deleterious. This is a case of &amp;ldquo;genetic hitch-hiking&amp;rdquo;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;background-selection:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Background selection&lt;/h2&gt;
+
+&lt;p&gt;It is the opposite case of selective sweep interference. Consider now &lt;em&gt;B&lt;/em&gt;, a
+strongly deleterious allele, and &lt;em&gt;a&lt;/em&gt; a weakly advantageous allele. &lt;em&gt;a&lt;/em&gt; is linked
+to &lt;em&gt;B&lt;/em&gt;. The deleterious effects of &lt;em&gt;B&lt;/em&gt; lead to the extinction of &lt;em&gt;B&lt;/em&gt; carrying
+individuals.&lt;/p&gt;
+
+&lt;p&gt;But &lt;em&gt;a&lt;/em&gt; is linked to &lt;em&gt;B&lt;/em&gt;. &lt;em&gt;a&lt;/em&gt; will disappear from the population, even if it is
+advantageous. This is a case of background selection. All polymorphism linked to
+a strongly deleterious allele is purged.&lt;/p&gt;
+
+&lt;h2 id=&#34;muller-s-ratchet:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Muller&amp;rsquo;s Ratchet&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Muller&amp;rsquo;s ratchet was first described in 1932.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It happens in clonal species, with small population sizes. A population carrying
+no deleterious mutation is a population subgroup. When the first deleterious
+mutation appears, the population ratchets up on the mutational burden. Since
+recombination is weak, given the small population size, this mutation has no
+chance to be cured. When further deleterious mutation occurs, population
+degenerate. Its fitness irresistibly drops down, to the point of extinction.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Hill-Robertson effects only occurs when recombination is weaker than mutation.
+Polymorphism decreases and selection efficacy decreases too. One must consider
+selection intensity, mutation and recombination respective rates. The size of
+the genomic window affected depends on those three parameters : if recombination
+is weak and selection strong, genome can be affected on a large scale.&lt;/p&gt;
+
+&lt;p&gt;Hill-Robertson effects can explain counter intuitive observations. The spread of
+deleterious allele can be explained by genomic interference, as is the case with
+cystic fibrosis.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;They are in &lt;em&gt;linkage desequilibrium&lt;/em&gt; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;As coined by John Maynard Smith&amp;rdquo; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Starting a blog</title>
+      <link>http://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</link>
+      <pubDate>Wed, 14 Oct 2015 16:38:14 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</guid>
+      <description>
+
+&lt;p&gt;Following the advice of
+&lt;a href=&#34;http://www.amazon.com/Pragmatic-Thinking-Learning-Refactor-Programmers/dp/1934356050&#34;&gt;Andy Hunt&lt;/a&gt;,
+I decided to start a blog. I want to be able to communicate my ideas in the most
+limpid way. Being a non-native English speaker, it is crucial for me to get used
+to write in English.&lt;/p&gt;
+
+&lt;h1 id=&#34;goal:73ae8c74cf7ae711ef861e36cba96620&#34;&gt;Goal&lt;/h1&gt;
+
+&lt;p&gt;I am currently learning population genomics, applied to microbial communities.
+Me and my supervisors are studying a biased gene conversion process in bacteria,
+using a natural transformation model of recombination : &lt;em&gt;Acinetobacter&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have never been exposed to such concepts, yet they seem really appealing to
+me. I want to be able to put some clear reasoning on concepts I have learned so
+far. Writing a blog is perfect for that.&lt;/p&gt;
+
+&lt;h1 id=&#34;an-aspiring-bacterial-evolutionnist:73ae8c74cf7ae711ef861e36cba96620&#34;&gt;An aspiring bacterial evolutionnist&lt;/h1&gt;
+
+&lt;p&gt;Here I&amp;rsquo;ll try to expose stuff that I learned during my late readings and
+research paper gambling…&lt;/p&gt;
+
+&lt;p&gt;I mostly do microbiology and evolution on a computer, using &lt;code&gt;R&lt;/code&gt; and &lt;code&gt;Python&lt;/code&gt;,
+and I try my best to be good at it. I&amp;rsquo;ll certainly blog on it sometimes.&lt;/p&gt;
+
+&lt;p&gt;I also loves &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Emacs&lt;/a&gt;, on which I&amp;rsquo;ll try
+to blog some other times.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

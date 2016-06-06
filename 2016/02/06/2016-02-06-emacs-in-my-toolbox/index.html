@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Emacs in My Toolbox &middot; Samuel Barreto</title>
+        <meta name="description" content="A post describing why emacs matters in a bioinformatician toolbox.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/normalize.css">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/highlight.css">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Emacs in My Toolbox</h1>
+    
+        <p class="post-description" itemprop="description">A post describing why emacs matters in a bioinformatician toolbox.</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-02-06" itemprop="datePublished">Sat, Feb 6, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Emacs is a powerful tool. A frequent habit of emacs user is to try to migrate
+everything they know and use inside emacs. Emacs Gnus or mu4e, both emacs mail
+clients, emacs org-mode, a GTD mode inside emacs—which is actually extremely
+powerful—, emacs calc, a calculator inside emacs etc… are all attempts in this
+line of conduct.</p>
+
+<p>As an emacs user myself, I also tried these stuff. And it works really well.</p>
+
+<p>As a matter of fact, I actually use it all day long. Let&rsquo;s describe quickly how
+I use it to work.</p>
+
+<h1 id="emacs-matters:345c4f196a8df77a0db582cec8160fba">Emacs Matters</h1>
+
+<p>I start emacs as I start my OS. I used to check mails with mu4e, but never
+really loved the UI. I check my agenda for the day, built with org-mode. I set
+up my main tasks for the day, putting some time-stamps on it.</p>
+
+<h1 id="programming-and-documenting-at-the-same-time:345c4f196a8df77a0db582cec8160fba">Programming and documenting. At the same time.</h1>
+
+<p>I then open the README.org of the project I&rsquo;m currently working on, which
+involves a lot of bash scripting, python and R. All these scripts are written
+inside the README.org, with comments and all written in org-mode. Scripts are
+written inside <code>src</code> blocks, and tangled to a src directory containing all my
+tangled files. I never ever edit a single tangled files. I always do it inside
+org-mode, so that I can describe my work, what I try to do, what I already did
+and what&rsquo;s left to do at the end of the day. My workflow is thus entirely
+managed inside emacs. I can put TODO flags in different parts of the project,
+organise the src code in different header tree etc…</p>
+
+<h1 id="org-mode-to-pdf:345c4f196a8df77a0db582cec8160fba">Org-mode to pdf</h1>
+
+<p>When the time comes to write a report, I write it inside org-mode. I use zotero
+to export my references to a <code>.bib</code> file somewhere on my computer. Org-ref is a
+mode to manage citations and references inside org-mode. I already wrote a 30
+pages long report with figures, references, math and all inside org-mode. I
+export to latex, and use <code>latexmk</code> to export my report to pdf.</p>
+
+<p>Emacs is great. Let&rsquo;s all use emacs.
+<sup class="footnote-ref" id="fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S"><a rel="footnote" href="#fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S">1</a></sup></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S">I actually use Spacemacs, a combination of Vim and Emacs. It&rsquo;s great if you plan to stay all day at the computer : your pinky will thank you for that. It&rsquo;s all the more true if you have it broken like me ! <a class="footnote-return" href="#fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+                 <a href="/tags/spacemacs/">spacemacs</a>
+            
+                 <a href="/tags/tool/">tool</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Emacs%20in%20My%20Toolbox&url=http%3a%2f%2fsam217pa.github.io%2f2016%2f02%2f06%2f2016-02-06-emacs-in-my-toolbox%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsam217pa.github.io%2f2016%2f02%2f06%2f2016-02-06-emacs-in-my-toolbox%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fsam217pa.github.io%2f2016%2f02%2f06%2f2016-02-06-emacs-in-my-toolbox%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'http:\/\/sam217pa.github.io\/2016\/02\/06\/2016-02-06-emacs-in-my-toolbox\/';
+    var disqus_title = 'Emacs in My Toolbox';
+    var disqus_url = 'http:\/\/sam217pa.github.io\/2016\/02\/06\/2016-02-06-emacs-in-my-toolbox\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://sam217pa.github.io/js/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+        <script src="http://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="http://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
