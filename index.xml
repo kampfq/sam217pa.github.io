@@ -7,8 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Mon, 06 Jun 2016 20:08:11 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jun 2016 14:33:06 +0200</lastBuildDate>
     <atom:link href="http://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using LaTeX</title>
+      <link>http://sam217pa.github.io/2016/06/07/using-latex/</link>
+      <pubDate>Tue, 07 Jun 2016 14:33:06 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/06/07/using-latex/</guid>
+      <description>&lt;p&gt;LaTeX is a great tool.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve recently used it to write my master&amp;rsquo;s memoir (accessible
+&lt;a href=&#34;https://www.dropbox.com/s/6btccuw8hudxvgo/rapport.pdf?dl=0&#34;&gt;here&lt;/a&gt;). I used Tikz
+to draw simple diagrams. They are really simple, yet I do not know of any other
+tool that I could use to produce these diagrams. In their first implementation,
+those diagrams integrated rather tightly text and figures. I said it before, and
+I say it again : I am firmly convinced that Tufte is right about integrating
+visual evidence with text. The Old Masters like &lt;em&gt;da Vinci&lt;/em&gt; and &lt;em&gt;Galileo&lt;/em&gt; did it.
+That was normal at the time: text was written with the support of visual
+evidence. They used ink.&lt;/p&gt;
+
+&lt;p&gt;We use computers. That makes the idea of laying down text and visual evidence
+together more difficult. We are used to separate it. One page for text, one page
+for figures. Sometimes the text describes something that is not even seeable by
+the reader, because the corresponding figure is on the next page.&lt;/p&gt;
+
+&lt;p&gt;LaTeX and Tikz allow us to do that much more naturally. It really is simple to
+integrate text, maths, figures, drawing, photos and diagrams together. Plus it
+is free. It is really moldable, you can lead LaTeX to draw anything you want.
+Search on Google, you will see some great examples of Phd Thesis written in
+LaTeX with great figures and diagrams. Nobody can do it inside Microsoft Word.
+Maybe it could be done inside Adobe InDesign, but I have no experience with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://sam217pa.github.io/images/recombinaison.png&#34; alt=&#34;Homologous Recombination During Natural Transformation&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Migrating to Hugo</title>
@@ -699,11 +733,7 @@ to blog some other times.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://sam217pa.github.io/page/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;about-me:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;About Me&lt;/h2&gt;
-
-&lt;p&gt;I am a graduate student of the microbiology school of Lyon, France (see
+      <description>&lt;p&gt;I am a graduate student of the microbiology school of Lyon, France (see
 &lt;a href=&#34;http://spiralconnect.univ-lyon1.fr/webapp/website/website.html?id=3170502&amp;amp;pageId=216831&#34;&gt;here&lt;/a&gt;).
 I am currently applying for a master thesis, under the supervision of
 &lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Duret-Laurent-.html&#34;&gt;Laurent Duret&lt;/a&gt; and
