@@ -16,8 +16,133 @@
       <pubDate>Mon, 06 Jun 2016 20:08:11 +0200</pubDate>
       
       <guid>http://sam217pa.github.io/2016/06/06/switch-to-hugo/</guid>
-      <description>&lt;p&gt;I quit Jekyll today. Not a really huge decision to make, the blog is really
-small at this point. I could convert all metadata and all by hand.&lt;/p&gt;
+      <description>
+
+&lt;p&gt;I quit Jekyll today. Not a really huge decision to make, the blog is really
+small at this point. I could convert all metadata and all by hand. That was
+before I knew that Hugo has some tools to ease the switch.&lt;/p&gt;
+
+&lt;h1 id=&#34;so-long-jekyll:379062a983a2c96623df21277397b505&#34;&gt;So long Jekyll&lt;/h1&gt;
+
+&lt;p&gt;I got tired of Jekyll for two reasons. The first is that I had a lot of stuff to
+install before being able to serve and test my website. The second is that it is
+a hell to maintain a blog with it. The last post I wrote
+(&lt;a href=&#34;http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/&#34;&gt;here&lt;/a&gt;)
+was published with Jekyll. That was before I upgraded to El Capitan. All hell
+went lose after that. Some dependencies were upgraded too, and stuff I&amp;rsquo;ve done
+four months ago were to be done again. I don&amp;rsquo;t have a clue about the &lt;code&gt;Ruby&lt;/code&gt;
+ecosystem, and I&amp;rsquo;m not particularly interested in learning it. I know it is
+really simple, but I don&amp;rsquo;t have the time nor the motivation to.&lt;/p&gt;
+
+&lt;h1 id=&#34;hi-hugo:379062a983a2c96623df21277397b505&#34;&gt;Hi Hugo&lt;/h1&gt;
+
+&lt;p&gt;I chosed Hugo for two reasons. The first is that I had great experiences with
+tools written in &lt;code&gt;Go&lt;/code&gt; recently, mainly &lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;fzf&lt;/a&gt;
+and &lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt;. I had taken a
+look at &lt;a href=&#34;https://github.com/urfave/cli&#34;&gt;cli&lt;/a&gt; when I was looking for a simple way
+to write a command line app&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and it looked dead simple. &lt;code&gt;Go&lt;/code&gt;-based tools seems to have a &amp;ldquo;keep it
+simple stupid&amp;rdquo; spirit that appeals to me very much. The second reason is that
+Hugo has an awesome &lt;a href=&#34;https://gohugo.io/&#34;&gt;website&lt;/a&gt; and
+&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;documentation&lt;/a&gt; that makes it really
+easy to have a quick overview of what it can do.&lt;/p&gt;
+
+&lt;p&gt;Since I don&amp;rsquo;t need really complex stuff to be done in a simple blog, I thought
+Hugo was a great choice. Its speed was the icing on the cake. I tend to think
+that I don&amp;rsquo;t need it. But when you have it, you don&amp;rsquo;t look back. Same goes for
+&lt;code&gt;ag&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To deploy the website to GitHub Pages, simply &lt;code&gt;git init&lt;/code&gt; in the &lt;code&gt;public&lt;/code&gt;
+directory, and &lt;code&gt;git remote add&lt;/code&gt; your repo URL. GitHub Pages are generated at
+super speed. This is really simple.&lt;/p&gt;
+
+&lt;p&gt;I would definitely recommend Hugo to anybody wanting to start a blog. I find it
+really simple to use, much more than Jekyll. And it has great themes.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;I ended up using &lt;a href=&#34;http://click.pocoo.org/5/&#34;&gt;click&lt;/a&gt; with Python. Great library, although it tends to introduce some clumsiness in the app &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Changing my Emacs Paradigm</title>
+      <link>http://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</link>
+      <pubDate>Mon, 06 Jun 2016 19:47:05 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</guid>
+      <description>
+
+&lt;p&gt;In my previous
+&lt;a href=&#34;http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/&#34;&gt;post&lt;/a&gt;, I
+talked about the way I tended to integrate everything in Emacs. In this one, I
+want to describe what lead me to totally change the way I use it.&lt;/p&gt;
+
+&lt;h1 id=&#34;living-in-the-terminal:90f8f993beffe30febe8d9a4af8da2db&#34;&gt;Living in the terminal&lt;/h1&gt;
+
+&lt;p&gt;I just spend four months in front of my computer. I literally lived inside my
+terminal for various reasons. I had biological data to analyse, and software to
+develop to do it. I used &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;perl&lt;/code&gt; and &lt;code&gt;Python&lt;/code&gt; and read some &lt;code&gt;C&lt;/code&gt; code
+too. The diversity of languages we have to face when working in the
+bioinformatics field is incredible. For that I was lucky to have chosen to learn
+polyglot &lt;code&gt;vi&lt;/code&gt; and &lt;code&gt;emacs&lt;/code&gt; in the past. Not being locked to a particuliar IDE
+when facing that much diversity is a great thing.&lt;/p&gt;
+
+&lt;h1 id=&#34;developping-inside-emacs:90f8f993beffe30febe8d9a4af8da2db&#34;&gt;Developping inside emacs&lt;/h1&gt;
+
+&lt;p&gt;At the beginning, I was doing exactly what I described in my previous post. I
+lived inside org-mode, using code blocks to put up software and describe what
+each piece of code was doing. I then tangled each block to its file, tested it,
+went back to org-mode, debugged it, tangled it, tested it … At the end of the
+day, that makes a lot of &lt;code&gt;C-u C-u C-c C-v
+t&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to speed up the way I wrote software, particularly when I was facing very
+tight deadlines. I really gradually started not to use org-mode to organise
+source code. Then I was not using it at all. Even my TODO notes migrated to
+&lt;a href=&#34;https://taskwarrior.org/&#34;&gt;taskwarrior&lt;/a&gt;, a great command line tool with very
+similar abilities as org-mode. The only benefit it has is being accessible from
+the command line really fast. Just type &lt;code&gt;alias T=&#39;task&#39;&lt;/code&gt; and &lt;code&gt;T&lt;/code&gt; to have a brief
+overview of what&amp;rsquo;s to be done.&lt;/p&gt;
+
+&lt;p&gt;Then I (re)learned to use &lt;a href=&#34;https://tmux.github.io/&#34;&gt;tmux&lt;/a&gt;, and started to
+harness the emacs daemon feature. It boosted my productivity a great deal. Just
+add&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;export EDITOR=&amp;quot;emacsclient -t&amp;quot;
+export ALTERNATE_EDITOR=&amp;quot;&amp;quot;
+
+alias e=&#39;emacsclient -t&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to your &lt;code&gt;.bashrc&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, and you&amp;rsquo;re all
+set to use emacs as your main editor. You can have as many tmux sessions you
+want, there is only one emacs instance to edit all the file you edit. It makes
+integrating emacs and the typical terminal environment, with all its speed and
+comfort, really nicer.&lt;/p&gt;
+
+&lt;p&gt;I recommend it to everyone searching for a way to integrate emacs within its
+terminal. I remember being very destabilized when I quit vim to emacs by the
+fact that emacs was really slow to open a simple file. I ended up using only the
+graphical emacs, but had to switch between emacs and the terminal quite often.
+To be honest, the &lt;code&gt;shell&lt;/code&gt;, &lt;code&gt;ansiterm&lt;/code&gt;, &lt;code&gt;eshell&lt;/code&gt; and all are not that great for
+now inside emacs. It feels very clumsy and slow, and result in all sort of bugs
+when emacs tries to syntax highlight everything.&lt;/p&gt;
+
+&lt;p&gt;I mapped &lt;code&gt;server-edit&lt;/code&gt; to &lt;code&gt;SPC-.&lt;/code&gt; inside Spacemacs, so that I can quickly switch
+between emacs and the terminal environment.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;code&gt;org-babel-tangle&lt;/code&gt;, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;or &lt;code&gt;.zshrc&lt;/code&gt;, you should obviously use zsh. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     

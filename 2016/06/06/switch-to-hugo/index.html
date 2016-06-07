@@ -65,11 +65,11 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+        <a title="About" href="/page/about/">About</a>
     </li>
 
                     </ul>
@@ -100,8 +100,55 @@ ga('send', 'pageview');
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>I quit Jekyll today. Not a really huge decision to make, the blog is really
-small at this point. I could convert all metadata and all by hand.</p>
+    
+
+<p>I quit Jekyll today. Not a really huge decision to make, the blog is really
+small at this point. I could convert all metadata and all by hand. That was
+before I knew that Hugo has some tools to ease the switch.</p>
+
+<h1 id="so-long-jekyll:379062a983a2c96623df21277397b505">So long Jekyll</h1>
+
+<p>I got tired of Jekyll for two reasons. The first is that I had a lot of stuff to
+install before being able to serve and test my website. The second is that it is
+a hell to maintain a blog with it. The last post I wrote
+(<a href="http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/">here</a>)
+was published with Jekyll. That was before I upgraded to El Capitan. All hell
+went lose after that. Some dependencies were upgraded too, and stuff I&rsquo;ve done
+four months ago were to be done again. I don&rsquo;t have a clue about the <code>Ruby</code>
+ecosystem, and I&rsquo;m not particularly interested in learning it. I know it is
+really simple, but I don&rsquo;t have the time nor the motivation to.</p>
+
+<h1 id="hi-hugo:379062a983a2c96623df21277397b505">Hi Hugo</h1>
+
+<p>I chosed Hugo for two reasons. The first is that I had great experiences with
+tools written in <code>Go</code> recently, mainly <a href="https://github.com/junegunn/fzf">fzf</a>
+and <a href="https://github.com/monochromegane/the_platinum_searcher">pt</a>. I had taken a
+look at <a href="https://github.com/urfave/cli">cli</a> when I was looking for a simple way
+to write a command line app<sup class="footnote-ref" id="fnref:379062a983a2c96623df21277397b505:I-ended-up-using"><a rel="footnote" href="#fn:379062a983a2c96623df21277397b505:I-ended-up-using">1</a></sup>, and it looked dead simple. <code>Go</code>-based tools seems to have a &ldquo;keep it
+simple stupid&rdquo; spirit that appeals to me very much. The second reason is that
+Hugo has an awesome <a href="https://gohugo.io/">website</a> and
+<a href="https://gohugo.io/overview/introduction/">documentation</a> that makes it really
+easy to have a quick overview of what it can do.</p>
+
+<p>Since I don&rsquo;t need really complex stuff to be done in a simple blog, I thought
+Hugo was a great choice. Its speed was the icing on the cake. I tend to think
+that I don&rsquo;t need it. But when you have it, you don&rsquo;t look back. Same goes for
+<code>ag</code>.</p>
+
+<p>To deploy the website to GitHub Pages, simply <code>git init</code> in the <code>public</code>
+directory, and <code>git remote add</code> your repo URL. GitHub Pages are generated at
+super speed. This is really simple.</p>
+
+<p>I would definitely recommend Hugo to anybody wanting to start a blog. I find it
+really simple to use, much more than Jekyll. And it has great themes.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:379062a983a2c96623df21277397b505:I-ended-up-using">I ended up using <a href="http://click.pocoo.org/5/">click</a> with Python. Great library, although it tends to introduce some clumsiness in the app <a class="footnote-return" href="#fnref:379062a983a2c96623df21277397b505:I-ended-up-using"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
 </div>
 

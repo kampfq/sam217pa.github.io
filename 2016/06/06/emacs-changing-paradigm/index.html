@@ -65,11 +65,11 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+        <a title="About" href="/page/about/">About</a>
     </li>
 
                     </ul>
@@ -100,12 +100,75 @@ ga('send', 'pageview');
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor
-tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis
-eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis
-parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor.
-Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum.
-Nam vestibulum accumsan nisl.</p>
+    
+
+<p>In my previous
+<a href="http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/">post</a>, I
+talked about the way I tended to integrate everything in Emacs. In this one, I
+want to describe what lead me to totally change the way I use it.</p>
+
+<h1 id="living-in-the-terminal:90f8f993beffe30febe8d9a4af8da2db">Living in the terminal</h1>
+
+<p>I just spend four months in front of my computer. I literally lived inside my
+terminal for various reasons. I had biological data to analyse, and software to
+develop to do it. I used <code>R</code>, <code>bash</code>, <code>perl</code> and <code>Python</code> and read some <code>C</code> code
+too. The diversity of languages we have to face when working in the
+bioinformatics field is incredible. For that I was lucky to have chosen to learn
+polyglot <code>vi</code> and <code>emacs</code> in the past. Not being locked to a particuliar IDE
+when facing that much diversity is a great thing.</p>
+
+<h1 id="developping-inside-emacs:90f8f993beffe30febe8d9a4af8da2db">Developping inside emacs</h1>
+
+<p>At the beginning, I was doing exactly what I described in my previous post. I
+lived inside org-mode, using code blocks to put up software and describe what
+each piece of code was doing. I then tangled each block to its file, tested it,
+went back to org-mode, debugged it, tangled it, tested it … At the end of the
+day, that makes a lot of <code>C-u C-u C-c C-v
+t</code><sup class="footnote-ref" id="fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><a rel="footnote" href="#fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle">1</a></sup></p>
+
+<p>I had to speed up the way I wrote software, particularly when I was facing very
+tight deadlines. I really gradually started not to use org-mode to organise
+source code. Then I was not using it at all. Even my TODO notes migrated to
+<a href="https://taskwarrior.org/">taskwarrior</a>, a great command line tool with very
+similar abilities as org-mode. The only benefit it has is being accessible from
+the command line really fast. Just type <code>alias T='task'</code> and <code>T</code> to have a brief
+overview of what&rsquo;s to be done.</p>
+
+<p>Then I (re)learned to use <a href="https://tmux.github.io/">tmux</a>, and started to
+harness the emacs daemon feature. It boosted my productivity a great deal. Just
+add</p>
+
+<pre><code class="language-sh">export EDITOR=&quot;emacsclient -t&quot;
+export ALTERNATE_EDITOR=&quot;&quot;
+
+alias e='emacsclient -t'
+</code></pre>
+
+<p>to your <code>.bashrc</code><sup class="footnote-ref" id="fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho"><a rel="footnote" href="#fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho">2</a></sup>, and you&rsquo;re all
+set to use emacs as your main editor. You can have as many tmux sessions you
+want, there is only one emacs instance to edit all the file you edit. It makes
+integrating emacs and the typical terminal environment, with all its speed and
+comfort, really nicer.</p>
+
+<p>I recommend it to everyone searching for a way to integrate emacs within its
+terminal. I remember being very destabilized when I quit vim to emacs by the
+fact that emacs was really slow to open a simple file. I ended up using only the
+graphical emacs, but had to switch between emacs and the terminal quite often.
+To be honest, the <code>shell</code>, <code>ansiterm</code>, <code>eshell</code> and all are not that great for
+now inside emacs. It feels very clumsy and slow, and result in all sort of bugs
+when emacs tries to syntax highlight everything.</p>
+
+<p>I mapped <code>server-edit</code> to <code>SPC-.</code> inside Spacemacs, so that I can quickly switch
+between emacs and the terminal environment.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><code>org-babel-tangle</code>, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  <a class="footnote-return" href="#fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><sup>[return]</sup></a></li>
+<li id="fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho">or <code>.zshrc</code>, you should obviously use zsh. <a class="footnote-return" href="#fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
 </div>
 
