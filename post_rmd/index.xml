@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post_rmds on Bacterial Finches</title>
+    <link>http://sam217pa.github.io/post_rmd/</link>
+    <description>Recent content in Post_rmds on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sam217pa.github.io/post_rmd/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Functionnal Programming In R</title>
+      <link>http://sam217pa.github.io/post_rmd/functional-programming-in-R/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sam217pa.github.io/post_rmd/functional-programming-in-R/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(mtcars$cyl)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../static/images/mtcars-1.png&#34; alt=&#34;plot of chunk mtcars&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x = 3
+y = x + 2
+plot(x, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../static/images/grosplot-1.png&#34; alt=&#34;plot of chunk grosplot&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

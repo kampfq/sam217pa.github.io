@@ -7,8 +7,414 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Thu, 30 Jun 2016 12:52:33 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Functional Programming In R</title>
+      <link>http://sam217pa.github.io/2016/07/05/functional-programming-in-r/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/07/05/functional-programming-in-r/</guid>
+      <description>
+
+&lt;p&gt;Functional programming is a style of programming which place the emphasis on
+functions. Functions helps to clearly express the intent of a piece of code. To
+me, &lt;code&gt;R&lt;/code&gt; is a functional language. Its deep roots goes back to Scheme, a
+functional LISP dialect. The imperative part of &lt;code&gt;R&lt;/code&gt; are to be found in its &lt;code&gt;S&lt;/code&gt;
+legacy. In this post, I want to describe how I use functions in R, mixing
+imperative and purely functional programming.&lt;/p&gt;
+
+&lt;p&gt;I will take as an example an analysis I&amp;rsquo;ve done in the past few months. It was a
+quick one day long analysis, but I think it would have been much longer if I had
+not used
+R&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;I work in biology. In november, we received results of a run of
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Sanger_sequencing&#34;&gt;Sanger sequencing&lt;/a&gt;. It was
+done in 96 well plates on 800bp PCR amplicons. We quickly found out that some
+sequences showed traces of contamination : we had secondary peak specifically on
+our divergence markers. We had reasons to believe that sequences with secondary
+peak would be distributed randomly over the 96 well plate if it was not a sign
+of contamination. I decided to test the random distribution using a quick
+simulation.&lt;/p&gt;
+
+&lt;p&gt;The simulation would do the following :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;generate 96 well plates with as much contaminated well as there were in our
+plates.&lt;/li&gt;
+&lt;li&gt;generate a lot of those plates.&lt;/li&gt;
+&lt;li&gt;per well, count the average number of contaminated well, and average this
+count over the plate.&lt;/li&gt;
+&lt;li&gt;compare this simulated statistic with the observed one in our plate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We first need to load some packages.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(assertthat)
+library(ggplot2)
+library(dplyr)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;functions-express-intent:6a5bf84d7e413edf98f3db000dff6cf1&#34;&gt;Functions express intent&lt;/h1&gt;
+
+&lt;p&gt;We want a simple function to sample a number at random between 1 and n.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;random_well &amp;lt;- function(n) sample(1:n, 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This function does only one simple thing. But it has a name that clearly express
+what it does and abstracts the sampling process, so simple as it is.&lt;/p&gt;
+
+&lt;p&gt;We also want a simple function to generate an empty plate, &lt;em&gt;ie&lt;/em&gt; a plate where no
+well is contaminated. A 96 well plate can easily be represented as a 8 by 12
+matrix.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;initiate_plate &amp;lt;- function() matrix(rep(0, 96), nrow = 8, ncol = 12)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the same manner, the function is really simple, but now I can just call
+&lt;code&gt;initiate_plate&lt;/code&gt; and be done with it : I now have an 8 by 12 matrix with 0 all
+over, ready to be filled up with simulated contaminations !&lt;/p&gt;
+
+&lt;h1 id=&#34;recursion-shortens-the-distance-from-mind-to-code:6a5bf84d7e413edf98f3db000dff6cf1&#34;&gt;Recursion shortens the distance from mind to code&lt;/h1&gt;
+
+&lt;p&gt;We now want to contaminate &lt;em&gt;n&lt;/em&gt; well inside of this empty plate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plate_generate &amp;lt;- function(plate = initiate_plate(), n) {
+    assert_that(is.numeric(n), n &amp;lt; 96)
+
+    ## this function contaminate a plate well if it is not already contaminated.
+    ## it uses recursion to do so.
+    contaminer &amp;lt;- function(mat) {
+        x &amp;lt;- random_well(8) # sample one line at random
+        y &amp;lt;- random_well(12) # sample one column at random
+
+        if (mat[x, y] != 1) {
+            mat[x, y] &amp;lt;- 1
+            mat
+        } else {
+            contaminer(mat)
+        }
+    }
+
+    ## if the plate already have *n* contaminated wells, return it.
+    ## otherwise create a plate with *n - 1* contaminated wells.
+    ## this kind of recursion is particularly useful to think about.
+    if (sum(plate &amp;lt; n)) {
+        ## if the plate does not have n wells contaminated
+        contaminer(plate_generate(plate, n - 1))
+        ## generate another plate with *n - 1* contaminated wells,
+        ## and contaminate another random well.
+    } else {
+        plate
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;plate_generator&lt;/code&gt; uses recursion. It is a style of function calling that I
+believe to be discouraged in R. But as my stack cannot exceed 96, I can use
+recursion without worrying too much about overflowing the R stack.&lt;/p&gt;
+
+&lt;p&gt;I have enclosed a function inside of it, since I do not need it outside of this
+context. This function, &lt;code&gt;contaminer&lt;/code&gt;, set the well / matrix value to 1 at a
+random coordinate if the well is not already at 1. If the well is already
+contaminated (equals to 1), I call &lt;code&gt;contaminer&lt;/code&gt; on the plate again : it will
+pick another random well, and contaminate it. If the well is already
+contaminated (equals to 1), I call &lt;code&gt;contaminer&lt;/code&gt; on the plate again : it will
+pick another random well, and contaminate it. If the well is already … I think
+you begin to understand how recursion works.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;plate_generator&lt;/code&gt; uses contaminer to create a matrix with &lt;em&gt;n&lt;/em&gt; contamination
+inside, &lt;em&gt;ie n&lt;/em&gt; wells with a 1 value and &lt;em&gt;96 - n&lt;/em&gt; wells with a 0 value. It does
+so by first checking if the total count of plate is equals to &lt;em&gt;n&lt;/em&gt;. If not, we
+can generate a plate with &lt;em&gt;n - 1&lt;/em&gt; contamination, and add another contamination
+with &lt;code&gt;contaminer&lt;/code&gt;. How can we generate a plate with &lt;em&gt;n - 1&lt;/em&gt; contamination ? It
+would be great if we had a function that generate a plate with the desired
+amount of contamination. Well, it appears we have. This function is called
+&lt;code&gt;plate_generator&lt;/code&gt;. If we call &lt;code&gt;plate_generator&lt;/code&gt; with &lt;em&gt;n = n - 1&lt;/em&gt;, it will
+contaminate another well ; the plate sum is now equal to &lt;em&gt;n&lt;/em&gt; and we can return
+it. But generating a plate with &lt;em&gt;n - 1&lt;/em&gt; contaminated well implies that we have a
+plate with &lt;em&gt;n - 2&lt;/em&gt; contaminated well and so on. &lt;strong&gt;This is recursion&lt;/strong&gt;. I have one
+function that does one thing and call itself to reach its goal.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;plate_generator&lt;/code&gt; function is useful in the sense that I did not have to
+think about it really well. I &lt;em&gt;know&lt;/em&gt; it is not optimised. I know that I can
+shorten the time of execution by first excluding wells that are already
+contaminated from the parameters space of &lt;code&gt;contaminer&lt;/code&gt;, instead of picking
+/ checking / contaminating a well randomly. The function would gain in speed.
+But I can generate ten thousands plate on my computer in less than 2 minutes.
+The function did not take that long to develop.&lt;/p&gt;
+
+&lt;p&gt;The previous code is maybe a little bit tedious to understand. Anyway, once it
+is tested, I do not have to care about how it is done. I can just call the
+function, I know it will always give the same result, even if the implementation
+change. It is a level of abstraction that clearly helps to develop clean and
+clever code by iterative steps. I am not afraid of breaking everything up : I
+know my functions does one thing and does it well. &lt;strong&gt;It has no side-effects&lt;/strong&gt;.
+This function is pure : it does not modify anything outside its scope.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We now want to generate many random plates, with a finite number of
+contamination inside of it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;running-the-simulation:6a5bf84d7e413edf98f3db000dff6cf1&#34;&gt;Running the simulation&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n_plate_generate &amp;lt;- function(number_of_plate, number_of_conta) {
+    lapply(1:number_of_plate, function(i) plate_generate(n = number_of_conta))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We now can generate three plates with three contaminated wells inside of it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n_plate_generate(3, 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     1     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    0    0    0    0    1    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [6,]    1    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
+## 
+## [[2]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    1    0    0    0    0    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    1    0    0    0    0    0    0    0     0     0     0
+## [6,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    1    0    0    0    0     0     0     0
+## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
+## 
+## [[3]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    0    0    0    0    1    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [6,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [8,]    0    1    0    1    0    0    0    0    0     0     0     0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We then need to count, per well, the number of neighbouring contaminated well.
+This function is kinda tricky to explain, and demands some kind of expertise
+with typical biological plates. I had to hardcode many stuff, so I guess this is
+not the cleaner way to do it. But at least is works.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;has_nearby_conta &amp;lt;- function(plate, line, column) {
+    assert_that(is.matrix(plate), is.numeric(line), is.numeric(column))
+
+    x      &amp;lt;- line
+    y      &amp;lt;- column
+    p      &amp;lt;- plate
+    nearby &amp;lt;- c()
+
+    bord_gauche     &amp;lt;- function(col) ifelse(col == 1 , TRUE, FALSE)
+    bord_droite     &amp;lt;- function(col) ifelse(col == 12, TRUE, FALSE)
+    bord_sup        &amp;lt;- function(row) ifelse(row == 1 , TRUE, FALSE)
+    bord_inf        &amp;lt;- function(row) ifelse(row == 8 , TRUE, FALSE)
+
+    coin_sup_gauche &amp;lt;- function(row, col) ifelse(bord_gauche(col) &amp;amp; bord_sup(row), TRUE, FALSE)
+    coin_inf_gauche &amp;lt;- function(row, col) ifelse(bord_gauche(col) &amp;amp; bord_inf(row), TRUE, FALSE)
+    coin_inf_droite &amp;lt;- function(row, col) ifelse(bord_droite(col) &amp;amp; bord_inf(row), TRUE, FALSE)
+    coin_sup_droite &amp;lt;- function(row, col) ifelse(bord_droite(col) &amp;amp; bord_sup(row), TRUE, FALSE)
+
+    if      (coin_sup_gauche(x, y)) { nearby &amp;lt;- c(nearby, p[x, y+1], p[x+1, y+1], p[x+1, y])}
+    else if (coin_inf_gauche(x, y)) { nearby &amp;lt;- c(nearby, p[x-1, y], p[x-1, y+1], p[x, y+1])}
+    else if (coin_sup_droite(x, y)) { nearby &amp;lt;- c(nearby, p[x, y-1], p[x+1, y-1], p[x+1, y])}
+    else if (coin_inf_droite(x, y)) { nearby &amp;lt;- c(nearby, p[x, y-1], p[x-1, y-1], p[x-1, y])}
+    else if (bord_gauche(y))        { nearby &amp;lt;- c(nearby, p[x-1, y], p[x-1, y+1], p[x, y+1], p[x+1, y+1], p[x+1, y])}
+    else if (bord_droite(y))        { nearby &amp;lt;- c(nearby, p[x-1, y], p[x-1, y-1], p[x, y-1], p[x+1, y-1], p[x+1, y])}
+    else if (bord_sup(x))           { nearby &amp;lt;- c(nearby, p[x, y-1], p[x+1, y-1], p[x+1, y], p[x+1, y+1], p[x, y+1])}
+    else if (bord_inf(x))           { nearby &amp;lt;- c(nearby, p[x, y-1], p[x-1, y-1], p[x-1, y], p[x-1, y+1], p[x, y+1])}
+    else {
+        nearby &amp;lt;- c(nearby,
+                    p[x-1, y-1], p[x, y-1], p[x+1, y-1],
+                    p[x-1, y  ],            p[x+1, y  ],
+                    p[x-1, y+1], p[x, y+1], p[x+1, y+1] )
+    }
+
+    ## normalise to 1 if &amp;gt; 1
+    nearby[nearby &amp;gt; 0] &amp;lt;- 1
+
+    ## return the mean of the nearby matrix.
+    mean(nearby)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We apply this function to a plate, to count the mean number of well that have at
+least one well contaminated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;count_nearby_conta_well &amp;lt;- function(plate) {
+    locate_conta_well &amp;lt;- function(plate) {
+        which(plate != 0, arr.ind = TRUE)
+    }
+
+    ## stores the positions of contaminated wells inside a list of the form
+    ## ( (row . column)
+    ##   (row . column) )
+    well_list &amp;lt;- locate_conta_well(plate)
+
+    mean(
+        apply(well_list, 1,
+              function(x) {
+            has_nearby_conta(plate, line = x[1], column = x[2])
+        }))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;During the debugging of this function, it was particulary useful to have clean
+and expressive names to decrypt the &lt;code&gt;traceback()&lt;/code&gt; output.&lt;/p&gt;
+
+&lt;p&gt;We need to count the number of contaminated well inside our plate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;count_conta &amp;lt;- function(plate) length(which(plate != 0))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s set &lt;em&gt;N&lt;/em&gt; the number of plate in the monte carlo simulation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n_plate &amp;lt;- 1000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can then generate 1000 plates with &lt;em&gt;C&lt;/em&gt; contamination inside of it,
+randomly distributed on the plate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# generate `n_plate` with C contaminated well
+random_weak &amp;lt;- n_plate_generate(n_plate, 35)
+## count the average number of nearby contaminated well per well and average it
+## over the plate. Do it to all the plate in random_weak.
+random_weak_mean_list &amp;lt;- lapply(random_weak, count_nearby_conta_well)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Just so that you can see the data :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(random_weak, n = 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    1    1    0    0    0    1    1    1    0     0     0     0
+## [2,]    1    0    1    0    1    1    0    1    0     0     1     0
+## [3,]    0    0    0    0    0    1    1    1    1     0     0     1
+## [4,]    1    1    0    0    0    0    0    0    1     0     0     0
+## [5,]    1    0    0    1    0    1    1    0    1     0     0     0
+## [6,]    0    0    1    0    0    1    0    0    0     0     1     1
+## [7,]    0    0    0    0    0    1    0    1    0     0     1     0
+## [8,]    0    1    0    1    1    0    0    0    1     0     0     0
+## 
+## [[2]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    1    0    0    0    0    0    1    1    1     0     1     0
+## [2,]    1    0    0    0    0    1    0    0    0     0     1     1
+## [3,]    0    1    1    0    0    0    0    1    0     1     0     1
+## [4,]    0    1    1    0    0    0    1    0    0     0     1     0
+## [5,]    0    1    0    0    1    1    0    1    0     1     1     0
+## [6,]    0    1    1    0    1    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    1    1    1    1    0     1     0     1
+## [8,]    1    0    0    0    0    0    0    0    0     1     0     0
+## 
+## [[3]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    1    1    0    0    0    0     0     0     1
+## [2,]    0    0    1    0    1    1    1    0    0     1     0     1
+## [3,]    0    1    0    0    1    0    0    0    0     1     1     1
+## [4,]    0    0    0    0    1    1    0    1    0     1     1     0
+## [5,]    1    0    0    0    1    0    0    0    1     0     0     0
+## [6,]    0    0    0    1    0    0    0    1    0     0     0     1
+## [7,]    0    0    0    0    1    0    0    1    0     0     1     0
+## [8,]    1    1    1    0    1    1    0    0    1     0     1     0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(random_weak_mean_list, n = 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] 0.3440476
+## 
+## [[2]]
+## [1] 0.3188095
+## 
+## [[3]]
+## [1] 0.3590476
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the first plate, the 96 wells have a mean of  0.3440476
+wells contaminated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot_mean_distrib &amp;lt;- function(random_mean_list) {
+
+    random_mean_list %&amp;gt;%
+        unlist() %&amp;gt;%
+        data.frame(wellcount = .) %&amp;gt;%
+        ggplot(aes(wellcount)) +
+        geom_histogram(binwidth = 0.005, fill = &amp;quot;gray&amp;quot;) +
+        labs(x = &amp;quot;Mean number of nearby contaminated well per well per plate&amp;quot;) +
+        theme_minimal() +
+        theme(panel.ontop = TRUE,
+              panel.grid.major.y =
+                  element_line(colour = &amp;quot;white&amp;quot;, size = 0.5, linetype = &amp;quot;dotted&amp;quot;),
+              panel.grid.minor.y =
+                  element_line(colour = &amp;quot;white&amp;quot;, size = 0.5, linetype = &amp;quot;dotted&amp;quot;))
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A first plot :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot_mean_distrib(random_weak_mean_list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://sam217pa.github.io/images/2016-07-05-randomweakmean-1.png&#34; alt=&#34;plot of chunk 2016-07-05-randomweakmean&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;factorial-in-r:6a5bf84d7e413edf98f3db000dff6cf1&#34;&gt;Factorial in R :&lt;/h1&gt;
+
+&lt;p&gt;I think this function is the cleanest and fastest way to express the factorial
+function in R. And yes, &lt;code&gt;*&lt;/code&gt; is a function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;factorial &amp;lt;- function(n) {
+    Reduce(f = `*`, x = 1:n, init = 1)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t&#34;&gt;Actually it is the language I am the most comfortable with, so it is not really a good comparison… &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Functionnal Programming In R</title>
+      <link>http://sam217pa.github.io/post_rmd/functional-programming-in-R/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sam217pa.github.io/post_rmd/functional-programming-in-R/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(mtcars$cyl)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../static/images/mtcars-1.png&#34; alt=&#34;plot of chunk mtcars&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x = 3
+y = x + 2
+plot(x, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../static/images/grosplot-1.png&#34; alt=&#34;plot of chunk grosplot&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>War of the languages</title>

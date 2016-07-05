@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Functional Programming In R &middot; Samuel Barreto</title>
+        <meta name="description" content="Adventures using functions to express logic in R">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/normalize.css">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/highlight.css">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Functional Programming In R</h1>
+    
+        <p class="post-description" itemprop="description">Adventures using functions to express logic in R</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-07-05" itemprop="datePublished">Tue, Jul 5, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Functional programming is a style of programming which place the emphasis on
+functions. Functions helps to clearly express the intent of a piece of code. To
+me, <code>R</code> is a functional language. Its deep roots goes back to Scheme, a
+functional LISP dialect. The imperative part of <code>R</code> are to be found in its <code>S</code>
+legacy. In this post, I want to describe how I use functions in R, mixing
+imperative and purely functional programming.</p>
+
+<p>I will take as an example an analysis I&rsquo;ve done in the past few months. It was a
+quick one day long analysis, but I think it would have been much longer if I had
+not used
+R<sup class="footnote-ref" id="fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t"><a rel="footnote" href="#fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t">1</a></sup>.</p>
+
+<p>I work in biology. In november, we received results of a run of
+<a href="https://en.wikipedia.org/wiki/Sanger_sequencing">Sanger sequencing</a>. It was
+done in 96 well plates on 800bp PCR amplicons. We quickly found out that some
+sequences showed traces of contamination : we had secondary peak specifically on
+our divergence markers. We had reasons to believe that sequences with secondary
+peak would be distributed randomly over the 96 well plate if it was not a sign
+of contamination. I decided to test the random distribution using a quick
+simulation.</p>
+
+<p>The simulation would do the following :</p>
+
+<ul>
+<li>generate 96 well plates with as much contaminated well as there were in our
+plates.</li>
+<li>generate a lot of those plates.</li>
+<li>per well, count the average number of contaminated well, and average this
+count over the plate.</li>
+<li>compare this simulated statistic with the observed one in our plate.</li>
+</ul>
+
+<p>We first need to load some packages.</p>
+
+<pre><code class="language-r">library(assertthat)
+library(ggplot2)
+library(dplyr)
+</code></pre>
+
+<h1 id="functions-express-intent:6a5bf84d7e413edf98f3db000dff6cf1">Functions express intent</h1>
+
+<p>We want a simple function to sample a number at random between 1 and n.</p>
+
+<pre><code class="language-r">random_well &lt;- function(n) sample(1:n, 1)
+</code></pre>
+
+<p>This function does only one simple thing. But it has a name that clearly express
+what it does and abstracts the sampling process, so simple as it is.</p>
+
+<p>We also want a simple function to generate an empty plate, <em>ie</em> a plate where no
+well is contaminated. A 96 well plate can easily be represented as a 8 by 12
+matrix.</p>
+
+<pre><code class="language-r">initiate_plate &lt;- function() matrix(rep(0, 96), nrow = 8, ncol = 12)
+</code></pre>
+
+<p>In the same manner, the function is really simple, but now I can just call
+<code>initiate_plate</code> and be done with it : I now have an 8 by 12 matrix with 0 all
+over, ready to be filled up with simulated contaminations !</p>
+
+<h1 id="recursion-shortens-the-distance-from-mind-to-code:6a5bf84d7e413edf98f3db000dff6cf1">Recursion shortens the distance from mind to code</h1>
+
+<p>We now want to contaminate <em>n</em> well inside of this empty plate.</p>
+
+<pre><code class="language-r">plate_generate &lt;- function(plate = initiate_plate(), n) {
+    assert_that(is.numeric(n), n &lt; 96)
+
+    ## this function contaminate a plate well if it is not already contaminated.
+    ## it uses recursion to do so.
+    contaminer &lt;- function(mat) {
+        x &lt;- random_well(8) # sample one line at random
+        y &lt;- random_well(12) # sample one column at random
+
+        if (mat[x, y] != 1) {
+            mat[x, y] &lt;- 1
+            mat
+        } else {
+            contaminer(mat)
+        }
+    }
+
+    ## if the plate already have *n* contaminated wells, return it.
+    ## otherwise create a plate with *n - 1* contaminated wells.
+    ## this kind of recursion is particularly useful to think about.
+    if (sum(plate &lt; n)) {
+        ## if the plate does not have n wells contaminated
+        contaminer(plate_generate(plate, n - 1))
+        ## generate another plate with *n - 1* contaminated wells,
+        ## and contaminate another random well.
+    } else {
+        plate
+    }
+}
+</code></pre>
+
+<p><code>plate_generator</code> uses recursion. It is a style of function calling that I
+believe to be discouraged in R. But as my stack cannot exceed 96, I can use
+recursion without worrying too much about overflowing the R stack.</p>
+
+<p>I have enclosed a function inside of it, since I do not need it outside of this
+context. This function, <code>contaminer</code>, set the well / matrix value to 1 at a
+random coordinate if the well is not already at 1. If the well is already
+contaminated (equals to 1), I call <code>contaminer</code> on the plate again : it will
+pick another random well, and contaminate it. If the well is already
+contaminated (equals to 1), I call <code>contaminer</code> on the plate again : it will
+pick another random well, and contaminate it. If the well is already … I think
+you begin to understand how recursion works.</p>
+
+<p><code>plate_generator</code> uses contaminer to create a matrix with <em>n</em> contamination
+inside, <em>ie n</em> wells with a 1 value and <em>96 - n</em> wells with a 0 value. It does
+so by first checking if the total count of plate is equals to <em>n</em>. If not, we
+can generate a plate with <em>n - 1</em> contamination, and add another contamination
+with <code>contaminer</code>. How can we generate a plate with <em>n - 1</em> contamination ? It
+would be great if we had a function that generate a plate with the desired
+amount of contamination. Well, it appears we have. This function is called
+<code>plate_generator</code>. If we call <code>plate_generator</code> with <em>n = n - 1</em>, it will
+contaminate another well ; the plate sum is now equal to <em>n</em> and we can return
+it. But generating a plate with <em>n - 1</em> contaminated well implies that we have a
+plate with <em>n - 2</em> contaminated well and so on. <strong>This is recursion</strong>. I have one
+function that does one thing and call itself to reach its goal.</p>
+
+<p>The <code>plate_generator</code> function is useful in the sense that I did not have to
+think about it really well. I <em>know</em> it is not optimised. I know that I can
+shorten the time of execution by first excluding wells that are already
+contaminated from the parameters space of <code>contaminer</code>, instead of picking
+/ checking / contaminating a well randomly. The function would gain in speed.
+But I can generate ten thousands plate on my computer in less than 2 minutes.
+The function did not take that long to develop.</p>
+
+<p>The previous code is maybe a little bit tedious to understand. Anyway, once it
+is tested, I do not have to care about how it is done. I can just call the
+function, I know it will always give the same result, even if the implementation
+change. It is a level of abstraction that clearly helps to develop clean and
+clever code by iterative steps. I am not afraid of breaking everything up : I
+know my functions does one thing and does it well. <strong>It has no side-effects</strong>.
+This function is pure : it does not modify anything outside its scope.</p>
+
+<blockquote>
+<p>We now want to generate many random plates, with a finite number of
+contamination inside of it.</p>
+</blockquote>
+
+<h1 id="running-the-simulation:6a5bf84d7e413edf98f3db000dff6cf1">Running the simulation</h1>
+
+<pre><code class="language-r">n_plate_generate &lt;- function(number_of_plate, number_of_conta) {
+    lapply(1:number_of_plate, function(i) plate_generate(n = number_of_conta))
+}
+</code></pre>
+
+<p>We now can generate three plates with three contaminated wells inside of it.</p>
+
+<pre><code class="language-r">n_plate_generate(3, 3)
+</code></pre>
+
+<pre><code>## [[1]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     1     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    0    0    0    0    1    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [6,]    1    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
+## 
+## [[2]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    1    0    0    0    0    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    1    0    0    0    0    0    0    0     0     0     0
+## [6,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    1    0    0    0    0     0     0     0
+## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
+## 
+## [[3]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [2,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [3,]    0    0    0    0    0    0    1    0    0     0     0     0
+## [4,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [5,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [6,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    0    0    0    0    0     0     0     0
+## [8,]    0    1    0    1    0    0    0    0    0     0     0     0
+</code></pre>
+
+<p>We then need to count, per well, the number of neighbouring contaminated well.
+This function is kinda tricky to explain, and demands some kind of expertise
+with typical biological plates. I had to hardcode many stuff, so I guess this is
+not the cleaner way to do it. But at least is works.</p>
+
+<pre><code class="language-r">has_nearby_conta &lt;- function(plate, line, column) {
+    assert_that(is.matrix(plate), is.numeric(line), is.numeric(column))
+
+    x      &lt;- line
+    y      &lt;- column
+    p      &lt;- plate
+    nearby &lt;- c()
+
+    bord_gauche     &lt;- function(col) ifelse(col == 1 , TRUE, FALSE)
+    bord_droite     &lt;- function(col) ifelse(col == 12, TRUE, FALSE)
+    bord_sup        &lt;- function(row) ifelse(row == 1 , TRUE, FALSE)
+    bord_inf        &lt;- function(row) ifelse(row == 8 , TRUE, FALSE)
+
+    coin_sup_gauche &lt;- function(row, col) ifelse(bord_gauche(col) &amp; bord_sup(row), TRUE, FALSE)
+    coin_inf_gauche &lt;- function(row, col) ifelse(bord_gauche(col) &amp; bord_inf(row), TRUE, FALSE)
+    coin_inf_droite &lt;- function(row, col) ifelse(bord_droite(col) &amp; bord_inf(row), TRUE, FALSE)
+    coin_sup_droite &lt;- function(row, col) ifelse(bord_droite(col) &amp; bord_sup(row), TRUE, FALSE)
+
+    if      (coin_sup_gauche(x, y)) { nearby &lt;- c(nearby, p[x, y+1], p[x+1, y+1], p[x+1, y])}
+    else if (coin_inf_gauche(x, y)) { nearby &lt;- c(nearby, p[x-1, y], p[x-1, y+1], p[x, y+1])}
+    else if (coin_sup_droite(x, y)) { nearby &lt;- c(nearby, p[x, y-1], p[x+1, y-1], p[x+1, y])}
+    else if (coin_inf_droite(x, y)) { nearby &lt;- c(nearby, p[x, y-1], p[x-1, y-1], p[x-1, y])}
+    else if (bord_gauche(y))        { nearby &lt;- c(nearby, p[x-1, y], p[x-1, y+1], p[x, y+1], p[x+1, y+1], p[x+1, y])}
+    else if (bord_droite(y))        { nearby &lt;- c(nearby, p[x-1, y], p[x-1, y-1], p[x, y-1], p[x+1, y-1], p[x+1, y])}
+    else if (bord_sup(x))           { nearby &lt;- c(nearby, p[x, y-1], p[x+1, y-1], p[x+1, y], p[x+1, y+1], p[x, y+1])}
+    else if (bord_inf(x))           { nearby &lt;- c(nearby, p[x, y-1], p[x-1, y-1], p[x-1, y], p[x-1, y+1], p[x, y+1])}
+    else {
+        nearby &lt;- c(nearby,
+                    p[x-1, y-1], p[x, y-1], p[x+1, y-1],
+                    p[x-1, y  ],            p[x+1, y  ],
+                    p[x-1, y+1], p[x, y+1], p[x+1, y+1] )
+    }
+
+    ## normalise to 1 if &gt; 1
+    nearby[nearby &gt; 0] &lt;- 1
+
+    ## return the mean of the nearby matrix.
+    mean(nearby)
+}
+</code></pre>
+
+<p>We apply this function to a plate, to count the mean number of well that have at
+least one well contaminated.</p>
+
+<pre><code class="language-r">count_nearby_conta_well &lt;- function(plate) {
+    locate_conta_well &lt;- function(plate) {
+        which(plate != 0, arr.ind = TRUE)
+    }
+
+    ## stores the positions of contaminated wells inside a list of the form
+    ## ( (row . column)
+    ##   (row . column) )
+    well_list &lt;- locate_conta_well(plate)
+
+    mean(
+        apply(well_list, 1,
+              function(x) {
+            has_nearby_conta(plate, line = x[1], column = x[2])
+        }))
+}
+</code></pre>
+
+<p>During the debugging of this function, it was particulary useful to have clean
+and expressive names to decrypt the <code>traceback()</code> output.</p>
+
+<p>We need to count the number of contaminated well inside our plate.</p>
+
+<pre><code class="language-r">count_conta &lt;- function(plate) length(which(plate != 0))
+</code></pre>
+
+<p>Let&rsquo;s set <em>N</em> the number of plate in the monte carlo simulation.</p>
+
+<pre><code class="language-r">n_plate &lt;- 1000
+</code></pre>
+
+<p>We can then generate 1000 plates with <em>C</em> contamination inside of it,
+randomly distributed on the plate.</p>
+
+<pre><code class="language-r"># generate `n_plate` with C contaminated well
+random_weak &lt;- n_plate_generate(n_plate, 35)
+## count the average number of nearby contaminated well per well and average it
+## over the plate. Do it to all the plate in random_weak.
+random_weak_mean_list &lt;- lapply(random_weak, count_nearby_conta_well)
+</code></pre>
+
+<p>Just so that you can see the data :</p>
+
+<pre><code class="language-r">head(random_weak, n = 3)
+</code></pre>
+
+<pre><code>## [[1]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    1    1    0    0    0    1    1    1    0     0     0     0
+## [2,]    1    0    1    0    1    1    0    1    0     0     1     0
+## [3,]    0    0    0    0    0    1    1    1    1     0     0     1
+## [4,]    1    1    0    0    0    0    0    0    1     0     0     0
+## [5,]    1    0    0    1    0    1    1    0    1     0     0     0
+## [6,]    0    0    1    0    0    1    0    0    0     0     1     1
+## [7,]    0    0    0    0    0    1    0    1    0     0     1     0
+## [8,]    0    1    0    1    1    0    0    0    1     0     0     0
+## 
+## [[2]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    1    0    0    0    0    0    1    1    1     0     1     0
+## [2,]    1    0    0    0    0    1    0    0    0     0     1     1
+## [3,]    0    1    1    0    0    0    0    1    0     1     0     1
+## [4,]    0    1    1    0    0    0    1    0    0     0     1     0
+## [5,]    0    1    0    0    1    1    0    1    0     1     1     0
+## [6,]    0    1    1    0    1    0    0    0    0     0     0     0
+## [7,]    0    0    0    0    1    1    1    1    0     1     0     1
+## [8,]    1    0    0    0    0    0    0    0    0     1     0     0
+## 
+## [[3]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+## [1,]    0    0    0    1    1    0    0    0    0     0     0     1
+## [2,]    0    0    1    0    1    1    1    0    0     1     0     1
+## [3,]    0    1    0    0    1    0    0    0    0     1     1     1
+## [4,]    0    0    0    0    1    1    0    1    0     1     1     0
+## [5,]    1    0    0    0    1    0    0    0    1     0     0     0
+## [6,]    0    0    0    1    0    0    0    1    0     0     0     1
+## [7,]    0    0    0    0    1    0    0    1    0     0     1     0
+## [8,]    1    1    1    0    1    1    0    0    1     0     1     0
+</code></pre>
+
+<pre><code class="language-r">head(random_weak_mean_list, n = 3)
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 0.3440476
+## 
+## [[2]]
+## [1] 0.3188095
+## 
+## [[3]]
+## [1] 0.3590476
+</code></pre>
+
+<p>For the first plate, the 96 wells have a mean of  0.3440476
+wells contaminated.</p>
+
+<pre><code class="language-r">plot_mean_distrib &lt;- function(random_mean_list) {
+
+    random_mean_list %&gt;%
+        unlist() %&gt;%
+        data.frame(wellcount = .) %&gt;%
+        ggplot(aes(wellcount)) +
+        geom_histogram(binwidth = 0.005, fill = &quot;gray&quot;) +
+        labs(x = &quot;Mean number of nearby contaminated well per well per plate&quot;) +
+        theme_minimal() +
+        theme(panel.ontop = TRUE,
+              panel.grid.major.y =
+                  element_line(colour = &quot;white&quot;, size = 0.5, linetype = &quot;dotted&quot;),
+              panel.grid.minor.y =
+                  element_line(colour = &quot;white&quot;, size = 0.5, linetype = &quot;dotted&quot;))
+
+}
+</code></pre>
+
+<p>A first plot :</p>
+
+<pre><code class="language-r">plot_mean_distrib(random_weak_mean_list)
+</code></pre>
+
+<p><img src="/images/2016-07-05-randomweakmean-1.png" alt="plot of chunk 2016-07-05-randomweakmean" /></p>
+
+<h1 id="factorial-in-r:6a5bf84d7e413edf98f3db000dff6cf1">Factorial in R :</h1>
+
+<p>I think this function is the cleanest and fastest way to express the factorial
+function in R. And yes, <code>*</code> is a function.</p>
+
+<pre><code class="language-r">factorial &lt;- function(n) {
+    Reduce(f = `*`, x = 1:n, init = 1)
+}
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t">Actually it is the language I am the most comfortable with, so it is not really a good comparison… <a class="footnote-return" href="#fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Functional%20Programming%20In%20R&url=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'http:\/\/sam217pa.github.io\/2016\/07\/05\/functional-programming-in-r\/';
+    var disqus_title = 'Functional Programming In R';
+    var disqus_url = 'http:\/\/sam217pa.github.io\/2016\/07\/05\/functional-programming-in-r\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://sam217pa.github.io/js/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+        <script src="http://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="http://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
