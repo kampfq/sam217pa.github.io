@@ -93,7 +93,7 @@ code {
     color: $primary;
     background-color: #F1F0EA;
     border-radius: 4px;
-    font-family: "Ubuntu Mono", monospace;
+    font-family: "Fira Mono", monospace;
 }
 
 hr {
@@ -162,7 +162,7 @@ table {
 
 #wrapper {
     height: auto;
-        min-height: 100%;
+    min-height: 100%;
     /* This must be the same as the height of the footer */
     margin-bottom: -265px;
 

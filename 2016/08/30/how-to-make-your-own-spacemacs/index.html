@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>How I build my own spacemacs &middot; Samuel Barreto</title>
+        <meta name="description" content="How I built my own version of spacemacs using ivy, general.el and use-package.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/normalize.css">
+
+        
+
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/solarized-light.min.css"> </link>
+
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/style.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300|Fira+Mono|Ubuntu:300&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">How I build my own spacemacs</h1>
+    
+        <p class="post-description" itemprop="description">How I built my own version of spacemacs using ivy, general.el and use-package.</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-08-30" itemprop="datePublished">Tue, Aug 30, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Spacemacs is a great starter kit. It is the only kit that got my attention. I
+have been using it for one year or so. I know most of its most useful commands.
+I like the plug-and-play feeling of its layer system. I like the laziness of its
+packaging system. I like how the devs build a great terminal experience inside
+emacs. I like how it abstracts Evil<sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:1"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:1">1</a></sup> from its users.</p>
+
+<p><img src="http://spacemacs.org/img/screenshots/ss1.png" alt="Spacemacs is a great editor with a great UI." /></p>
+
+<p>But I recently grew tired of its clumsiness. It took like seven or eight second
+to load. I tried to remove some configuration layer. I removed chunks of config
+I did not need. At its best, Spacemacs took — on my machine<sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:2"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:2">2</a></sup> — seven long
+seconds to load. I gave me the feeling that I did not need most of the full
+blown spacemacs distribution. Plus I wanted to understand how to setup my own
+emacs. I wanted to tweak it. I wanted to get my hands dirty.</p>
+
+<p><img src="http://decentfilms.com/uploads/articles/modern-times.jpg" alt="Diving into Emacs" /></p>
+
+<p>During my year in the spacemacs world, I discovered four awesome packages :
+<code>use-package</code>, <code>general.el</code>, <code>which-key</code> and <code>ivy</code>. They are the backbone of my
+new setup.</p>
+
+<blockquote>
+<p>I only need those four packages to build a good spacemacs experience.</p>
+</blockquote>
+
+<p><img src="http://www.lazerhorse.org/wp-content/uploads/2014/11/Peregrine-Falcon-Fastest-Animal-Diving.jpg" alt="Use-package will make your emacs fast" /></p>
+
+<h3 id="use-package-made-my-emacs-fast:ef99cf2bc6bc7f2027c35d1432ffe857"><code>use-package</code> made my emacs fast</h3>
+
+<p><code>use-package</code> is a package by the current maintainer of emacs. I use it to load
+packages lazily. They will not be loaded unless I call them, or one of
+my packages call them. It make the startup super fast<sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:5"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:5">3</a></sup>.</p>
+
+<p>The following code loads the package which-key, and make sure it is loadable. If
+not, it downloads it, thanks to key <code>:ensure</code> keyword.</p>
+
+<pre><code class="language-lisp">(use-package which-key :ensure t
+</code></pre>
+
+<p>I use the <code>:init</code> keyword to execute bits of code before the package is loaded.
+The following will enable <code>which-key</code> in each buffer.</p>
+
+<pre><code class="language-lisp">  :init
+  (which-key-mode)
+</code></pre>
+
+<p>I use the <code>:config</code> keyword to customize the module to my convenience. Those
+bits of code are executed after the package is loaded.</p>
+
+<pre><code class="language-lisp">  :config
+  (which-key-setup-side-window-right-bottom)
+  (setq which-key-sort-order 'which-key-key-order-alpha
+        which-key-side-window-max-width 0.33
+        which-key-idle-delay 0.05)
+  )
+</code></pre>
+
+<p>To avoid a cluttered mode-line, I use the <code>diminish</code> keyword of <code>use-package</code>.</p>
+
+<pre><code class="language-lisp">  :diminish which-key-mode
+</code></pre>
+
+<p>I could also use the following syntax, to replace the <code>WK</code> in the mode-line with
+<code>Ꙍ</code><sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:3"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:3">4</a></sup>.</p>
+
+<pre><code class="language-lisp">  :diminish (which-key-mode . &quot;Ꙍ&quot;)
+</code></pre>
+
+<p><img src="http://www.ed.ac.uk/files/styles/panel_breakpoints_theme_uoe_desktop_1x/public/thumbnails/image/istock_000048893782_double-900.jpg?itok=yaFi-FYU" alt="Use unicode in your mode-line" /></p>
+
+<p>Here I showed you how I use <code>use-package</code> to load a package that is enabled
+globally at startup. But <code>use-package</code> has many option to make sure the package
+is not loaded if nobody needs it. I use the <code>:commands</code> keyword to load the
+package when a command in the list of command is called.</p>
+
+<p>For example, if I want to use the <code>ranger</code> package, I do not need it until I
+call the <code>(ranger)</code> function. So I put <code>(ranger)</code> in the list of commands that
+will trigger the loading of <code>ranger</code>.</p>
+
+<pre><code class="language-lisp">(use-package ranger :ensure t
+  :commands (ranger)
+  :bind ((&quot;C-x d&quot; . deer))
+  :config
+  (setq ranger-cleanup-eagerly t)
+  )
+</code></pre>
+
+<p><code>use-package</code> also provide the <code>:bind</code> keyword. I use it to describe the list of
+commands that will trigger the loading of my package, and the keybindings that
+I want to associate with the command. In the previous example, I mapped
+<code>(deer)</code> to <code>C-x d</code>. So, unless I call <code>(ranger)</code> before typing <code>C-x d</code>, the
+<code>ranger</code> package will not load.</p>
+
+<blockquote>
+<p>This is the magic of use-package.</p>
+</blockquote>
+
+<p><img src="https://camo.githubusercontent.com/b1298535828025bd6dada5abbb8661b43c7c7785/687474703a2f2f692e696d6775722e636f6d2f535841363679372e706e67" alt="General.el is a great package to make a short spacemacs-like config" /></p>
+
+<h3 id="general-el-made-my-evil-shine:ef99cf2bc6bc7f2027c35d1432ffe857"><code>general.el</code> made my evil shine</h3>
+
+<p>General.el is the new evil-leader black. It makes it easy to implement leader
+keys, of any length you want. It also has nice integration with <code>use-package</code>
+and <code>which-key</code>. Its primary use is in combination with <code>evil</code>, but you can also
+use it with bare emacs.</p>
+
+<pre><code>(use-package general :ensure t
+  :config
+  (general-evil-setup t)
+
+  (general-define-key
+   :states '(normal insert emacs)
+   :prefix &quot;C-SPC&quot;
+   :non-normal-prefix &quot;C-SPC&quot;
+   &quot;l&quot; '(avy-goto-line)
+   &quot;a&quot; 'align-regexp
+   )
+
+  (general-define-key
+   :states '(normal motion insert emacs)
+   :prefix &quot;SPC&quot;
+   &quot;ar&quot; '(ranger :which-key &quot;call ranger&quot;)
+   &quot;g&quot;  '(:ignore t :which-key &quot;Git&quot;)
+   &quot;gs&quot; '(magit-status :which-key &quot;git status&quot;)
+   )
+)
+</code></pre>
+
+<p>The previous chunks load the <code>general</code> package at startup. This one is not
+lazily loaded. It uses <code>(general-define-key)</code> to define keys that are under the
+prefix <code>C-SPC</code>. When the evil-state is not normal, <em>ie</em> when I am in insert or
+visual mode, the prefix is also <code>C-SPC</code>, but I can set it to something
+different. So when I press <code>C-SPC</code> then <code>l</code>, it calls <code>avy-goto-line</code>.</p>
+
+<p>The next chunks is all it takes to setup a Spacemacs-like interface to my
+favorite commands using the space bar as a prefix. Like in spacemacs, <code>SPC ar</code>
+calls ranger. Notice the <code>:which-key</code> keyword. Use it to describe your
+keybindings. The string I use will be displayed by the <code>which-key</code> package. Use
+the <code>:ignore</code> keyword when the key-press is only a prefix, and you want to
+describe the prefix via <code>which-key</code>.</p>
+
+<p><img src="http://www.doaks.org/library-archives/library-and-archives-banner-images/ICFA%20Archives_Landscape_02.jpg" alt="Reading emacs documentation" /></p>
+
+<h3 id="which-key-will-make-your-emacs-friendly:ef99cf2bc6bc7f2027c35d1432ffe857"><code>which-key</code> will make your emacs friendly</h3>
+
+<p>The obvious benefit of spacemacs to me is its discoverability. Press a key, read
+the description of the prefix, press another key, etc…</p>
+
+<p><code>which-key</code> is a package that prints out a buffer of all the keybindings
+currently assigned to the prefix you type. In the previous example, if I type
+<code>C-x</code>, then a buffer prints out:</p>
+
+<p><img src="https://s15.postimg.org/5ufo1lst7/whichkeybuffer.png" alt="whichkeybuffer.png" /></p>
+
+<p>It is a listing of all the keyboard shortcut starting with <code>C-x</code>. But what if I
+want to know what is behind the <code>RET</code> keypress ? <code>which-key</code> provide a way to
+describe a prefix.</p>
+
+<pre><code class="language-lisp">(which-key-add-key-based-replacements
+    &quot;C-x RET&quot; &quot;coding system - input&quot;
+ )
+</code></pre>
+
+<p>So now when I press <code>C-x</code>, I see:</p>
+
+<p><img src="https://s21.postimg.org/52vaaat7b/whichkeybuffer_cxret.png" alt="whichkeybuffer-cxret.png" /></p>
+
+<p>Those three packages all belongs in the spacemacs universe, <code>general.el</code> being
+only an upgrade over <code>evil-leader</code>. The spacemacs dev chose to use <code>helm</code> as a
+default &ldquo;incremental completion and selection narrowing frameworks&rdquo;. But
+recently, a proficient and prolific emacs package developper<sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:6"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:6">5</a></sup> build an ecosystem
+of tools based on its variation of <code>ido</code>. Those packages are <code>ivy</code>, <code>counsel</code>
+and <code>swiper</code>. They represent a great alternative to the somewhat clumsy helm
+ecosystem.</p>
+
+<h3 id="ivy-extend-my-mind-inside-emacs:ef99cf2bc6bc7f2027c35d1432ffe857"><code>ivy</code> extend my mind inside emacs</h3>
+
+<p>Just like <code>helm</code> or <code>ido</code>, <code>ivy</code> is a &ldquo;generic completion framework&rdquo;. It shines
+at being unobtrusive and really fast. I was really surprised by the fact that I
+could reimplement most of my most used spacemacs commands on top of <code>ivy</code> or its
+associated package <code>counsel</code>.</p>
+
+<blockquote>
+<p>ivy-mode ensures that any Emacs command using completing-read-function uses
+ivy for completion. Counsel takes this further, providing versions of common
+Emacs commands that are customised to make the best use of ivy.</p>
+</blockquote>
+
+<p>Here is my <code>(use-package)</code> declaration for <code>ivy</code> and <code>counsel</code>:</p>
+
+<pre><code class="language-lisp">(use-package ivy :ensure t
+  :diminish (ivy-mode . &quot;&quot;) ; does not display ivy in the modeline
+  :init (ivy-mode 1)        ; enable ivy globally at startup
+  :bind (:map ivy-mode-map  ; bind in the ivy buffer
+         (&quot;C-'&quot; . ivy-avy)) ; C-' to ivy-avy
+  :config
+  (setq ivy-use-virtual-buffers t)   ; extend searching to bookmarks and …
+  (setq ivy-height 20)               ; set height of the ivy window
+  (setq ivy-count-format &quot;(%d/%d) &quot;) ; count format, from the ivy help page
+  )
+
+(use-package counsel :ensure t
+  :bind*                           ; load counsel when pressed
+  ((&quot;M-x&quot;     . counsel-M-x)       ; M-x use counsel
+   (&quot;C-x C-f&quot; . counsel-find-file) ; C-x C-f use counsel-find-file
+   (&quot;C-x C-r&quot; . counsel-recentf)   ; search recently edited files
+   (&quot;C-c f&quot;   . counsel-git)       ; search for files in git repo
+   (&quot;C-c s&quot;   . counsel-git-grep)  ; search for regexp in git repo
+   (&quot;C-c /&quot;   . counsel-ag)        ; search for regexp in git repo using ag
+   (&quot;C-c l&quot;   . counsel-locate))   ; search for files or else using locate
+  )
+</code></pre>
+
+<p><code>swiper</code> is an <code>isearch</code> replacement based on ivy. It is really really fast. I
+have tried it on huge files<sup class="footnote-ref" id="fnref:ef99cf2bc6bc7f2027c35d1432ffe857:4"><a rel="footnote" href="#fn:ef99cf2bc6bc7f2027c35d1432ffe857:4">6</a></sup>. It still is really really fast. I have the
+feeling it is much faster than <code>helm-swoop</code>, though I did not measured it. I
+bind it to <code>C-s</code>, the default keyboard press to isearch.</p>
+
+<h1 id="conclusion:ef99cf2bc6bc7f2027c35d1432ffe857">Conclusion</h1>
+
+<p>Here I showed you how I used those four packages and their ecosystem to build
+myself a great spacemacs-like experience. In the next post, I want to spend some
+time on helping you build your own experience of emacs. I will use those
+packages to describe you how you could build yourself a great emacs environment,
+using modern tools.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:1">Evil is The vim emulation inside emacs. It makes emacs behave exactly as vim. Try it if you want to keep your carpal tunnel.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:1"><sup>[return]</sup></a></li>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:2">A 2011 MacBook Pro with 16G of RAM and a Samsung SSD.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:2"><sup>[return]</sup></a></li>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:5">Like one-second fast.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:5"><sup>[return]</sup></a></li>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:3">Yes, you can and should use unicode.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:3"><sup>[return]</sup></a></li>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:6">See its github profile <a href="https://github.com/abo-abo">here</a>.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:6"><sup>[return]</sup></a></li>
+<li id="fn:ef99cf2bc6bc7f2027c35d1432ffe857:4">I have tried it, just like the maintainer, by copy-pasting org.el multiple time in itself. The file was like 1G bytes huge. Swiper did not tremble.
+ <a class="footnote-return" href="#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+                 <a href="/tags/spacemacs/">spacemacs</a>
+            
+                 <a href="/tags/dev/">dev</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=How%20I%20build%20my%20own%20spacemacs&url=http%3a%2f%2fsam217pa.github.io%2f2016%2f08%2f30%2fhow-to-make-your-own-spacemacs%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsam217pa.github.io%2f2016%2f08%2f30%2fhow-to-make-your-own-spacemacs%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fsam217pa.github.io%2f2016%2f08%2f30%2fhow-to-make-your-own-spacemacs%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'http:\/\/sam217pa.github.io\/2016\/08\/30\/how-to-make-your-own-spacemacs\/';
+    var disqus_title = 'How I build my own spacemacs';
+    var disqus_url = 'http:\/\/sam217pa.github.io\/2016\/08\/30\/how-to-make-your-own-spacemacs\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                
+                
+                
+                
+            </div>
+        </footer>
+
+        <script src="http://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="http://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="http://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="http://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
