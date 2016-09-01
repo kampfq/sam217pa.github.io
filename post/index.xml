@@ -7,8 +7,72 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Tue, 30 Aug 2016 17:57:03 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 01 Sep 2016 17:48:38 +0200</lastBuildDate>
     <atom:link href="http://sam217pa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Integrate iTerm2 in your Emacs setup</title>
+      <link>http://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</link>
+      <pubDate>Thu, 01 Sep 2016 17:48:38 +0200</pubDate>
+      
+      <guid>http://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</guid>
+      <description>&lt;p&gt;The terminal experience inside emacs being what it is — &lt;em&gt;ie&lt;/em&gt; really slow and
+kinda difficult to use —, I use iTerm2 as my main terminal. I put up three
+little emacs-lisp functions using AppleScript. They allow me to quickly switch
+between iTerm and spacemacs.&lt;/p&gt;
+
+&lt;p&gt;This one return the directory of the file currently opened. If it is a
+&lt;code&gt;*scratch*&lt;/code&gt; buffer or something like that, it simply returns the home directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defun get-file-dir-or-home ()
+  &amp;quot;If inside a file buffer, return the directory, else return home&amp;quot;
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+	&amp;quot;~/&amp;quot;
+      (file-name-directory filename))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This one allow me to &lt;code&gt;cd&lt;/code&gt; to the directory of the file I am editing in emacs. If
+I am in a &lt;code&gt;*scratch*&lt;/code&gt; buffer or something like that, it &lt;code&gt;cd&lt;/code&gt; to the &lt;code&gt;$HOME&lt;/code&gt;
+directory. It then focus the iTerm2 app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defun iterm-goto-filedir-or-home ()
+  &amp;quot;Go to present working dir and focus iterm&amp;quot;
+  (interactive)
+  (do-applescript
+   (concat
+    &amp;quot; tell application \&amp;quot;iTerm2\&amp;quot;\n&amp;quot;
+    &amp;quot;   tell the current session of current window\n&amp;quot;
+    (format &amp;quot;     write text \&amp;quot;cd %s\&amp;quot; \n&amp;quot; (get-file-dir-or-home))
+    &amp;quot;   end tell\n&amp;quot;
+    &amp;quot; end tell\n&amp;quot;
+    &amp;quot; do shell script \&amp;quot;open -a iTerm\&amp;quot;\n&amp;quot;
+    ))
+  )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This last one just focus the iTerm2 app, without modifying the working
+directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defun iterm-focus ()
+  (interactive)
+  (do-applescript
+   &amp;quot; do shell script \&amp;quot;open -a iTerm\&amp;quot;\n&amp;quot;
+   ))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have mapped it to &lt;code&gt;SPC &#39;&lt;/code&gt; and &lt;code&gt;SPC ?&lt;/code&gt; using &lt;code&gt;general.el&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(general-define-key
+ :states &#39;(normal visual insert emacs)
+ :prefix &amp;quot;SPC&amp;quot;
+  &amp;quot;&#39;&amp;quot; &#39;(iterm-focus :which-key &amp;quot;focus iterm&amp;quot;)
+  &amp;quot;?&amp;quot; &#39;(iterm-goto-filedir-or-home :which-key &amp;quot;focus iterm - goto dir&amp;quot;)
+  )
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>How I build my own spacemacs</title>
