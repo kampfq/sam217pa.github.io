@@ -52,6 +52,36 @@ directory. It then focus the iTerm2 app.&lt;/p&gt;
   )
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;em&gt;EDIT&lt;/em&gt;: 2016-09-05 I have taken Steve Purcell advice into account. Emacs already
+have a nice variable called &lt;code&gt;default-directory&lt;/code&gt;. It is set to the directory of
+the buffer being edited, or &lt;code&gt;nil&lt;/code&gt; if the buffer does not correspond to a file.
+So &lt;code&gt;(or default-directory &amp;quot;~&amp;quot;)&lt;/code&gt; does exactly what we want.&lt;/p&gt;
+
+&lt;p&gt;In case the directory name contains some strange characters like unicode chars
+or spaces, we need to escape that before passing to shell. That&amp;rsquo;s exactly what
+&lt;code&gt;shell-quote-argument&lt;/code&gt; does. Unfortunately, we need to escape the escaping
+characters before passing it as arguments to an applescript statement. Thus the
+escaping madness of the next chunk. It now work flawlessly even in directory
+like &amp;ldquo;&lt;code&gt;~/Users/me/Google Drive/pâte à pizza/&lt;/code&gt;&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defun sam--iterm-goto-filedir-or-home ()
+  &amp;quot;Go to present working dir and focus iterm&amp;quot;
+  (interactive)
+  (do-applescript
+   (concat
+    &amp;quot; tell application \&amp;quot;iTerm2\&amp;quot;\n&amp;quot;
+    &amp;quot;   tell the current session of current window\n&amp;quot;
+    (format &amp;quot;     write text \&amp;quot;cd %s\&amp;quot; \n&amp;quot;
+            ;; string escaping madness for applescript
+            (replace-regexp-in-string &amp;quot;\\\\&amp;quot; &amp;quot;\\\\\\\\&amp;quot;
+                                      (shell-quote-argument (or default-directory &amp;quot;~&amp;quot;))))
+    &amp;quot;   end tell\n&amp;quot;
+    &amp;quot; end tell\n&amp;quot;
+    &amp;quot; do shell script \&amp;quot;open -a iTerm\&amp;quot;\n&amp;quot;
+    ))
+  )
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;This last one just focus the iTerm2 app, without modifying the working
 directory.&lt;/p&gt;
 

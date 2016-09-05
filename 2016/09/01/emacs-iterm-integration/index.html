@@ -141,6 +141,36 @@ directory. It then focus the iTerm2 app.</p>
   )
 </code></pre>
 
+<p><em>EDIT</em>: 2016-09-05 I have taken Steve Purcell advice into account. Emacs already
+have a nice variable called <code>default-directory</code>. It is set to the directory of
+the buffer being edited, or <code>nil</code> if the buffer does not correspond to a file.
+So <code>(or default-directory &quot;~&quot;)</code> does exactly what we want.</p>
+
+<p>In case the directory name contains some strange characters like unicode chars
+or spaces, we need to escape that before passing to shell. That&rsquo;s exactly what
+<code>shell-quote-argument</code> does. Unfortunately, we need to escape the escaping
+characters before passing it as arguments to an applescript statement. Thus the
+escaping madness of the next chunk. It now work flawlessly even in directory
+like &ldquo;<code>~/Users/me/Google Drive/pâte à pizza/</code>&rdquo;.</p>
+
+<pre><code class="language-lisp">(defun sam--iterm-goto-filedir-or-home ()
+  &quot;Go to present working dir and focus iterm&quot;
+  (interactive)
+  (do-applescript
+   (concat
+    &quot; tell application \&quot;iTerm2\&quot;\n&quot;
+    &quot;   tell the current session of current window\n&quot;
+    (format &quot;     write text \&quot;cd %s\&quot; \n&quot;
+            ;; string escaping madness for applescript
+            (replace-regexp-in-string &quot;\\\\&quot; &quot;\\\\\\\\&quot;
+                                      (shell-quote-argument (or default-directory &quot;~&quot;))))
+    &quot;   end tell\n&quot;
+    &quot; end tell\n&quot;
+    &quot; do shell script \&quot;open -a iTerm\&quot;\n&quot;
+    ))
+  )
+</code></pre>
+
 <p>This last one just focus the iTerm2 app, without modifying the working
 directory.</p>
 
