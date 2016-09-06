@@ -28,7 +28,23 @@ I described the tools I needed to build myself a great spacemacs-like&lt;sup cla
 inside emacs. In this post, I want to explain the process of building it in more
 details. I hope it serves you in building a cool editor the way you like it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.oxforddictionaries.com/wp-content/uploads/pottery-wheel.jpg&#34; alt=&#34;Let&#39;s make emacs the way you like it&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://blog.oxforddictionaries.com/wp-content/uploads/pottery-wheel.jpg&#34; alt=&#34;Let&amp;#39;s make Emacs the way you like it&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Let&amp;#39;s make Emacs the way you like it
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;blockquote&gt;
 &lt;p&gt;Emacs proficient reader should skip this part and jump directly to the
@@ -56,7 +72,23 @@ function.&lt;/p&gt;
 
 &lt;h2 id=&#34;getting-emacs-ready-for-the-job:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Getting Emacs ready for the job&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1461896836934-ffe607ba8211&#34; alt=&#34;Getting Emacs ready.&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://images.unsplash.com/photo-1461896836934-ffe607ba8211&#34; alt=&#34;Get ready.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Get ready.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Once you have installed the most recent version of Emacs using your beloved
 package manage and opened it, Emacs will create a directory in your &lt;code&gt;$HOME&lt;/code&gt;
@@ -207,7 +239,23 @@ that.&lt;/p&gt;
 press &lt;code&gt;C-&#39;&lt;/code&gt;, it will call &lt;code&gt;avy-goto-word-1&lt;/code&gt; and trigger the loading of the &lt;code&gt;avy&lt;/code&gt;
 package.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1453230806017-56d81464b6c5?dpr=1&amp;amp;amp&#34; alt=&#34;Putting order in your setup&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://images.unsplash.com/photo-1453230806017-56d81464b6c5?dpr=1&amp;amp;amp&#34; alt=&#34;Your emacs setup after use-package&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Your emacs setup after use-package
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Use-package has all kinds of tricks to make sure no code is executed or loaded
 before it is needed. You &lt;strong&gt;really&lt;/strong&gt; need to check out &lt;code&gt;use-package&lt;/code&gt; on your way
@@ -230,7 +278,23 @@ two years, he developped an ecosystem around a completion framework that he
 wrote called &lt;code&gt;ivy&lt;/code&gt;. This ecosystem is composed of three packages called &lt;code&gt;ivy&lt;/code&gt;,
 &lt;code&gt;counsel&lt;/code&gt; and &lt;code&gt;swiper&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://static.pexels.com/photos/26662/pexels-photo-26662-large.jpg&#34; alt=&#34;Searching with Counsel&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://static.pexels.com/photos/26662/pexels-photo-26662-large.jpg&#34; alt=&#34;Searching with Counsel&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Searching with Counsel
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Counsel allow you to find recently visited files, to switch between buffers, to
 search for a string in the current git directory, to search for a file in the
@@ -239,7 +303,23 @@ applications to open, to search for music in rythmbox, to … . Well, you get th
 idea. Swiper allow you to find text really really quickly inside an Emacs
 buffer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1466436578965-5cba086a1824&#34; alt=&#34;Ivy is the foundation of the two other.&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://images.unsplash.com/photo-1466436578965-5cba086a1824&#34; alt=&#34;Ivy is the foundation of the two other.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Ivy is the foundation of the two other.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Ivy proposes completion candidates to the two other, and to many other Emacs
 function that needs completion and narrowing. You may have heard of another
@@ -252,7 +332,23 @@ But do we ?&lt;/p&gt;
 
 &lt;h2 id=&#34;bind-in-emacs:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Bind in Emacs : the &lt;code&gt;general&lt;/code&gt; way&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1463527882365-18201e85a091&#34; alt=&#34;Binding via general&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://images.unsplash.com/photo-1463527882365-18201e85a091&#34; alt=&#34;Binding via general.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Binding via general.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;Recently, a growing user base of Emacs user started to use Evil, a vim emulation
 built on top of Emacs command. It works just flawlessly. When they did, they
@@ -343,7 +439,23 @@ Which-key integration to General.&lt;/p&gt;
 
 &lt;h2 id=&#34;meeting-our-goal-build-yourself-a-great-spacemacs-like-experience:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Meeting our goal: build yourself a great Spacemacs-like experience&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1443928281170-6900dc50ac55&#34; alt=&#34;On the road to a great emacs experience&#34; /&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://images.unsplash.com/photo-1443928281170-6900dc50ac55&#34; alt=&#34;On the road to a great emacs experience&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        On the road to a great emacs experience
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
 
 &lt;p&gt;For Evil users out there, General also has nice integration with Evil states. It
 means that we can easily define keybindings to match Spacemacs design styles.

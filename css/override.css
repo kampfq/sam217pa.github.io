@@ -29,3 +29,19 @@ img#sam-cv-person {
     margin-top: auto;
     margin-bottom: auto;
 }
+
+
+figure figcaption {
+    font-size: 0.7em;
+    text-align: right;
+    color: gray;
+}
+
+figure img {
+    margin: 20px 0;
+}
+
+figure title {
+    font-size: 0.8em;
+    text-align: center;
+}
