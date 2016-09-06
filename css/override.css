@@ -1,0 +1,31 @@
+.sam-header {
+    width: 100%;
+}
+
+.sam-container {
+    margin: auto;
+}
+
+.sam-first {
+    width: 20%;
+    float: left;
+    display: block;
+}
+
+.sam-second {
+    width: 80%;
+    float: left;
+    display: block;
+}
+
+.sam-clear {
+    clear: both;
+}
+
+img#sam-cv-person {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}

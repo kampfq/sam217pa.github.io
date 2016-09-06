@@ -31,138 +31,185 @@ I am currently applying for a master thesis, under the supervision of
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://sam217pa.github.io/page/curriculum/</guid>
-      <description>&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-    &lt;img src=&#34;http://sam217pa.github.io/images/CV/person.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-    &lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;Who I Am&lt;/h2&gt;&lt;/p&gt;
+      <description>&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/person.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;I am a passionate student of all things Evolution. I like when theories are
-adapted to facts I learn, and connect together. I like to think of Bacteria as
-the modern Darwin&amp;rsquo;s finches, me being on a Genomic and Computerized &lt;em&gt;Beagle&lt;/em&gt;.
-I am always eager for more, never satisfied with what I know, always smiling
-at what I need to know.&lt;/p&gt;
-&lt;/blockquote&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2 align=&#34;left&#34;&gt;Who I Am&lt;/h2&gt;
+	&lt;p&gt;
+	    I am a passionate student of all things Evolution. I like when theories are
+	    adapted to facts I learn, and connect together. I like to think of Bacteria as
+	    the modern Darwin&#39;s finches, me being on a Genomic and Computerized Beagle.
+	&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;hr /&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/microscope.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;What I Do&lt;/h2&gt;&lt;/p&gt;
 
-&lt;p&gt;I study Microbiology and Evolution. I&amp;rsquo;m currently focused on the biased gene
-conversion process&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, supervised by
-&lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Duret-Laurent-.html&#34;&gt;Laurent Duret&lt;/a&gt; and
-&lt;a href=&#34;http://www.researchgate.net/profile/Franck_Bertolla&#34;&gt;Franck Bertolla&lt;/a&gt;. Them and
-I are studying its impact in prokaryotes. We use cloning, natural
-transformation, sequencing, computers and statistics.&lt;/p&gt;
+&lt;div class=&#34;sam-header&#34;&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/microscope.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;hr /&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2 align=&#34;left&#34;&gt;What I Do&lt;/h2&gt;
+	&lt;p&gt;
+	    I study Microbiology and Evolution. I&#39;m currently focused on the &lt;a href=&#34;http://sam217pa.github.io/project/projet-gbc/&#34;&gt;biased gene
+	    conversion process&lt;/a&gt;, supervised by &lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Duret-Laurent-.html&#34;&gt;Laurent Duret&lt;/a&gt; and
+	    &lt;a href=&#34;http://www.researchgate.net/profile/Franck_Bertolla&#34;&gt;Franck Bertolla&lt;/a&gt;. Them and
+	    I are studying its impact in prokaryotes. We use cloning, natural
+	    transformation, sequencing, computers and statistics.
+	&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/toolbox.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;What I&amp;rsquo;ve Done&lt;/h2&gt;&lt;/p&gt;
 
-&lt;h4 align=&#34;center&#34;&gt;2015&lt;/h4&gt;
+&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/toolbox.png&#34; alt=&#34;Toolbox&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;I&amp;rsquo;ve worked on the evolution of host dependence to its microbial symbionts, in
-the &lt;em&gt;Bemisia tabaci&lt;/em&gt; whitefly model&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;,
-under the supervision of
-&lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Vavre-Fabrice-.html&#34;&gt;Fabrice Vavre&lt;/a&gt; and
-&lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Mouton-Laurence-.html&#34;&gt;Laurence Mouton&lt;/a&gt;. I learned
-and used molecular biology, PCR, sequencing and evolution analysis.&lt;/p&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2 align=&#34;left&#34;&gt;What I have done&lt;/h2&gt;
 
-&lt;h4 align=&#34;center&#34;&gt;2013&lt;/h4&gt;
+	&lt;h4 align=&#34;left&#34;&gt;2015&lt;/h4&gt;
 
-&lt;p&gt;I tried to evaluate the pathogenicity of viable but non-culturable &lt;em&gt;Legionella
-pneumophila&lt;/em&gt;. I was supervised by
-&lt;a href=&#34;http://portail.univ-st-etienne.fr/bienvenue/utilitaires/mme-allegra-severine-56254.kjsp&#34;&gt;Severine Allegra&lt;/a&gt;.
-I learned flow cytometry, immuno-fluorescent microscopy, pathogenic bacteria
-handling.&lt;/p&gt;
+	&lt;p&gt;
+	    I&#39;ve worked on the evolution of host dependence to its microbial symbionts, in
+	    the &lt;i&gt;Bemisia tabaci&lt;/i&gt; whitefly model, under the supervision of
+	    &lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Vavre-Fabrice-.html&#34;&gt;Fabrice Vavre&lt;/a&gt; and
+	    &lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Mouton-Laurence-.html&#34;&gt;Laurence Mouton&lt;/a&gt;.
+	    I learned and used molecular biology, PCR, sequencing and evolution
+	    analysis.
+	&lt;/p&gt;
 
-&lt;hr /&gt;
+	&lt;h4&gt;2013&lt;/h4&gt;
+	&lt;p&gt;
+	    I tried to evaluate the pathogenicity of viable but non-culturable &lt;i&gt;Legionella pneumophila&lt;/i&gt;.
+	    I was supervised by &lt;a href=&#34;https://www.researchgate.net/profile/Severine_Allegra&#34;&gt;Severine Allegra&lt;/a&gt;.
+	    I learned flow cytometry, immuno-fluorescent microscopy,
+	    pathogenic bacteria handling and most and foremost, autonomy.
+	&lt;/p&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/study2.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;Study&lt;/h2&gt;&lt;/p&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;h4 align=&#34;center&#34;&gt;2014 - 2016&lt;/h4&gt;
+&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/study2.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;I studied Microbial Ecology in the Microbiology Master of Lyon, France&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:More-information&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:More-information&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.
-I learned evolution biology, host-microbes interactions, microbial ecology study
-techniques and statistics.&lt;/p&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2&gt;Study&lt;/h2&gt;
 
-&lt;h4 align=&#34;center&#34;&gt;2013 - 2014&lt;/h4&gt;
+	&lt;h4&gt;2014 - 2016&lt;/h4&gt;
+	&lt;p&gt;
+	    I studied Microbial Ecology in the
+	    &lt;a href=&#34;http://master-me.univ-lyon1.fr/&#34;&gt;Microbiology Master of Lyon&lt;/a&gt;, France.
+	    I learned evolution biology, host-microbes interactions, microbial ecology study
+	    techniques and statistics.
+	&lt;/p&gt;
 
-&lt;p&gt;I got my Microbiology Bachelor with honors from the Université Claude Bernard,
-Lyon 1, France.&lt;/p&gt;
+	&lt;h4&gt;2013 - 2014&lt;/h4&gt;
+	&lt;p&gt;
+	    I got my Microbiology Bachelor with honors from the Université Claude Bernard,
+	    Lyon 1, France.
+	&lt;/p&gt;
 
-&lt;h4 align=&#34;center&#34;&gt;2011 - 2013&lt;/h4&gt;
+	&lt;h4&gt;2011 - 2013&lt;/h4&gt;
+	&lt;p&gt;
+	    I obtained a technical degree of Environmental and Biological Engineering, with
+	    honors, from the Université Jean Moulin, Saint-Étienne, France.
+	&lt;/p&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;I obtained a technical degree of Environmental and Biological Engineering, with
-honors, from the Université Jean Moulin, Saint-Étienne, France.&lt;/p&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;hr /&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/computer2.png&#34; alt=&#34;Computer Skills&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;Computer Skills&lt;/h2&gt;&lt;/p&gt;
+&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/computer2.png&#34; alt=&#34;Computer Skills&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;I know my way around &lt;strong&gt;R&lt;/strong&gt;, that I&amp;rsquo;ve learned from
-&lt;a href=&#34;https://www.coursera.org/specializations/jhudatascience&#34;&gt;here&lt;/a&gt;. I know and used
-dplyr, reshape2, tidyr, plyr and Rcpp. I guess I would qualify as a ggplot2
-expert. I can also use the grid graphics package. You can go
-&lt;a href=&#34;https://www.dropbox.com/sh/pubta5p96hbznp6/AAClumumR0HM8JuXaDOAJ9Vea?dl=0&#34;&gt;here&lt;/a&gt;
-for a examples of some stuff I&amp;rsquo;ve done with &lt;strong&gt;R&lt;/strong&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:One-day-I-ll-pos&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:One-day-I-ll-pos&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2&gt;Computer Skills&lt;/h2&gt;
 
-&lt;p&gt;I know my way around Unix too. I use Arch Linux, (X)Ubuntu and MacOSX as my OS.
-I know the command line, bash scripting and various useful little skills, and
-can google the rest.&lt;/p&gt;
+	&lt;p&gt;
+	    I know my way around &lt;i&gt;R&lt;/i&gt;, that I&#39;ve learned from
+	    &lt;a href=&#34;https://www.coursera.org/specializations/jhudatascience&#34;&gt;here&lt;/a&gt;.
+	    I know and used dplyr, reshape2, tidyr, plyr and Rcpp. I guess I
+	    would qualify as a ggplot2 expert. I can also use the grid graphics
+	    package. You can go &lt;a href=&#34;https://www.dropbox.com/sh/pubta5p96hbznp6/AAClumumR0HM8JuXaDOAJ9Vea?dl=0&#34;&gt;here&lt;/a&gt;
+	    for a examples of some stuff I&#39;ve done with &lt;i&gt;R&lt;/i&gt;.
+	&lt;/p&gt;
 
-&lt;p&gt;I learn Python for data analysis, Clojure and Lisps for fun, LaTeX for beauty&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:An-example-https&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:An-example-https&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;,
-Vim for comfort, and Emacs for sanity&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:Actually-I-use-S&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:Actually-I-use-S&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+	&lt;p&gt;
+	    I know my way around Unix too. I use Arch Linux, (X)Ubuntu and MacOSX as my OS.
+	    I know the command line, bash scripting and various useful little skills, and
+	    can google the rest.
+	&lt;/p&gt;
 
-&lt;hr /&gt;
+	&lt;p&gt;
+	    I learn Python for data analysis, Clojure and Lisps for fun,
+	    &lt;a href=&#34;http://sam217pa.github.io/2016/06/07/using-latex/&#34;&gt;LaTeX&lt;/a&gt; for beauty,
+	    Vim for comfort, and Emacs for sanity.
+	&lt;/p&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/talk.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;Languages&lt;/h2&gt;&lt;/p&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;Je parle Français, my mother tongue.&lt;/p&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;I speak, read and understand English&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3f8e99622b52aa920647b4aaea1a9929:TOEIC-score-920&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3f8e99622b52aa920647b4aaea1a9929:TOEIC-score-920&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;Ich verstehe Deutsch, although not that well.&lt;/p&gt;
+&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/talk.png&#34; alt=&#34;Languages&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;hr /&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2&gt;Languages&lt;/h2&gt;
+	&lt;p&gt;
+	    Je parle Français, my mother&#39;s tongue.
+	    I speak, read and understand English (TOEIC score : 920 / 990).
+	    Ich verstehe Deutsch, although not that well.
+	&lt;/p&gt;
 
-&lt;p&gt;&lt;p align=&#34;center&#34;&gt;
-&lt;img src=&#34;http://sam217pa.github.io/images/CV/music.png&#34; alt=&#34;Computer Skills&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
-&lt;/p&gt;
-&lt;h2 align=&#34;center&#34;&gt;Hobbies&lt;/h2&gt;&lt;/p&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;I play music with various instruments in various bands. I love hiking in the
-&lt;a href=&#34;http://medias.valdallos.com/images/info_pages/multitailles/800x600_lac-d-allos-2385.jpg&#34;&gt;beautiful French Alps&lt;/a&gt;.
-I like travelling, reading about Evolution, reading as such, coffee, gherkins,
-science and life.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;hr /&gt;
+&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
+&lt;div class=&#34;sam-container&#34;&gt;
+    &lt;div class=&#34;sam-first&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/music.png&#34; alt=&#34;Hobbies&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+    &lt;/div&gt;
 
-&lt;ol&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;See &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/19630562&#34;&gt;here&lt;/a&gt; for a thorough review of the process and its impact on mammals genomes. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;See &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/19230673&#34;&gt;here&lt;/a&gt; for a good introduction to the evolutive concepts behind host-plant / insect-host / symbionts interaction. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:See-here-http-ww&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:More-information&#34;&gt;More information &lt;a href=&#34;http://master-me.univ-lyon1.fr/&#34;&gt;here&lt;/a&gt;. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:More-information&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:One-day-I-ll-pos&#34;&gt;One day I&amp;rsquo;ll post the commented code in the blog. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:One-day-I-ll-pos&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:An-example-https&#34;&gt;&lt;a href=&#34;https://www.dropbox.com/s/5obbvrbudd06tbo/notes.pdf?dl=0&#34;&gt;An example&lt;/a&gt; of what I do with LaTeX. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:An-example-https&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:Actually-I-use-S&#34;&gt;Actually I use &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Spacemacs&lt;/a&gt;, the best of both worlds. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:Actually-I-use-S&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3f8e99622b52aa920647b4aaea1a9929:TOEIC-score-920&#34;&gt;TOEIC score : 920 / 990. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3f8e99622b52aa920647b4aaea1a9929:TOEIC-score-920&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+    &lt;div class=&#34;sam-second&#34;&gt;
+	&lt;h2&gt;Hobbies&lt;/h2&gt;
+	&lt;p&gt;
+	    I play music with various instruments in various bands. I love hiking in the
+	    &lt;a href=&#34;http://medias.valdallos.com/images/info_pages/multitailles/800x600_lac-d-allos-2385.jpg&#34;&gt;beautiful French Alps&lt;/a&gt;.
+	    I like travelling, reading about Evolution, reading as such, coffee,
+	    gherkins, science and life.
+	&lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class=&#34;sam-clear&#34;&gt; &lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
