@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>How to build your own spacemacs &middot; Samuel Barreto</title>
+        <meta name="description" content="Build yourself a great Emacs the way you want it, using modern tools.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/normalize.css">
+
+        
+
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/solarized-light.min.css"> </link>
+
+        <link rel="stylesheet" href="http://sam217pa.github.io/css/style.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300|Fira+Mono|Ubuntu:300&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                            </h1>
+                        
+                        <a class="button-square" href="http://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">How to build your own spacemacs</h1>
+    
+        <p class="post-description" itemprop="description">Build yourself a great Emacs the way you want it, using modern tools.</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-09-02" itemprop="datePublished">Fri, Sep 2, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Emacs is a great environment to build a text editor. Being a really old piece of
+software, searching the internet does not always lead to the best or more recent
+results. My goal is to help you build an editor inside Emacs using the best
+tools for the job, with modern tools and well-crafted packages.</p>
+
+<p>In <a href="http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/">a previous post</a>,
+I described the tools I needed to build myself a great spacemacs-like<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:1"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:1">1</a></sup> experience
+inside emacs. In this post, I want to explain the process of building it in more
+details. I hope it serves you in building a cool editor the way you like it.</p>
+
+<p><img src="http://blog.oxforddictionaries.com/wp-content/uploads/pottery-wheel.jpg" alt="Let's make emacs the way you like it" /></p>
+
+<blockquote>
+<p>Emacs proficient reader should skip this part and jump directly to the
+<code>use-package</code> part <a href="#use-package:62128098bfcfe7aecd2bca9fcf074d28">here</a>. Those that already know
+about <code>use-package</code> should jump <a href="#move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">here</a>, where I
+talk about <code>ivy</code>, <code>swiper</code>, <code>counsel</code> and <code>general</code>. Those that do not want to
+read all my strange french-english prose can and should jump directly to
+<a href="#recipe:62128098bfcfe7aecd2bca9fcf074d28">here</a>. I have put up a recipe to a modern Emacs
+experience.</p>
+</blockquote>
+
+<p>Emacs is a text editor and a programming environment built on top of a
+programming language, just like Python or Java, called <em>emacs-lisp</em>. The text
+editing abilities of a bare Emacs distribution are decent, but today most Emacs
+users extend it through other pieces of software called modules or packages.
+They are also written in emacs-lisp, often by user of Emacs that became
+frustrated by a lack of feature or thought they could do better. The result is a
+big ecosystem of emacs-lisp packages, of which you can get an idea at
+<a href="https://melpa.org">melpa.org</a>. Anybody can download it and use it to extend the
+functionnalities of emacs.</p>
+
+<p>One of the main strength of Emacs is its extensibility and flexibility. As our
+first step, we are going to learn how to configure it using basic emacs
+function.</p>
+
+<h2 id="getting-emacs-ready-for-the-job:62128098bfcfe7aecd2bca9fcf074d28">Getting Emacs ready for the job</h2>
+
+<p><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211" alt="Getting Emacs ready." /></p>
+
+<p>Once you have installed the most recent version of Emacs using your beloved
+package manage and opened it, Emacs will create a directory in your <code>$HOME</code>
+directory called <code>~/.emacs.d</code>. When Emacs start, it reads a file in this
+directory called <code>~/.emacs.d/init.el</code>, and execute any emacs-lisp command it
+finds in it. We are going to use this file to customize emacs to our liking.</p>
+
+<blockquote>
+<p>As a version control adept, I have symlinked <code>init.el</code> to a dotfile repository
+under VC.</p>
+</blockquote>
+
+<p>When inside Emacs, press <code>C-x C-f</code> (meaning <code>control-f</code> then <code>control-f</code>), the
+emacs command to open a file. Emacs will prompt you for a file to open, and
+type <code>~/.emacs.d/init.el</code>. Emacs being really old, some of its default
+configuration are somewhat — er — mysterious and mystical. We are going to use
+<code>init.el</code> to introduce some sane defaults. Paste the following chunks using
+<code>C-y</code>.</p>
+
+<pre><code class="language-lisp">(setq delete-old-versions -1 )		; delete excess backup versions silently
+(setq version-control t )		; use version control
+(setq vc-make-backup-files t )		; make backups file even when in version controlled dir
+(setq backup-directory-alist `((&quot;.&quot; . &quot;~/.emacs.d/backups&quot;)) ) ; which directory to put backups file
+(setq vc-follow-symlinks t )				       ; don't ask for confirmation when opening symlinked file
+(setq auto-save-file-name-transforms '((&quot;.*&quot; &quot;~/.emacs.d/auto-save-list/&quot; t)) ) ;transform backups file name
+(setq inhibit-startup-screen t )	; inhibit useless and old-school startup screen
+(setq ring-bell-function 'ignore )	; silent bell when you make a mistake
+(setq coding-system-for-read 'utf-8 )	; use utf-8 by default
+(setq coding-system-for-write 'utf-8 )
+(setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
+(setq default-fill-column 80)		; toggle wrapping text at the 80th character
+(setq initial-scratch-message &quot;Welcome in Emacs&quot;) ; print a default message in the empty scratch buffer opened at startup
+</code></pre>
+
+<p>Place your cursor after the closing paren of the first line and press <code>C-x C-e</code>.
+It will execute the previous bits of code. <code>setq</code> is an emacs-lisp word meaning
+&ldquo;set the following variable to the following value&rdquo;. For the first line, we
+could translate in plain english to &ldquo;set the variable <em>delete-old-versions</em> to
+-1&rdquo;.</p>
+
+<p>Now save the <code>init.el</code> modifications by pressing <code>C-x C-s</code>, and quit Emacs by
+pressing <code>C-x C-c</code>. Restart it. Now press <code>M-x</code> (depending on your OS, it should
+corresponds to <code>Alt-x</code>) and <code>describe-variable</code>, then <code>delete-old-versions</code>. It
+should open a buffer with the documentation of the variable, with a line saying
+&ldquo;Its value is -1&rdquo;. So basically when Emacs started up, it evaluated the lines of
+code in <code>~/.emacs.d/init.el</code>. Now press <code>M-x</code> <code>describe-key</code> and press
+<code>C-e</code>. It should print a buffer describing the function attached to the
+keybindings <code>C-e</code></p>
+
+<p>In those simple exercises, we covered very important Emacs notion :</p>
+
+<ol>
+<li>Every command is bound to a function. Those function are, most of the time,
+defined in emacs-lisp. Some very important function are defined in C for
+performance.</li>
+<li>You learned that Emacs has a very thorough documentation describing variables,
+functions, keybindings…</li>
+<li>You learned to modify a variable using emacs-lisp.</li>
+<li>You learned how Emacs execute code at startup, and we can leverage that to
+customize it to our liking.</li>
+</ol>
+
+<h2 id="use-package:62128098bfcfe7aecd2bca9fcf074d28">Introduce structure in your config : <code>use-package</code> to the rescue</h2>
+
+<p>The emacs-lisp package archive with wich you can interact at
+<a href="https://melpa.org">melpa.org</a> has, at the time of writing 3 291 packages. The
+abundance of modules sometimes lead to something that emacs users call <em>Emacs
+bankruptcy</em>: a state in which the user does not understand its own Emacs
+configuration.</p>
+
+<blockquote>
+<p>I give up. During the past 6 years of my emacs career, my emacs configuration
+file grew to embarrassing levels. As of this morning, it is well over 1000
+lines and is a looming burden of disorganization. Startup time is poor,
+customizations exist for languages that I don’t use anymore (ahem,
+                                   &gt; csharp-mode), and it has been this way for too long…
+—— RyanMcGeary, 2007</p>
+</blockquote>
+
+<p>To prevent this, John Wiegley, the current emacs maintainer put up a great
+package called <code>use-package</code>. So, as our second step, we are going to set up
+<code>use-package</code> and use it for the first time. This &ldquo;meta&rdquo;-package is a package to
+manage other packages and the way they interact. Put the following lines in your
+<code>~/.emacs.d/init.el</code>.</p>
+
+<pre><code class="language-lisp">(require 'package)
+</code></pre>
+
+<p>This line basically says to Emacs make available any command present in the
+<em>package</em> module.</p>
+
+<pre><code class="language-lisp">(setq package-enable-at-startup nil) ; tells emacs not to load any packages before starting up
+;; the following lines tell emacs where on the internet to look up
+;; for new packages.
+(setq package-archives '((&quot;org&quot;       . &quot;http://orgmode.org/elpa/&quot;)
+                         (&quot;gnu&quot;       . &quot;http://elpa.gnu.org/packages/&quot;)
+                         (&quot;melpa&quot;     . &quot;https://melpa.org/packages/&quot;)
+                         (&quot;marmalade&quot; . &quot;http://marmalade-repo.org/packages/&quot;)))
+(package-initialize) ; guess what this one does ?
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package) ; unless it is already installed
+  (package-refresh-contents) ; updage packages archive
+  (package-install 'use-package)) ; and install the most recent version of use-package
+
+(require 'use-package) ; guess what this one does too ?
+</code></pre>
+
+<p>Now the best way to learn how it works is by reading its documentation. Nah.
+Let&rsquo;s use it first, read then. Restart emacs and put the following line in your
+<code>init.el</code>, then go to the end of line (<code>C-e</code>) and press <code>C-x C-e</code>.</p>
+
+<pre><code class="language-lisp">(use-package general :ensure t)
+</code></pre>
+
+<p>It should check for the <code>general</code> package and make sure it is accessible. If
+not, the <code>:ensure t</code> part of the previous chunks tells use-package to download
+it and place it somewhere accessible, in <code>~/.emacs.d/elpa/</code> by default<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:2"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:2">2</a></sup>.</p>
+
+<p>Now every function in the general package is available to you. We will now use
+the same <code>use-package</code> statement to customize the general package. We need the
+<code>:config</code> keyword of the <code>use-package</code> macro to do just that.</p>
+
+<pre><code class="language-lisp">(use-package general :ensure t
+  :config
+  (general-define-key &quot;C-'&quot; 'avy-goto-word-1)
+  )
+</code></pre>
+
+<p>The third line said &ldquo;bind to the <code>C-'</code> press the function <code>avy-goto-word-1</code>&rdquo;. It
+means we need the <code>avy</code> package. So let&rsquo;s use <code>use-package</code> again to download
+and load the <code>avy</code> package.</p>
+
+<pre><code class="language-lisp">(use-package avy :ensure t)
+</code></pre>
+
+<p>But then we do not need this package right when we start Emacs. It can wait
+until we first call <code>avy-goto-word-1</code> or any other command from the <code>avy</code>
+package. So we are going to put this command in the list of command that
+triggers the loading of the <code>avy</code> package. We use the <code>:commands</code> keyword to do
+that.</p>
+
+<pre><code class="language-lisp">(use-package avy :ensure t
+  :commands (avy-goto-word-1))
+</code></pre>
+
+<p>So now when we start Emacs, the <code>avy</code> package is not loaded. But when we first
+press <code>C-'</code>, it will call <code>avy-goto-word-1</code> and trigger the loading of the <code>avy</code>
+package.</p>
+
+<p><img src="https://images.unsplash.com/photo-1453230806017-56d81464b6c5?dpr=1&amp;amp" alt="Putting order in your setup" /></p>
+
+<p>Use-package has all kinds of tricks to make sure no code is executed or loaded
+before it is needed. You <strong>really</strong> need to check out <code>use-package</code> on your way
+to mold Emacs to your liking.</p>
+
+<h2 id="move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">Move in Emacs : the <em>abo-abo</em> way</h2>
+
+<p>In Emacs as in all text editor, you move more than you type. You move between
+buffers, <em>ie</em> text files loaded into memory. You move between lines. You move
+between sentences. You move between semantics unit. You move between files. You
+search for files. You search for text. You search for regexp. You search for
+projects.</p>
+
+<p>It really helps to have a uniform interface to the most common commands you
+call.</p>
+
+<p>One of the most prolific Emacs-package developper that I know of is called Oleh
+Krehel; <a href="https://twitter.com/_abo_abo">abo-abo</a> on Twitter<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:3"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:3">3</a></sup>. During the past
+two years, he developped an ecosystem around a completion framework that he
+wrote called <code>ivy</code>. This ecosystem is composed of three packages called <code>ivy</code>,
+<code>counsel</code> and <code>swiper</code>.</p>
+
+<p><img src="https://static.pexels.com/photos/26662/pexels-photo-26662-large.jpg" alt="Searching with Counsel" /></p>
+
+<p>Counsel allow you to find recently visited files, to switch between buffers, to
+search for a string in the current git directory, to search for a file in the
+current git directory, to search for Emacs function, to search for system
+applications to open, to search for music in rythmbox, to … . Well, you get the
+idea. Swiper allow you to find text really really quickly inside an Emacs
+buffer.</p>
+
+<p><img src="https://images.unsplash.com/photo-1466436578965-5cba086a1824" alt="Ivy is the foundation of the two other." /></p>
+
+<p>Ivy proposes completion candidates to the two other, and to many other Emacs
+function that needs completion and narrowing. You may have heard of another
+ecosystem centered around Helm. The spacemacs dev chose to use Helm as a central
+tool, but I can assure you that you will not regret chosing the Ivy way. It is
+really really fast, really well thought out and really convenient to use.</p>
+
+<p>So now we have a ton on function to bind, and still no way to make that easy.
+But do we ?</p>
+
+<h2 id="bind-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">Bind in Emacs : the <code>general</code> way</h2>
+
+<p><img src="https://images.unsplash.com/photo-1463527882365-18201e85a091" alt="Binding via general" /></p>
+
+<p>Recently, a growing user base of Emacs user started to use Evil, a vim emulation
+built on top of Emacs command. It works just flawlessly. When they did, they
+developped some ways to bind keys to functions like in Vim. One of the most
+successful solution to this is <code>evil-leader</code>. And then another Evil user by the
+pseudo of <code>noctuid</code> created a package called <code>general.el</code><sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:4"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:4">4</a></sup>. Of all the way I
+know to define keys in Emacs, this one is the most versatile and the simplest
+solution to defining keybindings.</p>
+
+<p>There is many ways to define keybindings in <code>general.el</code>. Since they are all
+constructed around <code>general-define-key</code>, it is the most flexible. So let&rsquo;s use
+that to bind some keys.</p>
+
+<pre><code class="language-lisp">(general-define-key
+  ;; replace default keybindings
+  &quot;C-s&quot; 'swiper             ; search for string in current buffer
+  &quot;M-x&quot; 'counsel-M-x        ; replace default M-x with ivy backend
+  )
+</code></pre>
+
+<p>This one is pretty simple. It binds <code>C-s</code> to swiper and <code>M-x</code> to counsel-M-x.
+Those two keys are probably amongs the two most used keybindings in Emacs. But
+General allows more complex solution to keybindings definition. Let&rsquo;s say we
+want all of our personnal keybindings bound to <code>C-c XY</code>, where <code>XY</code> is a
+combination of our choice. We can define a <code>:prefix</code>.</p>
+
+<pre><code class="language-lisp">(general-define-key
+ :prefix &quot;C-c&quot;
+ ;; bind to simple key press
+  &quot;b&quot;	'ivy-switch-buffer  ; change buffer, chose using ivy
+  &quot;/&quot;   'counsel-git-grep   ; find string in git project
+  ;; bind to double key press
+  &quot;ff&quot;  'counsel-find-file  ; find file using ivy
+  &quot;fr&quot;	'counsel-recentf    ; find recently edited files
+  &quot;pf&quot;  'counsel-git        ; find file in git project
+  )
+</code></pre>
+
+<p>Now <code>C-c b</code> switches buffer using Ivy. And <code>C-c f</code> then <code>f</code> finds files. And
+<code>C-c f</code> then <code>r</code> find recent files. Now we can see a pattern here: we just
+placed all command related to finding files under a <code>C-c f</code> prefix. It would be
+great if we could know when we press <code>C-c</code> what the <code>f</code> corresponds to.</p>
+
+<p>But hey it is Emacs. There is a package for it. It is called <code>which-key</code>. So
+guess what ?</p>
+
+<pre><code class="language-lisp">(use-package which-key :ensure t)
+</code></pre>
+
+<p>So now when we press <code>C-c</code>, a nice buffer shows up that pressing <code>b</code> will
+execute <code>ivy-switch-buffer</code>. But what does it show for <code>f</code> ? &ldquo;<code>+prefix</code>&rdquo;. We can
+do better. We can indicate to Which-key that <code>C-c f</code> related functions
+corresponds to <em>file</em> related operations.</p>
+
+<pre><code class="language-lisp">(use-package which-key :ensure t
+ :config
+ (which-key-add-key-based-replacement
+  &quot;C-c f&quot; &quot;file&quot;
+  &quot;C-c ff&quot; &quot;find file&quot;
+  &quot;C-c fr&quot; &quot;recently edited&quot;
+  &quot;C-c p&quot;  &quot;project&quot;))
+</code></pre>
+
+<p>Execute this code with <code>C-x C-e</code> as usual. Now press <code>C-c</code>, and see how much
+<code>which-key</code> is awesome. Never forget a keybinding. Very easy on beginners. Very
+swift. Very clean. Does it ?</p>
+
+<p>There is some kind of code duplication here. We define it using General, and
+describe it using Which-key. In fact we can do both in the same statement, using
+Which-key integration to General.</p>
+
+<pre><code class="language-lisp">(general-define-key
+ :prefix &quot;C-c&quot;
+ ;; bind to simple key press
+  &quot;b&quot;	'ivy-switch-buffer  ; change buffer, chose using ivy
+  &quot;/&quot;   'counsel-git-grep   ; find string in git project
+  ;; bind to double key press
+  &quot;f&quot;   '(:ignore t :which-key &quot;files&quot;)
+  &quot;ff&quot;  'counsel-find-file
+  &quot;fr&quot;	'counsel-recentf
+  &quot;p&quot;   '(:ignore t :which-key &quot;project&quot;)
+  &quot;pf&quot;  '(counsel-git :which-key &quot;find file in git dir&quot;)
+  )
+</code></pre>
+
+<p>Evaluate this code. Press <code>C-c</code>. Same output as before. See how General is great
+?</p>
+
+<h2 id="meeting-our-goal-build-yourself-a-great-spacemacs-like-experience:62128098bfcfe7aecd2bca9fcf074d28">Meeting our goal: build yourself a great Spacemacs-like experience</h2>
+
+<p><img src="https://images.unsplash.com/photo-1443928281170-6900dc50ac55" alt="On the road to a great emacs experience" /></p>
+
+<p>For Evil users out there, General also has nice integration with Evil states. It
+means that we can easily define keybindings to match Spacemacs design styles.
+And yet we retain the ability to build the editor we want. That is what we came
+to Emacs in the beginning.</p>
+
+<p>Check out what this chunk does.</p>
+
+<pre><code class="language-lisp">(use-package general :ensure t
+  :config
+  (general-define-key
+   :states '(normal visual insert emacs)
+   :prefix &quot;SPC&quot;
+   :non-normal-prefix &quot;C-SPC&quot;
+
+    ;; simple command
+    &quot;'&quot;   '(iterm-focus :which-key &quot;iterm&quot;)
+    &quot;?&quot;   '(iterm-goto-filedir-or-home :which-key &quot;iterm - goto dir&quot;)
+    &quot;/&quot;   'counsel-ag
+    &quot;TAB&quot; '(switch-to-other-buffer :which-key &quot;prev buffer&quot;)
+    &quot;SPC&quot; '(avy-goto-word-or-subword-1  :which-key &quot;go to char&quot;)
+
+    ;; Applications
+    &quot;a&quot; '(:ignore t :which-key &quot;Applications&quot;)
+    &quot;ar&quot; 'ranger
+    &quot;ad&quot; 'dired))
+</code></pre>
+
+<p>When Evil is in normal or visual state, the prefix is <code>SPC</code>, as in Spacemacs.
+When Evil is in insert or emacs state, the prefix is <code>C-SPC</code>. We can define some
+key under direct access, describe them using Which-key. We can then define
+prefix easily, using the <code>:ignore t</code> keyword. See how close we are from
+Spacemacs ?</p>
+
+<p>So then why not just use Spacemacs and be done with it ? Well, I like the <code>SPC</code>
+prefix thing too much to let the Spacemacs dev decide for me what keybindings
+must refer too. I want to make my own Emacs. I want to be able to define
+<code>:prefix</code> easily. I want to understand what Emacs does, without having to read
+the entire Spacemacs code base. I want an editor that I can customize to its
+inner deepness, without being hit by design choices I did not make.</p>
+
+<p>And then Spacemacs has one major drawback to me: it is very Qwerty-keyboard
+oriented. It means that when you use another keyboard layout, you make some
+weird movement just to accomodate Spacemacs keybindings.</p>
+
+<h3 id="recipe:62128098bfcfe7aecd2bca9fcf074d28">A recipe for a modern Emacs experience</h3>
+
+<p>I have put up a recipe to build a Spacemacs-like Emacs. It is based on what I
+have done systematically, to build a reasonable and very usable emacs to me.</p>
+
+<ol>
+<li>Spot a package that seems interesting.</li>
+<li>Install it using <code>use-package</code> and its <code>:ensure t</code> keyword.</li>
+<li>Use it for an hour or two.</li>
+<li>Determine the functions you need.</li>
+<li>Create autoloading for it using <code>use-package</code> abilities to deferred loading.</li>
+<li>Create a keybinding for it using <code>general</code>, under the <code>:prefix</code> you like. Use
+<code>SPC</code> to look like Spacemacs.</li>
+<li>Describe it using <code>which-key</code> or using the <code>:which-key</code> keyword of <code>general</code>
+definition.</li>
+<li>There is no other step. Use your package.</li>
+</ol>
+
+<p>I mean, really. You only need those seven steps. You need <code>use-package</code>,
+<code>general</code>, <code>which-key</code>. And finally you also need <em>abo-abo</em> packages. They are
+just too awesome.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:1">Spacemacs is an editor build on top of emacs that is gaining more and more traction among programmers.
+ <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:1"><sup>[return]</sup></a></li>
+<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:2">Guess what ELPA means ?
+ <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:2"><sup>[return]</sup></a></li>
+<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:3">Go on and follow him. You won&rsquo;t regret it.
+ <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:3"><sup>[return]</sup></a></li>
+<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:4">Check it out <a href="https://github.com/noctuid/general.el">here</a>.
+ <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+                 <a href="/tags/programming/">programming</a>
+            
+                 <a href="/tags/emacs-lisp/">emacs-lisp</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=How%20to%20build%20your%20own%20spacemacs&url=http%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f02%2fhow-to-build-your-own-spacemacs%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f02%2fhow-to-build-your-own-spacemacs%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f02%2fhow-to-build-your-own-spacemacs%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'http:\/\/sam217pa.github.io\/2016\/09\/02\/how-to-build-your-own-spacemacs\/';
+    var disqus_title = 'How to build your own spacemacs';
+    var disqus_url = 'http:\/\/sam217pa.github.io\/2016\/09\/02\/how-to-build-your-own-spacemacs\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                
+                
+                
+                
+            </div>
+        </footer>
+
+        <script src="http://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="http://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="http://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="http://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
