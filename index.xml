@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bacterial Finches</title>
-    <link>http://sam217pa.github.io/</link>
+    <link>https://sam217pa.github.io/</link>
     <description>Recent content on Bacterial Finches</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
     <lastBuildDate>Fri, 02 Sep 2016 21:29:21 +0200</lastBuildDate>
-    <atom:link href="http://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to build your own spacemacs</title>
-      <link>http://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</link>
+      <link>https://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</link>
       <pubDate>Fri, 02 Sep 2016 21:29:21 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</guid>
+      <guid>https://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</guid>
       <description>
 
 &lt;p&gt;Emacs is a great environment to build a text editor. Being a really old piece of
@@ -542,10 +542,10 @@ just too awesome.&lt;/p&gt;
     
     <item>
       <title>Integrate iTerm2 in your Emacs setup</title>
-      <link>http://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</link>
+      <link>https://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</link>
       <pubDate>Thu, 01 Sep 2016 17:48:38 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</guid>
+      <guid>https://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</guid>
       <description>&lt;p&gt;The terminal experience inside emacs being what it is — &lt;em&gt;ie&lt;/em&gt; really slow and
 kinda difficult to use —, I use iTerm2 as my main terminal. I put up three
 little emacs-lisp functions using AppleScript. They allow me to quickly switch
@@ -636,10 +636,10 @@ directory.&lt;/p&gt;
     
     <item>
       <title>How I build my own spacemacs</title>
-      <link>http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</link>
+      <link>https://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</link>
       <pubDate>Tue, 30 Aug 2016 17:57:03 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</guid>
+      <guid>https://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</guid>
       <description>
 
 &lt;p&gt;Spacemacs is a great starter kit. It is the only kit that got my attention. I
@@ -891,10 +891,10 @@ using modern tools.&lt;/p&gt;
     
     <item>
       <title>War of the languages</title>
-      <link>http://sam217pa.github.io/2016/06/30/war-of-the-languages/</link>
+      <link>https://sam217pa.github.io/2016/06/30/war-of-the-languages/</link>
       <pubDate>Thu, 30 Jun 2016 12:52:33 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/06/30/war-of-the-languages/</guid>
+      <guid>https://sam217pa.github.io/2016/06/30/war-of-the-languages/</guid>
       <description>
 
 &lt;h1 id=&#34;chosing-a-language:0e364b36ad4d8508a9d862aa1493b4bd&#34;&gt;Chosing a language&lt;/h1&gt;
@@ -1008,10 +1008,10 @@ reality.&lt;/p&gt;
     
     <item>
       <title>Using LaTeX</title>
-      <link>http://sam217pa.github.io/2016/06/07/using-latex/</link>
+      <link>https://sam217pa.github.io/2016/06/07/using-latex/</link>
       <pubDate>Tue, 07 Jun 2016 14:33:06 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/06/07/using-latex/</guid>
+      <guid>https://sam217pa.github.io/2016/06/07/using-latex/</guid>
       <description>&lt;p&gt;LaTeX is a great tool.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve recently used it to write my master&amp;rsquo;s memoir (accessible
@@ -1036,16 +1036,16 @@ Search on Google, you will see some great examples of Phd Thesis written in
 LaTeX with great figures and diagrams. Nobody can do it inside Microsoft Word.
 Maybe it could be done inside Adobe InDesign, but I have no experience with it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://sam217pa.github.io/images/recombinaison.png&#34; alt=&#34;Homologous Recombination During Natural Transformation&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sam217pa.github.io/images/recombinaison.png&#34; alt=&#34;Homologous Recombination During Natural Transformation&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Migrating to Hugo</title>
-      <link>http://sam217pa.github.io/2016/06/06/switch-to-hugo/</link>
+      <link>https://sam217pa.github.io/2016/06/06/switch-to-hugo/</link>
       <pubDate>Mon, 06 Jun 2016 20:08:11 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/06/06/switch-to-hugo/</guid>
+      <guid>https://sam217pa.github.io/2016/06/06/switch-to-hugo/</guid>
       <description>
 
 &lt;p&gt;I quit Jekyll today. Not a really huge decision to make, the blog is really
@@ -1100,10 +1100,10 @@ really simple to use, much more than Jekyll. And it has great themes.&lt;/p&gt;
     
     <item>
       <title>Changing my Emacs Paradigm</title>
-      <link>http://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</link>
+      <link>https://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</link>
       <pubDate>Mon, 06 Jun 2016 19:47:05 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</guid>
+      <guid>https://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</guid>
       <description>
 
 &lt;p&gt;In my previous
@@ -1178,10 +1178,10 @@ between emacs and the terminal environment.&lt;/p&gt;
     
     <item>
       <title>Recombination and the evolution of base composition in prokaryotic genomes</title>
-      <link>http://sam217pa.github.io/project/projet-gbc/</link>
+      <link>https://sam217pa.github.io/project/projet-gbc/</link>
       <pubDate>Mon, 06 Jun 2016 16:44:43 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/project/projet-gbc/</guid>
+      <guid>https://sam217pa.github.io/project/projet-gbc/</guid>
       <description>
 
 &lt;h1 id=&#34;what-s-all-the-fuss-about-base-composition:425db19f99baa55def903d554e6fa9b0&#34;&gt;What&amp;rsquo;s all the fuss about base composition ?&lt;/h1&gt;
@@ -1309,10 +1309,10 @@ evading property of bacterial genomes…&lt;/p&gt;
     
     <item>
       <title>Emacs in My Toolbox</title>
-      <link>http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</link>
+      <link>https://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</link>
       <pubDate>Sat, 06 Feb 2016 15:42:58 +0100</pubDate>
       
-      <guid>http://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</guid>
+      <guid>https://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</guid>
       <description>
 
 &lt;p&gt;Emacs is a powerful tool. A frequent habit of emacs user is to try to migrate
@@ -1367,10 +1367,10 @@ export to latex, and use &lt;code&gt;latexmk&lt;/code&gt; to export my report to
     
     <item>
       <title>Lectures and Data Visualization</title>
-      <link>http://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</link>
+      <link>https://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</link>
       <pubDate>Wed, 21 Oct 2015 20:40:26 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</guid>
+      <guid>https://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</guid>
       <description>
 
 &lt;p&gt;Powerpoints are everywhere. In our world of science, Powerpoints are the &lt;em&gt;lingua
@@ -1525,10 +1525,10 @@ tool.&lt;/p&gt;
     
     <item>
       <title>Biased Gene Conversion</title>
-      <link>http://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</link>
+      <link>https://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</link>
       <pubDate>Sat, 17 Oct 2015 15:17:18 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</guid>
+      <guid>https://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</guid>
       <description>
 
 &lt;p&gt;Base composition of genomes is affected by many major process, being either
@@ -1618,10 +1618,10 @@ deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
     
     <item>
       <title>Hill-Robertson Effects</title>
-      <link>http://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</link>
+      <link>https://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</link>
       <pubDate>Thu, 15 Oct 2015 19:06:40 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</guid>
+      <guid>https://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -1697,10 +1697,10 @@ cystic fibrosis.&lt;/p&gt;
     
     <item>
       <title>Starting a blog</title>
-      <link>http://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</link>
+      <link>https://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</link>
       <pubDate>Wed, 14 Oct 2015 16:38:14 +0200</pubDate>
       
-      <guid>http://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</guid>
+      <guid>https://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</guid>
       <description>
 
 &lt;p&gt;Following the advice of
@@ -1734,10 +1734,10 @@ to blog some other times.&lt;/p&gt;
     
     <item>
       <title>About</title>
-      <link>http://sam217pa.github.io/page/about/</link>
+      <link>https://sam217pa.github.io/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://sam217pa.github.io/page/about/</guid>
+      <guid>https://sam217pa.github.io/page/about/</guid>
       <description>&lt;p&gt;I am a graduate student of the microbiology school of Lyon, France (see
 &lt;a href=&#34;http://spiralconnect.univ-lyon1.fr/webapp/website/website.html?id=3170502&amp;amp;pageId=216831&#34;&gt;here&lt;/a&gt;).
 I am currently applying for a master thesis, under the supervision of
@@ -1750,14 +1750,14 @@ I am currently applying for a master thesis, under the supervision of
     
     <item>
       <title>Samuel Barreto</title>
-      <link>http://sam217pa.github.io/page/curriculum/</link>
+      <link>https://sam217pa.github.io/page/curriculum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://sam217pa.github.io/page/curriculum/</guid>
+      <guid>https://sam217pa.github.io/page/curriculum/</guid>
       <description>&lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/person.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/person.png&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1777,7 +1777,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/microscope.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/microscope.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1797,7 +1797,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/toolbox.png&#34; alt=&#34;Toolbox&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/toolbox.png&#34; alt=&#34;Toolbox&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1829,7 +1829,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/study2.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/study2.png&#34; alt=&#34;Education&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1863,7 +1863,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/computer2.png&#34; alt=&#34;Computer Skills&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/computer2.png&#34; alt=&#34;Computer Skills&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1899,7 +1899,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/talk.png&#34; alt=&#34;Languages&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/talk.png&#34; alt=&#34;Languages&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
@@ -1918,7 +1918,7 @@ I am currently applying for a master thesis, under the supervision of
 &lt;div class=&#34;sam-header&#34;&gt; &lt;/div&gt;
 &lt;div class=&#34;sam-container&#34;&gt;
     &lt;div class=&#34;sam-first&#34;&gt;
-	&lt;img id=&#34;sam-cv-person&#34; src=&#34;http://sam217pa.github.io/images/CV/music.png&#34; alt=&#34;Hobbies&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
+	&lt;img id=&#34;sam-cv-person&#34; src=&#34;https://sam217pa.github.io/images/CV/music.png&#34; alt=&#34;Hobbies&#34; width=&#34;70&#34; height=&#34;70&#34;&gt;
     &lt;/div&gt;
 
     &lt;div class=&#34;sam-second&#34;&gt;
