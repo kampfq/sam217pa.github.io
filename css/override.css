@@ -45,3 +45,7 @@ figure title {
     font-size: 0.8em;
     text-align: center;
 }
+
+.site-title#en {
+    margin: 0 0 0 10px;
+}
