@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Multilingual Hugo blog with GitHub Pages and Emacs &middot; Samuel Barreto</title>
+        <meta name="description" content="Use git branches and github pages to deploy a multilingual blog">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
+
+        
+
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
+	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300|Fira+Mono|Ubuntu:300&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                        <h1 class="site-title">
+                            <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                        </h1>
+                        
+                        <a class="button-square" href="https://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                        <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        
+                        
+                        <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                            <i class="fa fa-github-alt"></i>
+                        </a>
+                        
+                        
+                        <a class="button-square button-social hint--top" data-hint="Reddit" title="Reddit" href="https://www.reddit.com/user/sam217pa/">
+                            <i class="fa fa-reddit-square"></i>
+                        </a>
+                        
+                        
+                        
+                        
+			<h1 class="site-title" id="en">
+			    <a title="fr" href="https://sam217pa.github.io/fr/">fr</a>
+			</h1>
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Multilingual Hugo blog with GitHub Pages and Emacs</h1>
+    
+        <p class="post-description" itemprop="description">Use git branches and github pages to deploy a multilingual blog</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-09-09" itemprop="datePublished">Fri, Sep 9, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>Hugo is a great platform to deploy a blog with. Unfortunately and unlike Jekyll,
+I found it not very handy to setup a multilingual blog with. It has support for
+<a href="https://gohugo.io/tutorials/create-a-multilingual-site/">multilingual blog</a>,
+but I think it is kind of hard to follow the guide.</p>
+
+<p>So I decided to simply use git and git branches to build my blog with. And it
+works really well. If you are interested in building a multilingual blog with
+Hugo and GitHub Pages, please follow along.</p>
+
+<p>We are going to use the <code>master</code> branch to manage the english content of a hugo
+website, and a <code>french</code> branch to translate this content to another hugo
+website. The static english version of the site will be served by your GitHub
+Pages main page, and the static french version will be served by the <code>gh-pages</code>
+branch of another repo.</p>
+
+<h1 id="first-things-first-create-your-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303">First things first, create your blog</h1>
+
+<p>Hugo has a really nice <a href="https://gohugo.io/overview/quickstart/">tutorial</a> to
+explain how to create your website with it, but I want to explain some steps in
+a little more details. Type the following command at the command line to create
+a scaffold of a hugo website in the <code>my-website</code> directory.</p>
+
+<pre><code class="language-bash">hugo new site my-website
+</code></pre>
+
+<p>Now type this one to go into your hugo website and download a theme to use for
+your blog. I chosed <code>ghostwriter</code> for obvious reasons but there are lots of
+other good themes for hugo.</p>
+
+<pre><code class="language-bash">cd my-website
+mkdir themes
+cd themes
+git clone https://github.com/jbub/ghostwriter
+cd ..
+</code></pre>
+
+<p>Now edit <code>config.toml</code> and add the following lines to it:</p>
+
+<pre><code class="language-bash">themes = &quot;ghostwriter&quot;
+</code></pre>
+
+<p>Go check <a href="http://themes.gohugo.io/ghostwriter/">this page</a> for explanation on
+how to setup a ghostwriter-enabled website.</p>
+
+<p>Now type:</p>
+
+<pre><code class="language-bash">hugo serve
+</code></pre>
+
+<p>It deploys a website on the <a href="http://localhost:1313/">http://localhost:1313/</a> port.</p>
+
+<h1 id="write-your-first-post:87b2ce5efaaf4d0ccfffdf4dbb22e303">Write your first post</h1>
+
+<p>Type :</p>
+
+<pre><code class="language-bash">hugo new post/my-first-post-ever.md
+</code></pre>
+
+<p>to create a new post and edit it with your favorite editor. Of course, at this
+point your favorite editor should be Emacs, for reasons I&rsquo;ll explain below, but
+you may chose another.</p>
+
+<p>Now that you are satisfied with your first post, we are going to use git to
+manage the building of our website.</p>
+
+<h1 id="manage-your-blog-with-git:87b2ce5efaaf4d0ccfffdf4dbb22e303">Manage your blog with git</h1>
+
+<p>Type the following commands at the command line.</p>
+
+<pre><code class="language-bash">git init
+echo &quot;public/&quot; &gt; .gitignore
+echo &quot;public-fr/&quot; &gt;&gt; .gitignore
+echo &quot;themes/&quot; &gt;&gt; .gitignore
+git add .
+git commit -m &quot;first commit and first post&quot;
+</code></pre>
+
+<p>Git must not track the <code>themes</code> and <code>public</code> directories. The themes directory
+is already managed by git, since the themes are on their own git repo. The
+public directories are going to be the directory that contains the static
+version of our website, and will point to another repo.</p>
+
+<p>Now the master branch is setup to track the &ldquo;english&rdquo; version of your blog. We
+must setup a branch to track the &ldquo;french&rdquo; (or german or swahili if you prefer
+swahili to french) version of our blog.</p>
+
+<pre><code class="language-bash">git branch french
+git checkout french
+</code></pre>
+
+<p>Now edit your first post, and translate everything that need to be translated in
+french (or swahili).</p>
+
+<pre><code class="language-bash">git add content/post/my-first-post-ever.md
+git commit -m &quot;translated first post in english&quot;
+</code></pre>
+
+<p>We now need to build the website with hugo. We are going to deploy the french
+version in <code>public-fr</code> and the english version in <code>public</code>.</p>
+
+<pre><code class="language-bash">mkdir public-fr
+hugo -d public-fr
+</code></pre>
+
+<p>If you <code>ls public-fr</code>, you will see that hugo built the static website. Let us
+deploy the english version.</p>
+
+<pre><code class="language-bash">git checkout master
+hugo -d public
+</code></pre>
+
+<h1 id="host-your-pages-on-github-pages:87b2ce5efaaf4d0ccfffdf4dbb22e303">Host your pages on GitHub Pages</h1>
+
+<p>Now follow the instruction <a href="https://pages.github.com/">here</a> to use GitHub pages
+to deploy your own website.</p>
+
+<pre><code class="language-bash">cd public
+git init
+echo &quot;# english version of my personal website&quot; &gt; README.md
+git add .
+git commit -m &quot;website updated&quot;
+git remote add origin https://github.com/username/username.git
+git push -u
+</code></pre>
+
+<p>We are going to use another GitHub repo to publish the french version of the
+website. Open a new repo on github, and call it <code>fr</code>, or <code>sw</code> if you still
+prefer swahili. Now type at the command line:</p>
+
+<pre><code class="language-bash">cd ../public-fr/
+git init
+echo &quot;# french version of my personal website&quot; &gt; README.md
+git add .
+git commit -m &quot;site à jour&quot;
+git branch gh-pages
+git checkout gh-pages
+git remote add origin https://github.com/username/fr.git
+</code></pre>
+
+<p>GitHub will now serve the french version of your website to
+<a href="https://yourusername.github.io/fr/">https://yourusername.github.io/fr/</a>. I really love GitHub Pages.</p>
+
+<p>That&rsquo;s it, you can now setup a button as a link that points to your english
+version on the french website if you want.</p>
+
+<h1 id="use-emacs-to-manage-your-hugo-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303">Use Emacs to manage your Hugo blog</h1>
+
+<p>Here I&rsquo;ll just point to another blog post from
+<a href="https://blog.tohojo.dk/2015/10/integrating-hugo-into-emacs.html">Toke Høiland-Jørgensen</a>.
+He uses some custom elisp to wrap simple Hugo commands and manage his blog from
+Emacs.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/blogging/">blogging</a>
+            
+                 <a href="/tags/git/">git</a>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+                 <a href="/tags/github/">github</a>
+            
+                 <a href="/tags/hugo/">hugo</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Multilingual%20Hugo%20blog%20with%20GitHub%20Pages%20and%20Emacs&url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f09%2fsetup-a-multilingual-hugo-blog-with-emacs-and-github%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f09%2fsetup-a-multilingual-hugo-blog-with-emacs-and-github%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f09%2fsetup-a-multilingual-hugo-blog-with-emacs-and-github%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'https:\/\/sam217pa.github.io\/2016\/09\/09\/setup-a-multilingual-hugo-blog-with-emacs-and-github\/';
+    var disqus_title = 'Multilingual Hugo blog with GitHub Pages and Emacs';
+    var disqus_url = 'https:\/\/sam217pa.github.io\/2016\/09\/09\/setup-a-multilingual-hugo-blog-with-emacs-and-github\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                
+                
+                
+                
+            </div>
+        </footer>
+
+        <script src="https://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="https://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+

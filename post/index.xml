@@ -7,8 +7,170 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Fri, 02 Sep 2016 21:29:21 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 09 Sep 2016 14:29:08 +0200</lastBuildDate>
     <atom:link href="https://sam217pa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Multilingual Hugo blog with GitHub Pages and Emacs</title>
+      <link>https://sam217pa.github.io/2016/09/09/setup-a-multilingual-hugo-blog-with-emacs-and-github/</link>
+      <pubDate>Fri, 09 Sep 2016 14:29:08 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/09/setup-a-multilingual-hugo-blog-with-emacs-and-github/</guid>
+      <description>
+
+&lt;p&gt;Hugo is a great platform to deploy a blog with. Unfortunately and unlike Jekyll,
+I found it not very handy to setup a multilingual blog with. It has support for
+&lt;a href=&#34;https://gohugo.io/tutorials/create-a-multilingual-site/&#34;&gt;multilingual blog&lt;/a&gt;,
+but I think it is kind of hard to follow the guide.&lt;/p&gt;
+
+&lt;p&gt;So I decided to simply use git and git branches to build my blog with. And it
+works really well. If you are interested in building a multilingual blog with
+Hugo and GitHub Pages, please follow along.&lt;/p&gt;
+
+&lt;p&gt;We are going to use the &lt;code&gt;master&lt;/code&gt; branch to manage the english content of a hugo
+website, and a &lt;code&gt;french&lt;/code&gt; branch to translate this content to another hugo
+website. The static english version of the site will be served by your GitHub
+Pages main page, and the static french version will be served by the &lt;code&gt;gh-pages&lt;/code&gt;
+branch of another repo.&lt;/p&gt;
+
+&lt;h1 id=&#34;first-things-first-create-your-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;First things first, create your blog&lt;/h1&gt;
+
+&lt;p&gt;Hugo has a really nice &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;tutorial&lt;/a&gt; to
+explain how to create your website with it, but I want to explain some steps in
+a little more details. Type the following command at the command line to create
+a scaffold of a hugo website in the &lt;code&gt;my-website&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new site my-website
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now type this one to go into your hugo website and download a theme to use for
+your blog. I chosed &lt;code&gt;ghostwriter&lt;/code&gt; for obvious reasons but there are lots of
+other good themes for hugo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd my-website
+mkdir themes
+cd themes
+git clone https://github.com/jbub/ghostwriter
+cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now edit &lt;code&gt;config.toml&lt;/code&gt; and add the following lines to it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;themes = &amp;quot;ghostwriter&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Go check &lt;a href=&#34;http://themes.gohugo.io/ghostwriter/&#34;&gt;this page&lt;/a&gt; for explanation on
+how to setup a ghostwriter-enabled website.&lt;/p&gt;
+
+&lt;p&gt;Now type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo serve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It deploys a website on the &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; port.&lt;/p&gt;
+
+&lt;h1 id=&#34;write-your-first-post:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Write your first post&lt;/h1&gt;
+
+&lt;p&gt;Type :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new post/my-first-post-ever.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to create a new post and edit it with your favorite editor. Of course, at this
+point your favorite editor should be Emacs, for reasons I&amp;rsquo;ll explain below, but
+you may chose another.&lt;/p&gt;
+
+&lt;p&gt;Now that you are satisfied with your first post, we are going to use git to
+manage the building of our website.&lt;/p&gt;
+
+&lt;h1 id=&#34;manage-your-blog-with-git:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Manage your blog with git&lt;/h1&gt;
+
+&lt;p&gt;Type the following commands at the command line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+echo &amp;quot;public/&amp;quot; &amp;gt; .gitignore
+echo &amp;quot;public-fr/&amp;quot; &amp;gt;&amp;gt; .gitignore
+echo &amp;quot;themes/&amp;quot; &amp;gt;&amp;gt; .gitignore
+git add .
+git commit -m &amp;quot;first commit and first post&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Git must not track the &lt;code&gt;themes&lt;/code&gt; and &lt;code&gt;public&lt;/code&gt; directories. The themes directory
+is already managed by git, since the themes are on their own git repo. The
+public directories are going to be the directory that contains the static
+version of our website, and will point to another repo.&lt;/p&gt;
+
+&lt;p&gt;Now the master branch is setup to track the &amp;ldquo;english&amp;rdquo; version of your blog. We
+must setup a branch to track the &amp;ldquo;french&amp;rdquo; (or german or swahili if you prefer
+swahili to french) version of our blog.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch french
+git checkout french
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now edit your first post, and translate everything that need to be translated in
+french (or swahili).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add content/post/my-first-post-ever.md
+git commit -m &amp;quot;translated first post in english&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We now need to build the website with hugo. We are going to deploy the french
+version in &lt;code&gt;public-fr&lt;/code&gt; and the english version in &lt;code&gt;public&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir public-fr
+hugo -d public-fr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you &lt;code&gt;ls public-fr&lt;/code&gt;, you will see that hugo built the static website. Let us
+deploy the english version.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout master
+hugo -d public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;host-your-pages-on-github-pages:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Host your pages on GitHub Pages&lt;/h1&gt;
+
+&lt;p&gt;Now follow the instruction &lt;a href=&#34;https://pages.github.com/&#34;&gt;here&lt;/a&gt; to use GitHub pages
+to deploy your own website.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd public
+git init
+echo &amp;quot;# english version of my personal website&amp;quot; &amp;gt; README.md
+git add .
+git commit -m &amp;quot;website updated&amp;quot;
+git remote add origin https://github.com/username/username.git
+git push -u
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We are going to use another GitHub repo to publish the french version of the
+website. Open a new repo on github, and call it &lt;code&gt;fr&lt;/code&gt;, or &lt;code&gt;sw&lt;/code&gt; if you still
+prefer swahili. Now type at the command line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ../public-fr/
+git init
+echo &amp;quot;# french version of my personal website&amp;quot; &amp;gt; README.md
+git add .
+git commit -m &amp;quot;site à jour&amp;quot;
+git branch gh-pages
+git checkout gh-pages
+git remote add origin https://github.com/username/fr.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;GitHub will now serve the french version of your website to
+&lt;a href=&#34;https://yourusername.github.io/fr/&#34;&gt;https://yourusername.github.io/fr/&lt;/a&gt;. I really love GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it, you can now setup a button as a link that points to your english
+version on the french website if you want.&lt;/p&gt;
+
+&lt;h1 id=&#34;use-emacs-to-manage-your-hugo-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Use Emacs to manage your Hugo blog&lt;/h1&gt;
+
+&lt;p&gt;Here I&amp;rsquo;ll just point to another blog post from
+&lt;a href=&#34;https://blog.tohojo.dk/2015/10/integrating-hugo-into-emacs.html&#34;&gt;Toke Høiland-Jørgensen&lt;/a&gt;.
+He uses some custom elisp to wrap simple Hugo commands and manage his blog from
+Emacs.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to build your own spacemacs</title>
