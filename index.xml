@@ -7,8 +7,106 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Fri, 09 Sep 2016 14:29:08 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Sep 2016 12:36:10 +0200</lastBuildDate>
     <atom:link href="https://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Nuclear weapon multi-editing via Ivy and Ag</title>
+      <link>https://sam217pa.github.io/2016/09/11/nuclear-power-editing-via-ivy-and-ag/</link>
+      <pubDate>Sun, 11 Sep 2016 12:36:10 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/11/nuclear-power-editing-via-ivy-and-ag/</guid>
+      <description>
+
+&lt;p&gt;Sometimes when I am working on a project, I use project-wide variable or
+function definition. So I name them.&lt;/p&gt;
+
+&lt;p&gt;I usually suck at naming.&lt;/p&gt;
+
+&lt;p&gt;So when I think of a better name, I need a way to change it globally, &lt;em&gt;ie&lt;/em&gt; in
+all the files of the current project that uses it.&lt;/p&gt;
+
+&lt;p&gt;In Spacemacs, I have heard of what Fabien Dubosson, one of the main Spacemacs
+dev, called the
+&lt;a href=&#34;https://gitter.im/syl20bnr/spacemacs?at=573d831c0cb634927f80545e&#34;&gt;&amp;ldquo;nuclear weapon of multi-editing&amp;rdquo;&lt;/a&gt;.
+When I switched from Helm to Ivy, I looked for a way to do the same thing.&lt;/p&gt;
+
+&lt;p&gt;It turned out that Ivy-occur has nice integration with Wgrep since Ivy version
+&lt;a href=&#34;http://oremacs.com/2016/04/26/ivy-0.8.0/&#34;&gt;0.8&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;nuclear-weapon-multi-editing:d073c1575770588aabd9999611cd6aff&#34;&gt;Nuclear-weapon multi-editing :&lt;/h1&gt;
+
+&lt;p&gt;I call &lt;code&gt;counsel-ag&lt;/code&gt;, to search for the string I want to modify in the current
+directory. By default, &lt;code&gt;ag&lt;/code&gt; (and &lt;code&gt;counsel-ag&lt;/code&gt;) will ignore files ignored by git.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://s12.postimg.org/u0co6huct/first_step.png&#34; alt=&#34;Call counsel-ag and type edit&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Call counsel-ag and type edit
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I press &lt;code&gt;C-c C-o&lt;/code&gt; (&lt;code&gt;ivy-occur&lt;/code&gt;) in the search result. It opens an &lt;code&gt;ivy-occur&lt;/code&gt;
+buffer.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://s10.postimg.org/ssiucf35l/second_step.png&#34; alt=&#34;Press C-c C-o prints this buffer.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Press C-c C-o prints this buffer.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I switch to this buffer and press &lt;code&gt;C-x C-q&lt;/code&gt; (&lt;code&gt;ivy-wgrep-change-to-wgrep-mode&lt;/code&gt;)
+to edit it. I can now change each variable name globally using normal search and
+replace techniques. I use Evil-ex commands &lt;code&gt;:%s/pattern/replace/g&lt;/code&gt; but you may
+use others as well (I have heard good things of Iedit too…).&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://s14.postimg.org/s6ahj1eq9/third_step.png&#34; alt=&#34;Replace edit globally with potatoes.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Replace edit globally with potatoes.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I then press &lt;code&gt;C-c C-c&lt;/code&gt; (&lt;code&gt;wgrep-finish-edit&lt;/code&gt;). Now every occurence of the word
+&lt;em&gt;edit&lt;/em&gt; in all files has been replaced with &lt;em&gt;potatoes&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ivy is great.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Multilingual Hugo blog with GitHub Pages and Emacs</title>
@@ -1891,22 +1989,6 @@ and I try my best to be good at it. I&amp;rsquo;ll certainly blog on it sometime
 
 &lt;p&gt;I also loves &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Emacs&lt;/a&gt;, on which I&amp;rsquo;ll try
 to blog some other times.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://sam217pa.github.io/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sam217pa.github.io/page/about/</guid>
-      <description>&lt;p&gt;I am a graduate student of the microbiology school of Lyon, France (see
-&lt;a href=&#34;http://spiralconnect.univ-lyon1.fr/webapp/website/website.html?id=3170502&amp;amp;pageId=216831&#34;&gt;here&lt;/a&gt;).
-I am currently applying for a master thesis, under the supervision of
-&lt;a href=&#34;https://lbbe.univ-lyon1.fr/-Duret-Laurent-.html&#34;&gt;Laurent Duret&lt;/a&gt; and
-&lt;a href=&#34;http://www.researchgate.net/profile/Franck_Bertolla&#34;&gt;Franck Bertolla&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I like Evolution, Microorganisms, Computers, Simplicity, Science, and Life.&lt;/p&gt;
 </description>
     </item>
     
