@@ -49,3 +49,7 @@ figure title {
 .site-title#en {
     margin: 0 0 0 10px;
 }
+
+pre {
+    background: #fdf6e3;
+}

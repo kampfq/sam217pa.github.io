@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>From helm, to ivy &middot; Samuel Barreto</title>
+        <meta name="description" content="A user perspective.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.15" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
+
+        
+
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
+	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Fira+Mono|Ubuntu:300&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69057337-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                        <h1 class="site-title">
+                            <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                        </h1>
+                        
+                        <a class="button-square" href="https://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                        <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        
+                        
+                        <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
+                            <i class="fa fa-github-alt"></i>
+                        </a>
+                        
+                        
+                        <a class="button-square button-social hint--top" data-hint="Reddit" title="Reddit" href="https://www.reddit.com/user/sam217pa/">
+                            <i class="fa fa-reddit-square"></i>
+                        </a>
+                        
+                        
+                        
+                        
+			<h1 class="site-title" id="en">
+			    <a title="fr" href="https://sam217pa.github.io/fr/">fr</a>
+			</h1>
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">From helm, to ivy</h1>
+    
+        <p class="post-description" itemprop="description">A user perspective.</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-09-13" itemprop="datePublished">Tue, Sep 13, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Recently, I have seen a lot of Emacs users showing interest in Ivy.
+Most of them already know Helm or Ido. When someone asked
+<a href="https://www.reddit.com/r/emacs/comments/51lqn9/helm_or_ivy/">Helm or Ivy?</a>
+on reddit, I thought that I could give my opinion on Ivy, since I am
+an ex-Helm zealot.</p>
+
+
+<figure >
+    <a href="http://www.feer-mcqueen.com/blog/minimalism-vs-maximalism/">
+        <img src="http://www.feer-mcqueen.com/blog/wp-content/uploads/2015/11/miimalism-vs.-maximilasim-700x334.jpg" alt="Maximalists vs minimalists." />
+    </a>
+    
+    <figcaption>
+        <p>
+        Maximalists vs minimalists.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p><strong>Helm and Ivy are completion frameworks</strong>. It means they are tools
+that the Emacs ecosystem can use to narrow the field of possibilities
+after a given user input. The most common example that comes to mind
+is searching for files. Helm and Ivy helps the user to quickly search
+for files.</p>
+
+<p>They are frameworks. It means they can be used by much more complex
+commands that needs narrowing or completion. As an example, Helm has a
+command that emulate the google search bar, and get google suggests as
+you type (<code>helm-google-suggest</code>).</p>
+
+<p>Ivy and Helm have very similar goals, but the approach they take is
+very different.</p>
+
+<p><strong>Here I want to compare the tools, from a user point of view.</strong> What
+I mean by user perspective is that I want to compare Ivy and Helm
+without knowing how they works internally. I do not know enough
+<code>elisp</code> to be able to compare their internals. But I used them both,
+and can give you my feedback on how I, as a <em>user</em>, felt the
+difference between the tools. And finally, why I switched from Helm to
+Ivy.</p>
+
+<p>I want to start with Helm. When I used Spacemacs, I learned the Helm
+way. I learned how to <em>use</em> it, how to <em>customize</em> it, and how to
+<em>tailor</em> it to my needs. I guess I would qualify as a medium-level
+Helm user. I have read
+<a href="http://tuhdo.github.io/helm-intro.html">this post</a> and
+<a href="http://tuhdo.github.io/helm-projectile.html">this one</a> and
+<a href="https://github.com/emacs-helm/helm/wiki">this wiki too</a>, and used it
+every day for one year.</p>
+
+
+<figure >
+    <a href="https://www.pexels.com/photo/red-closed-penknife-on-the-desk-6172/">
+        <img src="https://s13.postimg.org/kre67gsfr/swiss_knife.jpg" alt="Helm is an Emacs swiss knife." />
+    </a>
+    
+    <figcaption>
+        <p>
+        Helm is an Emacs swiss knife.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p><strong>Helm is a very mature tool.</strong> According to its git commit history,
+work on Helm really started around 2009. At the time of writing, the
+official Helm git repository has 26k lines of emacs-lisp code.</p>
+
+<pre><code class="language-bash">git clone https://github.com/emacs-helm/helm.git
+cd helm
+cat *.el | wc -l
+# =&gt; 26431
+</code></pre>
+
+<p>This does not take into account the 142 packages that a query for
+&ldquo;helm&rdquo; returns on MELPA. You can do anything with Helm<sup class="footnote-ref" id="fnref:b22ac7be25cb84dac5370bf27958d01e:1"><a rel="footnote" href="#fn:b22ac7be25cb84dac5370bf27958d01e:1">1</a></sup>.</p>
+
+<p>Its main strength is that you can integrate and wrap many Emacs
+behavior with it. You can build an interface totally centered around
+Helm, just like Spacemacs did. It allows for a really really
+consistent interface. Everything goes through Helm.</p>
+
+<p>You can search files, search buffer, search colors, search project,
+search recently edited files, search system process, search music,
+search the internet, search completion, search snippets, search
+regexp, search commands, documentation, a-propos, infos, … You can
+manage your project with Helm-projectile, a nice wrapping around
+Projectile. You can generate gitignore with
+<a href="https://www.gitignore.io/">gitignore.io</a>. You can manage your
+bibliography with Helm-bibtex. You can browse Firefox bookmarks.</p>
+
+
+<figure >
+    
+        <img src="https://s9.postimg.org/vk1xngpn3/helm_google_suggest.gif" alt="Search Google from Emacs with Helm." />
+    
+    
+    <figcaption>
+        <p>
+        Search Google from Emacs with Helm.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>You can do anything with Helm.</p>
+
+<p>The end result is a very convenient tool to use, as the great majority
+of Spacemacs users can tell you. The major drawback it has is that
+it is a big behemoth size package. I think it is an <code>elisp</code> exploit
+from the devs to have succeeded in making Helm a very fast tool
+despite its size.</p>
+
+<p>And yet it sometimes feels like an overblown solution to simple
+problems. It can be clumsy to configure. It can sometimes have strange
+behaviors, causing lags or make Emacs use 100% of a core, even for
+simple queries. Maybe an expert Helm user reading this can put those
+lags on me not being an <code>elisp</code> expert, but still. Despite having used
+it for more than a year, I did not find the way to make it more
+stable. I think it tells something about the &ldquo;overblown problem&rdquo; I was
+talking about.</p>
+
+<p>You can do anything with Helm. But you don&rsquo;t need to do anything. Just
+because you can does not mean you should. After a year of using it,
+I can tell you that I have only used a third or less of Helm&rsquo;s
+abilities. Some functions I thought were great, I re-discovered by
+reading <a href="http://tuhdo.github.io/helm-intro.html">this post</a> yesterday.
+Most of the time, I used simple commands to switch buffers, or list
+files.</p>
+
+<blockquote>
+<p>Helm is only a package for completion, just like ido or ivy. It may
+be easy to use, once someone has gone through the trouble of setting
+it up, but it&rsquo;s hard to get it to do exactly what you want. Some
+people are fine with black boxes, as long as they give them nice
+things, I&rsquo;m not.</p>
+
+<p>— abo-abo, developper of Ivy, on the &ldquo;Why not Helm ?&rdquo; issue,
+<a href="https://github.com/abo-abo/swiper/issues/3">here</a>.</p>
+</blockquote>
+
+
+<figure >
+    <a href="https://headseye.wordpress.com/2012/05/19/opinel-no-7/">
+        <img src="https://s13.postimg.org/vcy1jgyrb/opinel.jpg" alt="Ivy does only one thing. And …" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Ivy does only one thing. And …
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p><strong>Ivy strives for minimalism, simplicity, customizability and
+discoverability.</strong> Those four adjectives tells a lot about the
+paradigm difference between the two. Read
+<a href="http://oremacs.com/swiper/">the introduction</a> of the Ivy
+documentation to have a good idea of what Ivy strives for.</p>
+
+<p>At the time of writing, Ivy only has 3.4k lines of code. The ecosystem
+built around it — <em>ie</em> Swiper and Counsel — is 7.5k lines of code
+long.</p>
+
+<pre><code class="language-bash">git clone https://github.com/abo-abo/swiper.git
+cd swiper
+## Only ivy ?
+cat ivy.el | wc -l
+# =&gt; 3442
+
+## count lines of code into the whole swiper ecosystem
+cat *.el | wc -l
+# =&gt; 7526
+</code></pre>
+
+<p>Ivy is really simple to use. Here is my whole setup.</p>
+
+<pre><code class="language-lisp">(use-package ivy :ensure t
+  :diminish (ivy-mode . &quot;&quot;)
+  :bind
+  (:map ivy-mode-map
+   (&quot;C-'&quot; . ivy-avy))
+  :config
+  (ivy-mode 1)
+  ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
+  (setq ivy-use-virtual-buffers t)
+  ;; number of result lines to display
+  (setq ivy-height 10)
+  ;; does not count candidates
+  (setq ivy-count-format &quot;&quot;)
+  ;; no regexp by default
+  (setq ivy-initial-inputs-alist nil)
+  ;; configure regexp engine.
+  (setq ivy-re-builders-alist
+	;; allow input not in order
+        '((t   . ivy--regex-ignore-order))))
+</code></pre>
+
+<p>Ivy is unobtrusive. It does not want you to integrate everything with
+it. It simply is the power house of your completion. You cannot do
+everything that the Helm ecosystem does with Ivy. So why did I
+switched to Ivy ?</p>
+
+<p>Despite being minimalistic, I was able to replace most of my common
+Helm use cases with Ivy. Because Ivy is so minimalistic, abo-abo built
+a package on top of it called Counsel. Counsel offers you many many
+tricks that you might like from Helm.</p>
+
+<p>You can switch buffers, search files, get project-wide search and
+replace, get Projectile integration, search recently edited files,
+search Emacs command, search documentation, search keybindings, browse
+the kill-ring …</p>
+
+
+<figure >
+    
+        <img src="https://s18.postimg.org/dunrn0eg9/swiper.gif" alt="Searching with Swiper. Really really fast." />
+    
+    
+    <figcaption>
+        <p>
+        Searching with Swiper. Really really fast.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p><strong>Let me describe how I replaced Helm with Ivy.</strong> Here is an overview
+of the most common Helm commands I needed to replace with Ivy. It was
+basically the functions I used all the time. I <code>ivy-switch-buffer</code> like
+three times per minute. I used <code>helm-swoop</code> fifty times a day, and
+<code>swiper</code> is just as good if not better. It is faster. For huge files,
+Counsel has <code>counsel-grep-or-swiper</code>. I have tested it on really
+really huge made up files (1M lines or so). It did not tremble.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Helm</th>
+<th align="left">Ivy</th>
+<th align="left">What ?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">helm-mini</td>
+<td align="left">ivy-switch-buffer</td>
+<td align="left">search for currently opened buffers</td>
+</tr>
+
+<tr>
+<td align="left">helm-recentf</td>
+<td align="left">counsel-recentf</td>
+<td align="left">search for recently edited files</td>
+</tr>
+
+<tr>
+<td align="left">helm-find-files</td>
+<td align="left">counsel-find-files</td>
+<td align="left">search files starting from <code>./</code></td>
+</tr>
+
+<tr>
+<td align="left">helm-ag</td>
+<td align="left">counsel-ag</td>
+<td align="left">search regexp occurence in current project</td>
+</tr>
+
+<tr>
+<td align="left">helm-grep-do-git-grep</td>
+<td align="left">counsel-git-grep</td>
+<td align="left">search regexp in current project</td>
+</tr>
+
+<tr>
+<td align="left">helm-swoop</td>
+<td align="left">swiper</td>
+<td align="left">search string interactively in current buffer</td>
+</tr>
+
+<tr>
+<td align="left">helm-show-kill-ring</td>
+<td align="left">counsel-yank-pop</td>
+<td align="left">search copy-paste history</td>
+</tr>
+
+<tr>
+<td align="left">helm-projectile</td>
+<td align="left">counsel-projectile</td>
+<td align="left">search project and file in it</td>
+</tr>
+
+<tr>
+<td align="left">?</td>
+<td align="left">counsel-git</td>
+<td align="left">search file in current git project</td>
+</tr>
+
+<tr>
+<td align="left">helm-themes</td>
+<td align="left">counsel-load-theme</td>
+<td align="left">switch themes</td>
+</tr>
+
+<tr>
+<td align="left">helm-descbinds</td>
+<td align="left">counsel-descbinds</td>
+<td align="left">describe keybindings and associated functions</td>
+</tr>
+
+<tr>
+<td align="left">helm-M-x</td>
+<td align="left">counsel-M-x</td>
+<td align="left">enhanced M-x command</td>
+</tr>
+</tbody>
+</table>
+
+<p>I think you can see that Ivy based commands have nothing to be ashamed
+of. They can replace every common use cases of Helm. I am not saying
+that you can do everything Helm does with Ivy. But it is already very
+convenient. And as I said, I don&rsquo;t need to do everything Helm does.</p>
+
+<p>To speak of completion paradigm, the difference is not that obvious
+between Helm and Ivy. What I can tell you, as a <em>user</em>, is that Ivy
+<em>feels</em> less cluttered, snappier, more intuitive, self-explanatory and
+really understandable. Every completion is predictable.</p>
+
+<p><strong>In the end, it really is a matter of personal taste.</strong> To me the
+&ldquo;Ivy or Helm&rdquo; debate is very similar to debates likes Emacs or
+Spacemacs, Emacs or an IDE, C or Java, minimalistic or full-blown.
+Thelonious or Duke. Van Der Rohe or Gaudi.</p>
+
+
+<figure >
+    
+        <img src="https://s13.postimg.org/5321kot1z/van_der_rohe.png" alt="This Mies Van Der Rohe designed pavillion is to architecture what Ivy is to Emacs." />
+    
+    
+    <figcaption>
+        <p>
+        This Mies Van Der Rohe designed pavillion is to architecture what Ivy is to Emacs.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+
+<figure >
+    
+        <img src="https://s13.postimg.org/ad70bzdav/gaudi.jpg" alt="The Gaudi way. The Helm way." />
+    
+    
+    <figcaption>
+        <p>
+        The Gaudi way. The Helm way.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>With Helm you get a huge package, a full list of features you will
+never use, a whole bunch of functions you will use occasionally, and a
+short list of functions you will use fifty times an hour. With Ivy you
+get a small package with only essentials functions that does not get
+in your way, and that you can extend easily through Counsel or very
+simple functions:</p>
+
+<pre><code class="language-lisp">(ivy-read &quot;Pick:&quot; (mapcar #'number-to-string (number-sequence 1 10)))
+</code></pre>
+
+<p>With Helm:</p>
+
+<pre><code class="language-lisp">(helm
+ :sources
+  (helm-build-sync-source &quot;one-to-ten&quot;
+    :candidates
+    (mapcar #'number-to-string (number-sequence 1 10))
+    :fuzzy-match t)
+  :buffer
+  &quot;*helm one-to-ten*&quot;)
+</code></pre>
+
+<p>Helm makes a lot of choices for the users. Ivy lets them tailor it to
+their needs. Helm uses a lot of memory to be very fast. Ivy stays
+simple to be very fast. Helm is mature. Ivy is young. Helm offers
+consistency across Emacs. Ivy offers simplicity and predictability.
+Helm ask you a rather involved setup. Ivy works out of the box.</p>
+
+<p>I am a little biased towards Ivy, since I use it. It suits my tastes
+better. But as a user, Helm and Ivy does not feel that different. They
+are both great packages, that chose a very different approach for the
+same goal.</p>
+
+<p><div class="reddit-embed" data-embed-media="www.redditmedia.com"
+data-embed-parent="false" data-embed-live="false"
+data-embed-uuid="36b96121-6628-470a-82a9-dbacdc593a42"
+data-embed-created="2016-09-13T11:22:25.426Z"><a
+href="https://www.reddit.com/r/emacs/comments/51lqn9/helm_or_ivy/d7dmed8">Comment</a>
+from discussion <a
+href="https://www.reddit.com/r/emacs/comments/51lqn9/helm_or_ivy/">Helm
+or ivy?</a>.</div><script async
+src="https://www.redditstatic.com/comment-embed.js"></script></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:b22ac7be25cb84dac5370bf27958d01e:1">The package that inspired Helm is called Anything by the way.
+ <a class="footnote-return" href="#fnref:b22ac7be25cb84dac5370bf27958d01e:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+                 <a href="/tags/helm/">helm</a>
+            
+                 <a href="/tags/ivy/">ivy</a>
+            
+                 <a href="/tags/opinions/">opinions</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=From%20helm%2c%20to%20ivy&url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f13%2ffrom-helm-to-ivy%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f13%2ffrom-helm-to-ivy%2f"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f13%2ffrom-helm-to-ivy%2f"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+           <i class="fa fa-google-plus"></i>
+            <span class="hidden">Google+</span>
+        </a>
+    </div>
+</footer>
+
+        
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sam217pagithubio';
+    var disqus_identifier = 'https:\/\/sam217pa.github.io\/2016\/09\/13\/from-helm-to-ivy\/';
+    var disqus_title = 'From helm, to ivy';
+    var disqus_url = 'https:\/\/sam217pa.github.io\/2016\/09\/13\/from-helm-to-ivy\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                
+                
+                
+                
+            </div>
+        </footer>
+
+        <script src="https://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="https://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
