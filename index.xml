@@ -151,13 +151,12 @@ it for more than a year, I did not find the way to make it more
 stable. I think it tells something about the &amp;ldquo;overblown problem&amp;rdquo; I was
 talking about.&lt;/p&gt;
 
-&lt;p&gt;You can do anything with Helm. But you don&amp;rsquo;t need to do anything. Just
-because you can does not mean you should. After a year of using it,
-I can tell you that I have only used a third or less of Helm&amp;rsquo;s
-abilities. Some functions I thought were great, I re-discovered by
-reading &lt;a href=&#34;http://tuhdo.github.io/helm-intro.html&#34;&gt;this post&lt;/a&gt; yesterday.
-Most of the time, I used simple commands to switch buffers, or list
-files.&lt;/p&gt;
+&lt;p&gt;You can do anything with Helm. But you don&amp;rsquo;t need to. Just because you
+can does not mean you should. After a year of using it, I can tell you
+that I have only used a third or less of Helm&amp;rsquo;s abilities. Some
+functions I thought were great, I re-discovered by reading
+&lt;a href=&#34;http://tuhdo.github.io/helm-intro.html&#34;&gt;this post&lt;/a&gt; yesterday. Most of
+the time, I used simple commands to switch buffers, or list files.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Helm is only a package for completion, just like ido or ivy. It may
