@@ -332,7 +332,7 @@ really huge made up files (1M lines or so). It did not tremble.&lt;/p&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;?&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;helm-ls-git-ls&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;counsel-git&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;search file in current git project&lt;/td&gt;
 &lt;/tr&gt;
@@ -428,6 +428,11 @@ simple functions:&lt;/p&gt;
     :fuzzy-match t)
   :buffer
   &amp;quot;*helm one-to-ten*&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or the simpler form:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(helm-comp-read &amp;quot;Pick:&amp;quot; (mapcar #&#39;number-to-string (number-sequence 1 10)))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Helm makes a lot of choices for the users. Ivy lets them tailor it to
