@@ -136,6 +136,32 @@ bibliography with Helm-bibtex. You can browse Firefox bookmarks.&lt;/p&gt;
 
 &lt;p&gt;You can do anything with Helm.&lt;/p&gt;
 
+&lt;p&gt;One feature I want to highlight, based on feedbacks from tuhdo
+&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/52lnad/from_helm_to_ivy_a_user_perspective/d7lypeu&#34;&gt;here on Reddit&lt;/a&gt;,
+is that Helm does not use the minibuffer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, while Ivy does. So it
+can be configured to open always in the currently opened window. It is
+a very neat feature for users with large or ultrawide monitors. Eyes
+do not have to travel back and forth to the minibuffer: completion
+results are always printed in the same window.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/52lnad/from_helm_to_ivy_a_user_perspective/d7lypeu&#34;&gt;
+        &lt;img src=&#34;http://i.imgur.com/g1Oz9JY.png&#34; alt=&#34;Helm configured to open in the currently active window&#34; /&gt;
+    &lt;/a&gt;
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Helm configured to open in the currently active window
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
 &lt;p&gt;The end result is a very convenient tool to use, as the great majority
 of Spacemacs users can tell you. The major drawback it has is that
 it is a big behemoth size package. I think it is an &lt;code&gt;elisp&lt;/code&gt; exploit
@@ -461,6 +487,8 @@ src=&#34;https://www.redditstatic.com/comment-embed.js&#34;&gt;&lt;/script&gt;&l
 &lt;ol&gt;
 &lt;li id=&#34;fn:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;The package that inspired Helm is called Anything by the way.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;The line at the bottom of your screen that you use when you type M-x for example.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
