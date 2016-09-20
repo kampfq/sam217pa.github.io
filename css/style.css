@@ -7,13 +7,13 @@ html, body {
 body {
   background: #FEFEFE;
   color: #424242;
-  font-family: "Lato", arial, sans-serif;
+  font-family: "PT Serif", Georgia, serif;
   font-size: 18px; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   text-transform: none;
-  font-family: "Ubuntu", helvetica, sans-serif; }
+  font-family: "PT Sans", helvetica, sans-serif; }
 
 h1 {
   font-size: 26px; }
@@ -630,3 +630,5 @@ table {
 
   .footer-copyright {
     padding: 0 10px; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -53,3 +53,23 @@ figure title {
 pre {
     background: #fdf6e3;
 }
+
+table {
+    font-size: 15px;
+    font-family: "PT Sans", sans-serif;
+}
+
+thead {
+    font-size: 18px;
+}
+
+.post-stub-date {
+    font-size: 12px;
+    font-family: "PT Sans", sans-serif;
+    color: gray;
+}
+
+#fr-button {
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
