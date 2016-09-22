@@ -7,7 +7,7 @@
         <meta name="description" content="Replace each occurence of string in your current directory">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
@@ -127,7 +127,7 @@ When I switched from Helm to Ivy, I looked for a way to do the same thing.</p>
 <p>It turned out that Ivy-occur has nice integration with Wgrep since Ivy version
 <a href="http://oremacs.com/2016/04/26/ivy-0.8.0/">0.8</a>.</p>
 
-<h1 id="nuclear-weapon-multi-editing:d073c1575770588aabd9999611cd6aff">Nuclear-weapon multi-editing :</h1>
+<h1 id="nuclear-weapon-multi-editing">Nuclear-weapon multi-editing :</h1>
 
 <p>I call <code>counsel-ag</code>, to search for the string I want to modify in the current
 directory. By default, <code>ag</code> (and <code>counsel-ag</code>) will ignore files ignored by git.</p>
@@ -176,7 +176,7 @@ to edit it. I can now change each variable name globally using normal search and
 replace techniques. I use Evil-ex commands <code>:%s/pattern/replace/g</code> but you may
 use others as well (I have heard good things of Iedit too…).</p>
 
-<p>
+
 <figure >
     
         <img src="https://s14.postimg.org/s6ahj1eq9/third_step.png" alt="Replace edit globally with potatoes." />
@@ -192,7 +192,7 @@ use others as well (I have heard good things of Iedit too…).</p>
     </figcaption>
     
 </figure>
-</p>
+
 
 <p>I then press <code>C-c C-c</code> (<code>wgrep-finish-edit</code>). Now every occurence of the word
 <em>edit</em> in all files has been replaced with <em>potatoes</em>.</p>

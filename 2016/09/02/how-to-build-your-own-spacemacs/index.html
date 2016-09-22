@@ -7,7 +7,7 @@
         <meta name="description" content="Build yourself a great Emacs the way you want it, using modern tools.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
@@ -117,7 +117,7 @@ results. My goal is to help you build an editor inside Emacs using the best
 tools for the job, with modern tools and well-crafted packages.</p>
 
 <p>In <a href="http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/">a previous post</a>,
-I described the tools I needed to build myself a great spacemacs-like<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:1"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:1">1</a></sup> experience
+I described the tools I needed to build myself a great spacemacs-like<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> experience
 inside emacs. In this post, I want to explain the process of building it in more
 details. I hope it serves you in building a cool editor the way you like it.</p>
 
@@ -141,11 +141,11 @@ details. I hope it serves you in building a cool editor the way you like it.</p>
 
 <blockquote>
 <p>Emacs proficient reader should skip this part and jump directly to the
-<code>use-package</code> part <a href="#use-package:62128098bfcfe7aecd2bca9fcf074d28">here</a>. Those that already know
-about <code>use-package</code> should jump <a href="#move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">here</a>, where I
+<code>use-package</code> part <a href="#use-package">here</a>. Those that already know
+about <code>use-package</code> should jump <a href="#move-in-emacs">here</a>, where I
 talk about <code>ivy</code>, <code>swiper</code>, <code>counsel</code> and <code>general</code>. Those that do not want to
 read all my strange french-english prose can and should jump directly to
-<a href="#recipe:62128098bfcfe7aecd2bca9fcf074d28">here</a>. I have put up a recipe to a modern Emacs
+<a href="#recipe">here</a>. I have put up a recipe to a modern Emacs
 experience.</p>
 </blockquote>
 
@@ -163,7 +163,7 @@ functionnalities of emacs.</p>
 first step, we are going to learn how to configure it using basic emacs
 function.</p>
 
-<h2 id="getting-emacs-ready-for-the-job:62128098bfcfe7aecd2bca9fcf074d28">Getting Emacs ready for the job</h2>
+<h2 id="getting-emacs-ready-for-the-job">Getting Emacs ready for the job</h2>
 
 
 <figure >
@@ -244,7 +244,7 @@ functions, keybindings…</li>
 customize it to our liking.</li>
 </ol>
 
-<h2 id="use-package:62128098bfcfe7aecd2bca9fcf074d28">Introduce structure in your config : <code>use-package</code> to the rescue</h2>
+<h2 id="use-package">Introduce structure in your config : <code>use-package</code> to the rescue</h2>
 
 <p>The emacs-lisp package archive with wich you can interact at
 <a href="https://melpa.org">melpa.org</a> has, at the time of writing 3 291 packages. The
@@ -299,7 +299,7 @@ Let&rsquo;s use it first, read then. Restart emacs and put the following line in
 
 <p>It should check for the <code>general</code> package and make sure it is accessible. If
 not, the <code>:ensure t</code> part of the previous chunks tells use-package to download
-it and place it somewhere accessible, in <code>~/.emacs.d/elpa/</code> by default<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:2"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:2">2</a></sup>.</p>
+it and place it somewhere accessible, in <code>~/.emacs.d/elpa/</code> by default<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>.</p>
 
 <p>Now every function in the general package is available to you. We will now use
 the same <code>use-package</code> statement to customize the general package. We need the
@@ -354,7 +354,7 @@ package.</p>
 before it is needed. You <strong>really</strong> need to check out <code>use-package</code> on your way
 to mold Emacs to your liking.</p>
 
-<h2 id="move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">Move in Emacs : the <em>abo-abo</em> way</h2>
+<h2 id="move-in-emacs">Move in Emacs : the <em>abo-abo</em> way</h2>
 
 <p>In Emacs as in all text editor, you move more than you type. You move between
 buffers, <em>ie</em> text files loaded into memory. You move between lines. You move
@@ -366,7 +366,7 @@ projects.</p>
 call.</p>
 
 <p>One of the most prolific Emacs-package developper that I know of is called Oleh
-Krehel; <a href="https://twitter.com/_abo_abo">abo-abo</a> on Twitter<sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:3"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:3">3</a></sup>. During the past
+Krehel; <a href="https://twitter.com/_abo_abo">abo-abo</a> on Twitter<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>. During the past
 two years, he developped an ecosystem around a completion framework that he
 wrote called <code>ivy</code>. This ecosystem is composed of three packages called <code>ivy</code>,
 <code>counsel</code> and <code>swiper</code>.</p>
@@ -423,7 +423,7 @@ really really fast, really well thought out and really convenient to use.</p>
 <p>So now we have a ton on function to bind, and still no way to make that easy.
 But do we ?</p>
 
-<h2 id="bind-in-emacs:62128098bfcfe7aecd2bca9fcf074d28">Bind in Emacs : the <code>general</code> way</h2>
+<h2 id="bind-in-emacs">Bind in Emacs : the <code>general</code> way</h2>
 
 
 <figure >
@@ -447,7 +447,7 @@ But do we ?</p>
 built on top of Emacs command. It works just flawlessly. When they did, they
 developped some ways to bind keys to functions like in Vim. One of the most
 successful solution to this is <code>evil-leader</code>. And then another Evil user by the
-pseudo of <code>noctuid</code> created a package called <code>general.el</code><sup class="footnote-ref" id="fnref:62128098bfcfe7aecd2bca9fcf074d28:4"><a rel="footnote" href="#fn:62128098bfcfe7aecd2bca9fcf074d28:4">4</a></sup>. Of all the way I
+pseudo of <code>noctuid</code> created a package called <code>general.el</code><sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup>. Of all the way I
 know to define keys in Emacs, this one is the most versatile and the simplest
 solution to defining keybindings.</p>
 
@@ -530,7 +530,7 @@ Which-key integration to General.</p>
 <p>Evaluate this code. Press <code>C-c</code>. Same output as before. See how General is great
 ?</p>
 
-<h2 id="meeting-our-goal-build-yourself-a-great-spacemacs-like-experience:62128098bfcfe7aecd2bca9fcf074d28">Meeting our goal: build yourself a great Spacemacs-like experience</h2>
+<h2 id="meeting-our-goal-build-yourself-a-great-spacemacs-like-experience">Meeting our goal: build yourself a great Spacemacs-like experience</h2>
 
 
 <figure >
@@ -594,7 +594,7 @@ inner deepness, without being hit by design choices I did not make.</p>
 oriented. It means that when you use another keyboard layout, you make some
 weird movement just to accomodate Spacemacs keybindings.</p>
 
-<h3 id="recipe:62128098bfcfe7aecd2bca9fcf074d28">A recipe for a modern Emacs experience</h3>
+<h3 id="recipe">A recipe for a modern Emacs experience</h3>
 
 <p>I have put up a recipe to build a Spacemacs-like Emacs. It is based on what I
 have done systematically, to build a reasonable and very usable emacs to me.</p>
@@ -620,14 +620,14 @@ just too awesome.</p>
 <hr />
 
 <ol>
-<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:1">Spacemacs is an editor build on top of emacs that is gaining more and more traction among programmers.
- <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:1"><sup>[return]</sup></a></li>
-<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:2">Guess what ELPA means ?
- <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:2"><sup>[return]</sup></a></li>
-<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:3">Go on and follow him. You won&rsquo;t regret it.
- <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:3"><sup>[return]</sup></a></li>
-<li id="fn:62128098bfcfe7aecd2bca9fcf074d28:4">Check it out <a href="https://github.com/noctuid/general.el">here</a>.
- <a class="footnote-return" href="#fnref:62128098bfcfe7aecd2bca9fcf074d28:4"><sup>[return]</sup></a></li>
+<li id="fn:1">Spacemacs is an editor build on top of emacs that is gaining more and more traction among programmers.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Guess what ELPA means ?
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Go on and follow him. You won&rsquo;t regret it.
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Check it out <a href="https://github.com/noctuid/general.el">here</a>.
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
 </ol>
 </div>
 

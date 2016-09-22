@@ -7,7 +7,7 @@
         <meta name="description" content="Why I changed the way I use emacs.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
@@ -116,7 +116,7 @@ ga('send', 'pageview');
 talked about the way I tended to integrate everything in Emacs. In this one, I
 want to describe what lead me to totally change the way I use it.</p>
 
-<h1 id="living-in-the-terminal:90f8f993beffe30febe8d9a4af8da2db">Living in the terminal</h1>
+<h1 id="living-in-the-terminal">Living in the terminal</h1>
 
 <p>I just spend four months in front of my computer. I literally lived inside my
 terminal for various reasons. I had biological data to analyse, and software to
@@ -126,14 +126,14 @@ bioinformatics field is incredible. For that I was lucky to have chosen to learn
 polyglot <code>vi</code> and <code>emacs</code> in the past. Not being locked to a particuliar IDE
 when facing that much diversity is a great thing.</p>
 
-<h1 id="developping-inside-emacs:90f8f993beffe30febe8d9a4af8da2db">Developping inside emacs</h1>
+<h1 id="developping-inside-emacs">Developping inside emacs</h1>
 
 <p>At the beginning, I was doing exactly what I described in my previous post. I
 lived inside org-mode, using code blocks to put up software and describe what
 each piece of code was doing. I then tangled each block to its file, tested it,
 went back to org-mode, debugged it, tangled it, tested it … At the end of the
 day, that makes a lot of <code>C-u C-u C-c C-v
-t</code><sup class="footnote-ref" id="fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><a rel="footnote" href="#fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle">1</a></sup></p>
+t</code><sup class="footnote-ref" id="fnref:org-babel-tangle"><a rel="footnote" href="#fn:org-babel-tangle">1</a></sup></p>
 
 <p>I had to speed up the way I wrote software, particularly when I was facing very
 tight deadlines. I really gradually started not to use org-mode to organise
@@ -153,7 +153,7 @@ export ALTERNATE_EDITOR=&quot;&quot;
 alias e='emacsclient -t'
 </code></pre>
 
-<p>to your <code>.bashrc</code><sup class="footnote-ref" id="fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho"><a rel="footnote" href="#fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho">2</a></sup>, and you&rsquo;re all
+<p>to your <code>.bashrc</code><sup class="footnote-ref" id="fnref:or-zshrc-you-sho"><a rel="footnote" href="#fn:or-zshrc-you-sho">2</a></sup>, and you&rsquo;re all
 set to use emacs as your main editor. You can have as many tmux sessions you
 want, there is only one emacs instance to edit all the file you edit. It makes
 integrating emacs and the typical terminal environment, with all its speed and
@@ -174,8 +174,8 @@ between emacs and the terminal environment.</p>
 <hr />
 
 <ol>
-<li id="fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><code>org-babel-tangle</code>, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  <a class="footnote-return" href="#fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle"><sup>[return]</sup></a></li>
-<li id="fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho">or <code>.zshrc</code>, you should obviously use zsh. <a class="footnote-return" href="#fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho"><sup>[return]</sup></a></li>
+<li id="fn:org-babel-tangle"><code>org-babel-tangle</code>, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  <a class="footnote-return" href="#fnref:org-babel-tangle"><sup>[return]</sup></a></li>
+<li id="fn:or-zshrc-you-sho">or <code>.zshrc</code>, you should obviously use zsh. <a class="footnote-return" href="#fnref:or-zshrc-you-sho"><sup>[return]</sup></a></li>
 </ol>
 </div>
 

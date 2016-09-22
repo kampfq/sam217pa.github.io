@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opinions on Bacterial Finches</title>
+    <link>https://sam217pa.github.io/categories/opinions/</link>
+    <description>Recent content in Opinions on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Wed, 21 Oct 2015 20:40:26 +0200</lastBuildDate>
+    <atom:link href="https://sam217pa.github.io/categories/opinions/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lectures and Data Visualization</title>
+      <link>https://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</link>
+      <pubDate>Wed, 21 Oct 2015 20:40:26 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2015/10/21/2015-10-21-lectures-and-datavis/</guid>
+      <description>
+
+&lt;p&gt;Powerpoints are everywhere. In our world of science, Powerpoints are the &lt;em&gt;lingua
+franca&lt;/em&gt; of lectures. Yet they are seldom used to their rightful potential. I
+believe Powerpoints are often accused of the lecturer&amp;rsquo;s fault. I speak here with
+the legitimacy of a student that spent most of the last six years listening to
+lecturers with poor lecturing skills&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-am-not-saying&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-am-not-saying&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am a great admirer of Edward Tufte&amp;rsquo;s work about data visualization. Yet I
+disagree with his opinion that Powerpoints kills reasoning. Actually I believe
+there are many overlaps between good data visualization and good lectures.&lt;/p&gt;
+
+&lt;p&gt;Here are Tufte&amp;rsquo;s opinion on graphical excellence. Good graphics :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;show the data&lt;/li&gt;
+&lt;li&gt;induce the viewer to think about substance rather than methodology, design
+or something else.&lt;/li&gt;
+&lt;li&gt;avoid distorting the data.&lt;/li&gt;
+&lt;li&gt;present many number in a small space.&lt;/li&gt;
+&lt;li&gt;make large data sets coherent.&lt;/li&gt;
+&lt;li&gt;reveal the data at several levels of details, from a broad overview to a
+fine structure.&lt;/li&gt;
+&lt;li&gt;serve a clear purpose.&lt;/li&gt;
+&lt;li&gt;be closely integrated with the statistical and verbal description of the
+data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a matter of fact, a good lectures shares the same objectives. Good lectures :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;show the question.&lt;/li&gt;
+&lt;li&gt;induce the listener to think about substance rather than the lecturer&amp;rsquo;s style of lecturing.&lt;/li&gt;
+&lt;li&gt;avoid distorting the question&lt;/li&gt;
+&lt;li&gt;present many complex facts and ideas in a small space.&lt;/li&gt;
+&lt;li&gt;make complex, multivariate questions coherent.&lt;/li&gt;
+&lt;li&gt;reveals the ins and outs of the question at several levels of details, from a
+broad overview to the finest technical details.&lt;/li&gt;
+&lt;li&gt;serve a clear purpose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here I&amp;rsquo;ll expose what I think makes a good
+lecturer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-ll-talk-indiff&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-ll-talk-indiff&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+It follows Tufte&amp;rsquo;s ideas on data visualization.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-the-question&#34;&gt;Good lecturers show the question&lt;/h2&gt;
+
+&lt;p&gt;A Powerpoint and a lecturer are useless if the scientific question behind it is
+not understood by the audience.&lt;/p&gt;
+
+&lt;p&gt;A good Powerpoint should always have a clear title. It describes clearly and
+concisely the broad topic. It serves its goal even better as a question.
+Questions gives direction to reasoning.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-have-a-good-style&#34;&gt;Good lecturers have a good style.&lt;/h2&gt;
+
+&lt;p&gt;This is my main point. Good lecturers induces the listener to think about the
+&lt;em&gt;question&lt;/em&gt;. The listener should not have to think about the lecture&amp;rsquo;s style. To
+paraphrase Pr Hervé Maisonneuve :&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Good style is absence of style.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Color that serves no goal should disappear. Forget Powerpoints ready-made
+templates. They have no place in Science. Superfluous words should disappear.
+Diagrams are clear. They take the space they need, no more.&lt;/p&gt;
+
+&lt;p&gt;Indeed, I do agree with Edward Tufte that Powerpoints should be reserved for
+pictures, diagrams and charts. In Science, we can put all aspects of reasoning
+to good use. Some people needs a visual support to information. But the
+excessive use of Powerpoints has shifted this support from the lecturer to the
+screen. We need to realize this. The support of information is the lecturer. The
+audience should be &lt;em&gt;listening&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Listening-is-a-s&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:Listening-is-a-s&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Not staring at a screen,
+trying to make sense of verbless sentences.&lt;/p&gt;
+
+&lt;p&gt;Poor lecturers tend to put too much textual information on screen. As if they
+were hoping that it could rescue their audience&amp;rsquo;s lack of attention…&lt;/p&gt;
+
+&lt;p&gt;As does good charts, good lecturers are neutral enough to shift focus from form
+to content.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-do-not-distort-the-question&#34;&gt;Good lecturers do not distort the question.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers do not leave an opinionated point of view of the question in the
+listener&amp;rsquo;s mind. On the contrary, they should be subtle enough to put the seeds
+of good reasoning in it. The listener has the choice to make it flourish.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-synthesize&#34;&gt;Good lecturers synthesize.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers show many elements to the listener. They give him keys to analyze
+those elements. Or they can lead him to get this keys by
+himself&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:It-depends-on-th&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:It-depends-on-th&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;But they have to be synthetic. One cannot hope to give a sufficiently broad
+overview of a complex topic with too much divergence from the central point.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-complexity&#34;&gt;Good lecturers show complexity.&lt;/h2&gt;
+
+&lt;p&gt;Good lecturers connect facts between them. Good lecturers connect theories
+between them. They connect theories to facts. They connect facts to theories.
+They connect it to the audience&amp;rsquo;s knowledge. One can not be a good lecturer
+without knowing his audience.&lt;/p&gt;
+
+&lt;p&gt;A good lecturer&amp;rsquo;s main role is to make complex questions coherent.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-show-details-and-perspective&#34;&gt;Good lecturers show details and perspective&lt;/h2&gt;
+
+&lt;p&gt;A good lecturer has the ability to attach the finest details to the broader
+tendency in which they are included. He knows the broad phenomena as well as
+little peculiar details.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-lecturers-serves-a-clear-purpose&#34;&gt;Good lecturers serves a clear purpose.&lt;/h2&gt;
+
+&lt;p&gt;It could be the #1 point. Good lecturers put things in context. Period. One can
+never have the listener&amp;rsquo;s attention if the listener does not know why he should
+listen. What is the point of this ? Why are you doing this ? Why work on this ?
+To what point ?&lt;/p&gt;
+
+&lt;p&gt;Such questions are so common that a lecturer tends to forget to answer it.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Tufte says a chart&amp;rsquo;s data to ink ratio should be maximized. Chartjunk should be
+eliminated.&lt;/p&gt;
+
+&lt;p&gt;I say ideas to speak ratio is the measure of a lecture&amp;rsquo;s quality. Talkjunk is
+needless. So many talk are crippled with useless information that it is rather
+the rule than the exception.&lt;/p&gt;
+
+&lt;p&gt;Focus should be on the lecturer. Not on the screen. The lecturer&amp;rsquo;s focus should
+be on the listener. Not on the screen.&lt;/p&gt;
+
+&lt;p&gt;Powerpoints are a tool to assist reasoning. Not a support of information. Not a
+decoration. They should be neutral. They should be the hammer of the lecturer. A
+tool.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:I-am-not-saying&#34;&gt;I am not saying here that all of the lectures I had were of poor quality. I say most of them. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-am-not-saying&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-ll-talk-indiff&#34;&gt;I&amp;rsquo;ll talk indifferently of lecturer or Powerpoint. To me, a Powerpoint is as bad as is its designer. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-ll-talk-indiff&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:Listening-is-a-s&#34;&gt;Listening is a skill we have to re-learn. Powerpoints have made that much damage. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Listening-is-a-s&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:It-depends-on-th&#34;&gt;It depends on the lecturer&amp;rsquo;s style. Even though he should not have a style. Ha. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:It-depends-on-th&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

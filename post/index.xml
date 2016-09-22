@@ -100,7 +100,7 @@ cat *.el | wc -l
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This does not take into account the 142 packages that a query for
-&amp;ldquo;helm&amp;rdquo; returns on MELPA. You can do anything with Helm&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&amp;ldquo;helm&amp;rdquo; returns on MELPA. You can do anything with Helm&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Its main strength is that you can integrate and wrap many Emacs
 behavior with it. You can build an interface totally centered around
@@ -138,7 +138,7 @@ bibliography with Helm-bibtex. You can browse Firefox bookmarks.&lt;/p&gt;
 
 &lt;p&gt;One feature I want to highlight, based on feedbacks from tuhdo
 &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/52lnad/from_helm_to_ivy_a_user_perspective/d7lypeu&#34;&gt;here on Reddit&lt;/a&gt;,
-is that Helm does not use the minibuffer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, while Ivy does. So it
+is that Helm does not use the minibuffer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, while Ivy does. So it
 can be configured to open always in the currently opened window. It is
 a very neat feature for users with large or ultrawide monitors. Eyes
 do not have to travel back and forth to the minibuffer: completion
@@ -485,10 +485,10 @@ src=&#34;https://www.redditstatic.com/comment-embed.js&#34;&gt;&lt;/script&gt;&l
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;The package that inspired Helm is called Anything by the way.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b22ac7be25cb84dac5370bf27958d01e:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;The line at the bottom of your screen that you use when you type M-x for example.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b22ac7be25cb84dac5370bf27958d01e:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;The package that inspired Helm is called Anything by the way.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;The line at the bottom of your screen that you use when you type M-x for example.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -518,7 +518,7 @@ When I switched from Helm to Ivy, I looked for a way to do the same thing.&lt;/p
 &lt;p&gt;It turned out that Ivy-occur has nice integration with Wgrep since Ivy version
 &lt;a href=&#34;http://oremacs.com/2016/04/26/ivy-0.8.0/&#34;&gt;0.8&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;nuclear-weapon-multi-editing:d073c1575770588aabd9999611cd6aff&#34;&gt;Nuclear-weapon multi-editing :&lt;/h1&gt;
+&lt;h1 id=&#34;nuclear-weapon-multi-editing&#34;&gt;Nuclear-weapon multi-editing :&lt;/h1&gt;
 
 &lt;p&gt;I call &lt;code&gt;counsel-ag&lt;/code&gt;, to search for the string I want to modify in the current
 directory. By default, &lt;code&gt;ag&lt;/code&gt; (and &lt;code&gt;counsel-ag&lt;/code&gt;) will ignore files ignored by git.&lt;/p&gt;
@@ -567,7 +567,7 @@ to edit it. I can now change each variable name globally using normal search and
 replace techniques. I use Evil-ex commands &lt;code&gt;:%s/pattern/replace/g&lt;/code&gt; but you may
 use others as well (I have heard good things of Iedit too…).&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;https://s14.postimg.org/s6ahj1eq9/third_step.png&#34; alt=&#34;Replace edit globally with potatoes.&#34; /&gt;
@@ -583,7 +583,7 @@ use others as well (I have heard good things of Iedit too…).&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;I then press &lt;code&gt;C-c C-c&lt;/code&gt; (&lt;code&gt;wgrep-finish-edit&lt;/code&gt;). Now every occurence of the word
 &lt;em&gt;edit&lt;/em&gt; in all files has been replaced with &lt;em&gt;potatoes&lt;/em&gt;.&lt;/p&gt;
@@ -615,7 +615,7 @@ website. The static english version of the site will be served by your GitHub
 Pages main page, and the static french version will be served by the &lt;code&gt;gh-pages&lt;/code&gt;
 branch of another repo.&lt;/p&gt;
 
-&lt;h1 id=&#34;first-things-first-create-your-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;First things first, create your blog&lt;/h1&gt;
+&lt;h1 id=&#34;first-things-first-create-your-blog&#34;&gt;First things first, create your blog&lt;/h1&gt;
 
 &lt;p&gt;Hugo has a really nice &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;tutorial&lt;/a&gt; to
 explain how to create your website with it, but I want to explain some steps in
@@ -651,7 +651,7 @@ how to setup a ghostwriter-enabled website.&lt;/p&gt;
 
 &lt;p&gt;It deploys a website on the &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; port.&lt;/p&gt;
 
-&lt;h1 id=&#34;write-your-first-post:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Write your first post&lt;/h1&gt;
+&lt;h1 id=&#34;write-your-first-post&#34;&gt;Write your first post&lt;/h1&gt;
 
 &lt;p&gt;Type :&lt;/p&gt;
 
@@ -665,7 +665,7 @@ you may chose another.&lt;/p&gt;
 &lt;p&gt;Now that you are satisfied with your first post, we are going to use git to
 manage the building of our website.&lt;/p&gt;
 
-&lt;h1 id=&#34;manage-your-blog-with-git:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Manage your blog with git&lt;/h1&gt;
+&lt;h1 id=&#34;manage-your-blog-with-git&#34;&gt;Manage your blog with git&lt;/h1&gt;
 
 &lt;p&gt;Type the following commands at the command line.&lt;/p&gt;
 
@@ -711,7 +711,7 @@ deploy the english version.&lt;/p&gt;
 hugo -d public
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;host-your-pages-on-github-pages:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Host your pages on GitHub Pages&lt;/h1&gt;
+&lt;h1 id=&#34;host-your-pages-on-github-pages&#34;&gt;Host your pages on GitHub Pages&lt;/h1&gt;
 
 &lt;p&gt;Now follow the instruction &lt;a href=&#34;https://pages.github.com/&#34;&gt;here&lt;/a&gt; to use GitHub pages
 to deploy your own website.&lt;/p&gt;
@@ -745,7 +745,7 @@ git remote add origin https://github.com/username/fr.git
 &lt;p&gt;That&amp;rsquo;s it, you can now setup a button as a link that points to your english
 version on the french website if you want.&lt;/p&gt;
 
-&lt;h1 id=&#34;use-emacs-to-manage-your-hugo-blog:87b2ce5efaaf4d0ccfffdf4dbb22e303&#34;&gt;Use Emacs to manage your Hugo blog&lt;/h1&gt;
+&lt;h1 id=&#34;use-emacs-to-manage-your-hugo-blog&#34;&gt;Use Emacs to manage your Hugo blog&lt;/h1&gt;
 
 &lt;p&gt;Here I&amp;rsquo;ll just point to another blog post from
 &lt;a href=&#34;https://blog.tohojo.dk/2015/10/integrating-hugo-into-emacs.html&#34;&gt;Toke Høiland-Jørgensen&lt;/a&gt;.
@@ -768,7 +768,7 @@ results. My goal is to help you build an editor inside Emacs using the best
 tools for the job, with modern tools and well-crafted packages.&lt;/p&gt;
 
 &lt;p&gt;In &lt;a href=&#34;http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/&#34;&gt;a previous post&lt;/a&gt;,
-I described the tools I needed to build myself a great spacemacs-like&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:62128098bfcfe7aecd2bca9fcf074d28:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:62128098bfcfe7aecd2bca9fcf074d28:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; experience
+I described the tools I needed to build myself a great spacemacs-like&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; experience
 inside emacs. In this post, I want to explain the process of building it in more
 details. I hope it serves you in building a cool editor the way you like it.&lt;/p&gt;
 
@@ -792,11 +792,11 @@ details. I hope it serves you in building a cool editor the way you like it.&lt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Emacs proficient reader should skip this part and jump directly to the
-&lt;code&gt;use-package&lt;/code&gt; part &lt;a href=&#34;#use-package:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;here&lt;/a&gt;. Those that already know
-about &lt;code&gt;use-package&lt;/code&gt; should jump &lt;a href=&#34;#move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;here&lt;/a&gt;, where I
+&lt;code&gt;use-package&lt;/code&gt; part &lt;a href=&#34;#use-package&#34;&gt;here&lt;/a&gt;. Those that already know
+about &lt;code&gt;use-package&lt;/code&gt; should jump &lt;a href=&#34;#move-in-emacs&#34;&gt;here&lt;/a&gt;, where I
 talk about &lt;code&gt;ivy&lt;/code&gt;, &lt;code&gt;swiper&lt;/code&gt;, &lt;code&gt;counsel&lt;/code&gt; and &lt;code&gt;general&lt;/code&gt;. Those that do not want to
 read all my strange french-english prose can and should jump directly to
-&lt;a href=&#34;#recipe:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;here&lt;/a&gt;. I have put up a recipe to a modern Emacs
+&lt;a href=&#34;#recipe&#34;&gt;here&lt;/a&gt;. I have put up a recipe to a modern Emacs
 experience.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -814,7 +814,7 @@ functionnalities of emacs.&lt;/p&gt;
 first step, we are going to learn how to configure it using basic emacs
 function.&lt;/p&gt;
 
-&lt;h2 id=&#34;getting-emacs-ready-for-the-job:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Getting Emacs ready for the job&lt;/h2&gt;
+&lt;h2 id=&#34;getting-emacs-ready-for-the-job&#34;&gt;Getting Emacs ready for the job&lt;/h2&gt;
 
 
 &lt;figure &gt;
@@ -895,7 +895,7 @@ functions, keybindings…&lt;/li&gt;
 customize it to our liking.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;use-package:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Introduce structure in your config : &lt;code&gt;use-package&lt;/code&gt; to the rescue&lt;/h2&gt;
+&lt;h2 id=&#34;use-package&#34;&gt;Introduce structure in your config : &lt;code&gt;use-package&lt;/code&gt; to the rescue&lt;/h2&gt;
 
 &lt;p&gt;The emacs-lisp package archive with wich you can interact at
 &lt;a href=&#34;https://melpa.org&#34;&gt;melpa.org&lt;/a&gt; has, at the time of writing 3 291 packages. The
@@ -950,7 +950,7 @@ Let&amp;rsquo;s use it first, read then. Restart emacs and put the following lin
 
 &lt;p&gt;It should check for the &lt;code&gt;general&lt;/code&gt; package and make sure it is accessible. If
 not, the &lt;code&gt;:ensure t&lt;/code&gt; part of the previous chunks tells use-package to download
-it and place it somewhere accessible, in &lt;code&gt;~/.emacs.d/elpa/&lt;/code&gt; by default&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:62128098bfcfe7aecd2bca9fcf074d28:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:62128098bfcfe7aecd2bca9fcf074d28:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+it and place it somewhere accessible, in &lt;code&gt;~/.emacs.d/elpa/&lt;/code&gt; by default&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now every function in the general package is available to you. We will now use
 the same &lt;code&gt;use-package&lt;/code&gt; statement to customize the general package. We need the
@@ -1005,7 +1005,7 @@ package.&lt;/p&gt;
 before it is needed. You &lt;strong&gt;really&lt;/strong&gt; need to check out &lt;code&gt;use-package&lt;/code&gt; on your way
 to mold Emacs to your liking.&lt;/p&gt;
 
-&lt;h2 id=&#34;move-in-emacs:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Move in Emacs : the &lt;em&gt;abo-abo&lt;/em&gt; way&lt;/h2&gt;
+&lt;h2 id=&#34;move-in-emacs&#34;&gt;Move in Emacs : the &lt;em&gt;abo-abo&lt;/em&gt; way&lt;/h2&gt;
 
 &lt;p&gt;In Emacs as in all text editor, you move more than you type. You move between
 buffers, &lt;em&gt;ie&lt;/em&gt; text files loaded into memory. You move between lines. You move
@@ -1017,7 +1017,7 @@ projects.&lt;/p&gt;
 call.&lt;/p&gt;
 
 &lt;p&gt;One of the most prolific Emacs-package developper that I know of is called Oleh
-Krehel; &lt;a href=&#34;https://twitter.com/_abo_abo&#34;&gt;abo-abo&lt;/a&gt; on Twitter&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:62128098bfcfe7aecd2bca9fcf074d28:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:62128098bfcfe7aecd2bca9fcf074d28:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. During the past
+Krehel; &lt;a href=&#34;https://twitter.com/_abo_abo&#34;&gt;abo-abo&lt;/a&gt; on Twitter&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. During the past
 two years, he developped an ecosystem around a completion framework that he
 wrote called &lt;code&gt;ivy&lt;/code&gt;. This ecosystem is composed of three packages called &lt;code&gt;ivy&lt;/code&gt;,
 &lt;code&gt;counsel&lt;/code&gt; and &lt;code&gt;swiper&lt;/code&gt;.&lt;/p&gt;
@@ -1074,7 +1074,7 @@ really really fast, really well thought out and really convenient to use.&lt;/p&
 &lt;p&gt;So now we have a ton on function to bind, and still no way to make that easy.
 But do we ?&lt;/p&gt;
 
-&lt;h2 id=&#34;bind-in-emacs:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Bind in Emacs : the &lt;code&gt;general&lt;/code&gt; way&lt;/h2&gt;
+&lt;h2 id=&#34;bind-in-emacs&#34;&gt;Bind in Emacs : the &lt;code&gt;general&lt;/code&gt; way&lt;/h2&gt;
 
 
 &lt;figure &gt;
@@ -1098,7 +1098,7 @@ But do we ?&lt;/p&gt;
 built on top of Emacs command. It works just flawlessly. When they did, they
 developped some ways to bind keys to functions like in Vim. One of the most
 successful solution to this is &lt;code&gt;evil-leader&lt;/code&gt;. And then another Evil user by the
-pseudo of &lt;code&gt;noctuid&lt;/code&gt; created a package called &lt;code&gt;general.el&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:62128098bfcfe7aecd2bca9fcf074d28:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:62128098bfcfe7aecd2bca9fcf074d28:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. Of all the way I
+pseudo of &lt;code&gt;noctuid&lt;/code&gt; created a package called &lt;code&gt;general.el&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. Of all the way I
 know to define keys in Emacs, this one is the most versatile and the simplest
 solution to defining keybindings.&lt;/p&gt;
 
@@ -1181,7 +1181,7 @@ Which-key integration to General.&lt;/p&gt;
 &lt;p&gt;Evaluate this code. Press &lt;code&gt;C-c&lt;/code&gt;. Same output as before. See how General is great
 ?&lt;/p&gt;
 
-&lt;h2 id=&#34;meeting-our-goal-build-yourself-a-great-spacemacs-like-experience:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;Meeting our goal: build yourself a great Spacemacs-like experience&lt;/h2&gt;
+&lt;h2 id=&#34;meeting-our-goal-build-yourself-a-great-spacemacs-like-experience&#34;&gt;Meeting our goal: build yourself a great Spacemacs-like experience&lt;/h2&gt;
 
 
 &lt;figure &gt;
@@ -1245,7 +1245,7 @@ inner deepness, without being hit by design choices I did not make.&lt;/p&gt;
 oriented. It means that when you use another keyboard layout, you make some
 weird movement just to accomodate Spacemacs keybindings.&lt;/p&gt;
 
-&lt;h3 id=&#34;recipe:62128098bfcfe7aecd2bca9fcf074d28&#34;&gt;A recipe for a modern Emacs experience&lt;/h3&gt;
+&lt;h3 id=&#34;recipe&#34;&gt;A recipe for a modern Emacs experience&lt;/h3&gt;
 
 &lt;p&gt;I have put up a recipe to build a Spacemacs-like Emacs. It is based on what I
 have done systematically, to build a reasonable and very usable emacs to me.&lt;/p&gt;
@@ -1271,14 +1271,14 @@ just too awesome.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:62128098bfcfe7aecd2bca9fcf074d28:1&#34;&gt;Spacemacs is an editor build on top of emacs that is gaining more and more traction among programmers.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:62128098bfcfe7aecd2bca9fcf074d28:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:62128098bfcfe7aecd2bca9fcf074d28:2&#34;&gt;Guess what ELPA means ?
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:62128098bfcfe7aecd2bca9fcf074d28:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:62128098bfcfe7aecd2bca9fcf074d28:3&#34;&gt;Go on and follow him. You won&amp;rsquo;t regret it.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:62128098bfcfe7aecd2bca9fcf074d28:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:62128098bfcfe7aecd2bca9fcf074d28:4&#34;&gt;Check it out &lt;a href=&#34;https://github.com/noctuid/general.el&#34;&gt;here&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:62128098bfcfe7aecd2bca9fcf074d28:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Spacemacs is an editor build on top of emacs that is gaining more and more traction among programmers.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Guess what ELPA means ?
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Go on and follow him. You won&amp;rsquo;t regret it.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;Check it out &lt;a href=&#34;https://github.com/noctuid/general.el&#34;&gt;here&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1390,13 +1390,13 @@ directory.&lt;/p&gt;
 have been using it for one year or so. I know most of its most useful commands.
 I like the plug-and-play feeling of its layer system. I like the laziness of its
 packaging system. I like how the devs build a great terminal experience inside
-emacs. I like how it abstracts Evil&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; from its users.&lt;/p&gt;
+emacs. I like how it abstracts Evil&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; from its users.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://spacemacs.org/img/screenshots/ss1.png&#34; alt=&#34;Spacemacs is a great editor with a great UI.&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;But I recently grew tired of its clumsiness. It took like seven or eight second
 to load. I tried to remove some configuration layer. I removed chunks of config
-I did not need. At its best, Spacemacs took — on my machine&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; — seven long
+I did not need. At its best, Spacemacs took — on my machine&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; — seven long
 seconds to load. I gave me the feeling that I did not need most of the full
 blown spacemacs distribution. Plus I wanted to understand how to setup my own
 emacs. I wanted to tweak it. I wanted to get my hands dirty.&lt;/p&gt;
@@ -1413,11 +1413,11 @@ new setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://www.lazerhorse.org/wp-content/uploads/2014/11/Peregrine-Falcon-Fastest-Animal-Diving.jpg&#34; alt=&#34;Use-package will make your emacs fast&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;use-package-made-my-emacs-fast:ef99cf2bc6bc7f2027c35d1432ffe857&#34;&gt;&lt;code&gt;use-package&lt;/code&gt; made my emacs fast&lt;/h3&gt;
+&lt;h3 id=&#34;use-package-made-my-emacs-fast&#34;&gt;&lt;code&gt;use-package&lt;/code&gt; made my emacs fast&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;use-package&lt;/code&gt; is a package by the current maintainer of emacs. I use it to load
 packages lazily. They will not be loaded unless I call them, or one of
-my packages call them. It make the startup super fast&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:5&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+my packages call them. It make the startup super fast&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:5&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;The following code loads the package which-key, and make sure it is loadable. If
 not, it downloads it, thanks to key &lt;code&gt;:ensure&lt;/code&gt; keyword.&lt;/p&gt;
@@ -1449,7 +1449,7 @@ bits of code are executed after the package is loaded.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I could also use the following syntax, to replace the &lt;code&gt;WK&lt;/code&gt; in the mode-line with
-&lt;code&gt;Ꙍ&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:3&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;code&gt;Ꙍ&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;  :diminish (which-key-mode . &amp;quot;Ꙍ&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -1485,7 +1485,7 @@ I want to associate with the command. In the previous example, I mapped
 
 &lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/b1298535828025bd6dada5abbb8661b43c7c7785/687474703a2f2f692e696d6775722e636f6d2f535841363679372e706e67&#34; alt=&#34;General.el is a great package to make a short spacemacs-like config&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;general-el-made-my-evil-shine:ef99cf2bc6bc7f2027c35d1432ffe857&#34;&gt;&lt;code&gt;general.el&lt;/code&gt; made my evil shine&lt;/h3&gt;
+&lt;h3 id=&#34;general-el-made-my-evil-shine&#34;&gt;&lt;code&gt;general.el&lt;/code&gt; made my evil shine&lt;/h3&gt;
 
 &lt;p&gt;General.el is the new evil-leader black. It makes it easy to implement leader
 keys, of any length you want. It also has nice integration with &lt;code&gt;use-package&lt;/code&gt;
@@ -1529,7 +1529,7 @@ describe the prefix via &lt;code&gt;which-key&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://www.doaks.org/library-archives/library-and-archives-banner-images/ICFA%20Archives_Landscape_02.jpg&#34; alt=&#34;Reading emacs documentation&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;which-key-will-make-your-emacs-friendly:ef99cf2bc6bc7f2027c35d1432ffe857&#34;&gt;&lt;code&gt;which-key&lt;/code&gt; will make your emacs friendly&lt;/h3&gt;
+&lt;h3 id=&#34;which-key-will-make-your-emacs-friendly&#34;&gt;&lt;code&gt;which-key&lt;/code&gt; will make your emacs friendly&lt;/h3&gt;
 
 &lt;p&gt;The obvious benefit of spacemacs to me is its discoverability. Press a key, read
 the description of the prefix, press another key, etc…&lt;/p&gt;
@@ -1556,12 +1556,12 @@ describe a prefix.&lt;/p&gt;
 &lt;p&gt;Those three packages all belongs in the spacemacs universe, &lt;code&gt;general.el&lt;/code&gt; being
 only an upgrade over &lt;code&gt;evil-leader&lt;/code&gt;. The spacemacs dev chose to use &lt;code&gt;helm&lt;/code&gt; as a
 default &amp;ldquo;incremental completion and selection narrowing frameworks&amp;rdquo;. But
-recently, a proficient and prolific emacs package developper&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:6&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:6&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; build an ecosystem
+recently, a proficient and prolific emacs package developper&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; build an ecosystem
 of tools based on its variation of &lt;code&gt;ido&lt;/code&gt;. Those packages are &lt;code&gt;ivy&lt;/code&gt;, &lt;code&gt;counsel&lt;/code&gt;
 and &lt;code&gt;swiper&lt;/code&gt;. They represent a great alternative to the somewhat clumsy helm
 ecosystem.&lt;/p&gt;
 
-&lt;h3 id=&#34;ivy-extend-my-mind-inside-emacs:ef99cf2bc6bc7f2027c35d1432ffe857&#34;&gt;&lt;code&gt;ivy&lt;/code&gt; extend my mind inside emacs&lt;/h3&gt;
+&lt;h3 id=&#34;ivy-extend-my-mind-inside-emacs&#34;&gt;&lt;code&gt;ivy&lt;/code&gt; extend my mind inside emacs&lt;/h3&gt;
 
 &lt;p&gt;Just like &lt;code&gt;helm&lt;/code&gt; or &lt;code&gt;ido&lt;/code&gt;, &lt;code&gt;ivy&lt;/code&gt; is a &amp;ldquo;generic completion framework&amp;rdquo;. It shines
 at being unobtrusive and really fast. I was really surprised by the fact that I
@@ -1600,11 +1600,11 @@ Emacs commands that are customised to make the best use of ivy.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;swiper&lt;/code&gt; is an &lt;code&gt;isearch&lt;/code&gt; replacement based on ivy. It is really really fast. I
-have tried it on huge files&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ef99cf2bc6bc7f2027c35d1432ffe857:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ef99cf2bc6bc7f2027c35d1432ffe857:4&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;. It still is really really fast. I have the
+have tried it on huge files&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;. It still is really really fast. I have the
 feeling it is much faster than &lt;code&gt;helm-swoop&lt;/code&gt;, though I did not measured it. I
 bind it to &lt;code&gt;C-s&lt;/code&gt;, the default keyboard press to isearch.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion:ef99cf2bc6bc7f2027c35d1432ffe857&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;Here I showed you how I used those four packages and their ecosystem to build
 myself a great spacemacs-like experience. In the next post, I want to spend some
@@ -1616,18 +1616,18 @@ using modern tools.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:1&#34;&gt;Evil is The vim emulation inside emacs. It makes emacs behave exactly as vim. Try it if you want to keep your carpal tunnel.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:2&#34;&gt;A 2011 MacBook Pro with 16G of RAM and a Samsung SSD.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:5&#34;&gt;Like one-second fast.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:3&#34;&gt;Yes, you can and should use unicode.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:6&#34;&gt;See its github profile &lt;a href=&#34;https://github.com/abo-abo&#34;&gt;here&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:6&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ef99cf2bc6bc7f2027c35d1432ffe857:4&#34;&gt;I have tried it, just like the maintainer, by copy-pasting org.el multiple time in itself. The file was like 1G bytes huge. Swiper did not tremble.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ef99cf2bc6bc7f2027c35d1432ffe857:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Evil is The vim emulation inside emacs. It makes emacs behave exactly as vim. Try it if you want to keep your carpal tunnel.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;A 2011 MacBook Pro with 16G of RAM and a Samsung SSD.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Like one-second fast.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Yes, you can and should use unicode.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;See its github profile &lt;a href=&#34;https://github.com/abo-abo&#34;&gt;here&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;I have tried it, just like the maintainer, by copy-pasting org.el multiple time in itself. The file was like 1G bytes huge. Swiper did not tremble.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1641,7 +1641,7 @@ using modern tools.&lt;/p&gt;
       <guid>https://sam217pa.github.io/2016/06/30/war-of-the-languages/</guid>
       <description>
 
-&lt;h1 id=&#34;chosing-a-language:0e364b36ad4d8508a9d862aa1493b4bd&#34;&gt;Chosing a language&lt;/h1&gt;
+&lt;h1 id=&#34;chosing-a-language&#34;&gt;Chosing a language&lt;/h1&gt;
 
 &lt;p&gt;I&amp;rsquo;ve been trying to make up my mind about which programming languages I should
 know. I&amp;rsquo;ve come to the conclusion that I must know what matters to me. That&amp;rsquo;s
@@ -1656,7 +1656,7 @@ pros and cons, switch to a new language, repeat.&lt;/p&gt;
 &lt;a href=&#34;https://www.coursera.org/specializations/jhu-data-science&#34;&gt;Coursera&lt;/a&gt; two years
 ago, I did not know which language to pick. They introduced &lt;code&gt;R&lt;/code&gt;, so I sticked
 with &lt;code&gt;R&lt;/code&gt;. And I came to love it. I learned about the most useful packages and
-all that. Learned some graphics techniques too&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0e364b36ad4d8508a9d862aa1493b4bd:ggplot2-to-the-r&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0e364b36ad4d8508a9d862aa1493b4bd:ggplot2-to-the-r&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This
+all that. Learned some graphics techniques too&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ggplot2-to-the-r&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ggplot2-to-the-r&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This
 time was great. I was not comparing &lt;code&gt;R&lt;/code&gt; to other languages. I knew only about
 &lt;code&gt;R&lt;/code&gt;. I was not saying &amp;ldquo;Oh, I wish &lt;code&gt;R&lt;/code&gt; could do that!&amp;rdquo; or &amp;ldquo;If only &lt;code&gt;R&lt;/code&gt; was as
 clean as &lt;code&gt;Python&lt;/code&gt;&amp;rdquo;. I sticked to &lt;code&gt;R&lt;/code&gt;, and learned a ton. It reminds me of the
@@ -1664,7 +1664,7 @@ period of life where people usually learn the most : childhood. Just thinking
 about the mass of information we have to face as a baby is incredible. The
 process of learning a first programming language is really similar. We have to
 face many information simultaneously : what is a for
-loop&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0e364b36ad4d8508a9d862aa1493b4bd:Not-in-R-of-cour&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0e364b36ad4d8508a9d862aa1493b4bd:Not-in-R-of-cour&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, what is a terminal, what is an IDE, what is a
+loop&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Not-in-R-of-cour&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:Not-in-R-of-cour&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, what is a terminal, what is an IDE, what is a
 function, where are my data, how do I learn about X, what was the name of this
 function already, I wish I knew of a function that could do this and that, what
 is the name of these functions&amp;rsquo; arguments, …&lt;/p&gt;
@@ -1694,7 +1694,7 @@ Scala. Maybe Clojure ? But wait.&lt;/p&gt;
 &lt;p&gt;What&amp;rsquo;s the point ?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&#34;what-do-i-need-from-a-programming-language:0e364b36ad4d8508a9d862aa1493b4bd&#34;&gt;What do I need from a programming language ?&lt;/h1&gt;
+&lt;h1 id=&#34;what-do-i-need-from-a-programming-language&#34;&gt;What do I need from a programming language ?&lt;/h1&gt;
 
 &lt;p&gt;I need it to be simple to use. I do not want to be a software engineer. I want
 to be able to analyse data. I want to be able to look at a biological data set,
@@ -1707,8 +1707,8 @@ stick to &lt;code&gt;R&lt;/code&gt;, and learn some &lt;code&gt;Python&lt;/code&
 my computer. I learned some pretty amazing stuff. But now I can focus on what is
 important to me as a data scientist : I want an analysis environment that is
 simple to use, closer to the data than to the metal, in which I can quickly
-abstract ideas&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0e364b36ad4d8508a9d862aa1493b4bd:functional-progr&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0e364b36ad4d8508a9d862aa1493b4bd:functional-progr&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, and if
-needed, that I can make faster easily&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:0e364b36ad4d8508a9d862aa1493b4bd:looking-at-you-R&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:0e364b36ad4d8508a9d862aa1493b4bd:looking-at-you-R&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+abstract ideas&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:functional-progr&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:functional-progr&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, and if
+needed, that I can make faster easily&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:looking-at-you-R&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:looking-at-you-R&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;R&lt;/code&gt; is all that. You can interface it with C++ seamlessly with dedicated
 package, to make it really really fast. Yet you can stay in your REPL all along,
@@ -1719,7 +1719,7 @@ if I develop some code, will it be easy to deploy to another computer, not using
 macOS like me ? &lt;code&gt;R&lt;/code&gt; is a great environment in this regard. It abstracts many
 things from the data analyst, and make his life really easy.&lt;/p&gt;
 
-&lt;h1 id=&#34;use-r-learn-python-learn-c:0e364b36ad4d8508a9d862aa1493b4bd&#34;&gt;Use R. Learn Python. Learn C++&lt;/h1&gt;
+&lt;h1 id=&#34;use-r-learn-python-learn-c&#34;&gt;Use R. Learn Python. Learn C++&lt;/h1&gt;
 
 &lt;p&gt;As a final advice to anybody reading this, which like me, is trying to find his
 place in this world of software engineers and bioinformatician. You don&amp;rsquo;t want
@@ -1741,10 +1741,10 @@ reality.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:0e364b36ad4d8508a9d862aa1493b4bd:ggplot2-to-the-r&#34;&gt;&lt;code&gt;ggplot2&lt;/code&gt; to the rescue ! &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0e364b36ad4d8508a9d862aa1493b4bd:ggplot2-to-the-r&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:0e364b36ad4d8508a9d862aa1493b4bd:Not-in-R-of-cour&#34;&gt;Not in &lt;code&gt;R&lt;/code&gt; of course ;) &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0e364b36ad4d8508a9d862aa1493b4bd:Not-in-R-of-cour&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:0e364b36ad4d8508a9d862aa1493b4bd:functional-progr&#34;&gt;functional programming was a good idea after all… &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0e364b36ad4d8508a9d862aa1493b4bd:functional-progr&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:0e364b36ad4d8508a9d862aa1493b4bd:looking-at-you-R&#34;&gt;looking at you Rcpp and Cython &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:0e364b36ad4d8508a9d862aa1493b4bd:looking-at-you-R&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:ggplot2-to-the-r&#34;&gt;&lt;code&gt;ggplot2&lt;/code&gt; to the rescue ! &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ggplot2-to-the-r&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:Not-in-R-of-cour&#34;&gt;Not in &lt;code&gt;R&lt;/code&gt; of course ;) &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Not-in-R-of-cour&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:functional-progr&#34;&gt;functional programming was a good idea after all… &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:functional-progr&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:looking-at-you-R&#34;&gt;looking at you Rcpp and Cython &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:looking-at-you-R&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1796,7 +1796,7 @@ Maybe it could be done inside Adobe InDesign, but I have no experience with it.&
 small at this point. I could convert all metadata and all by hand. That was
 before I knew that Hugo has some tools to ease the switch.&lt;/p&gt;
 
-&lt;h1 id=&#34;so-long-jekyll:379062a983a2c96623df21277397b505&#34;&gt;So long Jekyll&lt;/h1&gt;
+&lt;h1 id=&#34;so-long-jekyll&#34;&gt;So long Jekyll&lt;/h1&gt;
 
 &lt;p&gt;I got tired of Jekyll for two reasons. The first is that I had a lot of stuff to
 install before being able to serve and test my website. The second is that it is
@@ -1808,13 +1808,13 @@ four months ago were to be done again. I don&amp;rsquo;t have a clue about the &
 ecosystem, and I&amp;rsquo;m not particularly interested in learning it. I know it is
 really simple, but I don&amp;rsquo;t have the time nor the motivation to.&lt;/p&gt;
 
-&lt;h1 id=&#34;hi-hugo:379062a983a2c96623df21277397b505&#34;&gt;Hi Hugo&lt;/h1&gt;
+&lt;h1 id=&#34;hi-hugo&#34;&gt;Hi Hugo&lt;/h1&gt;
 
 &lt;p&gt;I chosed Hugo for two reasons. The first is that I had great experiences with
 tools written in &lt;code&gt;Go&lt;/code&gt; recently, mainly &lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;fzf&lt;/a&gt;
 and &lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt;. I had taken a
 look at &lt;a href=&#34;https://github.com/urfave/cli&#34;&gt;cli&lt;/a&gt; when I was looking for a simple way
-to write a command line app&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and it looked dead simple. &lt;code&gt;Go&lt;/code&gt;-based tools seems to have a &amp;ldquo;keep it
+to write a command line app&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-ended-up-using&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-ended-up-using&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and it looked dead simple. &lt;code&gt;Go&lt;/code&gt;-based tools seems to have a &amp;ldquo;keep it
 simple stupid&amp;rdquo; spirit that appeals to me very much. The second reason is that
 Hugo has an awesome &lt;a href=&#34;https://gohugo.io/&#34;&gt;website&lt;/a&gt; and
 &lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;documentation&lt;/a&gt; that makes it really
@@ -1836,7 +1836,7 @@ really simple to use, much more than Jekyll. And it has great themes.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;I ended up using &lt;a href=&#34;http://click.pocoo.org/5/&#34;&gt;click&lt;/a&gt; with Python. Great library, although it tends to introduce some clumsiness in the app &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:379062a983a2c96623df21277397b505:I-ended-up-using&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-ended-up-using&#34;&gt;I ended up using &lt;a href=&#34;http://click.pocoo.org/5/&#34;&gt;click&lt;/a&gt; with Python. Great library, although it tends to introduce some clumsiness in the app &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-ended-up-using&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1855,7 +1855,7 @@ really simple to use, much more than Jekyll. And it has great themes.&lt;/p&gt;
 talked about the way I tended to integrate everything in Emacs. In this one, I
 want to describe what lead me to totally change the way I use it.&lt;/p&gt;
 
-&lt;h1 id=&#34;living-in-the-terminal:90f8f993beffe30febe8d9a4af8da2db&#34;&gt;Living in the terminal&lt;/h1&gt;
+&lt;h1 id=&#34;living-in-the-terminal&#34;&gt;Living in the terminal&lt;/h1&gt;
 
 &lt;p&gt;I just spend four months in front of my computer. I literally lived inside my
 terminal for various reasons. I had biological data to analyse, and software to
@@ -1865,14 +1865,14 @@ bioinformatics field is incredible. For that I was lucky to have chosen to learn
 polyglot &lt;code&gt;vi&lt;/code&gt; and &lt;code&gt;emacs&lt;/code&gt; in the past. Not being locked to a particuliar IDE
 when facing that much diversity is a great thing.&lt;/p&gt;
 
-&lt;h1 id=&#34;developping-inside-emacs:90f8f993beffe30febe8d9a4af8da2db&#34;&gt;Developping inside emacs&lt;/h1&gt;
+&lt;h1 id=&#34;developping-inside-emacs&#34;&gt;Developping inside emacs&lt;/h1&gt;
 
 &lt;p&gt;At the beginning, I was doing exactly what I described in my previous post. I
 lived inside org-mode, using code blocks to put up software and describe what
 each piece of code was doing. I then tangled each block to its file, tested it,
 went back to org-mode, debugged it, tangled it, tested it … At the end of the
 day, that makes a lot of &lt;code&gt;C-u C-u C-c C-v
-t&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+t&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:org-babel-tangle&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:org-babel-tangle&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;I had to speed up the way I wrote software, particularly when I was facing very
 tight deadlines. I really gradually started not to use org-mode to organise
@@ -1892,7 +1892,7 @@ export ALTERNATE_EDITOR=&amp;quot;&amp;quot;
 alias e=&#39;emacsclient -t&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;to your &lt;code&gt;.bashrc&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, and you&amp;rsquo;re all
+&lt;p&gt;to your &lt;code&gt;.bashrc&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:or-zshrc-you-sho&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:or-zshrc-you-sho&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, and you&amp;rsquo;re all
 set to use emacs as your main editor. You can have as many tmux sessions you
 want, there is only one emacs instance to edit all the file you edit. It makes
 integrating emacs and the typical terminal environment, with all its speed and
@@ -1913,8 +1913,8 @@ between emacs and the terminal environment.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;code&gt;org-babel-tangle&lt;/code&gt;, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:90f8f993beffe30febe8d9a4af8da2db:org-babel-tangle&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;or &lt;code&gt;.zshrc&lt;/code&gt;, you should obviously use zsh. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:90f8f993beffe30febe8d9a4af8da2db:or-zshrc-you-sho&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:org-babel-tangle&#34;&gt;&lt;code&gt;org-babel-tangle&lt;/code&gt;, when given two prefix arguments, tangles only the block that correponds to the same output file. This function is really great.  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:org-babel-tangle&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:or-zshrc-you-sho&#34;&gt;or &lt;code&gt;.zshrc&lt;/code&gt;, you should obviously use zsh. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:or-zshrc-you-sho&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1939,13 +1939,13 @@ line of conduct.&lt;/p&gt;
 &lt;p&gt;As a matter of fact, I actually use it all day long. Let&amp;rsquo;s describe quickly how
 I use it to work.&lt;/p&gt;
 
-&lt;h1 id=&#34;emacs-matters:345c4f196a8df77a0db582cec8160fba&#34;&gt;Emacs Matters&lt;/h1&gt;
+&lt;h1 id=&#34;emacs-matters&#34;&gt;Emacs Matters&lt;/h1&gt;
 
 &lt;p&gt;I start emacs as I start my OS. I used to check mails with mu4e, but never
 really loved the UI. I check my agenda for the day, built with org-mode. I set
 up my main tasks for the day, putting some time-stamps on it.&lt;/p&gt;
 
-&lt;h1 id=&#34;programming-and-documenting-at-the-same-time:345c4f196a8df77a0db582cec8160fba&#34;&gt;Programming and documenting. At the same time.&lt;/h1&gt;
+&lt;h1 id=&#34;programming-and-documenting-at-the-same-time&#34;&gt;Programming and documenting. At the same time.&lt;/h1&gt;
 
 &lt;p&gt;I then open the README.org of the project I&amp;rsquo;m currently working on, which
 involves a lot of bash scripting, python and R. All these scripts are written
@@ -1957,7 +1957,7 @@ and what&amp;rsquo;s left to do at the end of the day. My workflow is thus entir
 managed inside emacs. I can put TODO flags in different parts of the project,
 organise the src code in different header tree etc…&lt;/p&gt;
 
-&lt;h1 id=&#34;org-mode-to-pdf:345c4f196a8df77a0db582cec8160fba&#34;&gt;Org-mode to pdf&lt;/h1&gt;
+&lt;h1 id=&#34;org-mode-to-pdf&#34;&gt;Org-mode to pdf&lt;/h1&gt;
 
 &lt;p&gt;When the time comes to write a report, I write it inside org-mode. I use zotero
 to export my references to a &lt;code&gt;.bib&lt;/code&gt; file somewhere on my computer. Org-ref is a
@@ -1966,13 +1966,13 @@ pages long report with figures, references, math and all inside org-mode. I
 export to latex, and use &lt;code&gt;latexmk&lt;/code&gt; to export my report to pdf.&lt;/p&gt;
 
 &lt;p&gt;Emacs is great. Let&amp;rsquo;s all use emacs.
-&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-actually-use-S&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-actually-use-S&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;I actually use Spacemacs, a combination of Vim and Emacs. It&amp;rsquo;s great if you plan to stay all day at the computer : your pinky will thank you for that. It&amp;rsquo;s all the more true if you have it broken like me ! &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:345c4f196a8df77a0db582cec8160fba:I-actually-use-S&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-actually-use-S&#34;&gt;I actually use Spacemacs, a combination of Vim and Emacs. It&amp;rsquo;s great if you plan to stay all day at the computer : your pinky will thank you for that. It&amp;rsquo;s all the more true if you have it broken like me ! &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-actually-use-S&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -1990,7 +1990,7 @@ export to latex, and use &lt;code&gt;latexmk&lt;/code&gt; to export my report to
 franca&lt;/em&gt; of lectures. Yet they are seldom used to their rightful potential. I
 believe Powerpoints are often accused of the lecturer&amp;rsquo;s fault. I speak here with
 the legitimacy of a student that spent most of the last six years listening to
-lecturers with poor lecturing skills&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+lecturers with poor lecturing skills&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-am-not-saying&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-am-not-saying&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;I am a great admirer of Edward Tufte&amp;rsquo;s work about data visualization. Yet I
 disagree with his opinion that Powerpoints kills reasoning. Actually I believe
@@ -2028,10 +2028,10 @@ broad overview to the finest technical details.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Here I&amp;rsquo;ll expose what I think makes a good
-lecturer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+lecturer&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-ll-talk-indiff&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:I-ll-talk-indiff&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
 It follows Tufte&amp;rsquo;s ideas on data visualization.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-show-the-question:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show the question&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-show-the-question&#34;&gt;Good lecturers show the question&lt;/h2&gt;
 
 &lt;p&gt;A Powerpoint and a lecturer are useless if the scientific question behind it is
 not understood by the audience.&lt;/p&gt;
@@ -2040,7 +2040,7 @@ not understood by the audience.&lt;/p&gt;
 concisely the broad topic. It serves its goal even better as a question.
 Questions gives direction to reasoning.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-have-a-good-style:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers have a good style.&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-have-a-good-style&#34;&gt;Good lecturers have a good style.&lt;/h2&gt;
 
 &lt;p&gt;This is my main point. Good lecturers induces the listener to think about the
 &lt;em&gt;question&lt;/em&gt;. The listener should not have to think about the lecture&amp;rsquo;s style. To
@@ -2059,7 +2059,7 @@ pictures, diagrams and charts. In Science, we can put all aspects of reasoning
 to good use. Some people needs a visual support to information. But the
 excessive use of Powerpoints has shifted this support from the lecturer to the
 screen. We need to realize this. The support of information is the lecturer. The
-audience should be &lt;em&gt;listening&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Not staring at a screen,
+audience should be &lt;em&gt;listening&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Listening-is-a-s&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:Listening-is-a-s&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Not staring at a screen,
 trying to make sense of verbless sentences.&lt;/p&gt;
 
 &lt;p&gt;Poor lecturers tend to put too much textual information on screen. As if they
@@ -2068,22 +2068,22 @@ were hoping that it could rescue their audience&amp;rsquo;s lack of attention…
 &lt;p&gt;As does good charts, good lecturers are neutral enough to shift focus from form
 to content.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-do-not-distort-the-question:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers do not distort the question.&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-do-not-distort-the-question&#34;&gt;Good lecturers do not distort the question.&lt;/h2&gt;
 
 &lt;p&gt;Good lecturers do not leave an opinionated point of view of the question in the
 listener&amp;rsquo;s mind. On the contrary, they should be subtle enough to put the seeds
 of good reasoning in it. The listener has the choice to make it flourish.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-synthesize:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers synthesize.&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-synthesize&#34;&gt;Good lecturers synthesize.&lt;/h2&gt;
 
 &lt;p&gt;Good lecturers show many elements to the listener. They give him keys to analyze
 those elements. Or they can lead him to get this keys by
-himself&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+himself&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:It-depends-on-th&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:It-depends-on-th&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;But they have to be synthetic. One cannot hope to give a sufficiently broad
 overview of a complex topic with too much divergence from the central point.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-show-complexity:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show complexity.&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-show-complexity&#34;&gt;Good lecturers show complexity.&lt;/h2&gt;
 
 &lt;p&gt;Good lecturers connect facts between them. Good lecturers connect theories
 between them. They connect theories to facts. They connect facts to theories.
@@ -2092,13 +2092,13 @@ without knowing his audience.&lt;/p&gt;
 
 &lt;p&gt;A good lecturer&amp;rsquo;s main role is to make complex questions coherent.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-show-details-and-perspective:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers show details and perspective&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-show-details-and-perspective&#34;&gt;Good lecturers show details and perspective&lt;/h2&gt;
 
 &lt;p&gt;A good lecturer has the ability to attach the finest details to the broader
 tendency in which they are included. He knows the broad phenomena as well as
 little peculiar details.&lt;/p&gt;
 
-&lt;h2 id=&#34;good-lecturers-serves-a-clear-purpose:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Good lecturers serves a clear purpose.&lt;/h2&gt;
+&lt;h2 id=&#34;good-lecturers-serves-a-clear-purpose&#34;&gt;Good lecturers serves a clear purpose.&lt;/h2&gt;
 
 &lt;p&gt;It could be the #1 point. Good lecturers put things in context. Period. One can
 never have the listener&amp;rsquo;s attention if the listener does not know why he should
@@ -2107,7 +2107,7 @@ To what point ?&lt;/p&gt;
 
 &lt;p&gt;Such questions are so common that a lecturer tends to forget to answer it.&lt;/p&gt;
 
-&lt;h1 id=&#34;conclusion:155e6c1f545572b1746defd0cf82a1c5&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 
 &lt;p&gt;Tufte says a chart&amp;rsquo;s data to ink ratio should be maximized. Chartjunk should be
 eliminated.&lt;/p&gt;
@@ -2127,10 +2127,10 @@ tool.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;I am not saying here that all of the lectures I had were of poor quality. I say most of them. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:I-am-not-saying&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;I&amp;rsquo;ll talk indifferently of lecturer or Powerpoint. To me, a Powerpoint is as bad as is its designer. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:I-ll-talk-indiff&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;Listening is a skill we have to re-learn. Powerpoints have made that much damage. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:Listening-is-a-s&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;It depends on the lecturer&amp;rsquo;s style. Even though he should not have a style. Ha. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:155e6c1f545572b1746defd0cf82a1c5:It-depends-on-th&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-am-not-saying&#34;&gt;I am not saying here that all of the lectures I had were of poor quality. I say most of them. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-am-not-saying&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-ll-talk-indiff&#34;&gt;I&amp;rsquo;ll talk indifferently of lecturer or Powerpoint. To me, a Powerpoint is as bad as is its designer. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-ll-talk-indiff&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:Listening-is-a-s&#34;&gt;Listening is a skill we have to re-learn. Powerpoints have made that much damage. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Listening-is-a-s&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:It-depends-on-th&#34;&gt;It depends on the lecturer&amp;rsquo;s style. Even though he should not have a style. Ha. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:It-depends-on-th&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -2151,7 +2151,7 @@ the genome reality very well, but it is a useful model as a null hypothesis. One
 must reject the neutral hypothesis before affirming that a genomic trait is under
 selection constraints.&lt;/p&gt;
 
-&lt;h1 id=&#34;natural-selection-hypothesis:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Natural Selection hypothesis&lt;/h1&gt;
+&lt;h1 id=&#34;natural-selection-hypothesis&#34;&gt;Natural Selection hypothesis&lt;/h1&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;A curious aspect of the theory of evolution is that everybody thinks he
@@ -2169,7 +2169,7 @@ deleterious : they does not spread in the population.&lt;/p&gt;
 &lt;p&gt;Recently, a new process that can confound selection tracks with a neutral
 process has been discovered : the biased gene conversion.&lt;/p&gt;
 
-&lt;h1 id=&#34;gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Gene conversion&lt;/h1&gt;
+&lt;h1 id=&#34;gene-conversion&#34;&gt;Gene conversion&lt;/h1&gt;
 
 &lt;p&gt;A gene conversion event takes place when the resolution of the intermediate
 poroduct of homolog recombination leads to the
@@ -2180,11 +2180,11 @@ obligate step in eukaryotes gametogenesis.&lt;/p&gt;
 &lt;p&gt;Nevertheless, if one allele has a greater chance to be the donor, the process is
 biased.&lt;/p&gt;
 
-&lt;h1 id=&#34;biased-gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Biased Gene Conversion&lt;/h1&gt;
+&lt;h1 id=&#34;biased-gene-conversion&#34;&gt;Biased Gene Conversion&lt;/h1&gt;
 
 &lt;p&gt;There are two main scenarios to explain a biased gene conversion event.&lt;/p&gt;
 
-&lt;h2 id=&#34;initiation-bias:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;Initiation bias&lt;/h2&gt;
+&lt;h2 id=&#34;initiation-bias&#34;&gt;Initiation bias&lt;/h2&gt;
 
 &lt;p&gt;The initiation bias appears when a region on one double stranded DNA is more
 often victim of double strand breaks than its homolog region on the sister
@@ -2194,7 +2194,7 @@ Paradoxically, on the lifespan of the hotspot, the coldspot will more often be
 the donor of gene conversion events, leading to the gradual death of the
 corresponding hotspot. There is an initiation bias on the gene conversion event.&lt;/p&gt;
 
-&lt;h2 id=&#34;gc-biased-gene-conversion:b61b64bfc3b666379e845ac6ec86f6ab&#34;&gt;GC-biased gene conversion&lt;/h2&gt;
+&lt;h2 id=&#34;gc-biased-gene-conversion&#34;&gt;GC-biased gene conversion&lt;/h2&gt;
 
 &lt;p&gt;The other bias is called GC-bias gene conversion. Indeed, it has been shown in
 many eukaryotes, including yeast and human, that the G or C alleles of a gene
@@ -2208,7 +2208,7 @@ than its A or T corresponding allele.&lt;/p&gt;
 &lt;p&gt;One can find traces of GC-bias gene conversion in a region if all positions are
 affected, being either neutral or &lt;em&gt;even deleterious&lt;/em&gt;. Typically, gBGC is
 associated with regions of high rate of recombination, actual or past. While
-selection only act on non neutral regions&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, gBGC also acts on nearby introns
+selection only act on non neutral regions&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, gBGC also acts on nearby introns
 and non-functional sequences. Moreover, selection can act on a very large
 genomic scale, when linkage is taken into account.&lt;/p&gt;
 
@@ -2222,8 +2222,8 @@ deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;exons or regulatory sequences
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b61b64bfc3b666379e845ac6ec86f6ab:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;exons or regulatory sequences
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -2251,17 +2251,17 @@ with each other.&lt;/p&gt;
 &lt;p&gt;Those are the typical Hill-Robertson effects, as described by Hill and Robertson
 in 1966. They have been described under other declination since.&lt;/p&gt;
 
-&lt;h2 id=&#34;selective-sweep:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Selective Sweep&lt;/h2&gt;
+&lt;h2 id=&#34;selective-sweep&#34;&gt;Selective Sweep&lt;/h2&gt;
 
 &lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt;, a strongly advantageous allele, and &lt;em&gt;b&lt;/em&gt; a weakly deleterious
-allele. &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. The
+allele. &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:They-are-in-link&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:They-are-in-link&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. The
 advantageous effects of &lt;em&gt;A&lt;/em&gt; leads to its invasion in the population. It can even
 lead to a point of fixation. It is thus a selective sweep of &lt;em&gt;A&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;But &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;. &lt;em&gt;b&lt;/em&gt; will also invade the population, even if it is
-deleterious. This is a case of &amp;ldquo;genetic hitch-hiking&amp;rdquo;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+deleterious. This is a case of &amp;ldquo;genetic hitch-hiking&amp;rdquo;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:As-coined-by-Joh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:As-coined-by-Joh&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;background-selection:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Background selection&lt;/h2&gt;
+&lt;h2 id=&#34;background-selection&#34;&gt;Background selection&lt;/h2&gt;
 
 &lt;p&gt;It is the opposite case of selective sweep interference. Consider now &lt;em&gt;B&lt;/em&gt;, a
 strongly deleterious allele, and &lt;em&gt;a&lt;/em&gt; a weakly advantageous allele. &lt;em&gt;a&lt;/em&gt; is linked
@@ -2272,7 +2272,7 @@ individuals.&lt;/p&gt;
 advantageous. This is a case of background selection. All polymorphism linked to
 a strongly deleterious allele is purged.&lt;/p&gt;
 
-&lt;h2 id=&#34;muller-s-ratchet:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Muller&amp;rsquo;s Ratchet&lt;/h2&gt;
+&lt;h2 id=&#34;muller-s-ratchet&#34;&gt;Muller&amp;rsquo;s Ratchet&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Muller&amp;rsquo;s ratchet was first described in 1932.&lt;/p&gt;
@@ -2285,7 +2285,7 @@ recombination is weak, given the small population size, this mutation has no
 chance to be cured. When further deleterious mutation occurs, population
 degenerate. Its fitness irresistibly drops down, to the point of extinction.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:b3a64479fb0577dd0f334345c4d6837a&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Hill-Robertson effects only occurs when recombination is weaker than mutation.
 Polymorphism decreases and selection efficacy decreases too. One must consider
@@ -2301,8 +2301,8 @@ cystic fibrosis.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;They are in &lt;em&gt;linkage desequilibrium&lt;/em&gt; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b3a64479fb0577dd0f334345c4d6837a:They-are-in-link&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;As coined by John Maynard Smith&amp;rdquo; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:b3a64479fb0577dd0f334345c4d6837a:As-coined-by-Joh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:They-are-in-link&#34;&gt;They are in &lt;em&gt;linkage desequilibrium&lt;/em&gt; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:They-are-in-link&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:As-coined-by-Joh&#34;&gt;As coined by John Maynard Smith&amp;rdquo; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:As-coined-by-Joh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -2322,7 +2322,7 @@ I decided to start a blog. I want to be able to communicate my ideas in the most
 limpid way. Being a non-native English speaker, it is crucial for me to get used
 to write in English.&lt;/p&gt;
 
-&lt;h1 id=&#34;goal:73ae8c74cf7ae711ef861e36cba96620&#34;&gt;Goal&lt;/h1&gt;
+&lt;h1 id=&#34;goal&#34;&gt;Goal&lt;/h1&gt;
 
 &lt;p&gt;I am currently learning population genomics, applied to microbial communities.
 Me and my supervisors are studying a biased gene conversion process in bacteria,
@@ -2332,7 +2332,7 @@ using a natural transformation model of recombination : &lt;em&gt;Acinetobacter&
 me. I want to be able to put some clear reasoning on concepts I have learned so
 far. Writing a blog is perfect for that.&lt;/p&gt;
 
-&lt;h1 id=&#34;an-aspiring-bacterial-evolutionnist:73ae8c74cf7ae711ef861e36cba96620&#34;&gt;An aspiring bacterial evolutionnist&lt;/h1&gt;
+&lt;h1 id=&#34;an-aspiring-bacterial-evolutionnist&#34;&gt;An aspiring bacterial evolutionnist&lt;/h1&gt;
 
 &lt;p&gt;Here I&amp;rsquo;ll try to expose stuff that I learned during my late readings and
 research paper gambling…&lt;/p&gt;
