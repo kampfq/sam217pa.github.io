@@ -410,6 +410,9 @@ that I do not precisely know the keybinding I want to reach, there is
 Which-key and Hydra. For everything else, I just call &lt;code&gt;M-x&lt;/code&gt; !
 Sometimes it is shorter to just type the function name with Ivy and
 Smex, the result is here really quickly.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s how I bind key in Emacs. But I am sure there are totally
+different or better strategies out there !&lt;/p&gt;
 </description>
     </item>
     
