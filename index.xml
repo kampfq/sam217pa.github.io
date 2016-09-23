@@ -7,8 +7,411 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Tue, 13 Sep 2016 19:02:47 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 23 Sep 2016 19:23:20 +0200</lastBuildDate>
     <atom:link href="https://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keybindings strategies in Emacs</title>
+      <link>https://sam217pa.github.io/2016/09/23/keybindings-strategies-in-emacs/</link>
+      <pubDate>Fri, 23 Sep 2016 19:23:20 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/23/keybindings-strategies-in-emacs/</guid>
+      <description>
+
+&lt;p&gt;Emacs is all keybindings. Escape Meta Alt Control Shift as they say.
+When you add another layer of possible keybindings with Evil, you end
+up being pretty limitless in your keybindings choices.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Here I want to describe how I bind keys in Emacs.&lt;/strong&gt; I do this for
+two reasons: because writing helps me to formalise it, and to get
+feedbacks from you and your own keybindings strategies.&lt;/p&gt;
+
+&lt;p&gt;The outline is the following.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I bind keys under the &lt;code&gt;SPC&lt;/code&gt; prefix using General.&lt;/li&gt;
+&lt;li&gt;I remap awkward Emacs keybindings on the &lt;code&gt;C-&lt;/code&gt; map.&lt;/li&gt;
+&lt;li&gt;I place common functions in normal state on &lt;code&gt;M-&lt;/code&gt; map, which is
+unused by Evil.&lt;/li&gt;
+&lt;li&gt;I use Key-seq to declare short key-sequences bound to very often
+used functions.&lt;/li&gt;
+&lt;li&gt;And finally I bind keys available in all states to &lt;code&gt;S-&lt;/code&gt; and &lt;code&gt;H-&lt;/code&gt;
+maps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I use Evil, so my main tool to define keybindings is General.el, which
+allow me to place functions under &lt;code&gt;:prefix&lt;/code&gt;es. I have one main
+&lt;code&gt;:prefix&lt;/code&gt; defined on the &lt;code&gt;SPC&lt;/code&gt; key, and two &amp;ldquo;minor&amp;rdquo; &lt;code&gt;:prefix&lt;/code&gt; defined
+on keys specific to my keyboard layout and not used by Evil. Every
+function that I use a lot is defined under the &lt;code&gt;SPC&lt;/code&gt; prefix, to
+emulate a Spacemacs behavior that I really like. In insert state, I
+tend to use the default Emacs keybindings.&lt;/p&gt;
+
+&lt;h1 id=&#34;general-define-key&#34;&gt;General-define-key&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;general-define-key&lt;/code&gt; from the General package is great. Here&amp;rsquo;s why.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It manages keybindings for Evil and non-evil use cases.&lt;/li&gt;
+&lt;li&gt;It provides a quick way to define multiple keybindings at once.&lt;/li&gt;
+&lt;li&gt;It respects keymaps.&lt;/li&gt;
+&lt;li&gt;It allow for really simple &lt;code&gt;:prefix&lt;/code&gt; definition, being &lt;code&gt;C-c&lt;/code&gt;, &lt;code&gt;C-§&lt;/code&gt;
+if you want, or &lt;code&gt;SPC&lt;/code&gt; to emulate spacemacs leader.&lt;/li&gt;
+&lt;li&gt;It has a nice integration with &lt;code&gt;which-key&lt;/code&gt;. One can define a
+keybinding and describe it in the same statement.&lt;/li&gt;
+&lt;li&gt;When you don&amp;rsquo;t remember your keybindings,
+&lt;code&gt;general-describe-keybindings&lt;/code&gt; provide a nicely formatted org-mode
+buffer with every keybindings defined using General, sorted by
+major mode.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;in-normal-and-visual-states&#34;&gt;In normal and visual states&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;In normal state&lt;/strong&gt;, I bind key under a &lt;code&gt;SPC&lt;/code&gt; prefix like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(general-define-key
+ :states &#39;(normal visual insert emacs)
+ :prefix &amp;quot;SPC&amp;quot;
+ :non-normal-prefix &amp;quot;M-SPC&amp;quot;
+  &amp;quot;&#39;&amp;quot; &#39;(iterm-focus :which-key &amp;quot;iterm&amp;quot;)
+  &amp;quot;?&amp;quot; &#39;(iterm-goto-filedir-or-home :which-key &amp;quot;iterm - goto dir&amp;quot;)
+  &amp;quot;/&amp;quot; &#39;(counsel-ag :wich-key &amp;quot;ag&amp;quot;)
+  &amp;quot;TAB&amp;quot; &#39;(ivy-switch-buffer :which-key &amp;quot;prev buffer&amp;quot;)
+  &amp;quot;.&amp;quot; &#39;(avy-goto-word-or-subword-1  :which-key &amp;quot;go to word&amp;quot;)
+  &amp;quot;SPC&amp;quot; &#39;(counsel-M-x :which-key &amp;quot;M-x&amp;quot;)
+  &amp;quot;a&amp;quot; &#39;(hydra-launcher/body :which-key &amp;quot;Applications&amp;quot;)
+  &amp;quot;b&amp;quot; &#39;(hydra-buffer/body t :which-key &amp;quot;Buffer&amp;quot;)
+  &amp;quot;c&amp;quot; &#39;(:ignore t :which-key &amp;quot;Comment&amp;quot;)
+  &amp;quot;cl&amp;quot; &#39;(comment-or-uncomment-region-or-line :which-key &amp;quot;comment line&amp;quot;)
+  &amp;quot;w&amp;quot; &#39;(hydra-window/body :which-key &amp;quot;Window&amp;quot;)
+  &amp;quot;f&amp;quot; &#39;(:ignore t :which-key &amp;quot;Files&amp;quot;)
+  &amp;quot;fd&amp;quot; &#39;(counsel-git :which-key &amp;quot;find in git dir&amp;quot;)
+  ;; ...
+  )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I can access those functions with &lt;code&gt;SPC&lt;/code&gt; in normal and visual state,
+and &lt;code&gt;M-SPC&lt;/code&gt; in emacs and insert state. The &lt;code&gt;:which-key&lt;/code&gt; keyword allow
+me to describe the role of prefixes like &lt;code&gt;SPC f&lt;/code&gt;, attached to file
+related functions.&lt;/p&gt;
+
+&lt;p&gt;I remap the &lt;code&gt;M-&lt;/code&gt; map functions in normal state, since I usually need
+them only in insert mode. They does not conflict with Evil
+keybindings, since Vim has no Meta key.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(general-nvmap
+ &amp;quot;&#39;&amp;quot; (general-simulate-keys &amp;quot;C-c&amp;quot;)
+ &amp;quot;M-&#39;&amp;quot; &#39;evil-goto-mark
+ &amp;quot;M-b&amp;quot; &#39;ivy-switch-buffer
+ ;; ...
+ )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;general-nvmap&lt;/code&gt; defines keybindings for the &lt;code&gt;n&lt;/code&gt;ormal and &lt;code&gt;v&lt;/code&gt;isual
+state only. The &lt;code&gt;general-simulate-keys&lt;/code&gt; allows me to press &lt;code&gt;&#39;&lt;/code&gt; instead
+of &lt;code&gt;C-c&lt;/code&gt;. So commonly defined prefixes are accessible using two key
+strokes.&lt;/p&gt;
+
+&lt;p&gt;Another hidden treasure of General is the &lt;code&gt;general-omap&lt;/code&gt; function. It
+is a wrapper that allow for very convenient Vim-like operator
+definitions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(general-omap
+ :prefix &amp;quot;SPC&amp;quot;
+  &amp;quot;.&amp;quot; &#39;avy-goto-word-or-subword-1
+  &amp;quot;l&amp;quot; &#39;evil-avy-goto-line
+  &amp;quot;é&amp;quot; &#39;evil-avy-goto-subword-0 )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how I can use it.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://s22.postimg.org/cyyoaqba9/general_omap.gif&#34; alt=&#34;Delete from here to the line selected with avy-goto-line&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Delete from here to the line selected with avy-goto-line
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I press &lt;code&gt;d&lt;/code&gt; in normal mode (&lt;code&gt;evil-delete&lt;/code&gt;), then &lt;code&gt;SPC&lt;/code&gt; and &lt;code&gt;l&lt;/code&gt; to
+delete from here to the line selected with avy, then &lt;code&gt;t&lt;/code&gt; to select the
+target line. This is awesome. It&amp;rsquo;s a great wrapper around
+&lt;code&gt;evil-define-motion&lt;/code&gt;-like definitions. Plus I don&amp;rsquo;t have to use a
+prefix, I can just bind &lt;code&gt;l&lt;/code&gt; to &lt;code&gt;evil-avy-goto-line&lt;/code&gt; in operator state.&lt;/p&gt;
+
+&lt;h1 id=&#34;in-insert-and-emacs-state&#34;&gt;In insert and emacs state&lt;/h1&gt;
+
+&lt;p&gt;In insert and emacs state, I use Emacs default keybindings. By
+default, Evil attributes Vim-like keybindings in insert state, but I
+found that Emacs keybindings can go a long way before moving to normal
+state.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(setq evil-disable-insert-state-bindings t)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In insert state, I typically use the default keybindings, provided by
+package authors or Emacs default. When I find that a keybinding is
+really awkward, I remap it using &lt;code&gt;general-iemap&lt;/code&gt;, but I tend to keep
+default Emacs in insert state. I found this to be the quickest way to
+learn new packages, keybindings corresponds to the package
+documentation for example. Plus packages authors generally know best
+which keybindings are good to use.&lt;/p&gt;
+
+&lt;p&gt;In insert mode, it is quicker to have a quick sequence trigger a
+commonly used function, without going back to normal state and reach
+the &lt;code&gt;SPC&lt;/code&gt; prefix.&lt;/p&gt;
+
+&lt;p&gt;For example, I save compulsively like every minutes. So using my
+prefix map, I should escape with &lt;code&gt;xq&lt;/code&gt; — my escape key sequence, then
+press &lt;code&gt;SPC&lt;/code&gt;, then &lt;code&gt;s.&lt;/code&gt;. That&amp;rsquo;s five keypress. This is how I save
+buffers in normal state. Using
+&lt;a href=&#34;https://github.com/vlevit/key-seq.el&#34;&gt;Key-seq&lt;/a&gt;, I can stay in insert
+(or emacs) state and use two keypress to save the buffer. For quick
+saving, I use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(use-package key-seq :ensure t
+  :config
+  (key-seq-define evil-insert-state-map &amp;quot;qs&amp;quot; #&#39;save-buffer))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now when I press &lt;code&gt;q&lt;/code&gt;, Key-seq waits for the second keypress for a delay
+corresponding to the &lt;code&gt;key-chord-two-keys-delay&lt;/code&gt;, otherwise it inserts
+&lt;code&gt;q&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To me, Key-seq is superior to Key-chord since it provides binding only
+in a defined key order, while Key-chord does not. I do not want to
+notice lags for every key strokes involved in a sequence. I only want
+a lag on the first key.&lt;/p&gt;
+
+&lt;p&gt;I have thus constructed a short list of function that I use really
+often. Here is my whole setup for Key-seq and Key-chord. I use the &lt;code&gt;q&lt;/code&gt;
+key for the first key stroke because it is always followed by &lt;code&gt;u&lt;/code&gt; in
+French and right under my index finger.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(use-package key-chord :ensure t
+  :defer 1 ; do not load right at startup
+  :config
+  (setq key-chord-two-keys-delay 0.2)
+  ;; need to use key-seq. otherwise key order does not matter. that&#39;s bad.
+  ;; i want latency only on x.
+  (use-package key-seq :ensure t
+    :config
+    (key-seq-define evil-insert-state-map &amp;quot;qf&amp;quot; #&#39;ivy-switch-buffer)
+    (key-seq-define evil-insert-state-map &amp;quot;qv&amp;quot; #&#39;git-gutter:stage-hunk)
+    (key-seq-define evil-insert-state-map &amp;quot;qc&amp;quot; #&#39;avy-goto-word-1)
+    (key-seq-define evil-insert-state-map &amp;quot;ql&amp;quot; #&#39;avy-goto-line)
+    (key-seq-define evil-insert-state-map &amp;quot;qs&amp;quot; #&#39;save-buffer)
+    (key-seq-define evil-insert-state-map &amp;quot;qp&amp;quot; #&#39;hydra-projectile/body)
+    (key-seq-define evil-insert-state-map &amp;quot;QV&amp;quot; #&#39;magit-status)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;how-do-i-remember-keybindings&#34;&gt;How do I remember keybindings ?&lt;/h1&gt;
+
+&lt;p&gt;Short answer: I don&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;My &lt;code&gt;keybindings.el&lt;/code&gt; file is around 700 lines of elisp, I can&amp;rsquo;t
+remember it all.&lt;/p&gt;
+
+&lt;p&gt;Some keybindings are so deeply ingrained in muscle memory that I do
+not have to think about them, like &lt;code&gt;SPC s.&lt;/code&gt; to save a buffer or &lt;code&gt;xq&lt;/code&gt;
+to escape insert state.&lt;/p&gt;
+
+&lt;p&gt;But the vast majority of keybindings defined by Emacs, packages
+developpers or me is hard to get used to. For those use cases, I cannot
+recommend enough to use Which-Key and Hydra.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Which-key is one of the best package to learn another.&lt;/strong&gt; Its main
+role is to describe functions associated to prefixed keybindings, like
+&lt;code&gt;C-c&lt;/code&gt; or &lt;code&gt;C-x&lt;/code&gt;. For example, the Markdown package in Emacs is pretty
+much &lt;code&gt;C-c&lt;/code&gt; oriented, every keybindings it defines are associated to a
+&lt;code&gt;C-c&lt;/code&gt; prefix, like &lt;code&gt;C-c C-u&lt;/code&gt; (&lt;code&gt;markdown-up-heading&lt;/code&gt;). I just can&amp;rsquo;t
+remember them. So in my &lt;code&gt;(use-package markdown-mode)&lt;/code&gt; declaration, I&amp;rsquo;ve
+added the following chunk:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(which-key-add-major-mode-key-based-replacements &#39;markdown-mode
+    &amp;quot;C-c C-a&amp;quot; &amp;quot;insert&amp;quot;
+    &amp;quot;C-c C-c&amp;quot; &amp;quot;export&amp;quot;
+    &amp;quot;C-c TAB&amp;quot; &amp;quot;images&amp;quot;
+    &amp;quot;C-c C-s&amp;quot; &amp;quot;text&amp;quot;
+    &amp;quot;C-c C-t&amp;quot; &amp;quot;header&amp;quot;
+    &amp;quot;C-c C-x&amp;quot; &amp;quot;move&amp;quot;
+    )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now when I press &lt;code&gt;C-c&lt;/code&gt; in a markdown buffer, I got:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://s18.postimg.org/cdmh62021/which_key_markdown.png&#34; alt=&#34;Prefixed keybinding now have an etiquette attached to them&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Prefixed keybinding now have an etiquette attached to them
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;strong&gt;The second best package to learn another is Hydra.&lt;/strong&gt; I know it&amp;rsquo;s not
+its primary use case, but I found it to be very convenient to learn a
+package. For those of you who do not know Hydra, it is a package that
+allow you to define &amp;ldquo;sticky&amp;rdquo; keybindings, &lt;em&gt;ie&lt;/em&gt; keybindings that you
+can press any number of times to trigger the same effect. Here is an
+example that I use to switch buffers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defhydra hydra-buffer (:color blue :columns 3)
+  &amp;quot;
+                Buffers :
+  &amp;quot;
+  (&amp;quot;n&amp;quot; next-buffer &amp;quot;next&amp;quot; :color red)
+  (&amp;quot;b&amp;quot; ivy-switch-buffer &amp;quot;switch&amp;quot;)
+  (&amp;quot;B&amp;quot; ibuffer &amp;quot;ibuffer&amp;quot;)
+  (&amp;quot;p&amp;quot; previous-buffer &amp;quot;prev&amp;quot; :color red)
+  (&amp;quot;C-b&amp;quot; buffer-menu &amp;quot;buffer menu&amp;quot;)
+  (&amp;quot;N&amp;quot; evil-buffer-new &amp;quot;new&amp;quot;)
+  (&amp;quot;d&amp;quot; kill-this-buffer &amp;quot;delete&amp;quot; :color red)
+  ;; don&#39;t come back to previous buffer after delete
+  (&amp;quot;D&amp;quot; (progn (kill-this-buffer) (next-buffer)) &amp;quot;Delete&amp;quot; :color red)
+  (&amp;quot;s&amp;quot; save-buffer &amp;quot;save&amp;quot; :color red))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When I evaluate the previous chunk, the macro is expanded to
+&lt;code&gt;hydra-buffer/body&lt;/code&gt;, which I bound to &lt;code&gt;SPC b&lt;/code&gt;. So now when I press
+&lt;code&gt;SPC b&lt;/code&gt;, I got:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://s22.postimg.org/l5z9bmxnl/hydra_buffer.png&#34; alt=&#34;I cut this hydra&amp;#39;s head with n or p, but they keep growing, until I cut a blue head.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        I cut this hydra&amp;#39;s head with n or p, but they keep growing, until I cut a blue head.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;From now on, until I press a blue key like &lt;code&gt;b&lt;/code&gt; or &lt;code&gt;N&lt;/code&gt;, this hydra will
+stick. It allows me to switch between buffers with &lt;code&gt;n&lt;/code&gt; or &lt;code&gt;p&lt;/code&gt;, to
+&lt;code&gt;d&lt;/code&gt;elete unused buffer or &lt;code&gt;s&lt;/code&gt;ave buffers.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://s21.postimg.org/9f5xtg0mv/hydra_buffer.gif&#34; alt=&#34;That&amp;#39;s me switching buffer by hitting n until I come back to this buffer&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        That&amp;#39;s me switching buffer by hitting n until I come back to this buffer
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;It seems to me that hydra is a great tool to learn a new package,
+because it allows you to attach a description to common function. Just
+take a look at this one, borrowed from
+&lt;a href=&#34;https://github.com/abo-abo/hydra/wiki/Projectile&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(defhydra hydra-projectile
+  (:color teal :hint nil)
+  &amp;quot;
+     PROJECTILE: %(projectile-project-root)
+
+  ^Find File^        ^Search/Tags^        ^Buffers^       ^Cache^                    ^Project^
+  ^---------^        ^-----------^        ^-------^       ^-----^                    ^-------^
+  _f_: file          _a_: ag              _i_: Ibuffer    _c_: cache clear           _p_: switch proj
+  _F_: file dwim     _g_: update gtags    _b_: switch to  _x_: remove known project
+  _C-f_: file pwd    _o_: multi-occur   _s-k_: Kill all   _X_: cleanup non-existing
+  _r_: recent file   ^ ^                  ^ ^             _z_: cache current
+  _d_: dir
+&amp;quot;
+  (&amp;quot;a&amp;quot;   projectile-ag)
+  (&amp;quot;b&amp;quot;   projectile-switch-to-buffer)
+  (&amp;quot;c&amp;quot;   projectile-invalidate-cache)
+  (&amp;quot;d&amp;quot;   projectile-find-dir)
+  (&amp;quot;f&amp;quot;   projectile-find-file)
+  (&amp;quot;F&amp;quot;   projectile-find-file-dwim)
+  (&amp;quot;C-f&amp;quot; projectile-find-file-in-directory)
+  (&amp;quot;g&amp;quot;   ggtags-update-tags)
+  (&amp;quot;s-g&amp;quot; ggtags-update-tags)
+  (&amp;quot;i&amp;quot;   projectile-ibuffer)
+  (&amp;quot;K&amp;quot;   projectile-kill-buffers)
+  (&amp;quot;s-k&amp;quot; projectile-kill-buffers)
+  (&amp;quot;m&amp;quot;   projectile-multi-occur)
+  (&amp;quot;o&amp;quot;   projectile-multi-occur)
+  (&amp;quot;p&amp;quot;   projectile-switch-project)
+  (&amp;quot;r&amp;quot;   projectile-recentf)
+  (&amp;quot;x&amp;quot;   projectile-remove-known-project)
+  (&amp;quot;X&amp;quot;   projectile-cleanup-known-projects)
+  (&amp;quot;z&amp;quot;   projectile-cache-current-file)
+  (&amp;quot;q&amp;quot;   nil &amp;quot;cancel&amp;quot; :color blue))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I bind it to &lt;code&gt;SPC p&lt;/code&gt;, it expands to that, and that&amp;rsquo;s really cool:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://s22.postimg.org/wkvqg9a01/hydra_projectile.png&#34; alt=&#34;Hydra and projectile are really cool partner&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Hydra and projectile are really cool partner
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;None of those keybindings use the &amp;ldquo;sticky&amp;rdquo; behavior of the previously
+described red keys. But this way, I do not have to worry about the
+exact Projectile function that I want to use, I just press &lt;code&gt;SPC p&lt;/code&gt; and
+read the Hydra etiquette. To me this is a great way of learning to
+&lt;em&gt;use&lt;/em&gt; a package.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;So finally how do I bind keys in Emacs ? I make this easy on my thumb
+using General.el and a &lt;code&gt;SPC&lt;/code&gt; prefix. For common functions, I bind them
+using Key-seq to short two key-strokes definitions. And for those cases
+that I do not precisely know the keybinding I want to reach, there is
+Which-key and Hydra. For everything else, I just call &lt;code&gt;M-x&lt;/code&gt; !
+Sometimes it is shorter to just type the function name with Ivy and
+Smex, the result is here really quickly.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>From helm, to ivy</title>
@@ -2355,85 +2758,6 @@ deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:3&#34;&gt;exons or regulatory sequences
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hill-Robertson Effects</title>
-      <link>https://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</link>
-      <pubDate>Thu, 15 Oct 2015 19:06:40 +0200</pubDate>
-      
-      <guid>https://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;Hill-Robertson effects are interference between two locus under selection. When
-recombination is weak, selection on the two locus interfere. Selection is less
-efficient than when it acts on two independent locus.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt;, two moderately advantageous allele, in different
-population. They are under positive or directional selection. If recombination
-is weak, an optimal &lt;em&gt;AB&lt;/em&gt; combination can never appear. &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt; interfere
-with each other.&lt;/p&gt;
-
-&lt;p&gt;Those are the typical Hill-Robertson effects, as described by Hill and Robertson
-in 1966. They have been described under other declination since.&lt;/p&gt;
-
-&lt;h2 id=&#34;selective-sweep&#34;&gt;Selective Sweep&lt;/h2&gt;
-
-&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt;, a strongly advantageous allele, and &lt;em&gt;b&lt;/em&gt; a weakly deleterious
-allele. &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:They-are-in-link&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:They-are-in-link&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. The
-advantageous effects of &lt;em&gt;A&lt;/em&gt; leads to its invasion in the population. It can even
-lead to a point of fixation. It is thus a selective sweep of &lt;em&gt;A&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;But &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;. &lt;em&gt;b&lt;/em&gt; will also invade the population, even if it is
-deleterious. This is a case of &amp;ldquo;genetic hitch-hiking&amp;rdquo;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:As-coined-by-Joh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:As-coined-by-Joh&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;background-selection&#34;&gt;Background selection&lt;/h2&gt;
-
-&lt;p&gt;It is the opposite case of selective sweep interference. Consider now &lt;em&gt;B&lt;/em&gt;, a
-strongly deleterious allele, and &lt;em&gt;a&lt;/em&gt; a weakly advantageous allele. &lt;em&gt;a&lt;/em&gt; is linked
-to &lt;em&gt;B&lt;/em&gt;. The deleterious effects of &lt;em&gt;B&lt;/em&gt; lead to the extinction of &lt;em&gt;B&lt;/em&gt; carrying
-individuals.&lt;/p&gt;
-
-&lt;p&gt;But &lt;em&gt;a&lt;/em&gt; is linked to &lt;em&gt;B&lt;/em&gt;. &lt;em&gt;a&lt;/em&gt; will disappear from the population, even if it is
-advantageous. This is a case of background selection. All polymorphism linked to
-a strongly deleterious allele is purged.&lt;/p&gt;
-
-&lt;h2 id=&#34;muller-s-ratchet&#34;&gt;Muller&amp;rsquo;s Ratchet&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Muller&amp;rsquo;s ratchet was first described in 1932.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;It happens in clonal species, with small population sizes. A population carrying
-no deleterious mutation is a population subgroup. When the first deleterious
-mutation appears, the population ratchets up on the mutational burden. Since
-recombination is weak, given the small population size, this mutation has no
-chance to be cured. When further deleterious mutation occurs, population
-degenerate. Its fitness irresistibly drops down, to the point of extinction.&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Hill-Robertson effects only occurs when recombination is weaker than mutation.
-Polymorphism decreases and selection efficacy decreases too. One must consider
-selection intensity, mutation and recombination respective rates. The size of
-the genomic window affected depends on those three parameters : if recombination
-is weak and selection strong, genome can be affected on a large scale.&lt;/p&gt;
-
-&lt;p&gt;Hill-Robertson effects can explain counter intuitive observations. The spread of
-deleterious allele can be explained by genomic interference, as is the case with
-cystic fibrosis.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:They-are-in-link&#34;&gt;They are in &lt;em&gt;linkage desequilibrium&lt;/em&gt; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:They-are-in-link&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:As-coined-by-Joh&#34;&gt;As coined by John Maynard Smith&amp;rdquo; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:As-coined-by-Joh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

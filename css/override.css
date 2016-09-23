@@ -32,6 +32,7 @@ img#sam-cv-person {
 
 
 figure figcaption {
+    font-family: "PT Sans", sans-serif;
     font-size: 0.7em;
     text-align: right;
     color: gray;
