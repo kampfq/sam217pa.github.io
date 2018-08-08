@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Context-dependent keybindings: a new emacs paradigm &middot; Samuel Barreto</title>
+        <meta name="description" content="On bacteria as modern genomics Darwin&#39;s Finches">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.46" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
+	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300,700" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                        <h1 class="site-title">
+                            <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                        </h1>
+                        
+                        <a class="button-square" href="https://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                        <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/tags/">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Context-dependent keybindings: a new emacs paradigm</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-10-18" itemprop="datePublished">Tue, Oct 18, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                <a href="" itemprop="url" rel="author">Samuel Barreto</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>I recently discovered to use context dependent keybindings. Keypress
+that does different thing depending on where the cursor — the point —
+is in the buffer.</p>
+
+<p>The idea is not new. I learned how to use it from
+<a href="http://endlessparentheses.com/define-context-aware-keys-in-emacs.html">this blog post</a>
+by Arthur Malabarba. Lispy and Worf, two packages by abo-abo, use it everywhere.</p>
+
+<p>Lispy uses the peculiar syntax of LISPs or LISPs-like languages to
+define keybindings that are aware of the context. An example :
+pressing <code>j</code> at a closing paren jumps to the next closing paren of the
+same level in Lispy.</p>
+
+<p>After using Lispy for a while, I recently had to edit some R code. I
+grew frustrated of having to press <code>C-c C-p</code> to evaluate a paragraph,
+while I could just press <code>p</code> after the last function call and be done
+with it.</p>
+
+<p>I thus defined :</p>
+
+<pre><code class="language-lisp">(defvar ess-closing-delim &quot;)\\|}\\|]&quot;
+  &quot;R closing delimiter&quot;)
+</code></pre>
+
+<p>which is a regex describing closing delimiters in the R syntax.</p>
+
+<pre><code class="language-lisp">(defun lesspy-eval-function-or-paragraph (arg &amp;optional vis)
+  (interactive &quot;p&quot;)
+  (cond ((looking-back ess-closing-delim)
+         (ess-eval-region-or-function-or-paragraph vis))
+        (t (self-insert-command arg))))
+</code></pre>
+
+<p>I have bound this to <code>p</code> with</p>
+
+<pre><code class="language-lisp">(define-key ess-mode-map (kbd &quot;p&quot;) #'lesspy-eval-function-or-paragraph)
+</code></pre>
+
+<p>The key part in this is the <code>(looking-back ess-closing-delim)</code> part.
+It will return <code>t</code> (true) if the cursor is after a closing delimiter,
+and <code>nil</code> (false) otherwise. If the first <code>cond</code> statement is false,
+the last one is true by default and tells emacs to insert the <code>arg</code>
+value, which corresponds to the <code>(kbd &quot;p&quot;)</code> command. In other words,
+it inserts <code>p</code>.</p>
+
+<p>Now when I write R code, and the cursor is at the following position:</p>
+
+<pre><code class="language-R">ggplot(mtcars, aes(cyl, mpg)) +
+  geom_point()|
+</code></pre>
+
+<p>I only have to press <code>p</code> to evaluate the last two lines in the R repl.</p>
+
+<p>But what if the cursor is here ?</p>
+
+<pre><code class="language-R">ggplot(mtcars, aes(cyl, mpg)) +
+  geom_point()| +
+  theme_minimal()
+</code></pre>
+
+<p>The function will evaluate the whole paragraph. But frequently, when I
+edit ggplot2 or dplyr code, I only want to evaluate from the beginning
+of the paragraph to the cursor position, without the following
+lines<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. I thus modified the elisp code to take the <code>+</code> sign into
+account.</p>
+
+<pre><code class="language-lisp">(defun lesspy-eval-function-or-paragraph (arg &amp;optional vis)
+  (interactive &quot;p&quot;)
+  (cond ((or (looking-at &quot; %&gt;%&quot;)
+             (and (looking-at &quot; \\+&quot;) (looking-back &quot;)&quot;)))
+         (save-excursion
+           (let ((end (point)))
+             (ess-goto-beginning-of-function-or-para)
+             (ess-eval-region (point) end vis &quot;eval pipeline&quot;))))
+        ((looking-back ess-closing-delim)
+         (ess-eval-region-or-function-or-paragraph vis))
+        (t (self-insert-command arg))))
+</code></pre>
+
+<p>So now when I press <code>p</code> at the following cursor position:</p>
+
+<pre><code class="language-R">ggplot(mtcars, aes(cyl, mpg)) +
+  geom_point()| +
+  theme_minimal()
+</code></pre>
+
+<p>It only evaluates from <code>ggplot</code> to <code>geom_point()</code>.</p>
+
+<p>This kind of keybindings is great, because it exploits the language
+syntax to define useful shortcuts. Since I learned how to use it, I&rsquo;ve
+put it everywhere in my init file. For example, I&rsquo;ve defined
+keybindings for when the cursor is after the punctuation sign of a
+sentence. Because one rarely put an alphabetic character right after
+the punctuation sign, this is a place in the buffer that you can
+exploit to create keybindings. An example :</p>
+
+<pre><code class="language-lisp">(defvar textpy-punctuation-re &quot;\\.\\|?\\|…\\|!\\|\\\&quot;\\|^$&quot;
+  &quot;the punctuation sign regex&quot;)
+
+(defun back-punctuation-p (&amp;optional empty)
+  &quot;if empty is t, returns t even on empty lines&quot;
+  (and (or empty (not (looking-at &quot;^&quot;)))
+       (looking-back textpy-punctuation-re)))
+
+
+(defun textpy-save (arg)
+  (interactive &quot;p&quot;)
+  (cond ((back-punctuation-p )
+         (save-buffer))
+        (t
+         (self-insert-command arg))))
+
+(define-key text-mode-map &quot;s&quot; #'textpy-save)
+</code></pre>
+
+<p>Now when the cursor is after a <code>.|</code>, pressing <code>s</code> saves the buffer. If
+the cursor is after <code>. |</code>, pressing <code>s</code> just inserts <code>s</code>, as you would
+expect.</p>
+
+<p>The only difficulty in this kind of keybindings definition is to think
+of all the use cases you can have for the target regexp and the overrided key (<code>s</code> in this case).</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">In ggplot2, you add elements to a plot layer by layer. So evaluating lines per line is a great way to isolate the effects of adding a layer.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+                 <a href="/tags/emacs/">emacs</a>
+            
+        </p>
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Context-dependent%20keybindings%3a%20a%20new%20emacs%20paradigm&url=https%3a%2f%2fsam217pa.github.io%2f2016%2f10%2f18%2fcontext-dependent-keybindings%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+    </div>
+</footer>
+
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                </p>
+                
+                
+                
+                
+            </div>
+        </footer>
+
+        <script src="https://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="https://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -4,29 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Functional Programming In R &middot; Samuel Barreto</title>
-        <meta name="description" content="Adventures using functions to express logic in R">
+        <meta name="description" content="On bacteria as modern genomics Darwin&#39;s Finches">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.46" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="http://sam217pa.github.io/css/normalize.css">
-        <link rel="stylesheet" href="http://sam217pa.github.io/css/highlight.css">
-        <link rel="stylesheet" href="http://sam217pa.github.io/css/style.css">
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300|Ubuntu+Mono|Ubuntu:300&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
+	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300,700" rel="stylesheet">
     </head>
     <body>
         
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-69057337-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
 
@@ -35,20 +38,17 @@ ga('send', 'pageview');
                 <div class="container">
                     <div class="site-title-wrapper">
                         
-                            <h1 class="site-title">
-                                <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
-                            </h1>
+                        <h1 class="site-title">
+                            <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                        </h1>
                         
-                        <a class="button-square" href="http://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        <a class="button-square" href="https://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
                         
-                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
-                                <i class="fa fa-twitter"></i>
-                            </a>
+                        <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                            <i class="fa fa-twitter"></i>
+                        </a>
                         
                         
-                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
-                                <i class="fa fa-github-alt"></i>
-                            </a>
                         
                         
                         
@@ -66,11 +66,15 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
         <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Tags" href="/tags/">Tags</a>
     </li>
 
                     </ul>
@@ -85,14 +89,12 @@ ga('send', 'pageview');
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Functional Programming In R</h1>
     
-        <p class="post-description" itemprop="description">Adventures using functions to express logic in R</p>
-    
     <p class="post-date">
         <span>Published <time datetime="2016-07-05" itemprop="datePublished">Tue, Jul 5, 2016</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
-                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+                <a href="" itemprop="url" rel="author">Samuel Barreto</a>
             </span>
         </span>
     </p>
@@ -113,7 +115,7 @@ imperative and purely functional programming.</p>
 <p>I will take as an example an analysis I&rsquo;ve done in the past few months. It was a
 quick one day long analysis, but I think it would have been much longer if I had
 not used
-R<sup class="footnote-ref" id="fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t"><a rel="footnote" href="#fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t">1</a></sup>.</p>
+R<sup class="footnote-ref" id="fnref:Actually-it-is-t"><a href="#fn:Actually-it-is-t">1</a></sup>.</p>
 
 <p>I work in biology. In november, we received results of a run of
 <a href="https://en.wikipedia.org/wiki/Sanger_sequencing">Sanger sequencing</a>. It was
@@ -142,7 +144,7 @@ library(ggplot2)
 library(dplyr)
 </code></pre>
 
-<h1 id="functions-express-intent:6a5bf84d7e413edf98f3db000dff6cf1">Functions express intent</h1>
+<h1 id="functions-express-intent">Functions express intent</h1>
 
 <p>We want a simple function to sample a number at random between 1 and n.</p>
 
@@ -163,7 +165,7 @@ matrix.</p>
 <code>initiate_plate</code> and be done with it : I now have an 8 by 12 matrix with 0 all
 over, ready to be filled up with simulated contaminations !</p>
 
-<h1 id="recursion-shortens-the-distance-from-mind-to-code:6a5bf84d7e413edf98f3db000dff6cf1">Recursion shortens the distance from mind to code</h1>
+<h1 id="recursion-shortens-the-distance-from-mind-to-code">Recursion shortens the distance from mind to code</h1>
 
 <p>We now want to contaminate <em>n</em> well inside of this empty plate.</p>
 
@@ -245,7 +247,7 @@ This function is pure : it does not modify anything outside its scope.</p>
 contamination inside of it.</p>
 </blockquote>
 
-<h1 id="running-the-simulation:6a5bf84d7e413edf98f3db000dff6cf1">Running the simulation</h1>
+<h1 id="running-the-simulation">Running the simulation</h1>
 
 <pre><code class="language-r">n_plate_generate &lt;- function(number_of_plate, number_of_conta) {
     lapply(1:number_of_plate, function(i) plate_generate(n = number_of_conta))
@@ -267,7 +269,7 @@ contamination inside of it.</p>
 ## [6,]    1    0    0    0    0    0    0    0    0     0     0     0
 ## [7,]    0    0    0    0    0    0    0    0    0     0     0     0
 ## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
-## 
+##
 ## [[2]]
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
 ## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
@@ -278,7 +280,7 @@ contamination inside of it.</p>
 ## [6,]    0    0    0    0    0    0    0    0    0     0     0     0
 ## [7,]    0    0    0    0    1    0    0    0    0     0     0     0
 ## [8,]    0    0    0    0    0    0    0    0    0     0     0     0
-## 
+##
 ## [[3]]
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
 ## [1,]    0    0    0    0    0    0    0    0    0     0     0     0
@@ -396,7 +398,7 @@ random_weak_mean_list &lt;- lapply(random_weak, count_nearby_conta_well)
 ## [6,]    0    0    1    0    0    1    0    0    0     0     1     1
 ## [7,]    0    0    0    0    0    1    0    1    0     0     1     0
 ## [8,]    0    1    0    1    1    0    0    0    1     0     0     0
-## 
+##
 ## [[2]]
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
 ## [1,]    1    0    0    0    0    0    1    1    1     0     1     0
@@ -407,7 +409,7 @@ random_weak_mean_list &lt;- lapply(random_weak, count_nearby_conta_well)
 ## [6,]    0    1    1    0    1    0    0    0    0     0     0     0
 ## [7,]    0    0    0    0    1    1    1    1    0     1     0     1
 ## [8,]    1    0    0    0    0    0    0    0    0     1     0     0
-## 
+##
 ## [[3]]
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
 ## [1,]    0    0    0    1    1    0    0    0    0     0     0     1
@@ -425,10 +427,10 @@ random_weak_mean_list &lt;- lapply(random_weak, count_nearby_conta_well)
 
 <pre><code>## [[1]]
 ## [1] 0.3440476
-## 
+##
 ## [[2]]
 ## [1] 0.3188095
-## 
+##
 ## [[3]]
 ## [1] 0.3590476
 </code></pre>
@@ -461,7 +463,7 @@ wells contaminated.</p>
 
 <p><img src="/images/2016-07-05-randomweakmean-1.png" alt="plot of chunk 2016-07-05-randomweakmean" /></p>
 
-<h1 id="factorial-in-r:6a5bf84d7e413edf98f3db000dff6cf1">Factorial in R :</h1>
+<h1 id="factorial-in-r">Factorial in R :</h1>
 
 <p>I think this function is the cleanest and fastest way to express the factorial
 function in R. And yes, <code>*</code> is a function.</p>
@@ -475,7 +477,7 @@ function in R. And yes, <code>*</code> is a function.</p>
 <hr />
 
 <ol>
-<li id="fn:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t">Actually it is the language I am the most comfortable with, so it is not really a good comparison… <a class="footnote-return" href="#fnref:6a5bf84d7e413edf98f3db000dff6cf1:Actually-it-is-t"><sup>[return]</sup></a></li>
+<li id="fn:Actually-it-is-t">Actually it is the language I am the most comfortable with, so it is not really a good comparison… <a class="footnote-return" href="#fnref:Actually-it-is-t"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
@@ -485,45 +487,16 @@ function in R. And yes, <code>*</code> is a function.</p>
     
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=Functional%20Programming%20In%20R&url=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=Functional%20Programming%20In%20R&url=https%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
-
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <i class="fa fa-facebook"></i>
-            <span class="hidden">Facebook</span>
-        </a>
-
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2fsam217pa.github.io%2f2016%2f07%2f05%2ffunctional-programming-in-r%2f"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-           <i class="fa fa-google-plus"></i>
-            <span class="hidden">Google+</span>
-        </a>
     </div>
 </footer>
 
+
         
-    <div class="comments">
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'sam217pagithubio';
-    var disqus_identifier = 'http:\/\/sam217pa.github.io\/2016\/07\/05\/functional-programming-in-r\/';
-    var disqus_title = 'Functional Programming In R';
-    var disqus_url = 'http:\/\/sam217pa.github.io\/2016\/07\/05\/functional-programming-in-r\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-
     </article>
 </div>
 
@@ -534,7 +507,7 @@ function in R. And yes, <code>*</code> is a function.</p>
             <div class="container">
                 <div class="site-title-wrapper">
                     <h1 class="site-title">
-                        <a title="Bacterial Finches" href="http://sam217pa.github.io/">Bacterial Finches</a>
+                        <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
                     </h1>
                     <a class="button-square button-jump-top js-jump-top" href="#">
                         <i class="fa fa-angle-up"></i>
@@ -542,7 +515,7 @@ function in R. And yes, <code>*</code> is a function.</p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
                 </p>
                 
                 
@@ -551,11 +524,11 @@ function in R. And yes, <code>*</code> is a function.</p>
             </div>
         </footer>
 
-        <script src="http://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-        <script src="http://sam217pa.github.io/js/jquery.fitvids.js"></script>
-        
-        <script src="http://sam217pa.github.io/js/scripts.js"></script>
+        <script src="https://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="https://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://sam217pa.github.io/js/scripts.js"></script>
     </body>
 </html>
 

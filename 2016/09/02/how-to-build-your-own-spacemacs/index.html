@@ -4,29 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>How to build your own spacemacs &middot; Samuel Barreto</title>
-        <meta name="description" content="Build yourself a great Emacs the way you want it, using modern tools.">
+        <meta name="description" content="On bacteria as modern genomics Darwin&#39;s Finches">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.46" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
         <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
 	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lora:400,700|Fira+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300,700" rel="stylesheet">
     </head>
     <body>
         
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-69057337-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
 
@@ -46,21 +49,10 @@ ga('send', 'pageview');
                         </a>
                         
                         
-                        <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
-                            <i class="fa fa-github-alt"></i>
-                        </a>
-                        
-                        
-                        <a class="button-square button-social hint--top" data-hint="Reddit" title="Reddit" href="https://www.reddit.com/user/sam217pa/">
-                            <i class="fa fa-reddit-square"></i>
-                        </a>
                         
                         
                         
                         
-                        <a class="button-square button-social hint--top" id="fr-button" data-hint="FR" title="FR" href="https://sam217pa.github.io/fr/">
-                            FR
-                        </a>
                     </div>
 
                     <ul class="site-nav">
@@ -74,11 +66,15 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
         <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Tags" href="/tags/">Tags</a>
     </li>
 
                     </ul>
@@ -93,14 +89,12 @@ ga('send', 'pageview');
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">How to build your own spacemacs</h1>
     
-        <p class="post-description" itemprop="description">Build yourself a great Emacs the way you want it, using modern tools.</p>
-    
     <p class="post-date">
         <span>Published <time datetime="2016-09-02" itemprop="datePublished">Fri, Sep 2, 2016</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
-                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+                <a href="" itemprop="url" rel="author">Samuel Barreto</a>
             </span>
         </span>
     </p>
@@ -117,27 +111,9 @@ results. My goal is to help you build an editor inside Emacs using the best
 tools for the job, with modern tools and well-crafted packages.</p>
 
 <p>In <a href="http://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/">a previous post</a>,
-I described the tools I needed to build myself a great spacemacs-like<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> experience
+I described the tools I needed to build myself a great spacemacs-like<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> experience
 inside emacs. In this post, I want to explain the process of building it in more
 details. I hope it serves you in building a cool editor the way you like it.</p>
-
-
-<figure >
-    
-        <img src="http://blog.oxforddictionaries.com/wp-content/uploads/pottery-wheel.jpg" alt="Let&#39;s make Emacs the way you like it" />
-    
-    
-    <figcaption>
-        <p>
-        Let&#39;s make Emacs the way you like it
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <blockquote>
 <p>Emacs proficient reader should skip this part and jump directly to the
@@ -164,24 +140,6 @@ first step, we are going to learn how to configure it using basic emacs
 function.</p>
 
 <h2 id="getting-emacs-ready-for-the-job">Getting Emacs ready for the job</h2>
-
-
-<figure >
-    
-        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211" alt="Get ready." />
-    
-    
-    <figcaption>
-        <p>
-        Get ready.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p>Once you have installed the most recent version of Emacs using your beloved
 package manage and opened it, Emacs will create a directory in your <code>$HOME</code>
@@ -299,7 +257,7 @@ Let&rsquo;s use it first, read then. Restart emacs and put the following line in
 
 <p>It should check for the <code>general</code> package and make sure it is accessible. If
 not, the <code>:ensure t</code> part of the previous chunks tells use-package to download
-it and place it somewhere accessible, in <code>~/.emacs.d/elpa/</code> by default<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>.</p>
+it and place it somewhere accessible, in <code>~/.emacs.d/elpa/</code> by default<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
 
 <p>Now every function in the general package is available to you. We will now use
 the same <code>use-package</code> statement to customize the general package. We need the
@@ -332,24 +290,6 @@ that.</p>
 press <code>C-'</code>, it will call <code>avy-goto-word-1</code> and trigger the loading of the <code>avy</code>
 package.</p>
 
-
-<figure >
-    
-        <img src="https://images.unsplash.com/photo-1453230806017-56d81464b6c5?dpr=1&amp;amp" alt="Your emacs setup after use-package" />
-    
-    
-    <figcaption>
-        <p>
-        Your emacs setup after use-package
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
 <p>Use-package has all kinds of tricks to make sure no code is executed or loaded
 before it is needed. You <strong>really</strong> need to check out <code>use-package</code> on your way
 to mold Emacs to your liking.</p>
@@ -366,28 +306,10 @@ projects.</p>
 call.</p>
 
 <p>One of the most prolific Emacs-package developper that I know of is called Oleh
-Krehel; <a href="https://twitter.com/_abo_abo">abo-abo</a> on Twitter<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>. During the past
+Krehel; <a href="https://twitter.com/_abo_abo">abo-abo</a> on Twitter<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>. During the past
 two years, he developped an ecosystem around a completion framework that he
 wrote called <code>ivy</code>. This ecosystem is composed of three packages called <code>ivy</code>,
 <code>counsel</code> and <code>swiper</code>.</p>
-
-
-<figure >
-    
-        <img src="https://static.pexels.com/photos/26662/pexels-photo-26662-large.jpg" alt="Searching with Counsel" />
-    
-    
-    <figcaption>
-        <p>
-        Searching with Counsel
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p>Counsel allow you to find recently visited files, to switch between buffers, to
 search for a string in the current git directory, to search for a file in the
@@ -395,24 +317,6 @@ current git directory, to search for Emacs function, to search for system
 applications to open, to search for music in rythmbox, to … . Well, you get the
 idea. Swiper allow you to find text really really quickly inside an Emacs
 buffer.</p>
-
-
-<figure >
-    
-        <img src="https://images.unsplash.com/photo-1466436578965-5cba086a1824" alt="Ivy is the foundation of the two other." />
-    
-    
-    <figcaption>
-        <p>
-        Ivy is the foundation of the two other.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p>Ivy proposes completion candidates to the two other, and to many other Emacs
 function that needs completion and narrowing. You may have heard of another
@@ -425,29 +329,11 @@ But do we ?</p>
 
 <h2 id="bind-in-emacs">Bind in Emacs : the <code>general</code> way</h2>
 
-
-<figure >
-    
-        <img src="https://images.unsplash.com/photo-1463527882365-18201e85a091" alt="Binding via general." />
-    
-    
-    <figcaption>
-        <p>
-        Binding via general.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
 <p>Recently, a growing user base of Emacs user started to use Evil, a vim emulation
 built on top of Emacs command. It works just flawlessly. When they did, they
 developped some ways to bind keys to functions like in Vim. One of the most
 successful solution to this is <code>evil-leader</code>. And then another Evil user by the
-pseudo of <code>noctuid</code> created a package called <code>general.el</code><sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup>. Of all the way I
+pseudo of <code>noctuid</code> created a package called <code>general.el</code><sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup>. Of all the way I
 know to define keys in Emacs, this one is the most versatile and the simplest
 solution to defining keybindings.</p>
 
@@ -531,24 +417,6 @@ Which-key integration to General.</p>
 ?</p>
 
 <h2 id="meeting-our-goal-build-yourself-a-great-spacemacs-like-experience">Meeting our goal: build yourself a great Spacemacs-like experience</h2>
-
-
-<figure >
-    
-        <img src="https://images.unsplash.com/photo-1443928281170-6900dc50ac55" alt="On the road to a great emacs experience" />
-    
-    
-    <figcaption>
-        <p>
-        On the road to a great emacs experience
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p>For Evil users out there, General also has nice integration with Evil states. It
 means that we can easily define keybindings to match Spacemacs design styles.
@@ -640,10 +508,6 @@ just too awesome.</p>
             
                  <a href="/tags/emacs/">emacs</a>
             
-                 <a href="/tags/programming/">programming</a>
-            
-                 <a href="/tags/emacs-lisp/">emacs-lisp</a>
-            
         </p>
     
 
@@ -653,40 +517,11 @@ just too awesome.</p>
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
-
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f02%2fhow-to-build-your-own-spacemacs%2f"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <i class="fa fa-facebook"></i>
-            <span class="hidden">Facebook</span>
-        </a>
-
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f02%2fhow-to-build-your-own-spacemacs%2f"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-           <i class="fa fa-google-plus"></i>
-            <span class="hidden">Google+</span>
-        </a>
     </div>
 </footer>
 
+
         
-    <div class="comments">
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'sam217pagithubio';
-    var disqus_identifier = 'https:\/\/sam217pa.github.io\/2016\/09\/02\/how-to-build-your-own-spacemacs\/';
-    var disqus_title = 'How to build your own spacemacs';
-    var disqus_url = 'https:\/\/sam217pa.github.io\/2016\/09\/02\/how-to-build-your-own-spacemacs\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-
     </article>
 </div>
 
@@ -705,7 +540,7 @@ just too awesome.</p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
                 </p>
                 
                 

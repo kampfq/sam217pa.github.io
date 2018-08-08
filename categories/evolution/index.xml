@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
     <lastBuildDate>Sat, 17 Oct 2015 15:17:18 +0200</lastBuildDate>
-    <atom:link href="https://sam217pa.github.io/categories/evolution/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://sam217pa.github.io/categories/evolution/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Biased Gene Conversion</title>
@@ -16,91 +18,8 @@
       <pubDate>Sat, 17 Oct 2015 15:17:18 +0200</pubDate>
       
       <guid>https://sam217pa.github.io/2015/10/17/2015-10-17-biased-gene-conversion/</guid>
-      <description>
-
-&lt;p&gt;Base composition of genomes is affected by many major process, being either
-neutral or selective. The neutral model describes mutations as following the
-genetic drift, which depends on population effective size. It does not represent
-the genome reality very well, but it is a useful model as a null hypothesis. One
-must reject the neutral hypothesis before affirming that a genomic trait is under
-selection constraints.&lt;/p&gt;
-
-&lt;h1 id=&#34;natural-selection-hypothesis&#34;&gt;Natural Selection hypothesis&lt;/h1&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;A curious aspect of the theory of evolution is that everybody thinks he
-understands it. &lt;em&gt;Jacques Monod&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The natural selection hypothesis discriminate three cases of a genomic trait
-being under selective constraints. The positive or directional selection leads
-to the gradual erasing of variation on a given position of the genome, if this
-position has a positive impact on the fitness. The purifying, or negative
-selection, act against all variation, nearly all mutation are deleterious.
-Typically, a mutation on conserved region of 16S rDNA in Bacteria are
-deleterious : they does not spread in the population.&lt;/p&gt;
-
-&lt;p&gt;Recently, a new process that can confound selection tracks with a neutral
-process has been discovered : the biased gene conversion.&lt;/p&gt;
-
-&lt;h1 id=&#34;gene-conversion&#34;&gt;Gene conversion&lt;/h1&gt;
-
-&lt;p&gt;A gene conversion event takes place when the resolution of the intermediate
-poroduct of homolog recombination leads to the
-uni-directional—non-reciprocal—exchange of genetic information from one donor to
-a receptor sequence. It is a key process of the first meiosis division, an
-obligate step in eukaryotes gametogenesis.&lt;/p&gt;
-
-&lt;p&gt;Nevertheless, if one allele has a greater chance to be the donor, the process is
-biased.&lt;/p&gt;
-
-&lt;h1 id=&#34;biased-gene-conversion&#34;&gt;Biased Gene Conversion&lt;/h1&gt;
-
-&lt;p&gt;There are two main scenarios to explain a biased gene conversion event.&lt;/p&gt;
-
-&lt;h2 id=&#34;initiation-bias&#34;&gt;Initiation bias&lt;/h2&gt;
-
-&lt;p&gt;The initiation bias appears when a region on one double stranded DNA is more
-often victim of double strand breaks than its homolog region on the sister
-chromosome. This region is thus called a recombination hotspots, whereas its
-homolog on the sister chromosome is called a recombination coldspots.
-Paradoxically, on the lifespan of the hotspot, the coldspot will more often be
-the donor of gene conversion events, leading to the gradual death of the
-corresponding hotspot. There is an initiation bias on the gene conversion event.&lt;/p&gt;
-
-&lt;h2 id=&#34;gc-biased-gene-conversion&#34;&gt;GC-biased gene conversion&lt;/h2&gt;
-
-&lt;p&gt;The other bias is called GC-bias gene conversion. Indeed, it has been shown in
-many eukaryotes, including yeast and human, that the G or C alleles of a gene
-are statistically significantly more often the donor of a gene conversion event
-than its A or T corresponding allele.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;It looks exactly as directed selection, but is &lt;em&gt;not&lt;/em&gt; an adaptative process.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;One can find traces of GC-bias gene conversion in a region if all positions are
-affected, being either neutral or &lt;em&gt;even deleterious&lt;/em&gt;. Typically, gBGC is
-associated with regions of high rate of recombination, actual or past. While
-selection only act on non neutral regions&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, gBGC also acts on nearby introns
-and non-functional sequences. Moreover, selection can act on a very large
-genomic scale, when linkage is taken into account.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;gBGC has been shown to be responsible for the large scale variations of
-GC-content, the so called genomic isochores; it can lead to the fixation of
-deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:3&#34;&gt;exons or regulatory sequences
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Base composition of genomes is affected by many major process, being either neutral or selective. The neutral model describes mutations as following the genetic drift, which depends on population effective size. It does not represent the genome reality very well, but it is a useful model as a null hypothesis. One must reject the neutral hypothesis before affirming that a genomic trait is under selection constraints.
+Natural Selection hypothesis  A curious aspect of the theory of evolution is that everybody thinks he understands it.</description>
     </item>
     
     <item>
@@ -109,77 +28,8 @@ deleterious mutations; and it can confound traces of selection.&lt;/p&gt;
       <pubDate>Thu, 15 Oct 2015 19:06:40 +0200</pubDate>
       
       <guid>https://sam217pa.github.io/2015/10/15/2015-10-15-hill-robertson-effects/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;Hill-Robertson effects are interference between two locus under selection. When
-recombination is weak, selection on the two locus interfere. Selection is less
-efficient than when it acts on two independent locus.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt;, two moderately advantageous allele, in different
-population. They are under positive or directional selection. If recombination
-is weak, an optimal &lt;em&gt;AB&lt;/em&gt; combination can never appear. &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt; interfere
-with each other.&lt;/p&gt;
-
-&lt;p&gt;Those are the typical Hill-Robertson effects, as described by Hill and Robertson
-in 1966. They have been described under other declination since.&lt;/p&gt;
-
-&lt;h2 id=&#34;selective-sweep&#34;&gt;Selective Sweep&lt;/h2&gt;
-
-&lt;p&gt;Consider &lt;em&gt;A&lt;/em&gt;, a strongly advantageous allele, and &lt;em&gt;b&lt;/em&gt; a weakly deleterious
-allele. &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:They-are-in-link&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:They-are-in-link&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. The
-advantageous effects of &lt;em&gt;A&lt;/em&gt; leads to its invasion in the population. It can even
-lead to a point of fixation. It is thus a selective sweep of &lt;em&gt;A&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;But &lt;em&gt;b&lt;/em&gt; is linked to &lt;em&gt;A&lt;/em&gt;. &lt;em&gt;b&lt;/em&gt; will also invade the population, even if it is
-deleterious. This is a case of &amp;ldquo;genetic hitch-hiking&amp;rdquo;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:As-coined-by-Joh&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:As-coined-by-Joh&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;background-selection&#34;&gt;Background selection&lt;/h2&gt;
-
-&lt;p&gt;It is the opposite case of selective sweep interference. Consider now &lt;em&gt;B&lt;/em&gt;, a
-strongly deleterious allele, and &lt;em&gt;a&lt;/em&gt; a weakly advantageous allele. &lt;em&gt;a&lt;/em&gt; is linked
-to &lt;em&gt;B&lt;/em&gt;. The deleterious effects of &lt;em&gt;B&lt;/em&gt; lead to the extinction of &lt;em&gt;B&lt;/em&gt; carrying
-individuals.&lt;/p&gt;
-
-&lt;p&gt;But &lt;em&gt;a&lt;/em&gt; is linked to &lt;em&gt;B&lt;/em&gt;. &lt;em&gt;a&lt;/em&gt; will disappear from the population, even if it is
-advantageous. This is a case of background selection. All polymorphism linked to
-a strongly deleterious allele is purged.&lt;/p&gt;
-
-&lt;h2 id=&#34;muller-s-ratchet&#34;&gt;Muller&amp;rsquo;s Ratchet&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Muller&amp;rsquo;s ratchet was first described in 1932.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;It happens in clonal species, with small population sizes. A population carrying
-no deleterious mutation is a population subgroup. When the first deleterious
-mutation appears, the population ratchets up on the mutational burden. Since
-recombination is weak, given the small population size, this mutation has no
-chance to be cured. When further deleterious mutation occurs, population
-degenerate. Its fitness irresistibly drops down, to the point of extinction.&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Hill-Robertson effects only occurs when recombination is weaker than mutation.
-Polymorphism decreases and selection efficacy decreases too. One must consider
-selection intensity, mutation and recombination respective rates. The size of
-the genomic window affected depends on those three parameters : if recombination
-is weak and selection strong, genome can be affected on a large scale.&lt;/p&gt;
-
-&lt;p&gt;Hill-Robertson effects can explain counter intuitive observations. The spread of
-deleterious allele can be explained by genomic interference, as is the case with
-cystic fibrosis.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:They-are-in-link&#34;&gt;They are in &lt;em&gt;linkage desequilibrium&lt;/em&gt; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:They-are-in-link&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:As-coined-by-Joh&#34;&gt;As coined by John Maynard Smith&amp;rdquo; &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:As-coined-by-Joh&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Hill-Robertson effects are interference between two locus under selection. When recombination is weak, selection on the two locus interfere. Selection is less efficient than when it acts on two independent locus.
+ Consider A and B, two moderately advantageous allele, in different population. They are under positive or directional selection. If recombination is weak, an optimal AB combination can never appear. A and B interfere with each other.</description>
     </item>
     
   </channel>

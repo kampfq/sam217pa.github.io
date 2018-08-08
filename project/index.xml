@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
     <lastBuildDate>Mon, 06 Jun 2016 16:44:43 +0200</lastBuildDate>
-    <atom:link href="https://sam217pa.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://sam217pa.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Recombination and the evolution of base composition in prokaryotic genomes</title>
@@ -16,129 +18,9 @@
       <pubDate>Mon, 06 Jun 2016 16:44:43 +0200</pubDate>
       
       <guid>https://sam217pa.github.io/project/projet-gbc/</guid>
-      <description>
-
-&lt;h1 id=&#34;what-s-all-the-fuss-about-base-composition&#34;&gt;What&amp;rsquo;s all the fuss about base composition ?&lt;/h1&gt;
-
-&lt;p&gt;Every genome is made of only four nucleotides : Adenine, Thymine, Guanine and
-Cytosine. By convention, biologists describe base composition of genomes in term
-of GC content, or GC%.&lt;/p&gt;
-
-&lt;p&gt;$$
-GC\% = \frac{GC}{AT + GC}
-$$&lt;/p&gt;
-
-&lt;p&gt;Base composition is a fundamental genome trait. It typically varies many fold
-over the genome, and between genome. Since fifty years, microbial GC-content
-diversity has been described&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:See-for-example&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:See-for-example&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.
-Now that we can massively sequence a lot of genome, we know that GC% is even
-more variable than expected. Extremely reduced genomes of insect endosymbionts
-typically have low GC%. &lt;em&gt;Carsonella rudii&lt;/em&gt; is the most AT rich genome sequenced
-to date. On the other side of the distribution, large genomes of soil bacteria
-have GC content around 70%, like &lt;em&gt;Streptomyces&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;The origin of such variability has been the topic of many debates since fifty
-years. Some authors have proposed that GC% is under selection, that the GC%
-contributes to individual fitness in a given environment. Several lines of
-evidence tends to indicate that environmental parameters may be related to GC%,
-like oxygen or nitrogen availability, or optimal growth temperature&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. But
-correlations between such factors and base composition are weak at best, and are
-often not robust to analysis in a powerful phylogenetic framework, &lt;em&gt;ie&lt;/em&gt; taking
-phylogenetic inertia into account. Thus, the favoured hypothesis since 1962 and
-the famous work of Sueoka &lt;em&gt;et al&lt;/em&gt;, was that divergence in mutational bias
-patterns was the main determinants of base composition variability. Sueoka
-proposed that GC-rich genomes may have more mutations toward G and C, while
-AT-rich genomes may have more mutations toward A and T. This hypothesis have
-popularized the idea that base composition is mostly determined by a neutral
-process : mutation.&lt;/p&gt;
-
-&lt;h1 id=&#34;2010-mutational-bias-hypothesis-shattered&#34;&gt;2010 : Mutational bias hypothesis shattered&lt;/h1&gt;
-
-&lt;p&gt;Sueoka&amp;rsquo;s idea was the dominant school of thought during fifty years. This
-hypothesis was broken into pieces by one issue of Plos Genetics&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, in which two
-famous geneticists team independently and simultaneously demonstrated that
-mutation is universally biased towards AT, even in GC-rich genomes. They also
-showed that some kind of evolutionary force tends to increase GC content in all
-genomes. Consequences of this two paper may well represent a &amp;ldquo;seismic shift of
-paradigm&amp;rdquo; in microbial evolution, as coined by Rocha &amp;amp; Feil&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; in their review
-paper. It can only mean one thing : some selection or selection-like process is
-increasing GC content in bacteria.&lt;/p&gt;
-
-&lt;h1 id=&#34;why-not-gc-biased-gene-conversion&#34;&gt;Why not GC-biased gene conversion ?&lt;/h1&gt;
-
-&lt;p&gt;In eucaryotes, it has been shown that recombination affects GC content.
-Recombination involves pairing of homologous strands of DNA into a structure
-called an &lt;em&gt;heteroduplex&lt;/em&gt;. Mismatch between strands are corrected by a specific
-mechanism, which tends to introduce more GC bases than AT. The process of
-mismatch repair leads to gene conversion, &lt;em&gt;ie&lt;/em&gt; the unidirectional transfer of
-genetic information from the donor strand to the corrected strand. In mammals
-and probably a great deal of eucaryotic organisms, gene conversion is biased
-towards GC, which means that GC:AT mismatch are more often corrected into GC
-than AT. The GC-biased gene conversion (gBGC) consequences have been thoroughly
-reviewed by Duret &amp;amp; Galtier in &lt;a href=&#34;10.1146/annurev-genom-082908-150001&#34;&gt;this&lt;/a&gt; 2009
-paper. The major consequences is that recombination hotspots (intensely
-recombining genomic regions) are GC-richer than coldspots. One can draw a very
-strong correlation between GC-content of a genomic region and its
-crossover-rate&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;p&gt;By increasing GC-alleles fixation probability over AT-alleles, gBGC has a
-selection-like signature in genomes. When the two 2010 papers came out, my
-supervisor thought that maybe gene conversion is also biased toward GC in
-bacteria ! Florent Lassalle, during is PhD, thus looked for traces of
-recombination in bacterial genomes, using comparative genomic tools&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:lassalle&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:lassalle&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;. He binned
-genomes into twenty distinct GC% bins, and found that the proportion of
-recombining genes in a given bin is correlated to its GC%. He also found that
-GC% is higher in recombining genes, and even higher at third codon positions.
-Due to genetic code redundancy, the third codon position is less strongly
-subject to purifying selection.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;All these observations are compatible with the gBGC hypothesis.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;what-s-my-job&#34;&gt;What&amp;rsquo;s my job ?&lt;/h1&gt;
-
-&lt;p&gt;But observations only are what they are : observations. It would be great if we
-could experimentally test that gene conversion is biased or not in bacterial
-models. My first goal is thus to measure the frequency of conversion of GC:AT
-mismatch toward GC and AT. I will force mismatch by using synthetic sequences
-that introduces single nucleotide variants at a given locus, and sequence the
-recombination products. We need many recombining bacteria. We chose to use
-natural transformation in &lt;em&gt;Acinetobacter baylyi&lt;/em&gt;, known for its high
-transformation frequencies.&lt;/p&gt;
-
-&lt;p&gt;My second goal is to estimate fundamental recombination related traits, like
-recombination rate per base and global effective population size. We want to
-confront those measures with known GC-content affecting environmental traits and
-fundamental genome properties, like genome size. The idea is to check for
-recombination related confounding patterns in previously advanced
-GC%-determining traits.&lt;/p&gt;
-
-&lt;p&gt;Maybe we&amp;rsquo;ll then have a more solid overview of what may be at stake in this ever
-evading property of bacterial genomes…&lt;/p&gt;
-
-&lt;script type=&#34;text/javascript&#34;
-  src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
-&lt;/script&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:See-for-example&#34;&gt;See for example the work of Hill &lt;em&gt;et al&lt;/em&gt;, 1966 &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:See-for-example&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:1&#34;&gt;Optimal Growth Temperature was thought to be positively correlated to GC% in the nineties, but this theory has been refuted since. See the work of Galtier &lt;em&gt;et al&lt;/em&gt;, 1997. They demonstrated that only structural RNA-encoding DNA GC% is correlated to GC%. There is no significant correlation between GC content and OGT.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;See &lt;a href=&#34;http://dx.doi.org/10.1371/journal.pgen.1001107&#34;&gt;this&lt;/a&gt; work by Hildebrand &lt;em&gt;et al&lt;/em&gt;, and &lt;a href=&#34;http://dx.plos.org/10.1371/journal.pgen.1001115&#34;&gt;this&lt;/a&gt; work by Hershberg &amp;amp; Petrov.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;See &lt;a href=&#34;http://dx.doi.org/10.1371/journal.pgen.1001104&#34;&gt;here&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;See &lt;a href=&#34;10.1371/journal.pgen.1000071&#34;&gt;this&lt;/a&gt; work by Duret &amp;amp; Arndt on the impact of recombination on nucleotide substitutions in the human genome.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:lassalle&#34;&gt;His &lt;a href=&#34;10.1371/journal.pgen.1004941&#34;&gt;paper&lt;/a&gt; has been published in Plos Genetics in 2015.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:lassalle&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>What&amp;rsquo;s all the fuss about base composition ? Every genome is made of only four nucleotides : Adenine, Thymine, Guanine and Cytosine. By convention, biologists describe base composition of genomes in term of GC content, or GC%.
+$$ GC\% = \frac{GC}{AT + GC} $$
+Base composition is a fundamental genome trait. It typically varies many fold over the genome, and between genome. Since fifty years, microbial GC-content diversity has been described1.</description>
     </item>
     
   </channel>

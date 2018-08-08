@@ -4,29 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>How I build my own spacemacs &middot; Samuel Barreto</title>
-        <meta name="description" content="How I built my own version of spacemacs using ivy, general.el and use-package.">
+        <meta name="description" content="On bacteria as modern genomics Darwin&#39;s Finches">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.46" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
         <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
 	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lora:400,700|Fira+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300,700" rel="stylesheet">
     </head>
     <body>
         
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-69057337-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
 
@@ -46,21 +49,10 @@ ga('send', 'pageview');
                         </a>
                         
                         
-                        <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
-                            <i class="fa fa-github-alt"></i>
-                        </a>
-                        
-                        
-                        <a class="button-square button-social hint--top" data-hint="Reddit" title="Reddit" href="https://www.reddit.com/user/sam217pa/">
-                            <i class="fa fa-reddit-square"></i>
-                        </a>
                         
                         
                         
                         
-                        <a class="button-square button-social hint--top" id="fr-button" data-hint="FR" title="FR" href="https://sam217pa.github.io/fr/">
-                            FR
-                        </a>
                     </div>
 
                     <ul class="site-nav">
@@ -74,11 +66,15 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
         <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Tags" href="/tags/">Tags</a>
     </li>
 
                     </ul>
@@ -93,14 +89,12 @@ ga('send', 'pageview');
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">How I build my own spacemacs</h1>
     
-        <p class="post-description" itemprop="description">How I built my own version of spacemacs using ivy, general.el and use-package.</p>
-    
     <p class="post-date">
         <span>Published <time datetime="2016-08-30" itemprop="datePublished">Tue, Aug 30, 2016</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
-                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+                <a href="" itemprop="url" rel="author">Samuel Barreto</a>
             </span>
         </span>
     </p>
@@ -115,13 +109,13 @@ ga('send', 'pageview');
 have been using it for one year or so. I know most of its most useful commands.
 I like the plug-and-play feeling of its layer system. I like the laziness of its
 packaging system. I like how the devs build a great terminal experience inside
-emacs. I like how it abstracts Evil<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> from its users.</p>
+emacs. I like how it abstracts Evil<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> from its users.</p>
 
 <p><img src="http://spacemacs.org/img/screenshots/ss1.png" alt="Spacemacs is a great editor with a great UI." /></p>
 
 <p>But I recently grew tired of its clumsiness. It took like seven or eight second
 to load. I tried to remove some configuration layer. I removed chunks of config
-I did not need. At its best, Spacemacs took — on my machine<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup> — seven long
+I did not need. At its best, Spacemacs took — on my machine<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup> — seven long
 seconds to load. I gave me the feeling that I did not need most of the full
 blown spacemacs distribution. Plus I wanted to understand how to setup my own
 emacs. I wanted to tweak it. I wanted to get my hands dirty.</p>
@@ -142,7 +136,7 @@ new setup.</p>
 
 <p><code>use-package</code> is a package by the current maintainer of emacs. I use it to load
 packages lazily. They will not be loaded unless I call them, or one of
-my packages call them. It make the startup super fast<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">3</a></sup>.</p>
+my packages call them. It make the startup super fast<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">3</a></sup>.</p>
 
 <p>The following code loads the package which-key, and make sure it is loadable. If
 not, it downloads it, thanks to key <code>:ensure</code> keyword.</p>
@@ -174,7 +168,7 @@ bits of code are executed after the package is loaded.</p>
 </code></pre>
 
 <p>I could also use the following syntax, to replace the <code>WK</code> in the mode-line with
-<code>Ꙍ</code><sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">4</a></sup>.</p>
+<code>Ꙍ</code><sup class="footnote-ref" id="fnref:3"><a href="#fn:3">4</a></sup>.</p>
 
 <pre><code class="language-lisp">  :diminish (which-key-mode . &quot;Ꙍ&quot;)
 </code></pre>
@@ -281,7 +275,7 @@ describe a prefix.</p>
 <p>Those three packages all belongs in the spacemacs universe, <code>general.el</code> being
 only an upgrade over <code>evil-leader</code>. The spacemacs dev chose to use <code>helm</code> as a
 default &ldquo;incremental completion and selection narrowing frameworks&rdquo;. But
-recently, a proficient and prolific emacs package developper<sup class="footnote-ref" id="fnref:6"><a rel="footnote" href="#fn:6">5</a></sup> build an ecosystem
+recently, a proficient and prolific emacs package developper<sup class="footnote-ref" id="fnref:6"><a href="#fn:6">5</a></sup> build an ecosystem
 of tools based on its variation of <code>ido</code>. Those packages are <code>ivy</code>, <code>counsel</code>
 and <code>swiper</code>. They represent a great alternative to the somewhat clumsy helm
 ecosystem.</p>
@@ -325,7 +319,7 @@ Emacs commands that are customised to make the best use of ivy.</p>
 </code></pre>
 
 <p><code>swiper</code> is an <code>isearch</code> replacement based on ivy. It is really really fast. I
-have tried it on huge files<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">6</a></sup>. It still is really really fast. I have the
+have tried it on huge files<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">6</a></sup>. It still is really really fast. I have the
 feeling it is much faster than <code>helm-swoop</code>, though I did not measured it. I
 bind it to <code>C-s</code>, the default keyboard press to isearch.</p>
 
@@ -365,10 +359,6 @@ using modern tools.</p>
             
                  <a href="/tags/emacs/">emacs</a>
             
-                 <a href="/tags/spacemacs/">spacemacs</a>
-            
-                 <a href="/tags/dev/">dev</a>
-            
         </p>
     
 
@@ -378,40 +368,11 @@ using modern tools.</p>
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
-
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsam217pa.github.io%2f2016%2f08%2f30%2fhow-to-make-your-own-spacemacs%2f"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <i class="fa fa-facebook"></i>
-            <span class="hidden">Facebook</span>
-        </a>
-
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fsam217pa.github.io%2f2016%2f08%2f30%2fhow-to-make-your-own-spacemacs%2f"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-           <i class="fa fa-google-plus"></i>
-            <span class="hidden">Google+</span>
-        </a>
     </div>
 </footer>
 
+
         
-    <div class="comments">
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'sam217pagithubio';
-    var disqus_identifier = 'https:\/\/sam217pa.github.io\/2016\/08\/30\/how-to-make-your-own-spacemacs\/';
-    var disqus_title = 'How I build my own spacemacs';
-    var disqus_url = 'https:\/\/sam217pa.github.io\/2016\/08\/30\/how-to-make-your-own-spacemacs\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-
     </article>
 </div>
 
@@ -430,7 +391,7 @@ using modern tools.</p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
                 </p>
                 
                 

@@ -4,29 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>From helm, to ivy &middot; Samuel Barreto</title>
-        <meta name="description" content="A user perspective.">
+        <meta name="description" content="On bacteria as modern genomics Darwin&#39;s Finches">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.46" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
         <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
         <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
 	<link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lora:400,700|Fira+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300,700" rel="stylesheet">
     </head>
     <body>
         
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-69057337-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
 
@@ -46,21 +49,10 @@ ga('send', 'pageview');
                         </a>
                         
                         
-                        <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/sam217pa">
-                            <i class="fa fa-github-alt"></i>
-                        </a>
-                        
-                        
-                        <a class="button-square button-social hint--top" data-hint="Reddit" title="Reddit" href="https://www.reddit.com/user/sam217pa/">
-                            <i class="fa fa-reddit-square"></i>
-                        </a>
                         
                         
                         
                         
-                        <a class="button-square button-social hint--top" id="fr-button" data-hint="FR" title="FR" href="https://sam217pa.github.io/fr/">
-                            FR
-                        </a>
                     </div>
 
                     <ul class="site-nav">
@@ -74,11 +66,15 @@ ga('send', 'pageview');
     </li>
 
     <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
         <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="Tags" href="/tags/">Tags</a>
     </li>
 
                     </ul>
@@ -93,14 +89,12 @@ ga('send', 'pageview');
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">From helm, to ivy</h1>
     
-        <p class="post-description" itemprop="description">A user perspective.</p>
-    
     <p class="post-date">
         <span>Published <time datetime="2016-09-13" itemprop="datePublished">Tue, Sep 13, 2016</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
-                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Samuel Barreto</a>
+                <a href="" itemprop="url" rel="author">Samuel Barreto</a>
             </span>
         </span>
     </p>
@@ -114,24 +108,6 @@ Most of them already know Helm or Ido. When someone asked
 <a href="https://www.reddit.com/r/emacs/comments/51lqn9/helm_or_ivy/">Helm or Ivy?</a>
 on reddit, I thought that I could give my opinion on Ivy, since I am
 an ex-Helm zealot.</p>
-
-
-<figure >
-    <a href="http://www.feer-mcqueen.com/blog/minimalism-vs-maximalism/">
-        <img src="http://www.feer-mcqueen.com/blog/wp-content/uploads/2015/11/miimalism-vs.-maximilasim-700x334.jpg" alt="Maximalists vs minimalists." />
-    </a>
-    
-    <figcaption>
-        <p>
-        Maximalists vs minimalists.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p><strong>Helm and Ivy are completion frameworks</strong>. It means they are tools
 that the Emacs ecosystem can use to narrow the field of possibilities
@@ -164,24 +140,6 @@ Helm user. I have read
 <a href="https://github.com/emacs-helm/helm/wiki">this wiki too</a>, and used it
 every day for one year.</p>
 
-
-<figure >
-    <a href="https://www.pexels.com/photo/red-closed-penknife-on-the-desk-6172/">
-        <img src="https://s13.postimg.org/kre67gsfr/swiss_knife.jpg" alt="Helm is an Emacs swiss knife." />
-    </a>
-    
-    <figcaption>
-        <p>
-        Helm is an Emacs swiss knife.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
 <p><strong>Helm is a very mature tool.</strong> According to its git commit history,
 work on Helm really started around 2009. At the time of writing, the
 official Helm git repository has 26k lines of emacs-lisp code.</p>
@@ -193,7 +151,7 @@ cat *.el | wc -l
 </code></pre>
 
 <p>This does not take into account the 142 packages that a query for
-&ldquo;helm&rdquo; returns on MELPA. You can do anything with Helm<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>.</p>
+&ldquo;helm&rdquo; returns on MELPA. You can do anything with Helm<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</p>
 
 <p>Its main strength is that you can integrate and wrap many Emacs
 behavior with it. You can build an interface totally centered around
@@ -209,36 +167,18 @@ Projectile. You can generate gitignore with
 <a href="https://www.gitignore.io/">gitignore.io</a>. You can manage your
 bibliography with Helm-bibtex. You can browse Firefox bookmarks.</p>
 
-
-<figure >
-    
-        <img src="https://s9.postimg.org/vk1xngpn3/helm_google_suggest.gif" alt="Search Google from Emacs with Helm." />
-    
-    
-    <figcaption>
-        <p>
-        Search Google from Emacs with Helm.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
 <p>You can do anything with Helm.</p>
 
 <p>One feature I want to highlight, based on feedbacks from tuhdo
 <a href="https://www.reddit.com/r/emacs/comments/52lnad/from_helm_to_ivy_a_user_perspective/d7lypeu">here on Reddit</a>,
-is that Helm does not use the minibuffer<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>, while Ivy does. So it
+is that Helm does not use the minibuffer<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>, while Ivy does. So it
 can be configured to open always in the currently opened window. It is
 a very neat feature for users with large or ultrawide monitors. Eyes
 do not have to travel back and forth to the minibuffer: completion
 results are always printed in the same window.</p>
 
 
-<figure >
+<figure>
     <a href="https://www.reddit.com/r/emacs/comments/52lnad/from_helm_to_ivy_a_user_perspective/d7lypeu">
         <img src="http://i.imgur.com/g1Oz9JY.png" alt="Helm configured to open in the currently active window" />
     </a>
@@ -287,24 +227,6 @@ things, I&rsquo;m not.</p>
 <p>— abo-abo, developper of Ivy, on the &ldquo;Why not Helm ?&rdquo; issue,
 <a href="https://github.com/abo-abo/swiper/issues/3">here</a>.</p>
 </blockquote>
-
-
-<figure >
-    <a href="https://headseye.wordpress.com/2012/05/19/opinel-no-7/">
-        <img src="https://s13.postimg.org/vcy1jgyrb/opinel.jpg" alt="Ivy does only one thing. And …" />
-    </a>
-    
-    <figcaption>
-        <p>
-        Ivy does only one thing. And …
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p><strong>Ivy strives for minimalism, simplicity, customizability and
 discoverability.</strong> Those four adjectives tells a lot about the
@@ -364,24 +286,6 @@ tricks that you might like from Helm.</p>
 replace, get Projectile integration, search recently edited files,
 search Emacs command, search documentation, search keybindings, browse
 the kill-ring …</p>
-
-
-<figure >
-    
-        <img src="https://s18.postimg.org/dunrn0eg9/swiper.gif" alt="Searching with Swiper. Really really fast." />
-    
-    
-    <figcaption>
-        <p>
-        Searching with Swiper. Really really fast.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
 
 <p><strong>Let me describe how I replaced Helm with Ivy.</strong> Here is an overview
 of the most common Helm commands I needed to replace with Ivy. It was
@@ -490,42 +394,6 @@ really understandable. Every completion is predictable.</p>
 Spacemacs, Emacs or an IDE, C or Java, minimalistic or full-blown.
 Thelonious or Duke. Van Der Rohe or Gaudi.</p>
 
-
-<figure >
-    
-        <img src="https://s13.postimg.org/5321kot1z/van_der_rohe.png" alt="This Mies Van Der Rohe designed pavillion is to architecture what Ivy is to Emacs." />
-    
-    
-    <figcaption>
-        <p>
-        This Mies Van Der Rohe designed pavillion is to architecture what Ivy is to Emacs.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
-
-<figure >
-    
-        <img src="https://s13.postimg.org/ad70bzdav/gaudi.jpg" alt="The Gaudi way. The Helm way." />
-    
-    
-    <figcaption>
-        <p>
-        The Gaudi way. The Helm way.
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-
 <p>With Helm you get a huge package, a full list of features you will
 never use, a whole bunch of functions you will use occasionally, and a
 short list of functions you will use fifty times an hour. With Ivy you
@@ -594,12 +462,6 @@ src="https://www.redditstatic.com/comment-embed.js"></script></p>
             
                  <a href="/tags/emacs/">emacs</a>
             
-                 <a href="/tags/helm/">helm</a>
-            
-                 <a href="/tags/ivy/">ivy</a>
-            
-                 <a href="/tags/opinions/">opinions</a>
-            
         </p>
     
 
@@ -609,40 +471,11 @@ src="https://www.redditstatic.com/comment-embed.js"></script></p>
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
-
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f13%2ffrom-helm-to-ivy%2f"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <i class="fa fa-facebook"></i>
-            <span class="hidden">Facebook</span>
-        </a>
-
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fsam217pa.github.io%2f2016%2f09%2f13%2ffrom-helm-to-ivy%2f"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-           <i class="fa fa-google-plus"></i>
-            <span class="hidden">Google+</span>
-        </a>
     </div>
 </footer>
 
+
         
-    <div class="comments">
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'sam217pagithubio';
-    var disqus_identifier = 'https:\/\/sam217pa.github.io\/2016\/09\/13\/from-helm-to-ivy\/';
-    var disqus_title = 'From helm, to ivy';
-    var disqus_url = 'https:\/\/sam217pa.github.io\/2016\/09\/13\/from-helm-to-ivy\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-
     </article>
 </div>
 
@@ -661,7 +494,7 @@ src="https://www.redditstatic.com/comment-embed.js"></script></p>
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
                 </p>
                 
                 
