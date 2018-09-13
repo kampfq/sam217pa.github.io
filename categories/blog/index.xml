@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Bacterial Finches</title>
+    <link>https://sam217pa.github.io/categories/blog/</link>
+    <description>Recent content in Blog on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Wed, 08 Aug 2018 18:22:33 +0200</lastBuildDate>
+    
+	<atom:link href="https://sam217pa.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Back To Blogging</title>
+      <link>https://sam217pa.github.io/2018/08/08/back-to-blogging/</link>
+      <pubDate>Wed, 08 Aug 2018 18:22:33 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2018/08/08/back-to-blogging/</guid>
+      <description>I&amp;rsquo;ve been eager to go back to blogging after more than a year of leaving it alone &amp;mdash; a PhD process is quite demanding, and I&amp;rsquo;m a father now … I always thought it was a pity that I stopped writing but here I am, trying to find some time to write again.
+I&amp;rsquo;d like to apologize to readers I&amp;rsquo;ve not responded to, because of more pressing deadlines or stuff like that.</description>
+    </item>
+    
+    <item>
+      <title>Multilingual Hugo blog with GitHub Pages and Emacs</title>
+      <link>https://sam217pa.github.io/2016/09/09/setup-a-multilingual-hugo-blog-with-emacs-and-github/</link>
+      <pubDate>Fri, 09 Sep 2016 14:29:08 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/09/setup-a-multilingual-hugo-blog-with-emacs-and-github/</guid>
+      <description>Hugo is a great platform to deploy a blog with. Unfortunately and unlike Jekyll, I found it not very handy to setup a multilingual blog with. It has support for multilingual blog, but I think it is kind of hard to follow the guide.
+So I decided to simply use git and git branches to build my blog with. And it works really well. If you are interested in building a multilingual blog with Hugo and GitHub Pages, please follow along.</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Hugo</title>
+      <link>https://sam217pa.github.io/2016/06/06/switch-to-hugo/</link>
+      <pubDate>Mon, 06 Jun 2016 20:08:11 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/06/06/switch-to-hugo/</guid>
+      <description>I quit Jekyll today. Not a really huge decision to make, the blog is really small at this point. I could convert all metadata and all by hand. That was before I knew that Hugo has some tools to ease the switch.
+So long Jekyll I got tired of Jekyll for two reasons. The first is that I had a lot of stuff to install before being able to serve and test my website.</description>
+    </item>
+    
+    <item>
+      <title>Starting a blog</title>
+      <link>https://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</link>
+      <pubDate>Wed, 14 Oct 2015 16:38:14 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2015/10/14/2015-10-14-starting-a-blog/</guid>
+      <description>Following the advice of Andy Hunt, I decided to start a blog. I want to be able to communicate my ideas in the most limpid way. Being a non-native English speaker, it is crucial for me to get used to write in English.
+Goal I am currently learning population genomics, applied to microbial communities. Me and my supervisors are studying a biased gene conversion process in bacteria, using a natural transformation model of recombination : Acinetobacter.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sam217pa.github.io/fr/information-biologique/</loc>
+    <lastmod>2018-09-13T15:08:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sam217pa.github.io/fr/canguilhem-connaissance/</loc>
+    <lastmod>2018-08-08T19:24:13+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sam217pa.github.io/2018/08/08/back-to-blogging/</loc>
     <lastmod>2018-08-08T18:22:33+02:00</lastmod>
   </url>
@@ -113,54 +123,43 @@
   
   <url>
     <loc>https://sam217pa.github.io/</loc>
-    <lastmod>2018-08-08T18:22:33+02:00</lastmod>
+    <lastmod>2018-09-13T15:08:05+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sam217pa.github.io/tags/blog/</loc>
+    <loc>https://sam217pa.github.io/categories/blog/</loc>
     <lastmod>2018-08-08T18:22:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sam217pa.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sam217pa.github.io/tags/emacs/</loc>
-    <lastmod>2017-01-31T09:42:12+01:00</lastmod>
+    <lastmod>2018-08-08T18:22:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sam217pa.github.io/categories/emacs/</loc>
-    <lastmod>2016-09-23T19:23:20+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sam217pa.github.io/tags/evolution/</loc>
-    <lastmod>2015-10-17T15:17:18+02:00</lastmod>
+    <lastmod>2017-01-31T09:42:12+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sam217pa.github.io/categories/evolution/</loc>
-    <lastmod>2015-10-17T15:17:18+02:00</lastmod>
+    <lastmod>2018-09-13T15:08:05+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sam217pa.github.io/tags/latex/</loc>
+    <loc>https://sam217pa.github.io/fr/</loc>
+    <lastmod>2018-09-13T15:08:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sam217pa.github.io/categories/latex/</loc>
     <lastmod>2016-06-07T14:33:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sam217pa.github.io/tags/opinion/</loc>
-    <lastmod>2015-10-21T20:40:26+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -182,7 +181,7 @@
   </url>
   
   <url>
-    <loc>https://sam217pa.github.io/tags/programming-languages/</loc>
+    <loc>https://sam217pa.github.io/categories/programming-languages/</loc>
     <lastmod>2016-06-30T12:52:33+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -199,7 +198,6 @@
   
   <url>
     <loc>https://sam217pa.github.io/tags/</loc>
-    <lastmod>2018-08-08T18:22:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   

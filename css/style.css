@@ -7,13 +7,13 @@ html, body {
 body {
   background: #FEFEFE;
   color: #424242;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Zilla Slab", serif;
   font-size: 20px; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   text-transform: none;
-  font-family: "Lato", helvetica, sans-serif; }
+  font-family: "Roboto Condensed", sans-serif; }
 
 h1 {
   font-size: 26px; }
@@ -245,8 +245,8 @@ table {
   font-size: 30px;
   font-weight: 700;
   margin: 15px 0;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: left;
+  text-transform: none; }
 
 .page-title {
   margin: 15px 40px; }
@@ -465,8 +465,8 @@ table {
   color: #656565;
   font-size: 14px;
   margin: 0;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: right;
+  text-transform: none; }
   .footer-copyright a {
     color: #656565;
     font-weight: 700; }

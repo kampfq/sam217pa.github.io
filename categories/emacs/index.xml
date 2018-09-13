@@ -7,10 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Fri, 23 Sep 2016 19:23:20 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 31 Jan 2017 09:42:12 +0100</lastBuildDate>
     
 	<atom:link href="https://sam217pa.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why I Removed Evil in ten points</title>
+      <link>https://sam217pa.github.io/2017/01/31/why-i-removed-evil/</link>
+      <pubDate>Tue, 31 Jan 2017 09:42:12 +0100</pubDate>
+      
+      <guid>https://sam217pa.github.io/2017/01/31/why-i-removed-evil/</guid>
+      <description>Someone noticed in my recent init.el that I had removed Evil from my config. Here I want to explain why I grew frustrated with it.
+To give you some context, I am an ex-vimmer that switched to Emacs initially out of curiosity for the Evil project. I tried to build my config using Evil before knowing any basic elisp, then learned about Spacemacs.
+It was version 0.101 at that time if I remember correctly, so it was pretty mature already.</description>
+    </item>
+    
+    <item>
+      <title>Context-dependent keybindings: a new emacs paradigm</title>
+      <link>https://sam217pa.github.io/2016/10/18/context-dependent-keybindings/</link>
+      <pubDate>Tue, 18 Oct 2016 19:01:39 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/10/18/context-dependent-keybindings/</guid>
+      <description>I recently discovered to use context dependent keybindings. Keypress that does different thing depending on where the cursor — the point — is in the buffer.
+The idea is not new. I learned how to use it from this blog post by Arthur Malabarba. Lispy and Worf, two packages by abo-abo, use it everywhere.
+Lispy uses the peculiar syntax of LISPs or LISPs-like languages to define keybindings that are aware of the context.</description>
+    </item>
     
     <item>
       <title>Keybindings strategies in Emacs</title>
@@ -21,6 +43,77 @@
       <description>Emacs is all keybindings. Escape Meta Alt Control Shift as they say. When you add another layer of possible keybindings with Evil, you end up being pretty limitless in your keybindings choices.
 Here I want to describe how I bind keys in Emacs. I do this for two reasons: because writing helps me to formalise it, and to get feedbacks from you and your own keybindings strategies.
 The outline is the following.</description>
+    </item>
+    
+    <item>
+      <title>From helm, to ivy</title>
+      <link>https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/</link>
+      <pubDate>Tue, 13 Sep 2016 19:02:47 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/</guid>
+      <description>Recently, I have seen a lot of Emacs users showing interest in Ivy. Most of them already know Helm or Ido. When someone asked Helm or Ivy? on reddit, I thought that I could give my opinion on Ivy, since I am an ex-Helm zealot.
+Helm and Ivy are completion frameworks. It means they are tools that the Emacs ecosystem can use to narrow the field of possibilities after a given user input.</description>
+    </item>
+    
+    <item>
+      <title>Nuclear weapon multi-editing via Ivy and Ag</title>
+      <link>https://sam217pa.github.io/2016/09/11/nuclear-power-editing-via-ivy-and-ag/</link>
+      <pubDate>Sun, 11 Sep 2016 12:36:10 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/11/nuclear-power-editing-via-ivy-and-ag/</guid>
+      <description>Sometimes when I am working on a project, I use project-wide variable or function definition. So I name them.
+I usually suck at naming.
+So when I think of a better name, I need a way to change it globally, ie in all the files of the current project that uses it.
+In Spacemacs, I have heard of what Fabien Dubosson, one of the main Spacemacs dev, called the &amp;ldquo;nuclear weapon of multi-editing&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>How to build your own spacemacs</title>
+      <link>https://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</link>
+      <pubDate>Fri, 02 Sep 2016 21:29:21 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/</guid>
+      <description>Emacs is a great environment to build a text editor. Being a really old piece of software, searching the internet does not always lead to the best or more recent results. My goal is to help you build an editor inside Emacs using the best tools for the job, with modern tools and well-crafted packages.
+In a previous post, I described the tools I needed to build myself a great spacemacs-like1 experience inside emacs.</description>
+    </item>
+    
+    <item>
+      <title>Integrate iTerm2 in your Emacs setup</title>
+      <link>https://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</link>
+      <pubDate>Thu, 01 Sep 2016 17:48:38 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/09/01/emacs-iterm-integration/</guid>
+      <description>The terminal experience inside emacs being what it is — ie really slow and kinda difficult to use —, I use iTerm2 as my main terminal. I put up three little emacs-lisp functions using AppleScript. They allow me to quickly switch between iTerm and spacemacs.
+This one return the directory of the file currently opened. If it is a *scratch* buffer or something like that, it simply returns the home directory.</description>
+    </item>
+    
+    <item>
+      <title>How I build my own spacemacs</title>
+      <link>https://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</link>
+      <pubDate>Tue, 30 Aug 2016 17:57:03 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/08/30/how-to-make-your-own-spacemacs/</guid>
+      <description>Spacemacs is a great starter kit. It is the only kit that got my attention. I have been using it for one year or so. I know most of its most useful commands. I like the plug-and-play feeling of its layer system. I like the laziness of its packaging system. I like how the devs build a great terminal experience inside emacs. I like how it abstracts Evil1 from its users.</description>
+    </item>
+    
+    <item>
+      <title>Changing my Emacs Paradigm</title>
+      <link>https://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</link>
+      <pubDate>Mon, 06 Jun 2016 19:47:05 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/06/06/emacs-changing-paradigm/</guid>
+      <description>In my previous post, I talked about the way I tended to integrate everything in Emacs. In this one, I want to describe what lead me to totally change the way I use it.
+Living in the terminal I just spend four months in front of my computer. I literally lived inside my terminal for various reasons. I had biological data to analyse, and software to develop to do it.</description>
+    </item>
+    
+    <item>
+      <title>Emacs in My Toolbox</title>
+      <link>https://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</link>
+      <pubDate>Sat, 06 Feb 2016 15:42:58 +0100</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/02/06/2016-02-06-emacs-in-my-toolbox/</guid>
+      <description>Emacs is a powerful tool. A frequent habit of emacs user is to try to migrate everything they know and use inside emacs. Emacs Gnus or mu4e, both emacs mail clients, emacs org-mode, a GTD mode inside emacs—which is actually extremely powerful—, emacs calc, a calculator inside emacs etc… are all attempts in this line of conduct.
+As an emacs user myself, I also tried these stuff. And it works really well.</description>
     </item>
     
   </channel>

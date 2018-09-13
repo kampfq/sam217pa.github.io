@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frs on Bacterial Finches</title>
+    <link>https://sam217pa.github.io/fr/</link>
+    <description>Recent content in Frs on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Thu, 13 Sep 2018 15:08:05 +0200</lastBuildDate>
+    
+	<atom:link href="https://sam217pa.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Le concept d&#39;information en biologie</title>
+      <link>https://sam217pa.github.io/fr/information-biologique/</link>
+      <pubDate>Thu, 13 Sep 2018 15:08:05 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/fr/information-biologique/</guid>
+      <description>Ceci est une tradition relativement libre de l&amp;rsquo;entrée Biological Information de la Stanford Encyclopedia of Philosophy modifiée en 2016 par Peter Godfrey-Smith et Kim Sterelny.
+Il manque ici des paragraphes entiers; je n&amp;rsquo;y ai pris que ce qui m&amp;rsquo;intéressait. (Je ne suis pas certain d&amp;rsquo;avoir le droit légal de traduire ça ici par ailleurs.)
+ Le concept d&amp;rsquo;information a acquis un rôle dans de nombreux secteurs de la biologie.</description>
+    </item>
+    
+    <item>
+      <title>Canguilhem, la connaissance de la vie</title>
+      <link>https://sam217pa.github.io/fr/canguilhem-connaissance/</link>
+      <pubDate>Wed, 08 Aug 2018 19:24:13 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/fr/canguilhem-connaissance/</guid>
+      <description>L&amp;rsquo;Histoire des sciences montre que le concept de Vie est historiquement inscrit dans un processus que Canguilhem nomme oscillatoire entre des visions mécanistiques ou mécanicistes de la vie et des visions vitalistes.
+Peu de praticiens de l&amp;rsquo;évolution tendraient aujourd&amp;rsquo;hui à avoir recours à cette vision vitaliste — la tendance actuelle étant au réductionnisme génétique. Elle est souvent rattachée à la description par Bergson de ce qu&amp;rsquo;il appelait « élan vital, » une conception de l&amp;rsquo;évolution orientée par ce que d&amp;rsquo;autres appelaient Entéléchie — notamment Driesch après Leibniz.</description>
+    </item>
+    
+  </channel>
+</rss>

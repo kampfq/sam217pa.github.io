@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Languages on Bacterial Finches</title>
+    <link>https://sam217pa.github.io/categories/programming-languages/</link>
+    <description>Recent content in Programming Languages on Bacterial Finches</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samuel Barreto</copyright>
+    <lastBuildDate>Thu, 30 Jun 2016 12:52:33 +0200</lastBuildDate>
+    
+	<atom:link href="https://sam217pa.github.io/categories/programming-languages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>War of the languages</title>
+      <link>https://sam217pa.github.io/2016/06/30/war-of-the-languages/</link>
+      <pubDate>Thu, 30 Jun 2016 12:52:33 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/2016/06/30/war-of-the-languages/</guid>
+      <description>Chosing a language I&amp;rsquo;ve been trying to make up my mind about which programming languages I should know. I&amp;rsquo;ve come to the conclusion that I must know what matters to me. That&amp;rsquo;s not a very exciting conclusion.
+But when you&amp;rsquo;re starting off in a new field, you are very curious about chosing the right tool for the job. You wander around on the internet, read some pros and cons of some particular language, start to learn about it, read some more pros and cons, switch to a new language, repeat.</description>
+    </item>
+    
+  </channel>
+</rss>
