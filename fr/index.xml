@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Thu, 13 Sep 2018 15:08:05 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 10:28:59 +0200</lastBuildDate>
     
 	<atom:link href="https://sam217pa.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Woese et Goldenfeld : la vie est physique</title>
+      <link>https://sam217pa.github.io/fr/woese-goldenfeld-2011/</link>
+      <pubDate>Sat, 29 Sep 2018 10:28:59 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/fr/woese-goldenfeld-2011/</guid>
+      <description>Ceci est une « traduction » encore une fois assez souple de l&amp;rsquo;article de Goldenfeld et Woese paru en 2011 &amp;mdash; l&amp;rsquo;un des derniers articles de Carl Woese.1 L&amp;rsquo;objet de l&amp;rsquo;article est de montrer que le phénomène vital ne peut être compris que comme émergent de phénomènes complexes et collectifs. Destiné à des physiciens &amp;mdash; l&amp;rsquo;article paraît dans Annual Review of Condensed Matter Physics &amp;mdash;, ils arguent que, tout comme les propriétés de la matière à l&amp;rsquo;état condensé ne sont pas réductibles aux propriétés des atomes qui la compose, le phénomène vital ne peut être réduit aux propriétés spécifiques de la matière sur laquelle il opère.</description>
+    </item>
     
     <item>
       <title>Le concept d&#39;information en biologie</title>
