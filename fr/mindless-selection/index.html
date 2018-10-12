@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mindless Selection &middot; Samuel Barreto</title>
+        <meta name="description" content="J.Maynard-Smith et le concept d&#39;information biologique">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.46" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/normalize.css">
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/solarized-light.min.css"> </link>
+        <link rel="stylesheet" href="https://sam217pa.github.io/css/style.css">
+	      <link rel="stylesheet" href="https://sam217pa.github.io/css/override.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Zilla+Slab" rel="stylesheet">
+    </head>
+    <body>
+        
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-69057337-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                        <h1 class="site-title">
+                            <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                        </h1>
+                        
+                        <a class="button-square" href="https://sam217pa.github.io/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                        <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/samuel_barreto8">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Français" href="/fr/">Français</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Curriculum" href="/page/curriculum/">Curriculum</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Tags" href="/categories">Tags</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container">
+        <header class="post-header">
+    <h1 class="post-title">Mindless Selection</h1>
+    
+        <p class="post-description">J.Maynard-Smith et le concept d&#39;information biologique</p>
+    
+</header>
+
+        <div class="post-content clearfix">
+    
+
+    
+
+<p>Cet article est la traduction de l&rsquo;article de John Maynard Smith sur
+le concept d&rsquo;information en biologie, dans lequel il développe son
+point de vue sur cette notion d&rsquo;information intentionnelle, et sur
+l&rsquo;utilité de l&rsquo;analogie informationnelle. Il pourrait sembler à
+première vue que JMS emploie ici une approche pragmatiste de la
+vérité, mais les dernières sections tendent à indiquer qu&rsquo;il croyait
+réellement à cette idée d&rsquo;information portée par le génome; que, par
+substance, le génome porte une information.</p>
+
+<p><em>Maynard-Smith J. 2000. The Concept of Information in Biology. Philosophy of Science 67:177–194.</em></p>
+
+<h1 id="table-des-matières">Table des matières</h1>
+
+<ol>
+<li><a href="#org93b4aa8">L&rsquo;analogie de l&rsquo;information</a></li>
+<li><a href="#org5c32fe0">Weismann et la non-hérédité des caractères acquis</a></li>
+<li><a href="#org282ac5a">Le code génétique</a></li>
+<li><a href="#orgf37b1b3">Symboles et « Gratuité »</a></li>
+<li><a href="#org5ab8c7e">La quantification de l&rsquo;Évolution</a></li>
+<li><a href="#org7a82906">Le génome est-il un <em>programme</em> de développement ?</a></li>
+<li><a href="#org72930f6">La Théorie de l&rsquo;Évolution et le Concept d&rsquo;Information en Biologie</a></li>
+<li><a href="#orgc09dd04">Conclusions</a></li>
+</ol>
+
+<h1 id="john-maynard-smith-le-concept-d-information-en-biologie">John Maynard Smith - Le Concept d&rsquo;Information en Biologie</h1>
+
+<p>« En biologie, l&rsquo;usage de termes informationnels implique
+l&rsquo;intentionnalité, en ce qu&rsquo;à la fois la forme du signal et la réponse
+qui lui est donnée ont évolué par la sélection. Où l&rsquo;ingénieur
+pense dessein, le biologiste voit sélection naturelle. »</p>
+
+<blockquote>
+<p>Une idée centrale en biologie contemporaine est celle de
+l&rsquo;information. La biologie du développement peut être vue comme
+l&rsquo;étude de la manière dont l&rsquo;information du génome est traduite en une
+structure adulte, la biologie évolutive comme celle de la manière dont
+l&rsquo;information en est venue à être dans le génome en premier lieu.
+Notre excuse pour écrire un article sur des sujets aussi variés que
+l&rsquo;origine des gènes, des cellules et du language tient au fait qu&rsquo;ils
+sont tous liés au stockage et à la transmission d&rsquo;informations.
+(Szathmary &amp; Maynard Smith, 1995)</p>
+</blockquote>
+
+<p> </p>
+
+<blockquote>
+<p>Ces [concepts d&rsquo;information] ne s&rsquo;appliquent pas à l&rsquo;ADN parce
+qu&rsquo;elles présupposent un véritable système d&rsquo;information, composé d&rsquo;un
+codeur, d&rsquo;un émetteur, d&rsquo;un récepteur, d&rsquo;un décodeur et d&rsquo;un canal
+d&rsquo;information entre eux. De tels composants n&rsquo;apparaissent pas dans
+les systèmes chimiques. Décrire les processus chimiques par métaphores
+linguistiques telles que « transcription » ou « traduction »
+n&rsquo;altèrent en rien la nature chimique de ces processus. De plus, même
+s&rsquo;il existait une chose telle que la transmission d&rsquo;information entre
+molécules, elle serait quasi-non-bruitée (substantiellement
+non-aléatoire), de telle sorte que le concept de probabilité, au cœur
+de la théorie de l&rsquo;information, ne s&rsquo;applique pas à cette sorte de
+transfert d&rsquo;information supposé.</p>
+</blockquote>
+
+<p>Il est clair que ces citations montrent qu&rsquo;il y a matière à discuter.
+Je ne m&rsquo;intéresserait ici seulement à l&rsquo;utilisation des concepts
+d&rsquo;information en génétique, en évolution et dans le développement, et
+pas en neurobiologie, domaine que je n&rsquo;ai pas de compétences pour
+débattre.</p>
+
+<p><a id="org93b4aa8"></a></p>
+
+<h2 id="l-analogie-de-l-information">L&rsquo;analogie de l&rsquo;information</h2>
+
+<p>L&rsquo;usage familier des termes informationnels est largement répandue en
+biologie moléculaire. Transcription, traduction, code, redondance,
+synonyme, messager, édition, correction, librairie &#x2014; ce sont tous
+des termes techniques en biologie. Je ne suis pas au courant de
+confusions provenant de la non-compréhension de leurs significations.
+En fait, les similarités entre leurs significations se référant à la
+communication humaine et à la génétique sont étonnamment proches. Un
+exemple suffira. Par « correction », la séquence de quatre bases d&rsquo;un
+brin d&rsquo;ADN néo-synthétisé est comparée à la séquence correspondante du
+brin matrice. S&rsquo;il y a un « mésappariemment » (c&rsquo;est-à-dire s&rsquo;il la
+base du brin neuf n&rsquo;est pas le complément de la base du brin ancien
+selon les règles d&rsquo;appariement A-T et C-G), alors elle est enlevée et
+remplacée par la base correcte. La similarité de ce processus avec
+celui de la comparaison des lettres de deux copies &#x2014; en principe une
+par une &#x2014; et la correction si elles différent, est évidente. Il est
+aussi pertinent de souligner qu&rsquo;en décrivant l&rsquo;activité de correction
+moléculaire, j&rsquo;ai de la difficulté à éviter d&rsquo;utiliser les mots
+« règles » et « correcte ».</p>
+
+<p>Les biologistes moléculaires font donc réellement usage des analogies
+informationnelles dans leurs travaux quotidiens. Les analogies sont
+utilisées en science de deux façons. Occasionnellement, il y a un
+isomorphisme formel entre deux systèmes physiques différents. Il y a
+cinquante ans, je travaillais comme ingénieur aéronautique. L&rsquo;une des
+choses qu&rsquo;on voulait savoir, à l&rsquo;étape de conception, était le mode de
+vibration mécanique du futur avion. Pour le découvrir, nous
+construisîmes un analogue électrique, dans lequel la masse de
+différentes parties de la structure était représentée par
+l&rsquo;inductances de bobines dans le circuit, et l&rsquo;élasticité par la
+capacité des condenseurs. La vibrations du circuit prédisaient donc
+les vibrations de l&rsquo;avion. La justification de cette procédure était
+que les équations décrivant les vibrations électriques et mécaniques
+sont identiques. Dans les faits, nous avions construit un ordinateur
+analogique spécialisé. [&#x2026;]</p>
+
+<p>Les cas d&rsquo;isomorphisme exact sont plutôt rares. Bien plus fréquente
+est la reconnaissance de similarité qualitatives, utiles dans la
+compréhension d&rsquo;un système inconnu par comparaison avec un système
+familier. Un exemple classique est l&rsquo;assimilation par Harvey du cœur à
+une pompe : il est peu probable qu&rsquo;il eut eu cette vision s&rsquo;il n&rsquo;avait
+pas été familier avec l&rsquo;usage technique des pompes. Un exemple plus
+controversé est le fait qu&rsquo;et Darwin et Wallace attribuent leur
+théorie de l&rsquo;évolution par la sélection naturelle à la lecture de
+l&rsquo;« Essai sur le principe de population » de Malthus. Un troisième
+exemple plus trivial est que j&rsquo;ai été conduit à inventer la théorie
+des jeux évolutifs par analogie avec la théorie des jeux classique,
+qui analyse le comportement humain : l&rsquo;essentiel que j&rsquo;ai tiré de
+l&rsquo;analogie était une notation mathématique commode. Le point est que
+les scientifiques ont besoin que leurs idées viennent d&rsquo;ailleurs. Bien
+souvent, les biologistes les ont par analogies avec des technologies
+contemporaines, parfois des sciences sociales. Il est donc naturel
+qu&rsquo;au cours du vingtième siècle, ils aient dû tirer leurs analogies de
+machines qui transforment l&rsquo;information. Le premier usage délibéré
+d&rsquo;une telle analogie est dû à August Weismann à la fin du XIXe siècle,
+et décrite plus bas. Bien sûr, comme je vais le démontrer, si
+l&rsquo;analogie est seulement qualitative, elle peut induire en erreur tout
+comme elle peut éclairer.</p>
+
+<p>Mais d&rsquo;abord il me faut répondre aux critiques de Mahner et Bunge
+citées au début de cet article. D&rsquo;abord, est-il vrai qu&rsquo;il n&rsquo;y a ni
+codeur, ni émetteur, ni récepteur, ni décodeur ni canaux
+d&rsquo;information ? Cette phrase attire bien l&rsquo;attention sur la façon dont
+la transcription et traduction génétique diffèrent d&rsquo;exemples typiques
+de communication humaine. Dans le cas humain, un message est d&rsquo;abord
+codé puis décodé. Dans le cas génétique, bien que nous pensions le
+message sous forme codée dans l&rsquo;ARN messager puis traduit par le
+ribosome en la séquence d&rsquo;acides aminés d&rsquo;une protéine, il est
+peut-être étrange de penser à cette étape comme du <em>dé</em>-codage,
+puisqu&rsquo;elle n&rsquo;était pas « codée » depuis la protéine vers l&rsquo;ARNm en
+premier lieu. Je ne crois pas que cela détruise l&rsquo;analogie entre le
+cas génétique et le second cas de la séquence humaine. Mais elle
+soulève cependant une question difficile. S&rsquo;il y a de
+l&rsquo;« information » dans l&rsquo;ADN, copiée dans l&rsquo;ARN, comment en est-elle
+venue là ? Y-a-t&rsquo;il une analogie entre l&rsquo;origine de l&rsquo;information dans
+l&rsquo;ADN et dans le code Morse ? Peut-être. En langage humain, le
+« codeur » est celui qui convertit une signification en une séquence
+de phonèmes, ensuite convertie en code Morse. En biologie, le codeur
+est la sélection naturelle. Ce parallèle semble tiré par les cheveux,
+voire carrément fausse pour un non-darwiniste. Mais c&rsquo;est la sélection
+naturelle qui, par le passé, a produit parmi toutes les séquences
+possibles la séquence de bases, qui, par le canal informationnel déjà
+décrit, spécifie une protéine « signifiante », en ce sens qu&rsquo;elle
+fonctionne d&rsquo;une façon qui favorise la survie de l&rsquo;organisme. Où
+l&rsquo;ingénieur voit dessein, le biologiste voit sélection naturelle.</p>
+
+<p>Quid de la prétention qu&rsquo;un processus chimique n&rsquo;est pas un signal qui
+porte un message ? Et pourquoi pas ? Si un message peut être porté par
+une onde sonore, électromagnétique ou les courants fluctuants d&rsquo;un fil
+de fer, pourquoi n&rsquo;en serait-il pas ainsi pour un ensemble de
+molécules chimiques ? Une avancée majeure de la théorie
+informationnelle est que la même information peut être transmise par
+différents porteurs physiques. Jusqu&rsquo;à présent, les ingénieurs n&rsquo;ont
+pas utilisé de porteurs chimiques, essentiellement à cause de
+difficultés d&rsquo;obtention et de stockage d&rsquo;information dans un milieu
+chimique. Le monde du vivant a résolu ce problème.</p>
+
+<p>Enfin, qu&rsquo;en est-il de l&rsquo;objection que le concept de probabilité,
+central en théorie de l&rsquo;information, est manquant dans les
+applications biologiques ? On pourrait très bien arguer du fait que
+l&rsquo;information ne peut alors être transmise par le mot imprimé, puisque
+l&rsquo;impression est véritablement non-bruitées. Dans la théorie de
+l&rsquo;information, la mesure de Shannon de la quantité d&rsquo;information <em>Σp
+logp</em> est une mesure de la capacité d&rsquo;un canal à transmettre
+l&rsquo;information, donné par le nombre de messages différents qui peuvent
+être potentiellement transmis. Les aspects probabilistiques de la
+théorie de Shannon ont été utilisés en neurobiologie mais rarement en
+génétique, puisqu&rsquo;il nous suffit de supposer une équiprobabilité.
+Sachant une séquence de <em>n</em> symboles, chacun d&rsquo;eux pouvant être l&rsquo;une
+parmi quatre alternatives équiprobables, la mesure de Shannon donne
+<em>2n</em> bits d&rsquo;information. Dans le message génétique, il y a quatre
+bases alternatives. Si elles étaient également probables, et si chaque
+symbole était indépendant de ses voisins, la quantité d&rsquo;information
+serrait de 2 bits par base. En fait, les bases ne sont pas
+équiprobables, et les voisines lui sont liées, donc la quantité
+d&rsquo;information est réduite dans une certaine mesure ; cette réduction
+n&rsquo;est pas très grande, et usuellement ignorée : une réduction plus
+grande résulte de la redondance du code. En bref, on ne s&rsquo;occupe pas
+de la mesure de Shannon, puisque 2 bits par base suffisent quasiment,
+mais on le pourrait si on le voulait. En l&rsquo;occurence, Gatlin (1972) a
+écrit un livre entier sur l&rsquo;application des indices de Shannon aux
+messages génétiques. Je ne suis pas sûr qu&rsquo;il en ressorte quoi que ce
+soit, mais elle montre au moins que le concept de probabilité
+s&rsquo;applique bien au code génétique. Il y a bien isomorphisme formel,
+plus que simplement une analogie qualititative.</p>
+
+<p>Il y a cependant des difficultés à l&rsquo;application de théories
+informationnelles en génétique. Elles proviennent moins de la
+transmission de l&rsquo;information que de leurs significations. Cette
+difficulté n&rsquo;est pas réservée à la génétique. Dans les premiers temps,
+il était de coutume d&rsquo;affirmer que la théorie ne s&rsquo;occupait pas de
+signification, seulement de la quantité d&rsquo;information: selon Weaver
+(Shannon et Weaver, 1949), « ce mot &ldquo;d&rsquo;information&rdquo; en théorie de la
+communication a trait moins à ce que l&rsquo;on dit vraiment qu&rsquo;à ce qu&rsquo;on
+pourrait dire. » En biologie, la question devient : Comment
+l&rsquo;information génétique spécifie forme et fonction ?</p>
+
+<p>Je décrit maintenant cinq tentatives, plus ou moins réussies,
+d&rsquo;applications des concepts d&rsquo;information en biologie, en finissant
+par le problème de la forme biologique. Dans la section de conclusion,
+j&rsquo;utilise l&rsquo;analogie entre l&rsquo;évolution et le dessein d&rsquo;ingénierie par
+les algorithmes génétique pour suggérer des façons dont les idées de
+la théorie de l&rsquo;information peuvent être appliquée à la biologie.</p>
+
+<p><a id="org5c32fe0"></a></p>
+
+<h2 id="weismann-et-la-non-hérédité-des-caractères-acquis">Weismann et la non-hérédité des caractères acquis</h2>
+
+<p>L&rsquo;affirmation par Weismann que les caractères acquis ne sont pas
+transmis est l&rsquo;un des moments décisifs de l&rsquo;histoire de la biologie
+évolutive. Darwin lui-même croyait aux « effets de l&rsquo;usage et de
+l&rsquo;abandon ». Qu&rsquo;est-ce qui a conduit Weismann à une notion si
+contre-intuitive ? Jusqu&rsquo;à ce que je lise, par hasard, la <em>Théorie de
+l&rsquo;Évolution</em> (Weismann 1904), je pensais que ses raisons étaient
+d&rsquo;abord que la lignée germinale est séparée tôt du soma, et ensuite
+que si l&rsquo;on coupe la queue des souris, leur descendance a une queue
+normale. Je pensais que c&rsquo;étaient là de piètres raisons. Il n&rsquo;y a pas
+de séparation de la lignée germinale et somatique chez les plantes, et
+pourtant elles ne sont pas plus suspectes de transmettre leurs
+caractères acquis que les animaux ; dans tous les cas, si l&rsquo;énergie et
+la matière nécessaires à la croissance des cellules germinales
+proviennent du soma, qu&rsquo;est-ce qui empêche le soma d&rsquo;affecter la
+lignée germinale ? Quant aux queues de souris, ça n&rsquo;est pas la sorte
+de caractères acquis qu&rsquo;on pourrait s&rsquo;attendre à être transmis …</p>
+
+<p>J&rsquo;avais évidemment mal jugé Weismann. Il y a deux longs chapitres de
+<em>Evolution Theory</em> dédiés à la non-hérédité des caractères acquis. Le
+seul argument qui n&rsquo;est pas utilisé dans ces chapitres est celui de la
+séparation de la lignée germinale: il importait à Weismann pour
+d&rsquo;autres raisons. Son argument cental est qu&rsquo;il y a de nombreux traits
+qui sont manifestement adaptatifs, mais qui n&rsquo;auraient pu évoluer par
+des moyens Lamarckiens, parce qu&rsquo;ils n&rsquo;auraient pu survenir d&rsquo;une
+adaptation individuelle en premier lieu: un exemple est celui de la
+forme de la cuticule d&rsquo;insecte, qui est durcie avant d&rsquo;être utilisée,
+et donc ne peut s&rsquo;adapter au cours de durée de vie d&rsquo;un individu
+unique. Il s&rsquo;ensuit que des adaptations peuvent évoluer sans hérédité
+Lamarckienne. Mais ça ne prouve en rien que les caractères acquis ne
+sont pas transmis. Son dernier argument pour attester qu&rsquo;ils ne le
+sont pas étaient qu&rsquo;il ne pouvait concevoir de mécanisme par lequel
+cette transmission aurait lieu. Supposons qu&rsquo;un forgeron développe de
+gros muscles aux bras. En quoi cela influence la croissance de ses
+cellules spermatiques, d&rsquo;une manière telle qu&rsquo;elle altère le
+développement d&rsquo;un œuf fertilisé par ledit sperme, tant et si bien que
+le fils du forgeron développe également de gros muscles ?</p>
+
+<p>En expliquant son incapacité à imaginer un tel mécanisme, il écrivit
+que la transmission d&rsquo;un caractère acquis est « très proche de la
+supposition qu&rsquo;un télégramme en anglais, pour la Chine, y est reçu en
+chinois » (en fait, il utilise cette analogie du télégramme deux fois,
+quoique dans des mots différents). C&rsquo;est remarquable pour plusieurs
+raisons. Il reconnait que l&rsquo;hérédité s&rsquo;occupe de la transmission d&rsquo;une
+information, pas seulement de matière ou d&rsquo;énergie. <em>Secundo</em>, il
+utilise une analogie avec un canal de transmission d&rsquo;information
+spécifique, le télégramme. <em>Tertio</em>, bien que cette vision a eu une
+importance considérable pour la biologie, son argument est fallacieux
+dans un sens. Après tout, si le gamète peut affecter la taille du
+muscle, pourquoi le muscle n&rsquo;affecterait pas le gamète ? En fait, la
+plupart des appareils de transmission d&rsquo;information que nous utilisons
+aujourd&rsquo;hui transmettent dans les deux sens ; ils n&rsquo;auraient guère
+d&rsquo;utilité s&rsquo;ils ne le pouvaient. Mais certains ressemblent au système
+génétique en ce qu&rsquo;ils ne transmettent que dans un sens. Un lecteur CD
+convertit les sillons d&rsquo;un disque en sons, mais on ne peut produire un
+disque en chantant sur le lecteur. Je crois que la non-hérédité des
+caractères acquis est plus un fait contingent, souvent vrai mais pas
+toujours, qu&rsquo;une nécessité logique. Dans la mesure où il est vrai, il
+suit du « dogme central » de la biologie moléculaire, qui veut que
+l&rsquo;information voyage depuis les acides nucléiques vers les protéines,
+mais pas des protéines aux acides nucléiques.</p>
+
+<p>Qu&rsquo;en est-il alors de la queue des souris ? Weismann nous dit que,
+lorsqu&rsquo;il exposa son idée pour la première fois à un congrès
+zoologique en Allemagne, on lui répondit « mais ça doit être faux:
+tout le monde sait que, si la queue d&rsquo;une chienne est amputée, ses
+chiots ont la queue tordue » &#x2014; un exemple intéressant de ce
+qu&rsquo;Haldane appelait le théorème de Tante Jobiska, « C&rsquo;est un fait que
+tout le monde sait. » L&rsquo;expérience des souris a été conduite pour
+réfuter cette objection.</p>
+
+<p>L&rsquo;incapacité à comprendre que l&rsquo;hérédité traite d&rsquo;informations, et que
+le transfert d&rsquo;information est irréversible, a de malheureuses
+conséquences, comme je le sus à mes dépens. Jeune homme, j&rsquo;étais
+Marxiste et membre du parti communiste. Ça n&rsquo;est pas quelque chose
+dont je suis fier, mais c&rsquo;est pertinent ici. Philosophiquement, le
+marxisme a peu d&rsquo;inclinations vers la notion d&rsquo;un gène qui influence
+le développement, mais qui est lui-même non-affecté: ça n&rsquo;est pas
+dialectique. Je ne suggère pas que son marxisme était l&rsquo;unique raison
+des visions de Lysenko &#x2014; il avait d&rsquo;autres motifs moins
+honorables &#x2014; mais je crois que le marxisme y est pour quelque chose.
+Certainement, le marxisme me mettait mal à l&rsquo;aise avec les visions de
+Weismann. J&rsquo;ai passé six mois à conduire une expérience pour les
+tester. La capacité d&rsquo;une Drosophile adulte à supporter de hautes
+températures dépend de la température à laquelle l&rsquo;œuf est incubé.
+Sans surprise, je découvris que l&rsquo;adaptation n&rsquo;était pas transmise.
+Pour moi, l&rsquo;exercice ne fut peut-être pas totalement une perte de
+temps.</p>
+
+<p><a id="org282ac5a"></a></p>
+
+<h2 id="le-code-génétique">Le code génétique</h2>
+
+<p>L&rsquo;analogie entre le code génétique et certains codes de conception
+humaine comme le code Morse ou ASCII est trop évidente pour nécessiter
+une justification. Mais certains attributs sont à souligner :</p>
+
+<ol>
+<li>La correspondance entre un triplet donné et l&rsquo;acide aminé qu&rsquo;il
+code est arbitraire. Bien que le décodage dépende nécessairement
+d&rsquo;une chimie, la machinerie de décodage (ARN de transferts, les
+enzymes d&rsquo;assignation) peut être altérée par l&rsquo;assignation. En
+effet, certaines mutations sont létales parce qu&rsquo;elles altèrent
+l&rsquo;assignation. En ce sens, le code est symbolique &#x2014; un point sur
+lequel je reviendrais.</li>
+<li>Le code génétique est peu commun en ce qu&rsquo;il code pour sa propre
+machine de traduction.</li>
+<li>Les scientifiques ayant découvert la nature du code, et de la
+machinerie de traduction, avaient constamment en tête l&rsquo;analogie du
+codage, ce qui ressort nettement du vocabulaire qu&rsquo;ils utilisèrent
+pour décrire leurs découvertes. Parfois, ils furent induits en
+erreur par l&rsquo;analogie. Un exemple en est celui de la croyance que
+le code serait décrypté de la même façon que le linéaire B &#x2014; en
+découvrant la pierre de Rosette. Il manquait une protéine dont la
+séquence d&rsquo;acides aminés était connue, spécifiée par un gène dont
+la séquence nucléotidique était connue. En fait, le code ne fut pas
+décrypté de cette façon. Il fut décodé par une « machine de
+traduction », une partie de machinerie cellulaire qui, lorsqu&rsquo;on
+lui fournit un ARN de séquence connue, synthétiserait un peptide
+dont on peut déterminer la séquence. Mais, malgré ces fausses
+pistes, l&rsquo;analogie informationnelle conduisit à la solution. Si le
+problème avait plutôt été traité comme un problème de chimie des
+interactions protéines-ARN, nous pourrions être toujours en attente
+d&rsquo;une réponse.
+Dans un article que j&rsquo;ai découvert alors que ce papier était en
+passe d&rsquo;être terminé, Sarkar (1996) décrit en détail l&rsquo;histoire de
+l&rsquo;idée d&rsquo;un « code sans virgule » (Crick <em>et al.</em>, 1957). Je suis
+d&rsquo;accord avec lui sur le fait que cette idée brouilla les pistes
+plutôt qu&rsquo;elle ne les éclaira, bien que j&rsquo;ai suggéré ailleurs
+(Maynard Smith, 1999) que ce fut l&rsquo;une des plus intelligentes idées
+finalement fausse de l&rsquo;histoire des sciences. Mais elle <em>était</em>
+fausse. Cela illustre bien cette idée que les analogies en science
+peuvent induire en erreur comme elles peuvent éclairer. Mais je
+crois que Sarkar est trop impatient de pointer les échecs de cette
+analogie informationnelle et d&rsquo;atténuer ses succès. Par exemple, il
+n&rsquo;explique pas que la découverte (Crick et al, 1961) de la relation
+entre ADN et protéine &#x2014; comme un triplet dans lequel le « cadre
+de lecture » correct est maintenu en comptant précisément par
+trois &#x2014; découle également de l&rsquo;analogie du code. Il est fascinant
+que Francis Crick fut l&rsquo;un des auteurs des deux articles. En
+deuxième exemple, l&rsquo;argument de Sarkar selon lequel le code ne
+permet pas de prédire la séquence d&rsquo;acide aminé (à cause de
+complications comme les introns, les variations du code universel,
+etc…) est franchement érronée ; les biologistes le font couramment.</li>
+<li>Il est possible d&rsquo;imaginer que l&rsquo;évolution d&rsquo;organismes complexes
+et adaptés sans un code génétique. Godfrey-Smith (1999) imagine un
+monde dans lequel les protéines jouent le même rôle central que
+celui qu&rsquo;ils ont dans notre monde, mais dans lequel la séquence
+d&rsquo;acide aminé est répliquée sans encodage. En bref, il suggère que
+les protéines pourraient servir de matrices pour elles-mêmes, en
+utilisant 20 molécules « connectantes », chacune avec deux
+extrémités similaires, l&rsquo;une adhérant à un amino-acide dans la
+matrie, l&rsquo;autre à un amino-acide similaire dans le brin
+néo-synthétisé. Dans un tel système, il n&rsquo;y aurait pas de « code »
+connectant un ensemble de molécule à un autre ensemble de molécules
+chimiquement différentes. Je suis d&rsquo;accord avec l&rsquo;idée qu&rsquo;un tel
+monde est concevable, et qu&rsquo;il lui manque un code. J&rsquo;argue
+cependant plus bas que la notion d&rsquo;information, et la distinction
+entre les causes génétiques et environnementales du développement,
+seraient tout aussi pertinentes dans le monde de Godfrey-Smith que
+dans le monde réel.</li>
+</ol>
+
+<p><a id="orgf37b1b3"></a></p>
+
+<h2 id="symboles-et-gratuité">Symboles et « Gratuité »</h2>
+
+<p><em>Le hasard et la nécessité</em> de Jacques Monod n&rsquo;a pas reçu un très bon
+accueil du côté des philosophes, particulièrement dans le monde
+Anglo-Saxon. Mais il contenait au moins une idée profonde, celle de la
+gratuité. Jacob et Monod (1959) avaient découvert la façon dont un
+gène pouvait être régulé. Dans les faits, une protéine « répressive »
+codée par un second gène « régulateur », se lie au gène et
+l&rsquo;« éteint ». Le gène peut être « allumé » par un « inducteur »,
+généralement une petite molécule, le lactose dans le cas de ce gène.
+L&rsquo;inducteur se lie à la protéine régulatrice, altère sa forme de telle
+sorte que la protéine ne se lie plus au gène et donc ne le réprime
+plus. Le point que Monod souligne est que la région de la protéine
+régulatrice à laquelle se lie l&rsquo;inducteur est différente de celle qui
+se lie au gène ; l&rsquo;inducteur a un effet en altérant la forme de la
+protéine. Il en résulte que, en principe, n&rsquo;importe quel inducteur
+peut « allumer » ou « éteindre » n&rsquo;importe quel gène. Évidemment,
+toutes ces réactions obéissent aux lois de la chimie, mais il n&rsquo;y a
+pas de nécessité chimique dans la relation entre un inducteur les
+gènes qu&rsquo;il régule. C&rsquo;est cette nature arbitraire de la biologie
+moléculaire que Monod appelle la gratuité.</p>
+
+<p>Je pense qu&rsquo;il serait plus éclairant d&rsquo;exprimer la conception de Monod
+en disant que les inducteurs et les répresseurs sont « symboliques »:
+dans la terminologie de la sémiotique, il n&rsquo;y a pas de connection
+nécessaire entre leur forme (composition chimique) et leur sens (gènes
+allumé ou éteint). D&rsquo;autres aspects de la biologie moléculaire sont
+symboliques dans le même sens: par exemple, le codon CAC code
+l&rsquo;histidine mais il n&rsquo;y a pas de raison chimique pour laquelle il ne
+coderait pas la glycine. (En passant, j&rsquo;avais trouvé cette distinction
+sémiotique entre le symbole, l&rsquo;icône et l&rsquo;index très éclairante sur la
+communication animale.)</p>
+
+<p>Sarkar (1996) discute de façon intéressante la notion de gratuité de
+Monod. Il interprète Monod en arguant que la « conception cybernétique
+de la régulation du gène a plus de valeur explicative qu&rsquo;un
+alternative purement physicaliste, » mais ajoute que cette opinion
+n&rsquo;est justifiée que si les cas de régulation différents de celui de
+l&rsquo;opéron lactose étudié par Monod sont de même nature. Il conclut que
+les « tentatives de généraliser le modèle de l&rsquo;opéron à celui de la
+régulation des gènes eucaryotes n&rsquo;ont montré aucune trace de succès
+pour l&rsquo;instant ». Je crois qu&rsquo;il serait difficile de trouver un
+généticien du développement d&rsquo;accord avec lui. Comme je l&rsquo;explique
+plus bas, les idées de Monod sont les bases de la recherche dans ce
+champ.</p>
+
+<p>Les linguistes défendraient que seul un langage symbolique peut
+convoyer un nombre infiniment grand de signification. Je pense que
+c&rsquo;est la nature symbolique de la biologie moléculaire qui rend
+possible un nombre indéfiniment grand de formes biologiques. Je
+retournerai au problème de la forme plus bas, mais d&rsquo;abord je décris
+la façon dont l&rsquo;analogie informationnelle m&rsquo;a conduite dans une
+impasse, tout en me préparant aux découvertes récentes en génétique du
+développement.</p>
+
+<p><a id="org5ab8c7e"></a></p>
+
+<h2 id="la-quantification-de-l-évolution">La quantification de l&rsquo;Évolution</h2>
+
+<p>Dans les années 1960, il me vint l&rsquo;idée qu&rsquo;en utilisant la théorie de
+l&rsquo;information, il serait possible de quantifier l&rsquo;évolution
+simultanément à trois niveaux &#x2014; génétique, sélectif et
+morphologique. L&rsquo;aspect génétique est le plus simple : la capacité du
+canal est, approximativement, deux bits par base. Les choses se
+compliquent en présence de grandes quantités d&rsquo;ADN répétitif, mais on
+peut s&rsquo;en accommoder. Le niveau sélectif est plus délicat, mais pas
+sans espoir. Supposons qu&rsquo;on se demande quel niveau de sélection est
+nécessaire pour programmer une séquence initialement aléatoire. Si,
+raisonnablement, la suppression sélective de la moitié de la
+population est vue comme l&rsquo;ajout d&rsquo;un bit d&rsquo;information, alors deux
+bits de sélection sont requis pour programmer chaque base.
+L&rsquo;inconvénient est que l&rsquo;évolution ne démarre pas d&rsquo;une séquence
+aléatoire. Un gène préalablement programmé (ou un ensemble de gènes)
+est plutôt dupliqué, à la suite de quoi l&rsquo;une des copies est altérée
+par la sélection. Cependant, il est encore possible d&rsquo;estimer
+grossièrement le niveau de sélection, en bits, nécessaire pour
+programmer un génome entier. Kimura (1961) en utilisant l&rsquo;idée
+d&rsquo;Haldane (1957) du « coût de la sélection » a fourni un aperçu
+élégant de la façon dans la sélection naturelle accumule de
+l&rsquo;information génétique dans le génome.</p>
+
+<p>L&rsquo;étape la plus difficile est celle de la quantification
+morphologique, mais avant de traiter cette question, je voudrais
+suggérer que la quantification de l&rsquo;information génétique et sélective
+dans la même unité a une application triviale. Il arrive parfois que
+certaines personnes, souvent mathématiciennes, annoncent qu&rsquo;il n&rsquo;y a
+pas eu assez de temps depuis l&rsquo;origine de la Terre, pour que la
+sélection naturelle produise l&rsquo;étonnante diversité et complexité
+observable. Ces assertions ont ceci de curieux que, bien qu&rsquo;elles
+semblent quantitatives à première vue, n&rsquo;indiquent jamais de combien
+de temps il faudrait augmenter cette durée : de deux fois, d&rsquo;un
+million de fois ? La seule façon que je connaisse de proposer une
+réponse quantitative est de montrer que, si l&rsquo;on estime, même
+grossièrement, la quantité d&rsquo;information dans le génome, et la
+quantité qui aurait pu être programmée par la sélection en 5 Ga, il y
+a eu largement assez de temps. Si, en se rappellant que pour
+l&rsquo;essentiel du temps, nos ancêtres étaient microbiens, nous supposons
+une moyenne de 20 générations par an, la sélection aurait eu dix fois
+le temps de programmer le génome. Mais cela suppose que le génome
+contienne suffisamment d&rsquo;information pou spécifier la forme de
+l&rsquo;adulte. C&rsquo;est une supposition raisonnable, puisqu&rsquo;il est difficile
+de voir de quel autre endroit l&rsquo;information pourrait provenir.</p>
+
+<p>Combien d&rsquo;information est nécessaire pour spécifier la forme adulte ?
+Clairement, il n&rsquo;est nul besoin de spécifier la nature et la position
+de chacun des atomes du corps, car tout n&rsquo;est pas spécifié. Cela
+suggère qu&rsquo;on se demande en fait de combien d&rsquo;information il est
+requis pour spécifier les attributs partagés par deux individus du
+même génotype &#x2014; par exemple, les jumeaux monozygotes. Pour
+simplifier, imaginons une paire d&rsquo;organismes bi-dimensionnels (il est
+alors facile d&rsquo;extrapoler l&rsquo;argument à trois dimensions). Imaginer une
+matrice de points noirs et blancs (des pixels dans les faits: à
+nouveau, il est possible d&rsquo;étendre l&rsquo;argument à plus de deux sortes de
+pixels.) Commencer par de petits pixels: peu à peu, les jumeaux
+identiques vont différer. Augmenter graduellement la taille des
+pixels, jusqu&rsquo;à ce que les images des jumeaux identiques soient les
+mêmes. Dès lors, l&rsquo;information requise est égale au nombre de pixel
+dans l&rsquo;image.</p>
+
+<p>Il suffit de décrire la méthode pour comprendre où le bât blesse.
+Imaginez trois images en noir et blanc: la première un ensemble
+aléatoire de point, la seconde La Joconde, et la troisième un cercle
+noir sur fond blanc. La première impose une information égale au
+nombre de pixel. La Joconde pourrait être décrite en moins de bits,
+grâce à la corrélaction entre points voisins, mais requiert toujours
+un grand nombre d&rsquo;information. Le cercle pourrait être déterminé en
+disant que, si <em>(x-a)² + (y-b)² &lt;r²</em>, alors noir, sinon blanc (où <em>ab</em>
+est le centre du cercle et <em>r</em> son rayon). On pourrait arguer que ça
+n&rsquo;est pas pertinent, puisque les gènes ignorent tout de la géométrie
+spatiale, mais à tort. La plupart des formes simples &#x2014; un cercle,
+par exemple &#x2014; peuvent être engendrées par des processus physiques
+simples, de sorte qu&rsquo;il suffit au génome de spécifier un nombre
+restreint de paramètres physiques: par exemple, les taux de réactions
+peuvent être déterminés par certaines enzymes.</p>
+
+<p>Là où l&rsquo;approche « pixel » est incomplète, c&rsquo;est que le génome n&rsquo;est
+pas une description de la forme adulte, mais un ensemble
+d&rsquo;instructions pour le construire: c&rsquo;est une recette plutôt qu&rsquo;un
+plan.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></p>
+
+<p><a id="org7a82906"></a></p>
+
+<h2 id="le-génome-est-il-un-programme-de-développement">Le génome est-il un <em>programme</em> de développement ?</h2>
+
+<p>Il n&rsquo;y a, je crois, aucune raison sérieuse de ne pas parler de code
+génétique, ou d&rsquo;affirmer qu&rsquo;un gène code la séquence d&rsquo;acides aminés
+d&rsquo;une protéine. Certainement, un gène a besoin de la machinerie de
+traduction de la cellule &#x2014; ribosomes, ARNt, etc… &#x2014; mais ça
+n&rsquo;invalide en rien l&rsquo;analogie: un programme informatique a besoin d&rsquo;un
+ordinateur avant de pouvoir faire quoi que ce soit. Pour un biologiste
+de l&rsquo;évolution, l&rsquo;idée est que la machinerie de traduction peut rester
+constante dans une lignée (quoiqu&rsquo;elle requiert un programme génétique
+invariant la déterminant), et pourtant des changements dans le
+programme génétique peuvent induire des changements dans les
+protéines.</p>
+
+<p>Il pourrait être objecté qu&rsquo;un gène ne spécifie que la séquence
+d&rsquo;acides aminés d&rsquo;une protéine, mais pas sa forme tridimensionnelle.
+Dans la plupart des cas, dans des conditions physico-chimiques
+appropriées, la séquence linéaire d&rsquo;acides aminés s&rsquo;auto-replie. Le
+repliement est un processus dynamique complexe: il est pour l&rsquo;instant
+impossible de prédire la structure tridimensionnelle à partir de la
+séquence. Mais les lois de la chimie et de la physique n&rsquo;ont pas à
+être codées par les gènes: elles sont données, et constantes. Dans
+l&rsquo;évolution, les changements dans les gènes peuvent causer des
+changements dans les protéines, lors même que les lois de la chimie
+restent inchangées.</p>
+
+<p>Cependant, un organisme est plus qu&rsquo;un sac de protéine spécifique. Le
+développement implique que différentes protéines soient synthétisées à
+différents moments, dans différents lieux. Une révolution est en train
+de se produire sur la compréhension de ces processus. L&rsquo;image qui s&rsquo;en
+dégage est celle d&rsquo;une hiérarchie complexe de gènes régulant
+l&rsquo;activité d&rsquo;autres gènes. Aujourd&rsquo;hui, la notion de gènes émettant un
+signal à destination d&rsquo;autres gènes est tout aussi centrale que la
+notion de code génétique l&rsquo;était quarante ans plus tôt.</p>
+
+<p>Commençons par une expérience (Halder <em>et al.</em>, 1995). Il existe un
+gène, le gène <em>eyeless</em>, chez la Souris. Les mutations de ce gènes
+(homozygotes) impliquent que la souris se développe sans yeux,
+suggérant que la forme sauvage de ce gène joue un rôle quelconque dans
+le développement de l&rsquo;œil. Ce gène normal de Souris a été transféré à
+la Drosophile, et activé à divers endroits du développement de la
+mouche. S&rsquo;il est activé dans une jambe en développement, un œil s&rsquo;y
+développe à la place; évidemment pas un œil de Souris, mais un œil
+composé de Drosophile. Cela suggère que le gène envoit le signal
+« Fabrique un œil ici »; plus précisément, il active localement
+d&rsquo;autres gènes impliqués dans le développement de l&rsquo;œil.</p>
+
+<p>Pour quelles étranges raisons un gène de Souris fonctionne-t-il dans
+une mouche ? Sans doute, l&rsquo;ancêtre commun de la Mouche et de la
+Souris, quelque 500 Ma plus tôt, possédait l&rsquo;ancêtre de ce gène : cela
+est confirmé par la présence chez <em>Drosophila</em> d&rsquo;un gène de séquence
+très similaire à celle du gène <em>eyeless</em> de la Souris. Quel était le
+rôle de ce gène dans ce lointain ancêtre ? Nous ne le savons pas, mais
+il est probable que l&rsquo;ancêtre commun avait une paire d&rsquo;organes
+sensitifs sur la tête &#x2014; peut-être une ou un amas de cellules
+photo-sensibles &#x2014; et que la différentiation de ces cellules, à
+partir de cellules épidermiques indifférenciées, était déclenchée par
+l&rsquo;ancêtre de ce gène.</p>
+
+<p>Cela soulève des questions sur la nature des signaux qui transitent.
+J&rsquo;ai défendu plus haut l&rsquo;idée que les inducteurs et les répresseurs
+d&rsquo;activité génique sont <em>symboliques</em>, en ce sens qu&rsquo;il n&rsquo;y a pas de
+connection chimique nécessaire entre la nature de l&rsquo;inducteur et ses
+effets. Dans l&rsquo;expérience originale de Jacob et Monod, les gènes
+métabolisant le lactose étaient activés par la présence de lactose
+dans le milieu. C&rsquo;est évidemment adaptatif ; il n&rsquo;y aurait aucun
+intérêt à activer des gènes s&rsquo;ils n&rsquo;avaient aucun rôle à jouer. Mais
+s&rsquo;il avait été avantageux du point de vue sélectif pour ce gène d&rsquo;être
+activé par un autre sucre, disons le maltose, alors les gènes
+régulateurs en questions auraient sans nul doute évolué.</p>
+
+<p>Pourtant l&rsquo;expérience décrite plus haut suggère que les gènes
+responsables de l&rsquo;initiation du développement des yeux ont été
+conservés pendant 500 Ma. Si les gènes sont symboliques, comment cela
+est-il possible ? Les mots sont des symboles, et ne sont pas
+conservés. Les mots utilisés pour décrirent un objet donné changent,
+donc par quelles raisons le gène élicitant le développement de l&rsquo;œil
+n&rsquo;a pas changé ? Cette question est d&rsquo;autant plus urgente que les
+gènes de la signalisation acquièrent parfois d&rsquo;autres significations. Dans
+l&rsquo;évolution, il se produit souvent qu&rsquo;un gène régulateur est dupliqué:
+l&rsquo;une des copies conserve sa fonction initiale pendant que l&rsquo;autre
+change légèrement jusqu&rsquo;à acquérir une fonction nouvelle. Je crois que
+l&rsquo;extrême conservation de nombreux gènes de la signalisation peut être
+expliqué de la façon suivante. Les gènes régulateurs sont souvent
+ordonnés hiérarchiquement: le gène A contrôle les gènes B, C, D … et
+chacun des gènes B, C et D contrôlent eux-mêmes d&rsquo;autres gènes. Les
+changement évolutifs adaptatifs sont probablement graduels, et
+excluent les changements dans les gènes à l&rsquo;initation d&rsquo;une hiérarchie
+régulatoire. Le gène <em>eyeless</em>, qui détermine où l&rsquo;œil est censé se
+développer, est vraisemblablement un tel gène initial, et donc
+extrêmement conservé. Mais le point que je veux souligner ici qu&rsquo;il
+est difficile d&rsquo;envisager le problème même s&rsquo;il est exclut de penser
+aux gènes comme émettant des signaux, et si ces signaux ne sont pas
+vus comme symboliques.</p>
+
+<p>À ce jour donc, on parle de gènes « signalant » à d&rsquo;autres gènes, du
+« programme » de développement du génome, etc… La terminologie
+informationnelle se répand dans la biologie du développement, comme
+elle a envahi la biologie moléculaire. Dans la section suivante,
+j&rsquo;essaie de justifier cette usage.</p>
+
+<p><a id="org72930f6"></a></p>
+
+<h2 id="la-théorie-de-l-évolution-et-le-concept-d-information-en-biologie">La Théorie de l&rsquo;Évolution et le Concept d&rsquo;Information en Biologie</h2>
+
+<p>Je commencerai par un concept d&rsquo;information qui a le mérite d&rsquo;être
+clair, mais qui excluerait sa possibilité d&rsquo;usage en biologie. Dretske
+(1981) argue comme suit. Si une variable <em>A</em> est corrélée à une
+seconde variable <em>B</em>, alors on peut dire que <em>B</em> porte de
+l&rsquo;information sur <em>A</em>; par exemple, si l&rsquo;occurence de la pluie (<em>A</em>)
+est corrélée avec un type particulier de nuage (<em>B</em>), alors le type de
+nuage nous informe s&rsquo;il va pleuvoir. De telles corrélations dépendent
+des lois de la physique, et des conditions locales que Dretske
+appelle des « conditions de canaux ».</p>
+
+<p>Avec cette définition, il n&rsquo;y a aucune difficulté à dire qu&rsquo;un gène
+porte de l&rsquo;information sur la forme adulte; un individu avec le gène
+pour l&rsquo;achondroplasie aura de petits bras et de petites jambes. Mais
+on peut tout aussi bien dire que l&rsquo;environnement d&rsquo;un bébé porte de
+l&rsquo;information sur sa croissance; s&rsquo;il est mal nourri, il sera maigre.
+Familièrement, c&rsquo;est évident; l&rsquo;environnement d&rsquo;un bébé prédit en
+effet de son futur. Mais les biologistes distinguent entre deux types
+de chaînes causales, génétique et environnementales, ou « nature » et
+« croissance », pour plusieurs raisons. Les différences de nature sont
+probablement héréditaires, alors que les différences de développement
+ne le sont pas; les changement évolutifs sont des changements de
+nature, les traits qui adaptent un organisme à son environnement sont
+vraisemblablement dus à la nature. Pour ces raisons, la distinction
+<em>nature-nurture</em> est devenue fondamentale en biologie. Bien sûr, la
+distinction se passe du concept d&rsquo;information, ou de son application
+spécifique aux causes génétiques. Cependant, comme les exemples
+précédents le démontrent, le langage informationnel a été utilisé pour
+caractériser les causes génétiques par opposition aux causes
+environnementales. Je veux ici justifier cet usage.</p>
+
+<p>J&rsquo;argue ici que la distinction ne peut être justifiée que si le
+concept d&rsquo;information en biologie est utilisé pour des causes qui ont
+l&rsquo;attribut d&rsquo;intentionnalité (Dennet, 1987). En biologie, l&rsquo;expression
+que <em>A</em> porte de l&rsquo;information sur <em>B</em> implique que <em>A</em> ait la forme
+qu&rsquo;il a <em>parce qu&rsquo;il</em> porte cette information. Une molécule d&rsquo;ADN a
+une séquence particulière parce qu&rsquo;elle détermine une protéine
+particulière, mais un nuage n&rsquo;est pas noir parce qu&rsquo;il prédit la
+pluie. Cet élément d&rsquo;intentionnalité vient de la sélection naturelle.</p>
+
+<p>Je commencerai par une analogie de l&rsquo;ingénierie. Un ingénieur qui
+s&rsquo;intéresse aux algorithmes génétiques veut concevoir le programme
+d&rsquo;un jeu compétitif. Par simplicité, il choisit Renards et Oies, un
+jeu qui se joue sur un plateau de jeu de dames, dans lequel quatre
+oies doivent acculer un renard. (En l&rsquo;occurence, je me suis amusé à
+l&rsquo;évolution d&rsquo;un programme qui joue à ce jeu dans les années 1940
+déjà. Sans ordinateur, je n&rsquo;ai pas pu traiter de jeux plus difficiles,
+mais Renards et Oies est apparu comme relativement facilement à
+résoudre.) Il invente donc un certain nombre de règles pour les oies,
+(rester en lignes, ne pas laisser de trous, rester en face du renard).
+Chaque règle a au moins un paramètre (par exemple pour la position des
+trous, déterminer la position de chacun des trous). Il s&rsquo;arrange
+ensuite pour qu&rsquo;une séquence de bit spécifie chacun de ces paramètres,
+et la pondération à accorder à chacune des règles dans le choix du
+déplacement suivant. Il conduit ensuite un exemple typique
+d&rsquo;expérience d&rsquo;algorithme génétique, en commençant par une population
+de séquences aléatoires, en permettant à chacune de jouer contre un
+renard efficace, en sélectionnant la plus utile, et en générant une
+nouvelle population de séquence avec mutations aléatoires. Pour un jeu
+aussi simple que Renards et Oies, il terminera avec un programme
+capable de battre n&rsquo;importe quelle stratégie du renard; les choses se
+compliquent pour les échecs.</p>
+
+<p>Si au lieu d&rsquo;utiliser une approche d&rsquo;algorithme génétique, l&rsquo;ingénieur
+avait simplement écrit un programme approprié, je pense que personne
+n&rsquo;objecterait que ledit programme porte de l&rsquo;information, du moins des
+instructions, qui donnent corps à ses intentions. Par analogie, je
+veux dire que dans la première approche, il y a de l&rsquo;information dans
+la séquence de bit, qui a été programmée par la sélection plutôt que
+par l&rsquo;ingénieur. Cet usage est justifié par le fait que, en présence
+d&rsquo;une séquence de bit et des déplacements qu&rsquo;elle génère, il serait
+impossible de déterminer si elle a été générée par l&rsquo;ingénieur
+directement, ou par la sélection entre différents algorithmes
+génétiques.</p>
+
+<p>L&rsquo;évolution biologique procède d&rsquo;abord par une étape de codage.
+Ensuite la sélection basée sur le succès dans le jeu est remplacée par
+la survie et la reproduction (la <em>fitness</em>) dans un environnement
+spécifique.</p>
+
+<p>Je pense que cette analogie autorise les biologistes à dire que l&rsquo;ADN
+contient de l&rsquo;information qui a été programmée par la sélection
+naturelle; que cette information code la séquence d&rsquo;acide aminé de
+protéines; que, dans un sens souvent moins compris, l&rsquo;ADN et les
+protéines portent des instructions, ou un programme, pour le
+développement de l&rsquo;organisme; que la sélection naturelle des
+organismes altère l&rsquo;information dans le génome; et que, enfin,
+l&rsquo;information génomique est « signifiante » en ce qu&rsquo;elle engendre un
+organisme capable de survivre dans l&rsquo;environnement dans lequel la
+sélection opère.</p>
+
+<p>La faiblesse de ces modèles, algorithmique ou biologique, est qu&rsquo;ils
+n&rsquo;indiquent pas d&rsquo;où les « règles » proviennent en premier lieu. Dans
+le cas algorithmique, le succès de la procédure dépend de
+l&rsquo;ingéniosité avec laquelle les règles ont été choisies. Dans le cas
+biologique, les règles dépendent de lois de la physique et de la
+chimie; les organismes n&rsquo;ont pas à inventer ou à faire évoluer<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+les règles qui indiquent à une séquence d&rsquo;acides aminés la façon de se
+replier. Mais il y a des règles de degrés supérieurs, qui dépendent
+de ce que les cellules se divisent de façon répétée; que toutes les
+cellules contiennent un génome entier; que les cellules peuvent
+émettre des signaux aux cellules voisines; que les gènes peuvent être
+activés ou réprimés par d&rsquo;autres; que l&rsquo;état d&rsquo;activation ou de
+répression des gènes peut être transmis par la division cellulaire
+aux cellules filles. La recherche en biologie du développement
+s&rsquo;occupe d&rsquo;identifier les gènes régulateurs et les règles de degré
+supérieur, dont les paramètres sont contrôlés par lesdits gènes.</p>
+
+<p>Les raisons pour lesquelles les biologistes tiennent à distinguer les
+causes environnementales des causes génétiques du développement
+doivent maintenant apparaître clairement. L&rsquo;environnement constitue
+les « conditions de canaux ». Les lois de la physique ne changent pas,
+mais l&rsquo;environnement local peux varier. Les fluctuations de
+l&rsquo;environnement sont une source de bruit dans le système, pas
+d&rsquo;information. Parfois, les organismes s&rsquo;adaptent en effet à leur
+environnement au cours de leur durée de vie, sans évolution génétique.
+Par exemple, les pigments se développent dans la peau des humains
+exposés à la lumière solaire, par protection contre les UV. Une telle
+réponse adaptative nécessite que le génome ait évolué par la sélection
+naturelle de façon à pouvoir faire face à un tel environnement
+fluctuant. Ce qui est héréditaire n&rsquo;est donc pas le pigment brun en
+lui même, mais le mécanisme génétique qui cause son apparition en
+réponse au soleil.</p>
+
+<p>Ceci était donc plus une histoire naturelle du concept d&rsquo;information
+en biologie qu&rsquo;une analyse philosophique. Le concept a joué un rôle
+central dans l&rsquo;essor de la génétique moléculaire. L&rsquo;image du
+développement qui émerge peu à peu est celle d&rsquo;une hiérarchie complexe
+de gènes régulateurs et de systèmes de signalisation par essence
+symboliques. Un tel système dépend de l&rsquo;information génétique, mais la
+façon dont l&rsquo;information est responsable de la forme biologique est
+tellement différente de la façon dont un programme informatique
+fonctionne que l&rsquo;analogie entre eux ne s&rsquo;est pas, je pense, rendue
+particulièrement utile, quoiqu&rsquo;elle soit plus proche de la vérité que
+l&rsquo;idée selon laquelle les systèmes dynamiques complexes engendrent la
+forme biologique « d&rsquo;eux-mêmes ». Une idée moins courante et pourtant
+centrale à la fois en biologie moléculaire et en développement est la
+notion de Monod de « gratuité », dont je pense qu&rsquo;elle est la plus
+clairement exprimée en disant que les signaux moléculaires en biologie
+sont symboliques.</p>
+
+<p><a id="orgc09dd04"></a></p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Dans le langage courant, le mot « information » est utilisé dans deux
+contextes différents. Il peut être utilisé sans implications
+sémantiques; par exemple lorsqu&rsquo;on dit qu&rsquo;un nuage fournit de
+l&rsquo;information sur le fait qu&rsquo;il pleuve bientôt ou non. Dans de tels
+cas, personne ne serait enclin à dire que le nuage a la forme qu&rsquo;il a
+parce qu&rsquo;il fournit de l&rsquo;information. Par contre, un bulletin
+météorologique contient de l&rsquo;information sur le fait qu&rsquo;il pleuve ou
+non, et est structuré d&rsquo;une telle sorte parce qu&rsquo;il contient de
+l&rsquo;information. La différence peut être exprimée en disant que le
+bulletin contient de l&rsquo;intentionnalité (Dennett, 1987), quand le nuage
+n&rsquo;en contient pas. La notion d&rsquo;information telle qu&rsquo;utilisée en
+biologie est de cette nature; elle implique de l&rsquo;intentionnalité.
+C&rsquo;est la raison pour laquelle on parle de gènes comme porteurs
+d&rsquo;information durant le développement, et de fluctuations
+environnementales comme n&rsquo;en contenant pas.</p>
+
+<p>Un gène contient donc de l&rsquo;information, mais qu&rsquo;en est-il d&rsquo;une
+protéine codée par ce gène ? Je pense qu&rsquo;il faut distinguer entre deux
+cas. Une protéine peut avoir une fonction directement déterminée par
+sa structure &#x2014; elle peut être enzymatique, ou fibre contractile.
+D&rsquo;un autre côté, elle peut avoir une fonction régulatrice,
+d&rsquo;activation ou de répression de gènes. De telles fonctions
+régulatrices sont arbitraires, ou symboliques. Elles dépendent de
+récepteur spécifiques sur la séquence d&rsquo;ADN, qui elles-même ont évolué
+par sélection naturelle. L&rsquo;activité d&rsquo;une enzyme dépend des lois de la
+chimie et de l&rsquo;environnement chimique (par exemple de la présence d&rsquo;un
+substrat adapté), mais il n&rsquo;y a pas de structure qui peut être vue
+comme le « récepteur » du « message » d&rsquo;une enzyme. Par contre,
+l&rsquo;effet d&rsquo;une protéine régulatrice dépend bien d&rsquo;un récepteur évolué
+de l&rsquo;information qu&rsquo;il porte: le gène <em>eyeless</em> indique
+« fabrique-un-œil-ici », mais seulement parce que les gènes impliqués
+dans la génèse de l&rsquo;œil ont une séquence réceptrice appropriée. De la
+même façon, l&rsquo;effet d&rsquo;un gène dépend de la machinerie de traduction
+&#x2014; ribosomes, ARNt, enzymes d&rsquo;assignation. Par toutes ces raisons, je
+veux dire que les gènes et les protéines régulatrices portent de
+l&rsquo;information, contrairement aux enzymes.</p>
+
+<p>Une conclusion similaire sur le concept d&rsquo;information a été proposée
+par Sterelny et Griffiths (1999). En particulier, ils écrivent :
+« L&rsquo;information intentionnelle semble le meilleur candidat pour le
+sens dans lequel les gènes et eux seuls portent de l&rsquo;information
+développementale. » Justifiant cette proposition, ils ajoutent : « Un
+test distinctif d&rsquo;information intentionnelle ou sémantique est lorsque
+parler d&rsquo;erreur ou de mauvaise représentation a un sens. » En
+biologie, l&rsquo;erreur de représentation est possible parce qu&rsquo;il y a à la
+fois une structure évoluée portant l&rsquo;information, et une structure
+évoluée qui la reçoit.</p>
+
+<p>En communication humaine, la forme d&rsquo;un message dépend d&rsquo;un agent
+humain intelligent; les bulletins sont écrits par des humains (ou des
+ordinateurs programmés par des humains), et sont conçus pour changer
+le comportement des personnes qui les lisent. Il y a donc
+d&rsquo;intelligents émetteurs et récepteurs. De quelle manière peut-on
+alors parler d&rsquo;un génome comme ayant de l&rsquo;intentionnalité ? J&rsquo;ai argué
+du fait que le génome est tel qu&rsquo;il est à cause de millions d&rsquo;années
+de sélection, favorisant les génomes qui causent le développement
+d&rsquo;organismes capables de survivre dans un environnement donné. Il en
+résulte que le génome a la séquence qu&rsquo;il a parce qu&rsquo;elle génère un
+organisme adapté. C&rsquo;est dans ce sens que les génomes ont de
+l&rsquo;intentionnalité. Le dessein intelligent et la sélection naturelle
+produisent des résultats similaires. Un argument pour cette vision est
+que les programmes conçus par des humains pour produire un résultat
+sont similaires à, et parfois impossible à distinguer de, programmes
+générés par une sélection sans âme.</p>
+
+<h1 id="notes-de-bas-de-page">Notes de bas de page</h1>
+
+<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> <em>It is a recipe, not a blueprint.</em></p>
+
+<p><sup><a id="fn.2" href="#fnr.2">2</a></sup> Il est intéressant qu&rsquo;en anglais le verbe <em>evolve</em> peut être
+employé à la voix active, comme s&rsquo;il était possible pour une entité ou
+un processus de <em>faire</em> évoluer un trait. Il est difficile à traduire
+puisque l&rsquo;évolution est uniquement passive en français, un processus
+ou une entité évolue par un processus immanent ou qui lui est
+extérieur mais il n&rsquo;évolue pas, au sens de faire évoluer, un caractère
+ou un trait. On pourrait faire le même constat pour le verbe <em>to
+signal</em>, qui peut être employé à la voix active en anglais mais plus
+difficilement en français.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        <a class="icon-twitter" href="http://twitter.com/share?text=Mindless%20Selection&url=https%3a%2f%2fsam217pa.github.io%2ffr%2fmindless-selection%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+    </div>
+</footer>
+
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Bacterial Finches" href="https://sam217pa.github.io/">Bacterial Finches</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    
+                    <span>&copy; 2018 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <br />
+                    <span>This work is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://sam217pa.github.io/js/jquery-3.0.0.min.js"></script>
+        <script src="https://sam217pa.github.io/js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://sam217pa.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://sam217pa.github.io/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samuel Barreto</copyright>
-    <lastBuildDate>Mon, 08 Oct 2018 14:29:35 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 12 Oct 2018 13:03:52 +0200</lastBuildDate>
     
 	<atom:link href="https://sam217pa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mindless Selection</title>
+      <link>https://sam217pa.github.io/fr/mindless-selection/</link>
+      <pubDate>Fri, 12 Oct 2018 13:03:52 +0200</pubDate>
+      
+      <guid>https://sam217pa.github.io/fr/mindless-selection/</guid>
+      <description>Cet article est la traduction de l&amp;rsquo;article de John Maynard Smith sur le concept d&amp;rsquo;information en biologie, dans lequel il développe son point de vue sur cette notion d&amp;rsquo;information intentionnelle, et sur l&amp;rsquo;utilité de l&amp;rsquo;analogie informationnelle. Il pourrait sembler à première vue que JMS emploie ici une approche pragmatiste de la vérité, mais les dernières sections tendent à indiquer qu&amp;rsquo;il croyait réellement à cette idée d&amp;rsquo;information portée par le génome; que, par substance, le génome porte une information.</description>
+    </item>
     
     <item>
       <title>The Gospel of Greed</title>
